@@ -220,12 +220,11 @@ gulp.task('build-delete', function() {
   return del(['dist/**/*', '!dist/silence.zip']);
 });
 
-gulp.task('build',
-  gulp.series('default','build-clean', 'build-copy', 'build-zip', 'build-delete')
-);
-
-
 /* DEFAULT
 /––––––––––––––––––––––––*/
 // default gulp tasks executed with `gulp`
 gulp.task('default', gulp.series('css', 'cachebust', 'javascript','makepot'));
+
+gulp.task('build',
+  gulp.series('default','build-clean', 'build-copy', 'build-zip', 'build-delete')
+);
