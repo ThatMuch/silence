@@ -116,7 +116,7 @@ function slugify($text) {
 /––––––––––––––––––––––––*/
 // outputs one of the two parts of the Google Tag Manager scripts
 // Usage: gtm('head', 'GTM-1234567) and gtm('body', 'GTM-1234567)
-function _s_gtm($type) {
+function silence_gtm($type) {
   global $GTM_id;
   if ($GTM_id) :
     if ($type == 'head') : ?>
