@@ -28,16 +28,16 @@ $element_width_mobile: 95vw; // default width of the .element content-div
 
 /* Presets
 /––––––––––––––––––––––––*/
-$color-primary: #D8AC4D;
-$color-primary-darker: #bd9236;
-$color-secondary: #83988D;
-$color-secondary-darker: #253D38;
-$color-black: #212529;
-$color-dark: #343a40;
-$color-grey2: #495057;
-$color-grey1: #868e96;
-$color-grey: #F2F2F2;
-$color-light: #fff;
+$color_primary: #D8AC4D;
+$color_primary-darker: #bd9236;
+$color_secondary: #83988D;
+$color_secondary-darker: #253D38;
+$color_black: #212529;
+$color_dark: #343a40;
+$color_grey2: #495057;
+$color_grey1: #868e96;
+$color_grey: #F2F2F2;
+$color_light: #fff;
 
 /*=============================================
   FONTS
@@ -46,10 +46,11 @@ $color-light: #fff;
 /* set base values */
 $text-fz: 1em;
 $text-scale-ratio: 1.2;
-$text-ff: "Asap", sans-serif;
-$text-c: $color-dark;
+$text-ff: "Roboto", sans-serif;
+$text-c: $color_secondary-darker;
 $text-fw: 400;
 $text-lh: 1.5;
+$text-quote: "Merriweather", serif;
 
 /* type scale */
 $text-xs: calc(1em / (#{$text-scale-ratio} * #{$text-scale-ratio}));
@@ -90,19 +91,19 @@ $space-xxxl: 8.5em;
 
 /* HTML
 /––––––––––––––––––––––––*/
-$html__bgcolor: $color-light;
+$html__bgcolor: $color_light;
 
 /* NAV
 /––––––––––––––––––––––––*/
-$nav__linkcolor: $color-dark;
-$nav__hovercolor: $color-primary;
-$nav__activecolor: $color-primary;
-$nav__spacercolor: $color-dark;
+$nav__linkcolor: $color_dark;
+$nav__hovercolor: $color_primary;
+$nav__activecolor: $color_primary;
+$nav__spacercolor: $color_dark;
 
 /* ANCHORS
 /––––––––––––––––––––––––*/
-$a__linkcolor: $color-dark;
-$a__hovercolor: $color-dark;
+$a__linkcolor: $color_dark;
+$a__hovercolor: $color_dark;
 $a__textdecoration: "none";
 
 /*==================================================================================
