@@ -67,6 +67,6 @@
 /*==================================================================================
   BOOTSTRAP
 ==================================================================================*/
-$theme-colors: ("primary": $color-primary, "secondary": $color-secondary);
+$theme-colors: ("primary": $color_primary, "secondary": $color_secondary);
 
 @import "../../node_modules/bootstrap/scss/bootstrap";

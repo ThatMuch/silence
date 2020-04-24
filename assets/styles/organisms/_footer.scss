@@ -9,8 +9,8 @@
 .footer {
     width: 100vw;
     margin-top: auto;
-    color: $color-grey;
-    background: $color-dark;
+    color: $color_grey;
+    background: $color_dark;
 
     &__rs {
         text-align: center;
@@ -21,7 +21,7 @@
             margin-right: .5rem;
 
             a {
-                color: $color-grey1;
+                color: $color_grey1;
                 font-size: 1.5rem;
             }
         }
@@ -33,19 +33,19 @@
     }
 
     &__credits {
-        background-color: $color-black;
-        color: $color-grey2;
+        background-color: $color_black;
+        color: $color_grey2;
         text-align: center;
 
         a {
-            color: $color-grey2;
+            color: $color_grey2;
         }
     }
 
     /*----------  Widgets  ----------*/
 
     .widget-title {
-        color: $color-grey1;
+        color: $color_grey1;
         margin-bottom: 1rem;
     }
 
@@ -53,7 +53,7 @@
         padding: 0;
 
         .nav-link {
-            color: $color-light;
+            color: $color_light;
             padding: 0 0 0.5rem 0;
         }
     }
