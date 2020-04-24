@@ -28,21 +28,20 @@ html {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-    font-family: $text-ff;
-    font-size: $text-fz; // only used for rem-handling, the actual font-size is $body__fontsize
-    line-height: $text-lh;
     color: $text-c;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
 
-body {
-    // used as wrapper for sticky footer
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    background-color: $html__bgcolor !important;
+    body {
+        font-family: $text-ff;
+        font-size: $text-fz; // only used for rem-handling, the actual font-size is $body__fontsize
+        line-height: $text-lh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        background-color: $html__bgcolor;
+    }
 }
 
 main {
@@ -61,7 +60,7 @@ aside {
 
     .widget {
         padding: 1rem 0;
-        border-bottom: 1px solid $color-grey;
+        border-bottom: 1px solid $color_grey;
 
         .nav-link {
             padding: 0 0 0.5rem 0;
