@@ -11,18 +11,18 @@
  */
  ?>
 
-  <section class="section section-testimonials
-  <? if(get_sub_field('fond') == "Couleur"):?> bg-primary
-  <? elseif(get_sub_field('fond') == "Gris"):?> bg-light<? endif;?>">
-    <!-- Section background: image -->
-      <? if(get_sub_field('fond') == "Image"):?>
-      <div class="section__background-image"  style="
-            <? if(get_sub_field('image')):?>
-            background-image:url(<? echo the_sub_field('image') ?>);
-            <? endif;?>"></div>
-      <? endif;?>
-    <!-- Section background: image -->
+  <section class="section section-testimonials">
         <div class="container">
+               <!-- Title -->
+               <?php if(get_sub_field('title') ) : ?>
+             <h2 class="section__title"><?php echo get_sub_field('title'); ?></h2>
+        <?php endif; ?>
+        <!-- Title -->
+        <!-- Slogan -->
+        <?php if( get_sub_field('slogan') ) : ?>
+	 <?php echo get_sub_field('slogan'); ?>
+ <?php endif; ?>
+        <!-- Slogan -->
               <?php
               $args = array(
               'post_type' => 'testimonials'

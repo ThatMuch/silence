@@ -240,11 +240,11 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5ea8360484e78",
-                            "label": "Slogan",
-                            "name": "slogan",
+                            "key": "field_5ba630a0a7bfd",
+                            "label": "Titre",
+                            "name": "title",
                             "type": "text",
-                            "instructions": "",
+                            "instructions": "Le titre affiché dans la section",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -259,11 +259,11 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_5ba630a0a7bfd",
-                            "label": "Titre",
-                            "name": "title",
+                            "key": "field_5ea8360484e78",
+                            "label": "Slogan",
+                            "name": "slogan",
                             "type": "text",
-                            "instructions": "Le titre affiché dans la section",
+                            "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -981,5 +981,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1588085070
+    "modified": 1588087184
 }

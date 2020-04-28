@@ -18,6 +18,11 @@
              <h2 class="section__title"><?php echo get_sub_field('title'); ?></h2>
         <?php endif; ?>
         <!-- Title -->
+        <!-- Slogan -->
+        <?php if( get_sub_field('slogan') ) : ?>
+	 <?php echo get_sub_field('slogan'); ?>
+ <?php endif; ?>
+        <!-- Slogan -->
   <?php
 
 $images = get_sub_field('logo_list');
