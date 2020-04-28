@@ -11,9 +11,7 @@
  */
  ?>
 
-  <section class="section section-team
-  <? if(get_sub_field('fond') == "Couleur"):?> bg-primary
-  <? elseif(get_sub_field('fond') == "Gris"):?> bg-light<? endif;?>">
+  <section class="section section-team">
     <!-- Section background: image -->
       <? if(get_sub_field('fond') == "Image"):?>
       <div class="section__background-image"  style="

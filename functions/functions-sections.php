@@ -34,20 +34,18 @@ function stanlee_sections() {
   ob_start('sanitize_output');
   if (have_rows('sections')):
     while (have_rows('sections')): the_row();
-      if (get_row_layout() == 'text') : stanlee_section_text(); endif;
-      if (get_row_layout() == 'text_image') : stanlee_section_text_img(); endif;
-      if (get_row_layout() == 'link') : stanlee_section_link(); endif;
-      if (get_row_layout() == 'services') : stanlee_section_services(); endif;
-      if (get_row_layout() == 'team') : stanlee_section_team(); endif;
-      if (get_row_layout() == 'portfolio') : stanlee_section_portfolio(); endif;
-      if (get_row_layout() == 'testimonials') : stanlee_section_testimonials(); endif;
-      if (get_row_layout() == 'price') : stanlee_section_price(); endif;
-      if (get_row_layout() == 'logos') : stanlee_section_logos(); endif;
-      if (get_row_layout() == 'carousel') : stanlee_section_carousel(); endif;
-      if (get_row_layout() == 'gallery') : stanlee_section_gallery(); endif;
+      if (get_row_layout() == 'accordeon') : stanlee_section_accordeon(); endif;
+      if (get_row_layout() == 'articles') : stanlee_section_articles(); endif;
       if (get_row_layout() == 'contact') : stanlee_section_contact(); endif;
-      if (get_row_layout() == 'stats') : stanlee_section_stats(); endif;
-      if (get_row_layout() == 'faq') : stanlee_section_faq(); endif;
+      if (get_row_layout() == 'cta') : stanlee_section_link(); endif;
+      if (get_row_layout() == 'newsletter') : stanlee_section_newsletter(); endif;
+      if (get_row_layout() == 's-formations') : stanlee_section_s_formations(); endif;
+      if (get_row_layout() == 's-images') : stanlee_section_s_images(); endif;
+      if (get_row_layout() == 's-video') : stanlee_section_s_video(); endif;
+      if (get_row_layout() == 'slider') : stanlee_section_slider(); endif;
+      if (get_row_layout() == 'team') : stanlee_section_team(); endif;
+      if (get_row_layout() == 'testimonials') : stanlee_section_testimonials(); endif;
+      if (get_row_layout() == 'text') : stanlee_section_text(); endif;
     endwhile;
   endif;
   return ob_get_flush();
@@ -55,94 +53,21 @@ function stanlee_sections() {
 
 
 /*==================================================================================
-  BLOCKS
+  SECTIONS
 ==================================================================================*/
-// add your custom sections here...
 
-/* TEXT
+/* Accordeon
 /––––––––––––––––––––––––*/
-function stanlee_section_text() {
+function stanlee_section_accordeon() {
   ob_start('sanitize_output');
-    include (get_template_directory().'/templates/section-text.php');
+    include (get_template_directory().'/templates/section-accordeon.php');
   return ob_get_flush();
 }
-/* TEXT + IMAGE
+/* Articles
 /––––––––––––––––––––––––*/
-function stanlee_section_text_img() {
+function stanlee_section_articles() {
   ob_start('sanitize_output');
-    include (get_template_directory().'/templates/section-text-image.php');
-  return ob_get_flush();
-}
-
-/* LINK
-/––––––––––––––––––––––––*/
-function stanlee_section_link() {
-  ob_start('sanitize_output');
-    include (get_template_directory().'/templates/section-link.php');
-  return ob_get_flush();
-}
-
-/* SERVICES
-/––––––––––––––––––––––––*/
-function stanlee_section_services() {
-  ob_start('sanitize_output');
-    include (get_template_directory().'/templates/section-services.php');
-  return ob_get_flush();
-}
-
-/* TEAM
-/––––––––––––––––––––––––*/
-function stanlee_section_team() {
-  ob_start('sanitize_output');
-    include (get_template_directory().'/templates/section-team.php');
-  return ob_get_flush();
-}
-
-/* PORTFOLIO
-/––––––––––––––––––––––––*/
-function stanlee_section_portfolio() {
-  ob_start('sanitize_output');
-    include (get_template_directory().'/templates/section-portfolio.php');
-  return ob_get_flush();
-}
-
-/* TESTIMONIALS
-/––––––––––––––––––––––––*/
-function stanlee_section_testimonials() {
-  ob_start('sanitize_output');
-    include (get_template_directory().'/templates/section-testimonials.php');
-  return ob_get_flush();
-}
-
-/* PRICE
-/––––––––––––––––––––––––*/
-function stanlee_section_price() {
-  ob_start('sanitize_output');
-    include (get_template_directory().'/templates/section-price.php');
-  return ob_get_flush();
-}
-
-/* LOGOS
-/––––––––––––––––––––––––*/
-function stanlee_section_logos() {
-  ob_start('sanitize_output');
-    include (get_template_directory().'/templates/section-logos.php');
-  return ob_get_flush();
-}
-
-/* CAROUSEL
-/––––––––––––––––––––––––*/
-function stanlee_section_carousel() {
-  ob_start('sanitize_output');
-    include (get_template_directory().'/templates/section-carousel.php');
-  return ob_get_flush();
-}
-
-/* GALLERY
-/––––––––––––––––––––––––*/
-function stanlee_section_gallery() {
-  ob_start('sanitize_output');
-    include (get_template_directory().'/templates/section-gallery.php');
+    include (get_template_directory().'/templates/section-articles.php');
   return ob_get_flush();
 }
 
@@ -154,19 +79,75 @@ function stanlee_section_contact() {
   return ob_get_flush();
 }
 
-/* STATS
+/* CTA
 /––––––––––––––––––––––––*/
-function stanlee_section_stats() {
+function stanlee_section_cta() {
   ob_start('sanitize_output');
-    include (get_template_directory().'/templates/section-stats.php');
+    include (get_template_directory().'/templates/section-cta.php');
   return ob_get_flush();
 }
 
-/* FAQ
+/* Newsletter
 /––––––––––––––––––––––––*/
-function stanlee_section_faq() {
+function stanlee_section_newsletter() {
   ob_start('sanitize_output');
-    include (get_template_directory().'/templates/section-faq.php');
+    include (get_template_directory().'/templates/section-newsletter.php');
+  return ob_get_flush();
+}
+
+/* slider
+/––––––––––––––––––––––––*/
+function stanlee_section_slider() {
+  ob_start('sanitize_output');
+    include (get_template_directory().'/templates/section-slider.php');
+  return ob_get_flush();
+}
+
+/* Slider formations
+/––––––––––––––––––––––––*/
+function stanlee_section_s_formation() {
+  ob_start('sanitize_output');
+    include (get_template_directory().'/templates/section-s-formation.php');
+  return ob_get_flush();
+}
+
+/* s_images
+/––––––––––––––––––––––––*/
+function stanlee_section_s_images() {
+  ob_start('sanitize_output');
+    include (get_template_directory().'/templates/section-s-images.php');
+  return ob_get_flush();
+}
+
+/* s_video
+/––––––––––––––––––––––––*/
+function stanlee_section_s_video() {
+  ob_start('sanitize_output');
+    include (get_template_directory().'/templates/section-s-video.php');
+  return ob_get_flush();
+}
+
+/* TEAM
+/––––––––––––––––––––––––*/
+function stanlee_section_team() {
+  ob_start('sanitize_output');
+    include (get_template_directory().'/templates/section-team.php');
+  return ob_get_flush();
+}
+
+/* TESTIMONIALS
+/––––––––––––––––––––––––*/
+function stanlee_section_testimonials() {
+  ob_start('sanitize_output');
+    include (get_template_directory().'/templates/section-testimonials.php');
+  return ob_get_flush();
+}
+
+/* TEXT
+/––––––––––––––––––––––––*/
+function stanlee_section_text() {
+  ob_start('sanitize_output');
+    include (get_template_directory().'/templates/section-text.php');
   return ob_get_flush();
 }
 

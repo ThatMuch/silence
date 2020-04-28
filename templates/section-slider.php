@@ -11,7 +11,7 @@
  */
  ?>
 
-  <section class="section section-carousel">
+  <section class="section section-slider">
       <div class="container">
           <? $images = get_sub_field('images'); ?>
           <? if($images): $i =0; $y =0; ?>
