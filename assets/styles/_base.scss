@@ -80,3 +80,9 @@ footer .inner {
         width: $element_width_mobile;
     }
 }
+
+.site-content .container {
+    @include breakpoint(laptop) {
+        max-width: 90%;
+    }
+}

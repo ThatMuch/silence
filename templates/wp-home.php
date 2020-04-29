@@ -10,40 +10,27 @@
 ?>
 
 <? get_header(); ?>
-<div class="container">
-  <div class="row">
-  <main id="blog" class="content-area col-sm-12 col-lg-8">
 
-    <section>
-      <? if (have_posts() ) : while (have_posts()) : the_post(); ?>
-        <article>
-          <div class="row">
-            <? if (has_post_thumbnail($post->ID)): ?>
-              <div class="col-sm-4">
-                <? the_post_thumbnail('large', ['class' => 'modernizr-of']); ?>
-              </div>
-            <? endif; ?>
-            <div class="<? if (has_post_thumbnail($post->ID)): ?> col-sm-8 <? else : ?> col-sm-12<?endif; ?>">
-              <h2 class="entry-title"><a href="<? the_permalink()?>"><? the_title(); ?></a></h2>
-              <? the_excerpt(); ?>
-              <hr>
-              <div class="postinfo"><?= get_the_date_stanlee(); ?></div>
-            </div>
-          </div>
-        </article>
-      <? endwhile; endif; ?>
-<? the_posts_pagination( array(
-	'mid_size'  => 2,
-	'prev_text' => __( '<', 'stanlee' ),
-  'next_text' => __( '>', 'stanlee' ),
-  'screen_reader_text' => __( '&nbsp;' )
-) ); ?>
-
+  <main id="blog">
+  <?php if (has_post_thumbnail()) : ?>
+    <section class="page__header">
+    <h1 class="page__header__title text-center"><?php the_title(); ?></h1>
+        <?php the_post_thumbnail('large'); ?>
     </section>
+  <?php endif?>
+    <section class="container">
+      <? if (have_posts() ) : ?><?php while (have_posts()) : the_post(); ?>
+        <?php get_template_part('templates/wp', 'post')?>
+      <? endwhile; endif; ?>
+      <?php
+      global $wp_query;
+      if (  $wp_query->max_num_pages > 1 ) : ?>
 
+        <button class="btn btn-outline-primary misha_loadmore">Voir tous les articles</button>
+
+      <?php endif; ?>
+    </section>
   </main>
 
-<? get_sidebar(); ?>
-  </div>
-</div>
+
 <? get_footer(); ?>

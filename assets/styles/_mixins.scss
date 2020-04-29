@@ -8,7 +8,12 @@
 
 /* Responsive */
 @mixin breakpoint($device) {
-    @if $device == desktop {
+    @if $device == desktopLG {
+        @media screen and (min-width: 1920px) {
+            @content;
+        }
+    }
+    @else if $device == desktop {
         @media screen and (min-width: 1200px) {
             @content;
         }
