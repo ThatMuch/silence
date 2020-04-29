@@ -38,6 +38,7 @@ function stanlee_sections() {
       if (get_row_layout() == 'articles') : stanlee_section_articles(); endif;
       if (get_row_layout() == 'contact') : stanlee_section_contact(); endif;
       if (get_row_layout() == 'cta') : stanlee_section_link(); endif;
+      if (get_row_layout() == 'formations') : stanlee_section_formations(); endif;
       if (get_row_layout() == 'newsletter') : stanlee_section_newsletter(); endif;
       if (get_row_layout() == 's-formations') : stanlee_section_s_formations(); endif;
       if (get_row_layout() == 's-images') : stanlee_section_s_images(); endif;
@@ -84,6 +85,13 @@ function stanlee_section_contact() {
 function stanlee_section_cta() {
   ob_start('sanitize_output');
     include (get_template_directory().'/templates/section-cta.php');
+  return ob_get_flush();
+}
+/* FORMATIONS
+/––––––––––––––––––––––––*/
+function stanlee_section_formations() {
+  ob_start('sanitize_output');
+    include (get_template_directory().'/templates/section-formations.php');
   return ob_get_flush();
 }
 
@@ -150,5 +158,4 @@ function stanlee_section_text() {
     include (get_template_directory().'/templates/section-text.php');
   return ob_get_flush();
 }
-
 ?>

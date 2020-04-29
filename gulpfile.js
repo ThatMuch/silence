@@ -121,7 +121,7 @@ gulp.task('browsersync', function() {
 gulp.task('css', gulp.series('clean:css', function() {
   return gulp
     .src(assets['css'].concat(vendors['css']))
-    .pipe(plumber({errorHandler: notify.onError("Error")}))
+    .pipe(plumber({errorHandler: notify.onError("<%= error.message %>")}))
     .pipe(concat('style.min.css'))
     .pipe(sass())
     .pipe(autoprefixer('last 2 version', { cascade: false }))
@@ -197,6 +197,7 @@ gulp.task('watch',  gulp.parallel('browsersync', function() {
   watch(assets['javascript'], gulp.series('javascript'));
   watch('**/*.php', browserSync.reload);
   watch('*.html', browserSync.reload);
+  watch('**/*.scss', browserSync.reload);
 }));
 
 gulp.task('build-clean', function() {

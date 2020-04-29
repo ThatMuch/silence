@@ -38,3 +38,27 @@ nav.navbar {
         }
     }
 }
+
+.nav.nav-tab {
+    .nav-item {
+        .nav-link {
+            text-transform: uppercase;
+            color: $color_secondary;
+            position: relative;
+
+            &.active, &:hover {
+                color: $color-primary !important;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    height: 1px;
+                    width: 33%;
+                    left: 33%;
+                    bottom: 0;
+                    background-color: $color-primary;
+                }
+            }
+        }
+    }
+}
