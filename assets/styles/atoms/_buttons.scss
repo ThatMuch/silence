@@ -7,11 +7,27 @@
  */
 
 button, .btn {
-    display: block;
+    padding: 8px 50px;
+    transition: 0,2s;
+    display: inline-block;
+    position: relative;
+    border-radius: 30px;
+
+    i {
+        position: absolute;
+        right: 0.5rem;
+        top: 0;
+        bottom: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    span {
+        margin-right: 32px;
+    }
 
     &:hover, &:active, &:focus {
-        //
-   
+        transition: $transition_fast;
     }
 
     &:disabled {
@@ -48,47 +64,23 @@ button, .btn {
     }
 }
 
-.button{
-    padding: 8px 50px;
-    transition: 0,2s;
-    display: inline-block;
-    position: relative;
-    border-radius: 30px;
-
-    i {
-        position: absolute;
-        right: 0.5rem;
-        top: 0;
-        bottom: 0;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-    span{
-        margin-right: 32px;
-    }
-}
-
-.button:hover{
-    transition: 0,2s;
-}
-
-.button_ogre{
+.button_ogre {
     background-color: $color_primary;
     border: 2px solid $color_primary;
     color: $color_light;
- }
- 
- .button_ogre:hover{
+}
+
+.button_ogre:hover {
     background-color: transparent;
     color: $color_primary;
- }
- 
- .button_ogre_border{
+}
+
+.button_ogre_border {
     border: 2px solid $color_primary;
-    color: $color_primary;    
- }
- 
- .button_ogre_border:hover{
+    color: $color_primary;
+}
+
+.button_ogre_border:hover {
     background-color: $color_primary;
     color: $color_light;
- }
+}
