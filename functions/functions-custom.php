@@ -17,7 +17,7 @@
 function shortcode_button($atts) {
   $link = $atts['link'];
   $text = $atts['text'];
-  return '<a href="'.$link.'" class="button">'.$text.'</a>';
+  return '<a href="'.$link.'" class="btn btn-primary">'.$text.'</a>';
 }
 add_shortcode('button', 'shortcode_button');
 
