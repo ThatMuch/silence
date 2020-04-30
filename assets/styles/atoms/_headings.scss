@@ -5,6 +5,11 @@
  * @since       silence_1.0.0.0
  *
  */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
 h1 {
     @include heading-size(6);
 
@@ -13,8 +18,6 @@ h1 {
 
 h2 {
     @include heading-size(5);
-
-    font-weight: 700;
 }
 
 h3 {
@@ -24,8 +27,7 @@ h3 {
 h4 {
     @include heading-size(3);
 
-    font-weight: 700;
-    color: $color_black;
+    color: $color_secondary-darker;
 }
 
 h5 {
@@ -41,42 +43,6 @@ h6 {
     letter-spacing: 1px;
 }
 
-.title-uppercase {
-    text-transform: uppercase;
-}
-
 .subtitle {
     font-size: 17px;
-}
-
-.subtitle-left {
-    float: left;
-}
-
-.subtitle-right {
-    float: right;
-}
-
-.title-align-left {
-    text-align: left;
-}
-
-.title-align-right {
-    text-align: right;
-}
-
-.title-card {
-    text-align: center;
-    font-weight: bold;
-    color: $color_light;
-    padding: 10px;
-    font-size: 23px;
-    line-height: 30px;
-}
-
-.title-card-back {
-    font-weight: bold;
-    color: $color_primary;
-    font-size: 22px;
-    line-height: 28px;
 }

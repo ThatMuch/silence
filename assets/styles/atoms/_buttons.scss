@@ -7,7 +7,7 @@
  */
 
 button, .btn {
-    padding: 8px 50px;
+    padding: 8px 50px !important;
     transition: 0,2s;
     display: inline-block;
     position: relative;
@@ -15,8 +15,7 @@ button, .btn {
 
     i {
         position: absolute;
-        right: 0.5rem;
-        top: 0;
+        right: 1rem;
         bottom: 0;
         top: 50%;
         transform: translateY(-50%);
@@ -37,6 +36,8 @@ button, .btn {
 }
 
 .btn.btn-primary {
+    color: #fff !important;
+
     &:hover, &:active, &:focus {
         //
    
@@ -52,8 +53,7 @@ button, .btn {
 
 .btn.btn-outline-primary {
     &:hover, &:active, &:focus {
-        //
-   
+        color: #fff !important;
     }
 }
 

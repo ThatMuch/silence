@@ -50,10 +50,10 @@ textarea {
 }
 
 fieldset {
-    border: 1px solid $color_black;
+    border: 1px solid $color_black !important;
     border-radius: 10px;
     display: block;
-    padding: 1em 1.75em 0.65em;
+    padding: 1em 1.75em 0.65em !important;
 
     legend {
         color: $color_black;
