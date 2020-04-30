@@ -6,8 +6,21 @@
  *
  */
 
+input, textarea{
+  border: 0!important;
+  background-color: transparent!important;
+  outline: none;
+
+
+}
+
+input:focus, textarea:focus{
+    border-color: transparent!important;
+    box-shadow: inherit!important;
+}
+
 input, select {
-    //
+    
     &:active, &:hover, &:focus {
         //
    
@@ -16,9 +29,29 @@ input, select {
 
 input[type="radio"],
 input[type="checkbox"] {
-    //
+    
+}
+
+input[type="submit"]{
+    background-color: $color_primary!important;
+    padding: 5px 20px;
+    border: 2px solid $color_primary!important;
+    transition: 0,2s;
+    color: $color_light;
+    border-radius: 30px;
+    display: block;
+    max-width: 200px;
+    margin: auto;
+}
+
+input[type="submit"]:hover{
+    background-color: transparent!important;
+    color: $color_primary;
+    transition: 0,2s;
 }
 
 textarea {
     //
 }
+
+

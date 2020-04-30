@@ -11,6 +11,7 @@ h1 {
 
 h2 {
     @include heading-size(5);
+    font-weight: 700!important;
 }
 
 h3 {
@@ -19,16 +20,57 @@ h3 {
 
 h4 {
     @include heading-size(3);
+    font-weight: 700!important;
+    color: $color_black;
 }
 
 h5 {
     @include heading-size(2);
-
     letter-spacing: 1px;
+    margin-bottom: 0!important;
 }
 
 h6 {
     @include heading-size(1);
 
     letter-spacing: 1px;
+}
+
+.title-uppercase{
+    text-transform: uppercase;
+}
+
+.subtitle{
+    font-size: 17px;
+}
+
+.subtitle-left{
+    float: left;
+}
+
+.subtitle-right{
+    float: right;
+}
+
+.title-align-left{
+    text-align: left;
+}
+
+.title-align-right{
+    text-align: right;
+}
+
+.title-card{
+    text-align: center;
+    font-weight: bold;
+    color: $color_light;
+    padding: 10px;
+    font-size: 23px;
+    line-height: 30px;
+}
+.title-card-back{
+    font-weight: bold;
+    color: $color_primary;
+    font-size: 22px;
+    line-height: 28px;
 }

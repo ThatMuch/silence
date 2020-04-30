@@ -1,4 +1,18 @@
 .section-contact {
+    fieldset{
+
+        padding: .35em .75em .625em!important;
+    
+        legend {
+            letter-spacing: 2px!important;
+            font-size: 12px!important;
+        }
+
+        p{
+            margin-bottom: 0;
+        }
+    }
+
     .form-control {
         @media screen and (max-width: 530px) {
             font-size: 1.4rem;
