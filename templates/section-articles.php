@@ -15,9 +15,6 @@
  <?php if( get_sub_field('title') ) : ?>
 	 <?php echo get_sub_field('title'); ?>
  <?php endif; ?>
- <?php if( get_sub_field('slogan') ) : ?>
-	 <?php echo get_sub_field('slogan'); ?>
- <?php endif; ?>
 
 <!-- Boucle sur les 2 derniers articles publiés -->
 
