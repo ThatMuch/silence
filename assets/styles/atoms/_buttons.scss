@@ -7,9 +7,26 @@
  */
 
 button, .btn {
+    padding: 8px 50px !important;
+    transition: 0,2s;
+    display: inline-block;
+    position: relative;
+    border-radius: 30px;
+
+    i {
+        position: absolute;
+        right: 1rem;
+        bottom: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    span {
+        margin-right: 32px;
+    }
+
     &:hover, &:active, &:focus {
-        //
-   
+        transition: $transition_fast;
     }
 
     &:disabled {
@@ -19,6 +36,8 @@ button, .btn {
 }
 
 .btn.btn-primary {
+    color: #fff !important;
+
     &:hover, &:active, &:focus {
         //
    
@@ -34,8 +53,7 @@ button, .btn {
 
 .btn.btn-outline-primary {
     &:hover, &:active, &:focus {
-        //
-   
+        color: #fff !important;
     }
 }
 
@@ -44,4 +62,25 @@ button, .btn {
         //
    
     }
+}
+
+.button_ogre {
+    background-color: $color_primary;
+    border: 2px solid $color_primary;
+    color: $color_light;
+}
+
+.button_ogre:hover {
+    background-color: transparent;
+    color: $color_primary;
+}
+
+.button_ogre_border {
+    border: 2px solid $color_primary;
+    color: $color_primary;
+}
+
+.button_ogre_border:hover {
+    background-color: $color_primary;
+    color: $color_light;
 }

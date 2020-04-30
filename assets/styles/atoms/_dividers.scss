@@ -5,6 +5,11 @@
  * @since       silence_1.0.0.0
  *
  */
-hr {
-    //
+
+.block-round {
+    background: transparent url("./assets/images/texture-points.svg") round 0 0;
+    width: 550px;
+    height: 60px;
+    background-repeat: repeat;
+    background-size: 15px;
 }
