@@ -52,11 +52,7 @@
     </div>
   </div>
 </nav>
-<?php if ( is_home()): ?>
-            <header>
-                <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-            </header>
-<?php endif; ?>
+
 <? if (is_archive() || is_category()): ?>
   <header>
     <h1 class="page-title screen-reader-text">

@@ -10,40 +10,35 @@
 ?>
 
 <? get_header(); ?>
-<div class="container">
-  <div class="row">
-  <main id="blog" class="content-area col-sm-12 col-lg-8">
+<?php $page_id = get_queried_object_id();?>
+  <main id="blog">
+  <?php if (has_post_thumbnail()) : ?>
+    <section class="page__header">
+      <div class="page__header__content">
+        <div class="container page__header__content__inner">
+          <?php if ( get_field('slogan_page',$page_id)) : ?>
+            <h1 class="page__header__title page__header__slogan"><?php the_field( 'slogan_page',$page_id ); ?></h1>
+          <?php else : ?>
+            <h1 class="page__header__title text-center"><?php echo get_the_title($page_id); ?></h1>
+          <?php endif; ?>
 
-    <section>
-      <? if (have_posts() ) : while (have_posts()) : the_post(); ?>
-        <article>
-          <div class="row">
-            <? if (has_post_thumbnail($post->ID)): ?>
-              <div class="col-sm-4">
-                <? the_post_thumbnail('large', ['class' => 'modernizr-of']); ?>
-              </div>
-            <? endif; ?>
-            <div class="<? if (has_post_thumbnail($post->ID)): ?> col-sm-8 <? else : ?> col-sm-12<?endif; ?>">
-              <h2 class="entry-title"><a href="<? the_permalink()?>"><? the_title(); ?></a></h2>
-              <? the_excerpt(); ?>
-              <hr>
-              <div class="postinfo"><?= get_the_date_stanlee(); ?></div>
-            </div>
-          </div>
-        </article>
-      <? endwhile; endif; ?>
-<? the_posts_pagination( array(
-	'mid_size'  => 2,
-	'prev_text' => __( '<', 'stanlee' ),
-  'next_text' => __( '>', 'stanlee' ),
-  'screen_reader_text' => __( '&nbsp;' )
-) ); ?>
-
+        </div>
+      </div>
+      <? echo get_the_post_thumbnail($page_id,'large'); ?>
     </section>
+  <?php endif?>
 
+    <section class="container">
+      <? if (have_posts() ) : ?>
+        <?php while (have_posts()) : the_post(); ?>
+        <?php get_template_part('templates/wp', 'post')?>
+      <? endwhile; endif; ?>
+      <?php
+      if (  $wp_query->max_num_pages > 1 ) : ?>
+        <button class="btn btn-outline-primary misha_loadmore">Voir tous les articles</button>
+      <?php endif; ?>
+    </section>
   </main>
 
-<? get_sidebar(); ?>
-  </div>
-</div>
+
 <? get_footer(); ?>

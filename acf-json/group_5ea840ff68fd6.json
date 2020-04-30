@@ -5,7 +5,7 @@
         {
             "key": "field_5ea84123a1a46",
             "label": "Slogan",
-            "name": "slogan",
+            "name": "slogan_page",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -34,6 +34,13 @@
                 "operator": "!=",
                 "value": "6"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
         ]
     ],
     "menu_order": 0,
@@ -44,5 +51,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1588085148
+    "modified": 1588201057
 }

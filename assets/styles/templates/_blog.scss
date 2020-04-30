@@ -9,18 +9,13 @@
 
 main#blog {
     section {
-        article {
-            img,
-            .modernizr-of {
-                width: 100%;
-                height: 100%;
-                background-size: cover;
-                object-fit: cover;
-            }
-        }
+        /*        .pagination {
+                   justify-content: center;
+               } */
 
-        .pagination {
-            justify-content: center;
+        .misha_loadmore {
+            display: block;
+            margin: 0 auto 80px;
         }
     }
 }
