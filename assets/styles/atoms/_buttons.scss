@@ -12,6 +12,9 @@ button, .btn {
     display: inline-block;
     position: relative;
     border-radius: 30px;
+    font-size: .8rem !important;
+    text-transform: uppercase;
+    font-weight: 300 !important;
 
     i {
         position: absolute;
@@ -52,6 +55,8 @@ button, .btn {
 }
 
 .btn.btn-outline-primary {
+    color: $color_primary;
+
     &:hover, &:active, &:focus {
         color: #fff !important;
     }

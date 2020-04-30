@@ -19,15 +19,23 @@ $subCat = get_categories( array('child_of' => $cat, 'orderby' => 'name', 'hide_e
  <section class="section section_formations">
 	<div class="container">
 		<!-- Header -->
-		<?php if ( get_sub_field('slogan') ) : ?>
-			<p><?php echo get_sub_field('slogan'); ?></p>
-		<?php endif; ?>
-
+		<div class=" section__header">
 		<?php if ( get_sub_field('title') ) : ?>
-			<h2><?php echo get_sub_field('title'); ?></h2>
+			<p class="section__header__title text-right"><?php echo get_sub_field('title'); ?></p>
 		<?php endif; ?>
+		<div class="row">
+			<div class="col-sm-6 divider">
+			<div class="block-round"></div>
+			</div>
+			<div class="col-sm-6">
+			<?php if ( get_sub_field('slogan') ) : ?>
+			<h2 class="section__header__slogan text-right"><?php echo get_sub_field('slogan'); ?></h2>
+		<?php endif; ?>
+			</div>
+		</div>
+		</div>
 		<!-- Navigation -->
-		<ul class="nav nav-tab mb-3" id="pills-tab" role="tablist">
+		<ul class="nav nav-tab" id="pills-tab" role="tablist">
 		<?php foreach ($subCat as $key=>$value) { ?>
 			<li class="nav-item">
 			<a class="nav-link <?php echo $key === 0 ? 'active' : '' ?>" id="pills-<?php echo $key?>-tab" data-toggle="pill" data-target="#pills-<?php echo $key?>" role="tab" aria-controls="pills-<?php echo $key?>" aria-selected="true">
@@ -54,7 +62,51 @@ $subCat = get_categories( array('child_of' => $cat, 'orderby' => 'name', 'hide_e
 					if ($the_query->have_posts()) : ;
 						while ($the_query->have_posts()) : $the_query->the_post() ;?>
 							<!-- Cards -->
-							<div class="col-sm-4"><?php the_title();?></div>
+							<div class="col-sm-4 d-flex justify-content-center">
+								<div class="card-training card">
+									<div class="card__inner">
+										<div class="card__front">
+											<div class="img__inner"><img src="<?php the_post_thumbnail_url();?>" alt="<?php the_title()?>" /></div>
+											<span class="card-training__category"><?php echo $cat->name ?></span>
+											<div class="content-center-verticale">
+												<h3 class="card__title"><?php the_title();?></h3>
+											</div>
+											<div class="card-training__details">
+											<?php if ( have_rows( 'details' ) ) : ?>
+												<ul>
+												<?php while ( have_rows( 'details' ) ) : the_row(); ?>
+												<li>
+													<img src="<?php echo get_template_directory_uri(); ?>/assets/images/ordi.svg" />
+													<span><?php the_sub_field( 'time_present' ); ?></span>
+												</li>
+												<li>
+													<img src="<?php echo get_template_directory_uri(); ?>/assets/images/clock.svg" />
+													<span><?php the_sub_field( 'time_remot' ); ?></span>
+												</li>
+												<li>
+													<img src="<?php echo get_template_directory_uri(); ?>/assets/images/pin.svg" />
+													<span><?php the_sub_field( 'location' ); ?></span>
+												</li>
+												<li>
+													<img src="<?php echo get_template_directory_uri(); ?>/assets/images/user.svg" />
+													<span><?php the_sub_field( 'people' ); ?> Pers</span>
+												</li>
+												<?php endwhile; ?>
+												</u>
+											<?php endif; ?>
+											</div>
+										</div>
+										<div class="card__back ">
+											<h3 class="card__back__title"><?php the_title();?></h3>
+											<?php if ( get_field('desc') ) : ?>
+												<p class="card__back__text"><?php echo get_field('desc'); ?></p>
+											<?php endif; ?>
+											<a class="btn btn-primary mt-auto">Nous contacter<i class="fas fa-arrow-right"></i></a>
+											<a class="btn btn-outline-primary">Télécharger la brochure<i class="fas fa-download"></i></a>
+										</div>
+									</div>
+									</div>
+							</div>
 				<?php
 						endwhile;
 					endif;

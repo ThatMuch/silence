@@ -21,8 +21,28 @@ main#sections {
             position: relative;
         }
 
-        .section__title {
-            margin-bottom: 2rem;
+        &__header {
+            margin-bottom: $space-xl;
+
+            &__title {
+                font-weight: 300;
+            }
+
+            &__slogan {
+                margin-bottom: 0;
+            }
+
+            .row {
+                @include breakpoint(tablet) {
+                    flex-direction: row-reverse;
+                }
+            }
+
+            .divider {
+                @include breakpoint(mobile) {
+                    margin-bottom: $space-md;
+                }
+            }
         }
 
         .section__background-image {

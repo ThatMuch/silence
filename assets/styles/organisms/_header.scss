@@ -6,6 +6,7 @@
  *
  */
 $header_h: 550px;
+$header_h-m: 390px;
 
 header {
     margin-top: $header_height;
@@ -17,6 +18,11 @@ header {
     height: $header_h;
     overflow: hidden;
     position: relative;
+
+    @include breakpoint(mobile) {
+        height: $header_h-m;
+    }
+
 
     // filtrer
     &:before {
