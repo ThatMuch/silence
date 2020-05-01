@@ -1,12 +1,22 @@
 .section-slider {
+    background-color: $color-grey;
+
     @include breakpoint(mobile) {
         padding: 3rem 0 !important;
     }
 
 
-    .carousel-item {
-        img {
-            width: 100%;
+    .divider {
+        display: flex;
+        align-items: center;
+
+        .block-round {
+            min-height: 30px;
+            height: 30px;
         }
+    }
+
+    h2 {
+        margin-bottom: 0;
     }
 }
