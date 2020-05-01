@@ -19,4 +19,10 @@
     h2 {
         margin-bottom: 0;
     }
+
+    &__btn {
+        padding: $space-lg 0;
+        display: flex;
+        justify-content: center;
+    }
 }
