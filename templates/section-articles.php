@@ -11,11 +11,21 @@
  */
  ?>
 
+
  <section class="section section-articles">
  <?php if( get_sub_field('title') ) : ?>
 	 <?php echo get_sub_field('title'); ?>
  <?php endif; ?>
 
-<!-- Boucle sur les 2 derniers articles publiés -->
+	<div class="container">
+	<fieldset>
+            <?php if( get_sub_field('slogan') ) : ?>
+                  <legend>
+                  <h5><?php echo get_sub_field('slogan'); ?></h5>
+                  </legend>
+			<?php endif; ?>
+    </fieldset>		
+	</div>
+
 
  </section>

@@ -13,12 +13,13 @@
 
   <section class="section section-logos">
       <div class="container">
-        <!-- Title -->
-        <?php if(get_sub_field('title') ) : ?>
-             <h2 class="section__title"><?php echo get_sub_field('title'); ?></h2>
-        <?php endif; ?>
-        <!-- Title -->
-        <!-- Slogan -->
+      <fieldset>
+            <?php if( get_sub_field('title') ) : ?>
+                  <legend class="text-center">
+                  <h5><?php echo get_sub_field('title'); ?></h5>
+                  </legend>
+            <?php endif; ?>
+   
         <?php if( get_sub_field('slogan') ) : ?>
 	 <?php echo get_sub_field('slogan'); ?>
  <?php endif; ?>
@@ -37,5 +38,6 @@ if( $images ): ?>
       <?php endforeach; ?>
   </div>
 <?php endif; ?>
+</fieldset>
       </div>
 </section>

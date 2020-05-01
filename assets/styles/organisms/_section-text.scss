@@ -1,3 +1,10 @@
 main#sections {
-    .section-text {}
+    .section-text {
+        h2{
+            color: $color_primary;
+            font-size: 23px;
+            margin-bottom: 15px!important;
+            font-weight: 500!important;
+        }
+    }
 }
