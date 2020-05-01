@@ -12,6 +12,7 @@
     border: 0 !important;
     perspective: 1000;
     border-radius: $border-radius;
+    margin-bottom: $space-lg;
 
     &:hover .card__inner {
         transform: rotateY(180deg);
@@ -53,6 +54,8 @@
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
         overflow: scroll;
         transform: rotateY(180deg);
+        display: flex;
+        flex-direction: column;
 
         &__title {
             font-weight: bold;
@@ -78,8 +81,8 @@
 }
 
 .card-training {
-    max-width: 245px;
-    height: 360px;
+    height: 500px;
+    width: 350px;
 
     .btn {
         display: block;
@@ -110,8 +113,9 @@
         ul {
             width: 100%;
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             margin: 10px 0;
+            padding: 10px 30px;
 
             li {
                 list-style: none;

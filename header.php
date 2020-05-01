@@ -14,8 +14,6 @@
     <? silence_gtm('head') ?>
     <!--=== OPEN-GRAPH TAGS ===-->
     <? silence_ogtags() ?>
-    <!--=== PRELOAD FONTS ===-->
-    <? silence_preload_fonts() ?>
     <!--=== WP HEAD ===-->
     <? wp_head(); ?>
   </head>
