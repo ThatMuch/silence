@@ -5,139 +5,106 @@
         padding: 3rem 0 !important;
     }
 
-    fieldset {
 
-        legend{
+    fieldset {
+        padding: 1.75em 1.75em 0 !important;
+
+        legend {
             margin-left: 79.5%;
         }
 
         @media screen and (max-width: 991px) {
-           text-align: center!important;
+            text-align: center !important;
         }
     }
 
-    .header-section{
+    .header-section {
         display: flex;
         margin-bottom: 1.5rem;
 
-        h2{
-            margin-bottom: 0!important;
+        h2 {
+            margin-bottom: 0 !important;
             font-size: 26px;
             margin-right: 20px;
             width: 30%;
         }
     }
 
-    &__carousel {
-        text-align: center;
+    .slider {
+        margin-bottom: 1.74em;
 
-        @include breakpoint(mobile) {
-            min-height: 500px;
-        }
-
-        .carousel-inner {
-            width: 100%!important; 
-        }
-
-        .carousel-indicators {
-            bottom: -25px;
-            margin-bottom: 0;
-        }
-
-        .carousel-item-next{
-            display: flex!important;
-        }
- 
-        .carousel-item-prev{
-            display: flex!important;
-        }
-
-        .carousel-item.active {
-            display: flex!important;
-        }
-
-        .container-testimonials{
-            max-width: 100%;
-
-            .row{
+        .row {
+            @include breakpoint(laptop) {
                 flex-direction: row-reverse;
-
-                @media screen and (max-width: 991px) {
-                    flex-direction: inherit;
-                }
             }
         }
+    }
 
-        .block-contentTestimonials{
-            padding: 1rem 3rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            @media screen and (max-width: 1150px) {
-                padding: 1rem 3rem 1rem 0rem;
-            }
-
-            @media screen and (max-width: 991px) {
-                -ms-flex: 0 0 100%;
-                flex: 0 0 100%;
-                max-width: 100%;
-                padding: 1rem;
-                text-align: right!important;
-            }
-
-            h5{
-                font-size: 26px;
-                padding-bottom: 8px;
-                display: block;
-            }
-        }
-
-        .card_img_Testimonials{
+    .slider__img {
+        .img__inner {
             width: 100%;
-            height: 360px;
-            overflow: hidden;
-            border-radius: 20px;
+            height: 300px;
+            margin: 0 auto;
 
-            @media screen and (max-width: 991px) {
-                -ms-flex: 0 0 100%;
-                flex: 0 0 100%;
-                max-width: 100%;
+            @include breakpoint(tablet) {
+                height: 400px;
+            }
+
+
+            @include breakpoint(laptop) {
+                height: 35vh;
+            }
+
+
+            @include breakpoint(desktop) {
+                height: 45vh;
             }
         }
+    }
 
-        .carousel-control-prev,
-        .carousel-control-next {
-            @include breakpoint(mobile) {
-                display: none;
-            }
+    .slider__content {
+        padding: 1rem 0;
+
+        @include breakpoint(desktop) {
+            padding: 1rem 3rem 1rem 0rem;
         }
 
-        .carousel-indicators-testimonials{
-            bottom: -36px;
-            background-color: $color_grey;
-            padding: 0 20px;
-            right:inherit; 
-            left:inherit; 
-            display: inline-block;
-            position: relative;
-            top: 23px;
 
-                li{
-                    width: 12px!important;
-                    height: 12px!important;
-                    background: $color_secondary;
-                    border-top: inherit!important; 
-                    border-bottom: inherit!important; 
-                    margin: 0 5px;
-                    display: inline-block;
-                }
+        @include breakpoint(laptop) {
+            max-width: 100%;
+            padding: 1rem;
+            text-align: right !important;
+        }
 
-                .active{
-                    transform: scale(1.35);
-                    background: $color_primary;
-                }
+
+        h5 {
+            font-size: 26px;
+            padding-bottom: 8px;
+            display: block;
+        }
+    }
+
+    .slick-arrow {
+        display: none !important;
+    }
+
+    .slick-dots {
+        background-color: $color-grey;
+        bottom: -36px;
+        width: inherit;
+        display: inline-block;
+        padding: 0 20px;
+        transform: translateX(-50%);
+        left: 50%;
+    }
+
+    .divider {
+        display: flex;
+        align-items: center;
+
+        .block-round {
+            min-height: 30px;
+            height: 30px;
         }
     }
 }
-

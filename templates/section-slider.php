@@ -26,7 +26,7 @@
               </div>
           </div>
 
-          <div class="slider">
+          <div class="slider-default slider">
           <?php
             if( have_rows('items') ):
                 while ( have_rows('items') ) : the_row(); ?>
@@ -43,7 +43,6 @@
                         </div>
                     </div>
                 </div>
-
                 <?php endwhile; ?>
             <?php endif;?>
           </div>

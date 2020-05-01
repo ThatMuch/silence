@@ -64,5 +64,9 @@ fieldset {
         letter-spacing: 2px;
         margin-left: 2rem;
         margin-bottom: 0;
+
+        * {
+            font-weight: 300 !important;
+        }
     }
 }
