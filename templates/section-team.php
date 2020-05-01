@@ -12,20 +12,24 @@
  ?>
 
   <section class="section section-team">
-    <!-- Section background: image -->
-      <? if(get_sub_field('fond') == "Image"):?>
-      <div class="section__background-image"  style="
-            <? if(get_sub_field('image')):?>
-            background-image:url(<? echo the_sub_field('image') ?>);
-            <? endif;?>"></div>
-      <? endif;?>
-    <!-- Section background: image -->
       <div class="container">
-          <!-- Title -->
-          <?php if(get_sub_field('title') ) : ?>
-              <h2 class="section__title"><?php echo get_sub_field('title'); ?></h2>
-          <?php endif; ?>
-          <!-- Title -->
+   			<!-- Header Section-->
+               <div class=" section__header">
+			<?php if ( get_sub_field('title') ) : ?>
+				<p class="section__header__title text-right"><?php echo get_sub_field('title'); ?></p>
+			<?php endif; ?>
+			<div class="row">
+				<div class="col-sm-6 divider">
+				<div class="block-round"></div>
+				</div>
+				<div class="col-sm-6">
+				<?php if ( get_sub_field('slogan') ) : ?>
+				<h2 class="section__header__slogan text-right"><?php echo get_sub_field('slogan'); ?></h2>
+			<?php endif; ?>
+				</div>
+			</div>
+		</div>
+		<!-- Header Section -->
           <?php
               $args = array(
                   'post_type' => 'team'

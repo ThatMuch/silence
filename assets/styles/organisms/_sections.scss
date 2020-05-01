@@ -32,7 +32,7 @@ main#sections {
                 margin-bottom: 0;
             }
 
-            .row {
+            &-right .row {
                 @include breakpoint(tablet) {
                     flex-direction: row-reverse;
                 }

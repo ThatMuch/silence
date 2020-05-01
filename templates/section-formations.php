@@ -18,22 +18,23 @@ $subCat = get_categories( array('child_of' => $cat, 'orderby' => 'name', 'hide_e
 
  <section class="section section_formations">
 	<div class="container">
-		<!-- Header -->
-		<div class=" section__header">
-		<?php if ( get_sub_field('title') ) : ?>
-			<p class="section__header__title text-right"><?php echo get_sub_field('title'); ?></p>
-		<?php endif; ?>
-		<div class="row">
-			<div class="col-sm-6 divider">
-			<div class="block-round"></div>
-			</div>
-			<div class="col-sm-6">
-			<?php if ( get_sub_field('slogan') ) : ?>
-			<h2 class="section__header__slogan text-right"><?php echo get_sub_field('slogan'); ?></h2>
-		<?php endif; ?>
+		<!-- Header Section-->
+		<div class=" section__header section__header-right">
+			<?php if ( get_sub_field('title') ) : ?>
+				<p class="section__header__title text-right"><?php echo get_sub_field('title'); ?></p>
+			<?php endif; ?>
+			<div class="row">
+				<div class="col-sm-6 divider">
+				<div class="block-round"></div>
+				</div>
+				<div class="col-sm-6">
+				<?php if ( get_sub_field('slogan') ) : ?>
+				<h2 class="section__header__slogan text-right"><?php echo get_sub_field('slogan'); ?></h2>
+			<?php endif; ?>
+				</div>
 			</div>
 		</div>
-		</div>
+		<!-- Header Section -->
 		<!-- Navigation -->
 		<ul class="nav nav-tab" id="pills-tab" role="tablist">
 		<?php foreach ($subCat as $key=>$value) { ?>

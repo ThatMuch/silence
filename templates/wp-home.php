@@ -29,6 +29,23 @@
   <?php endif?>
 
     <section class="container">
+      			<!-- Header Section-->
+			<div class=" section__header">
+			<?php if ( get_sub_field('title') ) : ?>
+				<p class="section__header__title text-left"><?php echo get_sub_field('title'); ?></p>
+			<?php endif; ?>
+			<div class="row">
+				<div class="col-sm-6">
+				<?php if ( get_sub_field('slogan') ) : ?>
+				<h2 class="section__header__slogan text-left"><?php echo get_sub_field('slogan'); ?></h2>
+			<?php endif; ?>
+        </div>
+        <div class="col-sm-6 divider">
+				<div class="block-round"></div>
+				</div>
+			</div>
+		</div>
+		<!-- Header Section -->
       <? if (have_posts() ) : ?>
         <?php while (have_posts()) : the_post(); ?>
         <?php get_template_part('templates/wp', 'post')?>
