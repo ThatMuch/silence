@@ -25,7 +25,7 @@
             "key": "field_5ba61b7cec587",
             "label": "Description",
             "name": "description",
-            "type": "textarea",
+            "type": "wysiwyg",
             "instructions": "Courte description limitée à 160 charactères",
             "required": 0,
             "conditional_logic": 0,
@@ -35,10 +35,10 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": ""
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         },
         {
             "key": "field_5ba61aac63d93",
@@ -171,5 +171,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1588526694
+    "modified": 1588527941
 }
