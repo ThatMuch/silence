@@ -6,13 +6,11 @@
         align-items: center;
 
         @include breakpoint(laptop) {
-            flex-direction: row-reverse;
+            &:nth-child(even) {
+                flex-direction: row-reverse;
+            }
         }
 
-
-        &:nth-child(odd) {
-            flex-direction: row-reverse;
-        }
 
         &__job {
             font-weight: 300 !important;
