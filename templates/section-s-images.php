@@ -28,16 +28,18 @@
 
 $images = get_sub_field('logo_list');
 $size = 'medium';
+$i = 8;
 
 if( $images ): ?>
-  <div class="section-logos__grid">
-      <?php foreach( $images as $image ): ?>
-          <div class="logo">
-                   <img src="<?php echo $image['sizes'][$size]; ?>" alt="<?php echo $image['alt']; ?>" />
-              </div>
-      <?php endforeach; ?>
-  </div>
+<div class="multiple-items slider slider-logo">
+    <?php foreach( $images as $image ): ?> 
+      <div class="block-img-logo">
+             <img src="<?php echo $image['sizes'][$size]; ?>" alt="<?php echo $image['alt']; ?>" />
+      </div>
+    <?php endforeach; ?> 
+</div>
 <?php endif; ?>
 </fieldset>
-      </div>
+    </div>
 </section>
+

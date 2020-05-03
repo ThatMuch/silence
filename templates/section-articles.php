@@ -18,12 +18,74 @@
  <?php endif; ?>
 
 	<div class="container">
+            <div class="section__header">
+                  <div class="row">
+                        <div class="col-sm-8 divider">
+                                    <div class="block-round"></div>
+                              </div>
+                              <div class="col-sm-4">
+                                    <?php if(get_sub_field('tittle') ) : ?>
+                                          <h2 class="section__title mb-0"><?php echo get_sub_field('tittle'); ?></h2>
+                                    <?php endif; ?>
+                              </div>
+                  </div>
+            </div>
+      
 	<fieldset>
             <?php if( get_sub_field('slogan') ) : ?>
                   <legend>
                   <h5><?php echo get_sub_field('slogan'); ?></h5>
                   </legend>
-			<?php endif; ?>
+                  <?php endif; ?>
+                  
+                  <div class="row">
+                        <?php
+                              $args = array(
+                                    'post_type' => 'post',
+                                    'posts_per_page' => 2
+                              );
+
+                              $query = new WP_Query( $args );
+ 
+                              if ( $query->have_posts() ) {
+                              
+                              while ( $query->have_posts() ) {
+                              
+                                    $query->the_post();
+                              
+                                          ?>
+                                          
+                                          <div class="col-md-6">
+                                                <div class="card-post card">
+                                                      <div class="card__inner">
+                                                            <div class="card__front">
+                                                            <div class="img__inner">
+                                                            <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+                                                            <img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>"/>
+                                                            </div>
+                                                            <div class="content-center-verticale">
+                                                                  <h3 class="card__title"><?php the_title(); ?></h3>
+                                                            </div>
+                                                            </div>
+                                                            <div class="card__back">
+                                                                  <h3 class="card__back__title"><?php the_title(); ?></h3>
+                                                                  <p class="card__back__text"><?php the_content(); ?><?php the_excerpt(); ?></p>
+                                                                  <a href="<?php the_permalink() ?>" class="btn btn-primary">Lire<i class="fa fa-chevron-right"></i></a>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+
+                              <?php
+ 
+                        }
+
+                  }
+
+wp_reset_postdata();
+
+?>
+                  </div>
     </fieldset>		
 	</div>
 

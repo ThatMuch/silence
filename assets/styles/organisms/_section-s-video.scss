@@ -1,0 +1,41 @@
+.section-accueil{
+    height: 600px;
+    overflow: hidden;
+
+    &-video{
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        object-fit: cover;
+        position: absolute;
+        width: 125%;
+        z-index: -1;
+        transform: rotateY(3.142rad);
+        height: 600px;
+    }
+
+    .container {
+        top: 50%; 
+        transform: translateY(-50%);
+
+        section{
+            max-width: 700px;
+
+            h1{
+                font-size: 40px;
+                line-height: 50px;
+
+
+               p{
+                   margin-bottom: 0;
+               }
+            }
+        }
+    }
+    .slick-active h1 {
+        -webkit-animation: fadeInDown 1s both 1s;
+        animation: fadeInDown 1s both 1s;
+    }
+}
+

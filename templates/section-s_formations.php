@@ -11,6 +11,7 @@
  */
  ?>
 
+<p>coucou</p>
  <section class="section section-s-formations">
 <div class="container">
 			<!-- Header Section-->
@@ -29,8 +30,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- Header Section -->
-		<!-- Boucle sur les formations -->
+	
 </div>
 
 
