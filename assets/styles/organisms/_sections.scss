@@ -29,7 +29,10 @@ main#sections {
             }
 
             &__slogan {
-                margin-bottom: 0;
+                margin-bottom: 1rem;
+                    @include breakpoint(tablet) {
+                        margin-bottom: 0;
+                    }
             }
 
             &-right .row {

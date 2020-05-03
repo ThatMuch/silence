@@ -35,6 +35,7 @@ html {
     body {
         font-family: $text-ff;
         font-size: $text-fz; // only used for rem-handling, the actual font-size is $body__fontsize
+        font-weight: 300;
         line-height: $text-lh;
         display: flex;
         flex-direction: column;

@@ -19,35 +19,53 @@
 				<p class="section__header__title text-left"><?php echo get_sub_field('title'); ?></p>
 			<?php endif; ?>
 			<div class="row">
+            <div class="col-sm-6 divider">
+				<div class="block-round"></div>
+				</div>
 				<div class="col-sm-6">
 				<?php if ( get_sub_field('slogan') ) : ?>
 				<h2 class="section__header__slogan text-left"><?php echo get_sub_field('slogan'); ?></h2>
 			<?php endif; ?>
         </div>
-        <div class="col-sm-6 divider">
-				<div class="block-round"></div>
-				</div>
+
 			</div>
 		</div>
 		<!-- Header Section -->
+        <?php if ( get_sub_field('text') ) : ?>
+            <div class="section-faq__text"><?php echo get_sub_field('text'); ?></div>
+        <?php endif; ?>
+
         <div class="accordion section-faq__accordion" id="faq-accordion">
             <!-- FAQ -->
-            <?php if ( have_rows('faq') ) :  $i =0; ?>
+            <?php if ( have_rows('items') ) :  $i =0; ?>
 
-                <?php while( have_rows('faq') ) : the_row();?>
+                <?php while( have_rows('items') ) : the_row();?>
                     <div class="card">
-                        <div class="card-header" id="heading-<?php echo $i ?>" data-toggle="collapse" data-target="#collapse-<?php echo $i ?>" aria-expanded="true" aria-controls="collapseOne">
+                        <div class="card-header collapsed" id="heading-<?php echo $i ?>" data-toggle="collapse" data-target="#collapse-<?php echo $i ?>" aria-expanded="true" aria-controls="collapseOne">
                         <div class="row">
-                            <div class="col-2 col-md-1"> <span class="card-header-expand" ><i class="fas fa-plus"></i></span></div>
-                            <div class="col-10 col-md-11"><?php the_sub_field('question'); ?></div>
+                            <div class="col-10 col-md-11"><span class="section-faq__accordion__title"><?php the_sub_field('title'); ?></span></div>
+                            <div class="col-2 col-md-1 d-flex">
+                                <span class="card-header-expand ml-auto">
+                                    <i class="fas fa-plus"></i>
+                                </span>
+                             </div>
                         </div>
-
-
                         </div>
 
                         <div id="collapse-<?php echo $i ?>" class="collapse" aria-labelledby="heading-<?php echo $i ?>" data-parent="#faq-accordion">
                             <div class="card-body">
-                                <p class="answer"><?php the_sub_field('answer'); ?></p>
+                                <div class="row d-flex align-items-center">
+                                    <div class="col-sm-4">
+                                    <?php if ( get_sub_field('image') ) : $image = get_sub_field('image'); ?>
+                                        <!-- Thumbnail image -->
+                                        <img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" class="m-auto d-block"/>
+                                    <?php endif; ?>
+                                    </div>
+                                    <div class="col-sm-8">
+                                    <div class="answer"><?php the_sub_field('text'); ?></div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>

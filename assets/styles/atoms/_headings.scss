@@ -22,6 +22,8 @@ h2 {
 
 h3 {
     @include heading-size(4);
+
+    color: $color-primary;
 }
 
 h4 {
