@@ -9,15 +9,15 @@
         margin-bottom: 2rem;
     }
 
-    &__grid {
-        display: grid;
+    .section-logos__grid {
+        display: grid!important;
         grid-gap: 30px;
         grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
         // grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         grid-auto-rows: 140px;
         
     }
-
+    
     .logo {
         display: flex;
         align-items: center;

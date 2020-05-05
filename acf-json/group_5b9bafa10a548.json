@@ -344,10 +344,10 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5ea836bd84e79",
-                            "label": "Slogan",
-                            "name": "slogan",
-                            "type": "text",
+                            "key": "field_5ea836db84e7a",
+                            "label": "Label du bouton",
+                            "name": "button",
+                            "type": "link",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -356,16 +356,12 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
+                            "return_format": "array"
                         },
                         {
-                            "key": "field_5ea836db84e7a",
-                            "label": "Label du bouton",
-                            "name": "label_button",
+                            "key": "field_5ea836bd84e79",
+                            "label": "Slogan",
+                            "name": "slogan",
                             "type": "text",
                             "instructions": "",
                             "required": 0,
@@ -775,7 +771,7 @@
                             "key": "field_5ea839e927c02",
                             "label": "Background",
                             "name": "background",
-                            "type": "image",
+                            "type": "file",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -785,13 +781,8 @@
                                 "id": ""
                             },
                             "return_format": "array",
-                            "preview_size": "thumbnail",
                             "library": "all",
-                            "min_width": "",
-                            "min_height": "",
                             "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
                             "max_size": "",
                             "mime_types": ""
                         },
@@ -845,6 +836,21 @@
                     "label": "Articles",
                     "display": "block",
                     "sub_fields": [
+                        {
+                            "key": "field_5eb01a3c17f92",
+                            "label": "Bouton",
+                            "name": "bouton",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        },
                         {
                             "key": "field_5ea83c0b7e68a",
                             "label": "Titre",
@@ -1051,5 +1057,9 @@
     ],
     "active": 1,
     "description": "",
+<<<<<<< HEAD
     "modified": 1588521311
+=======
+    "modified": 1588602750
+>>>>>>> feature/sectionlogo
 }

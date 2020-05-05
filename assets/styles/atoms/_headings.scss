@@ -12,12 +12,12 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     @include heading-size(6);
-
     text-transform: uppercase;
 }
 
 h2 {
     @include heading-size(5);
+    font-size: 30px!important;
 }
 
 h3 {
@@ -47,4 +47,13 @@ h6 {
 
 .subtitle {
     font-size: 17px;
+}
+
+.section__title{
+    margin-top: -1px;
+    font-size: 1.8vw!important;
+}
+
+.section__header__slogan{
+    font-size: 1.8vw!important;
 }

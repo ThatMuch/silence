@@ -19,28 +19,29 @@
 				<p class="section__header__title text-left"><?php echo get_sub_field('title'); ?></p>
 			<?php endif; ?>
 			<div class="row">
-			<div class="col-sm-6 divider">
-				<div class="block-round"></div>
-				</div>
-				<div class="col-sm-6">
-				<?php if ( get_sub_field('slogan') ) : ?>
-				<h2 class="section__header__slogan text-left"><?php echo get_sub_field('slogan'); ?></h2>
-			<?php endif; ?>
+      <div class="col-sm-8 divider">
+				   <div class="block-round"></div>
         </div>
-
+        
+				<div class="col-sm-4">
+              <?php if ( get_sub_field('slogan') ) : ?>
+              <h2 class="section__header__slogan text-left"><?php echo get_sub_field('slogan'); ?></h2>
+            <?php endif; ?>
+        </div>
 			</div>
 		</div>
 		<!-- Header Section -->
 
   <div class="section-contact__form">
-    <!-- Contact form -->
-    <?php $form = get_sub_field('contact_form');?>
-    <?php if($form) : ?>
+            <!-- Contact form -->
 
-          <?php echo $form; ?>
+          <?php $form = get_sub_field('contact_form');?>
+          <?php if($form) : ?>
 
-    <?php endif; ?>
-    <!-- Contact form -->
+                <?php echo $form; ?>
+
+          <?php endif; ?>
+          <!-- Contact form -->     
   </div>
     </div>
  </section>

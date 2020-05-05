@@ -42,7 +42,7 @@ function stanlee_sections() {
       if (get_row_layout() == 'newsletter') : stanlee_section_newsletter(); endif;
       if (get_row_layout() == 's-formations') : stanlee_section_s_formations(); endif;
       if (get_row_layout() == 's-images') : stanlee_section_s_images(); endif;
-      if (get_row_layout() == 's-video') : stanlee_section_s_video(); endif;
+      if (get_row_layout() == 's_video') : stanlee_section_s_video(); endif;
       if (get_row_layout() == 'slider') : stanlee_section_slider(); endif;
       if (get_row_layout() == 'team') : stanlee_section_team(); endif;
       if (get_row_layout() == 'testimonials') : stanlee_section_testimonials(); endif;
@@ -113,9 +113,9 @@ function stanlee_section_slider() {
 
 /* Slider formations
 /––––––––––––––––––––––––*/
-function stanlee_section_s_formation() {
+function stanlee_section_s_formations() {
   ob_start('sanitize_output');
-    include (get_template_directory().'/templates/section-s-formation.php');
+    include (get_template_directory().'/templates/section-s_formations.php');
   return ob_get_flush();
 }
 
@@ -131,7 +131,7 @@ function stanlee_section_s_images() {
 /––––––––––––––––––––––––*/
 function stanlee_section_s_video() {
   ob_start('sanitize_output');
-    include (get_template_directory().'/templates/section-s-video.php');
+    include (get_template_directory().'/templates/section-s_video.php');
   return ob_get_flush();
 }
 

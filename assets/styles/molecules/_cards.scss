@@ -10,13 +10,9 @@
     position: relative;
     perspective: 1000px;
     border: 0 !important;
-    perspective: 1000;
+    perspective: 1000px;
     border-radius: $border-radius;
     margin-bottom: $space-lg;
-
-    &:hover .card__inner {
-        transform: rotateY(180deg);
-    }
 
     &__inner {
         width: 100%;
@@ -26,8 +22,17 @@
         position: relative;
     }
 
+    &:hover .card__inner {
+        transform: rotateY(180deg);
+
+        .card__back{
+            backface-visibility: hidden;
+        }
+    }
+
+    
+
     &__front, &__back {
-        backface-visibility: hidden;
         position: absolute;
         top: 0;
         left: 0;
@@ -39,12 +44,12 @@
 
     &__front {
         z-index: 2;
-        transform: rotateY(0deg);
+        backface-visibility: hidden;
+        // transform: rotateY(0deg);
     }
 
     &__back {
         background-color: #fff;
-        backface-visibility: hidden;
         transition: transform .5s linear 0s;
         padding: 30px;
         font-weight: 300;
@@ -56,6 +61,7 @@
         transform: rotateY(180deg);
         display: flex;
         flex-direction: column;
+        box-sizing: border-box;
 
         &__title {
             font-weight: bold;
@@ -83,6 +89,7 @@
 .card-training {
     height: 500px;
     width: 350px;
+    background-color: transparent!important;
 
     .btn {
         display: block;
@@ -92,7 +99,7 @@
     &__category {
         position: absolute;
         color: #fff;
-        width: 100px;
+        width: 145px;
         font-size: 12px;
         top: 1rem;
         left: 0;
@@ -109,6 +116,7 @@
         background: #83988D;
         left: 0;
         right: 0;
+        z-index: 3;
 
         ul {
             width: 100%;
@@ -116,6 +124,10 @@
             justify-content: space-around;
             margin: 10px 0;
             padding: 10px 30px;
+
+            @media screen and (max-width: 1150px) {
+                padding: 10px 20px;
+            }
 
             li {
                 list-style: none;
@@ -132,6 +144,10 @@
                     color: #fff;
                     padding: 0 8px;
                     text-transform: uppercase;
+
+                    @media screen and (max-width: 1090px) {
+                        font-size: 10px;
+                    }
                 }
             }
         }
@@ -139,6 +155,13 @@
 }
 
 .card-post {
-    max-width: 45%;
+    max-width: 100%;
     height: 360px;
+    margin-bottom: 16px;
+
+    .btn {
+        display: inline-block;
+        margin-top: 0;
+        max-width: 200px;
+    }
 }

@@ -54,6 +54,9 @@
                                             <div class="slider__content text-right col-lg-8">
                                                         <!-- Auteur -->
                                                         <h5><?php the_title()?></h5>
+                                                        <?php if (get_field('poste') ) : ?>
+                                                              <span> <?php echo get_field('poste'); ?></span>
+                                                        <?php endif; ?>
                                                         <!-- Auteur -->
                                                         <!-- Job -->
                                                         <?php if (get_field('quote') ) : ?>
