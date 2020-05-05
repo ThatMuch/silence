@@ -11,7 +11,7 @@
 		cssEase: 'linear',
 		arrows: false,
 	});
-		
+
 	  $('.slider-autoplay').slick({
 		autoplay: true,
 		autoplaySpeed: 9000,

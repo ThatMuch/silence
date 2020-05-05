@@ -1,5 +1,4 @@
 .section-faq {
-
     &__accordion {
         &__title {
             font-weight: 700;
@@ -24,8 +23,8 @@
             @media screen and (max-width: 767px) {
                 font-size: 19px;
             }
-            &-expand{
 
+            &-expand {
                 color: rgba($color: $color_primary, $alpha: 0.5);
             }
 
@@ -34,15 +33,16 @@
             }
         }
 
-         .card-header {
-                i:before {
-                    content: "\f068" !important;
-                }
+        .card-header {
+            i:before {
+                content: "\f068" !important;
             }
-         .card-header.collapsed {
-                i:before {
-                    content: "\f067" !important;
-                }
+        }
+
+        .card-header.collapsed {
+            i:before {
+                content: "\f067" !important;
             }
+        }
     }
 }

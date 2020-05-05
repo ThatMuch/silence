@@ -30,14 +30,14 @@
                               </div>
                   </div>
             </div>
-      
+
 	<fieldset>
             <?php if( get_sub_field('slogan') ) : ?>
                   <legend>
                   <h5><?php echo get_sub_field('slogan'); ?></h5>
                   </legend>
                   <?php endif; ?>
-                  
+
                   <div class="row">
                         <?php
                               $args = array(
@@ -46,15 +46,15 @@
                               );
 
                               $query = new WP_Query( $args );
- 
+
                               if ( $query->have_posts() ) {
-                              
+
                               while ( $query->have_posts() ) {
-                              
+
                                     $query->the_post();
-                              
+
                                           ?>
-                                          
+
                                           <div class="col-md-6">
                                                 <div class="card-post card">
                                                       <div class="card__inner">
@@ -70,14 +70,14 @@
                                                             <div class="card__back">
                                                                   <h3 class="card__back__title"><?php the_title(); ?></h3>
                                                                   <p class="card__back__text"><?php  the_excerpt(); ?></p>
-                                                                  <a href="<?php the_permalink() ?>" class="btn btn-secondary">Lire<i class="fa fa-chevron-right"></i></a>
+                                                                  <a href="<?php the_permalink() ?>" class="btn btn-outline-primary">Lire<i class="fa fa-chevron-right"></i></a>
                                                             </div>
                                                       </div>
                                                 </div>
                                           </div>
 
                               <?php
- 
+
                         }
 
                   }
@@ -86,11 +86,11 @@ wp_reset_postdata();
 
 ?>
                   </div>
-    </fieldset>		
+    </fieldset>
 	</div>
-      <?php 
+      <?php
 $link = get_sub_field('bouton');
-if( $link ): 
+if( $link ):
     $link_url = $link['url'];
     $link_title = $link['title'];
 ?>

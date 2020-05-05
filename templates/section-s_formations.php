@@ -29,7 +29,7 @@
 						</div>
 					</div>
 			</div>
-			
+
      <div class="row">
 
 
@@ -37,20 +37,21 @@
 			<?php
                     $args = array(
 						'post_type' => 'formations',
-						'posts_per_page' => 3
+						'posts_per_page' => 3,
+						'tag' => 'featured'
 					);
 					$the_query = new WP_Query($args);
- 
+
 					if ($the_query->have_posts()) : ;
 					    while ($the_query->have_posts()) : $the_query->the_post() ;?>
-									
+
 								<div class="col-md-4 d-flex justify-content-center column-grid-card">
 									<div class="card-training card">
 									<div class="card__inner">
 										<div class="card__front">
 											<div class="img__inner"><img src="<?php the_post_thumbnail_url();?>" alt="<?php the_title()?>" /></div>
 											<span class="card-training__category">
-											<?php 
+											<?php
 												foreach((get_the_category()) as $category){
 													echo $category->name."<br>";
 													}
@@ -101,15 +102,15 @@
 	wp_reset_query();
 ?>
 
-</div>	
-<?php 
+</div>
+<?php
 $link = get_sub_field('button');
-if( $link ): 
+if( $link ):
     $link_url = $link['url'];
     $link_title = $link['title'];
 ?>
 <div class="container-button">
-	<a class="btn btn-primary mt-auto" href="<?php echo esc_url( $link_url ); ?>"><?php echo esc_html( $link_title ); ?></a>
+	<a class="btn btn-primary mt-auto" href="<?php echo esc_url( $link_url ); ?>"><i class="fas fa-search"></i><?php echo esc_html( $link_title ); ?></a>
 </div>
 <?php endif; ?>
 </div>
