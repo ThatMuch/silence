@@ -20,7 +20,7 @@ button, .btn {
         position: absolute;
         right: 1rem;
         bottom: 0;
-        top: 50%;
+        top: 55%;
         transform: translateY(-50%);
     }
 
@@ -39,53 +39,67 @@ button, .btn {
 }
 
 .btn.btn-primary {
-    color: #fff !important;
+    background-color: $color_primary;
+    border: 2px solid $color_primary;
+    color: $color_light;
 
     &:hover, &:active, &:focus {
-        //
-   
+        background-color: transparent;
+        color: $color_primary;
+        border: 2px solid $color_primary;
     }
 }
 
 .btn.btn-secondary {
-    &:hover, &:active, &:focus {
-        //
-   
-    }
-}
-
-.btn.btn-outline-primary {
-    color: $color_primary;
-
-    &:hover, &:active, &:focus {
-        color: #fff !important;
-    }
-}
-
-.btn.btn-outline-secondary {
-    &:hover, &:active, &:focus {
-        //
-   
-    }
-}
-
-.button_ogre {
-    background-color: $color_primary;
     border: 2px solid $color_primary;
-    color: $color_light;
-}
-
-.button_ogre:hover {
+    color: $color_primary;
     background-color: transparent;
-    color: $color_primary;
+
+    &:hover, &:active, &:focus {
+        background-color: $color_primary;
+        color: $color_light;
+        border: 2px solid $color_primary;
+    }
 }
 
-.button_ogre_border {
-    border: 2px solid $color_primary;
-    color: $color_primary;
+
+.container-button{
+    text-align: center;
+    margin-top: 1.5rem;
 }
 
-.button_ogre_border:hover {
-    background-color: $color_primary;
-    color: $color_light;
-}
+// .btn.btn-outline-primary {
+    
+
+//     &:hover, &:active, &:focus {
+//         color: #fff !important;
+//     }
+// }
+
+// .btn.btn-outline-secondary {
+//     &:hover, &:active, &:focus {
+        
+   
+//     }
+// }
+
+// .button_ogre {
+//     background-color: $color_primary;
+//     border: 2px solid $color_primary;
+//     color: $color_light;
+// }
+
+// .button_ogre:hover {
+//     background-color: transparent;
+//     color: $color_primary;
+// }
+
+// .button_ogre_border {
+//     border: 2px solid $color_primary;
+//     color: $color_primary;
+// }
+
+// .button_ogre_border:hover {
+//     background-color: $color_primary;
+//     color: $color_light;
+// }

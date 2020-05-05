@@ -20,10 +20,10 @@
 	<div class="container">
             <div class="section__header">
                   <div class="row">
-                        <div class="col-sm-8 divider">
+                        <div class="col-sm-7 divider">
                                     <div class="block-round"></div>
                               </div>
-                              <div class="col-sm-4">
+                              <div class="col-sm-5">
                                     <?php if(get_sub_field('tittle') ) : ?>
                                           <h2 class="section__title mb-0"><?php echo get_sub_field('tittle'); ?></h2>
                                     <?php endif; ?>
@@ -69,8 +69,8 @@
                                                             </div>
                                                             <div class="card__back">
                                                                   <h3 class="card__back__title"><?php the_title(); ?></h3>
-                                                                  <p class="card__back__text"><?php the_content(); ?><?php the_excerpt(); ?></p>
-                                                                  <a href="<?php the_permalink() ?>" class="btn btn-primary">Lire<i class="fa fa-chevron-right"></i></a>
+                                                                  <p class="card__back__text"><?php  the_excerpt(); ?></p>
+                                                                  <a href="<?php the_permalink() ?>" class="btn btn-secondary">Lire<i class="fa fa-chevron-right"></i></a>
                                                             </div>
                                                       </div>
                                                 </div>
@@ -88,6 +88,15 @@ wp_reset_postdata();
                   </div>
     </fieldset>		
 	</div>
-
+      <?php 
+$link = get_sub_field('bouton');
+if( $link ): 
+    $link_url = $link['url'];
+    $link_title = $link['title'];
+?>
+<div class="container-button">
+	<a class="btn btn-primary mt-auto" href="<?php echo esc_url( $link_url ); ?>"><?php echo esc_html( $link_title ); ?></a>
+</div>
+<?php endif; ?>
 
  </section>

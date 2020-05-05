@@ -92,8 +92,6 @@ $args = array(
 register_post_type( "testimonials", $args );
 
 
-function cptui_register_my_cpts_formations() {
-
 	/**
 	 * Post Type: Formations.
 	 */
@@ -151,11 +149,6 @@ function cptui_register_my_cpts_formations() {
 	];
 
 	register_post_type( "formations", $args );
-}
-
-add_action( 'init', 'cptui_register_my_cpts_formations' );
-
-
 }
 
 add_action( 'init', 'cptui_register_my_cpts' );

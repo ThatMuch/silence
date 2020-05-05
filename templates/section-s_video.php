@@ -18,9 +18,9 @@
   if ($data_type == 'mp4') {  ?>
   <video autoplay muted loop class="section-accueil-video"><source src="<?php echo $image['url'];?>" type="video/mp4"></video>
  
-<?php } else {
-  echo wp_get_attachment_image($image['ID'], 'large');
-  }
+<?php } else { ?>
+      <div class="section-accueil-background"><?php echo wp_get_attachment_image($image['ID'], 'large'); ?></div>
+  <?php }
 ?>
 
 <div class="container">

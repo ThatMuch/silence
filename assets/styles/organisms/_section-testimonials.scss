@@ -78,9 +78,19 @@
 
 
         h5 {
-            font-size: 26px;
-            padding-bottom: 8px;
+            font-size: 27px;
             display: block;
+        }
+
+        span{
+            text-transform: uppercase;
+            font-weight: 200;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+
+        p{
+            margin-top: 20px;
         }
     }
 
