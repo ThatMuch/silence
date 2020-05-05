@@ -9,26 +9,38 @@
 .footer {
     width: 100vw;
     margin-top: auto;
-    color: $color_grey;
-    background: $color_dark;
+    color: #fff;
+    background: $color_secondary;
+    padding: 3rem 0 5rem;
+
+    .block-round {
+        filter: grayscale(100%) invert(1) brightness(200%);
+        height: 30px;
+        min-height: 30px;
+    }
 
     &__rs {
-        text-align: center;
-
         &__item {
             display: inline-block;
             list-style: none;
             margin-right: .5rem;
+            height: 50px;
+            width: 50px;
+            border: 5px solid $color-primary;
+            background-color: #fff;
+            border-radius: 100%;
 
             a {
-                color: $color_grey1;
+                color: $color_primary;
                 font-size: 1.5rem;
+                line-height: 45px;
+                text-align: center;
+                display: block;
             }
         }
     }
 
     &__inner {
-        padding: 1.5rem 0;
         font-size: 0.8rem;
     }
 
@@ -43,10 +55,33 @@
     }
 
     /*----------  Widgets  ----------*/
+    .widget-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(4, 70px);
+        gap: 15px;
+
+        .widget:first-child() {
+            grid-row: span 4;
+        }
+
+        .widget:nth-child(2) {
+            grid-row: span 2;
+        }
+
+        .widget:nth-child(3) {
+            grid-row: span 2;
+        }
+
+        .widget:last-child {
+            grid-column-end: -1;
+        }
+    }
 
     .widget-title {
-        color: $color_grey1;
+        color: $color_secondary-darker;
         margin-bottom: 1rem;
+        font-size: 1.2rem;
     }
 
     .nav {
@@ -55,6 +90,7 @@
         .nav-link {
             color: $color_light;
             padding: 0 0 0.5rem 0;
+            text-align: left;
         }
     }
 }

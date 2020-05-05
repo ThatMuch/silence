@@ -28,6 +28,20 @@ add_theme_support(
   )
 );
 
+function your_theme_customizer_setting($wp_customize) {
+  // add a setting
+      $wp_customize->add_setting('footer-logo');
+  // Add a control to upload the hover logo
+      $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'footer-logo', array(
+          'label' => 'Footer Logo',
+          'section' => 'title_tagline', //this is the section where the custom-logo from WordPress is
+          'settings' => 'footer-logo',
+          'priority' => 8 // show it just below the custom-logo
+      )));
+  }
+
+  add_action('customize_register', 'your_theme_customizer_setting');
+
 // Page d'options
 if(function_exists('acf_add_options_page') ) {
     acf_add_options_page();

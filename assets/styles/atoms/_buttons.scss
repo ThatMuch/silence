@@ -57,6 +57,7 @@ button, .btn {
 .btn.btn-outline-primary {
     color: $color_primary;
     border-width: 2px;
+    background-color: #fff;
 
     &:hover, &:active, &:focus {
         color: #fff !important;
