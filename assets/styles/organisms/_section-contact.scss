@@ -1,14 +1,14 @@
 .section-contact {
-    fieldset{
+    fieldset {
+        padding: 0.35em 0.75em 0.625em !important;
+        margin-bottom: $space-md;
 
-        padding: .35em .75em .625em!important;
-    
         legend {
-            letter-spacing: 2px!important;
-            font-size: 12px!important;
+            letter-spacing: 2px !important;
+            font-size: 12px !important;
         }
 
-        p{
+        p {
             margin-bottom: 0;
         }
     }
@@ -41,7 +41,6 @@
     }
 
     &__form {
-        width: 40%;
         margin: 0 auto;
 
         @include breakpoint(mobile) {

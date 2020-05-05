@@ -19,14 +19,15 @@
 				<p class="section__header__title text-left"><?php echo get_sub_field('title'); ?></p>
 			<?php endif; ?>
 			<div class="row">
+			<div class="col-sm-6 divider">
+				<div class="block-round"></div>
+				</div>
 				<div class="col-sm-6">
 				<?php if ( get_sub_field('slogan') ) : ?>
 				<h2 class="section__header__slogan text-left"><?php echo get_sub_field('slogan'); ?></h2>
 			<?php endif; ?>
         </div>
-        <div class="col-sm-6 divider">
-				<div class="block-round"></div>
-				</div>
+
 			</div>
 		</div>
 		<!-- Header Section -->
