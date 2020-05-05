@@ -1,8 +1,6 @@
 {
     "key": "group_5ba61a37bbb9d",
     "title": "Informations",
-<<<<<<< HEAD
-=======
     "location": [
         [
             {
@@ -21,7 +19,6 @@
     "active": 1,
     "description": "",
     "modified": 1588586239,
->>>>>>> feature/sectionlogo
     "fields": [
         {
             "key": "field_5ba61a9963d92",
