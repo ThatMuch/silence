@@ -49,3 +49,22 @@ function debounce(func, wait, immediate) {
     if (callNow) func.apply(context, args);
   };
 }
+
+/* Menu burger */
+var menuBtn = document.querySelector('.btn-menu');
+var nav = document.querySelector('.menu');
+
+// This is a flag so the class open can be added and removed at the correct time.
+// There are other ways of doing this such as multiplying 1 by -1 and storing the
+// result each time but this way is clearer I think.
+var menuOpen = false;
+
+menuBtn.addEventListener('click', function() {
+  if(!menuOpen) {
+    nav.classList.add('d-block');
+    menuOpen = true;
+  } else {
+    nav.classList.remove('d-block');
+    menuOpen = false;
+  }
+});
