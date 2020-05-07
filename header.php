@@ -29,13 +29,7 @@
   <a class="navbar-brand" href="<?php echo site_url(); ?>">
     <div class="logo" style="background-image: url('<? if($image[0]): echo $image[0]; else: echo get_template_directory_uri()?>/assets/images/stanlee_logo_texte.png<?endif; ?>')"></div>
   </a>
-    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'theme-textdomain' ); ?>">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
     <div class="collapse navbar-collapse" id="navbar-content">
-
-
         <?php
         wp_nav_menu( array(
             'theme_location' => 'mainmenu', // Defined when registering the menu
@@ -50,7 +44,9 @@
     </div>
   </div>
 </nav>
-
+<button class="navbar-toggler btn-menu collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'theme-textdomain' ); ?>">
+  <span class="btn-menu__burger"></span>
+</button>
 <? if (is_archive() || is_category()): ?>
   <header>
     <h1 class="page-title screen-reader-text">
