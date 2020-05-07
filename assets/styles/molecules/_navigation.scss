@@ -69,9 +69,11 @@ nav.navbar {
 .nav.nav-tab {
     justify-content: center;
     margin-bottom: $space-xl;
+}
 
+@include breakpoint(laptop) {
     .nav-item {
-        .nav-link {
+        a.nav-link {
             text-transform: uppercase;
             color: $color_secondary;
             position: relative;
@@ -83,8 +85,8 @@ nav.navbar {
                     content: '';
                     position: absolute;
                     height: 1px;
-                    width: 33%;
-                    left: 33%;
+                    width: 42px;
+                    left: 0;
                     bottom: 0;
                     background-color: $color-primary;
                 }

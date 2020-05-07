@@ -90,12 +90,18 @@
         ) );
         ?>
     </div>
+    <button  class="ml-auto btn btn-primary d-none d-md-block">
+  <span class="btn-search__text">Formation et coaching</span>
+  <i class="fas fa-search"></i> </button>
   </div>
 </nav>
 
 <button class="navbar-toggler btn-menu collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'theme-textdomain' ); ?>">
   <span class="btn-menu__burger"></span>
 </button>
+<button  class="ml-auto btn btn-primary btn-search">
+  <span class="btn-search__text">Formation et coaching</span>
+  <i class="fas fa-search"></i> </button>
 <? if (is_archive() || is_category()): ?>
   <header>
     <h1 class="page-title screen-reader-text">

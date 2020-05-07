@@ -35,12 +35,11 @@ button, .btn {
 }
 
 .btn.btn-primary {
-    background-color: $color_primary;
-    border: 3px solid $color_primary;
+    border-width: 3px;
     color: $color_light;
 
     &:hover, &:active, &:focus {
-        background-color: transparent;
+        background-color: #fff;
         color: $color_primary;
     }
 }
@@ -117,6 +116,33 @@ button, .btn {
             &:after {
                 transform: translateY(10px);
             }
+        }
+    }
+}
+
+.btn-search {
+    &__text {
+        display: none;
+
+        @include breakpoint(laptop) {
+            display: block;
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        position: fixed;
+        right: 30px;
+        bottom: 15px;
+        z-index: 201;
+        height: 64px;
+        width: 64px;
+        border-radius: 100% !important;
+        padding: 0 !important;
+
+        i {
+            position: relative;
+            transform: inherit;
+            right: initial;
         }
     }
 }
