@@ -56,12 +56,30 @@
         }
     }
 
+    &__contact {
+        margin-bottom: 2rem;
+
+        @include breakpoint(laptop) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__header {
+        @include breakpoint(laptop) {
+            flex-direction: row-reverse;
+        }
+    }
+
     /*----------  Widgets  ----------*/
     .widget-list {
-        display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: repeat(4, 70px);
         gap: 15px;
+
+        @include breakpoint(laptop) {
+            display: grid;
+        }
+
 
         .widget:first-child() {
             grid-row: span 4;
