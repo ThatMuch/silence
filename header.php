@@ -116,8 +116,7 @@
 						echo get_the_date( _x( 'F Y', 'monthly archives date format', 'stanlee' ) );
 					elseif ( is_year() ) :
 						echo get_the_date( _x( 'Y', 'yearly archives date format', 'stanlee' ) );
-					else :
-						single_cat_title();
+
 					endif;
 					?>
     </h1>

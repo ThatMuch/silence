@@ -129,4 +129,16 @@ add_action( 'widgets_init', 'stanlee_widgets_init' );
 }
 
 add_filter( 'get_search_form', 'my_search_form', 100 ); */
+
+
+function search_filter($query) {
+  if ( ! is_admin() && $query->is_main_query() ) {
+      if ( $query->is_search ) {
+          $query->set( 'post_type', 'formations' );
+          $query->set( 'posts_per_page', 15 );
+      }
+  }
+}
+add_action( 'pre_get_posts', 'search_filter' );
+
 ?>

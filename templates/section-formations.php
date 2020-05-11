@@ -106,7 +106,9 @@ $subCat = get_categories( array('child_of' => $cat, 'orderby' => 'name', 'hide_e
 											<a class="btn btn-outline-primary">Télécharger la brochure<i class="fas fa-download"></i></a>
 										</div>
 									</div>
-									</div>
+
+
+								</div>
 							</div>
 				<?php
 						endwhile;

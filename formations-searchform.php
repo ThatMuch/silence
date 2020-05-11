@@ -1,4 +1,16 @@
 <!-- SEARCH -->
+
+<?php
+
+$args = array(
+ 'parent' => 0
+);
+
+$taxonomy = 'category';
+$terms = get_terms($taxonomy, array( 'parent' => 0, 'exclude' => 1 ) );
+$selectedCat = 3;
+$subTerms = get_terms($taxonomy, array( 'parent' => $selectedCat , 'exclude' => 1 ) );
+?>
 <div class="search p-5">
 <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" id="formations-searchform">
   <div class="container h-100">
@@ -13,7 +25,7 @@
       </div>
       </div>
     <div class="search__content text-center">
-    <p>Renseigner les cartes pour trouver votre bonheur</p>
+    <p class="mb-5">Renseigner les cartes pour trouver votre bonheur</p>
     <div class="d-grid">
 <div class="card-search">
   <fieldset>
@@ -25,10 +37,11 @@
     </div>
 <div class="card-search__dropdown">
   <div class="select-container">
-    <select name="model" id="model">
-            <option value=""><?php _e( 'Selectionner', 'textdomain' ); ?></option>
-            <option value="organisation"><?php _e( 'Une organisation', 'textdomain' ); ?></option>
-            <option value="particulier"><?php _e( 'Un particulier', 'textdomain' ); ?></option>
+    <select name="cat" id="cat">
+            <option value="">Selectionner</option>
+            <?php foreach ( $terms as $term ) { ?>
+              <option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?></option>
+              <?php } ?>
     </select>
   </div>
 </div>
@@ -46,8 +59,9 @@
   <div class="select-container">
     <select name="model" id="model">
             <option value=""><?php _e( 'Selectionner', 'textdomain' ); ?></option>
-            <option value="organisation"><?php _e( 'Une organisation', 'textdomain' ); ?></option>
-            <option value="particulier"><?php _e( 'Un particulier', 'textdomain' ); ?></option>
+            <?php foreach ( $subTerms as $term ) { ?>
+              <option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?></option>
+              <?php } ?>
     </select>
   </div>
 </div>
@@ -65,15 +79,18 @@
   <div class="select-container">
     <select name="model" id="model">
             <option value=""><?php _e( 'Selectionner', 'textdomain' ); ?></option>
-            <option value="organisation"><?php _e( 'Une organisation', 'textdomain' ); ?></option>
-            <option value="particulier"><?php _e( 'Un particulier', 'textdomain' ); ?></option>
+            <option value=""><?php _e( 'Selectionner', 'textdomain' ); ?></option>
+            <?php foreach ( $subTerms as $term ) { ?>
+              <option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?></option>
+              <?php } ?>
     </select>
   </div>
 </div>
   </fieldset>
 </div>
     </div>
-	<input type="submit" id="searchsubmit" class="btn btn-primary" value="Appliquer" />
+    <input type="hidden" name="post_type" value="formations" />
+	<button type="submit" id="searchsubmit" class="btn btn-primary">Appliquer<i class="fas fa-arrow-right"></i></button>
     </div>
   </div>
 </form>
