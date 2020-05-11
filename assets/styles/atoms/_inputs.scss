@@ -6,10 +6,11 @@
  *
  */
 
-input, textarea {
+input, textarea, select {
     border: 0 !important;
     background-color: transparent !important;
     outline: none;
+    color: $color-secondary-darker;
 }
 
 input:focus, textarea:focus {
@@ -47,6 +48,91 @@ input[type="submit"]:hover {
 
 textarea {
     //
+}
+
+select {
+    font-weight: 300;
+}
+
+.select-container {
+    position: relative;
+    height: 100%;
+    text-align: center;
+
+    &::after {
+        font-family: 'Font Awesome 5 Free' !important;
+        content: "\f107";
+        position: absolute;
+        bottom: 2px;
+        left: 50%;
+        font-weight: 700;
+        z-index: 0;
+    }
+}
+
+$background: #fff;
+$select-color: #fff;
+$select-background: $color-grey;
+$select-width: 220px;
+$select-height: 40px;
+
+.select-hidden {
+    display: none;
+    visibility: hidden;
+    padding-right: 10px;
+}
+
+.select {
+    cursor: pointer;
+    position: relative;
+    height: 110%;
+
+    &:not(:empty) {
+        font-weight: 700;
+    }
+}
+
+.select-styled {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 100%;
+    width: 100%;
+    text-align-last: center;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    padding: 1.5rem;
+}
+
+.select-options {
+    display: none;
+    position: absolute;
+    top: 120%;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #fff;
+    box-shadow: $shadow;
+    border-radius: $border-radius;
+
+    li {
+        margin: 0;
+        padding: 12px 0;
+        text-indent: 15px;
+        font-weight: 300;
+
+        &:hover {
+            color: $color-secondary;
+        }
+
+        &[rel="hide"] {
+            display: none;
+        }
+    }
 }
 
 fieldset {
