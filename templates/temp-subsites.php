@@ -8,22 +8,22 @@
  *
  */
 ?>
-<? /* Template Name: Subsites */ ?>
+<? php/* Template Name: Subsites */ ?>
 
-<? get_header(); ?>
+<? phpget_header(); ?>
 
   <main id="subsites">
 
-    <? if (have_posts() ) : while (have_posts()) : the_post(); ?>
+    <? phpif (have_posts() ) : while (have_posts()) : the_post(); ?>
       <section>
         <div class="element overview">
-          <h1><? the_title(); ?></h1>
-          <p><? the_content(); ?><p>
+          <h1><? phpthe_title(); ?></h1>
+          <p><? phpthe_content(); ?><p>
         </div>
       </section>
-    <? endwhile; endif; ?>
+    <? phpendwhile; endif; ?>
 
-    <? // Child Pages
+    <? php// Child Pages
     $args = [
       'post_type'      => 'page',
       'posts_per_page' => -1,
@@ -36,17 +36,17 @@
     if ( $query->have_posts() ) : ?>
       <section>
         <div class="element sites">
-          <? while ( $query->have_posts() ) : $query->the_post(); ?>
+          <? phpwhile ( $query->have_posts() ) : $query->the_post(); ?>
             <div class="site">
-              <h2><? the_title(); ?></h2>
-              <? the_post_thumbnail('large', ['class' => 'modernizr-of']); ?>
-              <p><? the_content(); ?></p>
+              <h2><? phpthe_title(); ?></h2>
+              <? phpthe_post_thumbnail('large', ['class' => 'modernizr-of']); ?>
+              <p><? phpthe_content(); ?></p>
             </div>
-          <? endwhile; ?>
+          <? phpendwhile; ?>
         </div>
       </section>
-    <? endif; wp_reset_query(); ?>
+    <? phpendif; wp_reset_query(); ?>
 
   </main>
 
-<? get_footer(); ?>
+<? phpget_footer(); ?>

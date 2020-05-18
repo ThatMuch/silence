@@ -6,7 +6,7 @@
  */
 ?>
 
-<? if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+<? phpif ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }
 ?>

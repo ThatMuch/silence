@@ -12,16 +12,16 @@
  ?>
 
   <section class="section section-cta
-  <? if(get_sub_field('fond') == "Couleur"):?> bg-primary
-  <? elseif(get_sub_field('fond') == "Gris"):?> bg-light<? endif;?>">
+  <? phpif(get_sub_field('fond') == "Couleur"):?> bg-primary
+  <? phpelseif(get_sub_field('fond') == "Gris"):?> bg-light<? phpendif;?>">
 
     <!-- Section background: image -->
-    <? if(get_sub_field('fond') == "Image"):?>
+    <? phpif(get_sub_field('fond') == "Image"):?>
         <div class="section__background-image"  style="
-        <? if(get_sub_field('image')):?>
-        background-image:url(<? echo the_sub_field('image') ?>);
-        <? endif;?>"></div>
-    <? endif;?>
+        <? phpif(get_sub_field('image')):?>
+        background-image:url(<? phpecho the_sub_field('image') ?>);
+        <? phpendif;?>"></div>
+    <? phpendif;?>
     <!-- Section background: image -->
     <div class="container">
         <!-- Title -->

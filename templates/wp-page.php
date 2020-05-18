@@ -6,7 +6,7 @@
  */
 ?>
 
-<? get_header(); ?>
+<? phpget_header(); ?>
 <div class="container">
 
 <main id="page">
@@ -27,16 +27,16 @@
   <?php endif?>
 
   <section>
-    <? while (have_posts()) : the_post(); ?>
+    <? phpwhile (have_posts()) : the_post(); ?>
       <article>
-        <h1><? the_title(); ?></h1>
-        <? the_content(); ?>
+        <h1><? phpthe_title(); ?></h1>
+        <? phpthe_content(); ?>
       </article>
-    <? endwhile; ?>
+    <? phpendwhile; ?>
   </section>
 
 </main>
 </div>
-<? get_footer(); ?>
+<? phpget_footer(); ?>
 
 

@@ -50,7 +50,7 @@
                                                       <img src="<?php the_post_thumbnail_url()?>" alt="<?php the_title()?>">
                                                 </div>
                                             </div>
-                                      <? endif;?>
+                                      <? phpendif;?>
                                             <div class="slider__content text-right col-lg-8">
                                                         <!-- Auteur -->
                                                         <h5><?php the_title()?></h5>
@@ -67,8 +67,8 @@
                                 </div>
 
                           </div>
-                          <? endwhile;?>
-                    <? endif; wp_reset_query(); ?>
+                          <? phpendwhile;?>
+                    <? phpendif; wp_reset_query(); ?>
                </div>
       </fieldset>
 </div>

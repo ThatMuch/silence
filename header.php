@@ -6,28 +6,28 @@
  */
 ?>
 <!DOCTYPE html>
-<html <? language_attributes(); ?>>
+<html <? phplanguage_attributes(); ?>>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, initial-scale=1">
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-    <? silence_gtm('head') ?>
+    <? phpsilence_gtm('head') ?>
     <!--=== OPEN-GRAPH TAGS ===-->
-    <? silence_ogtags() ?>
+    <? phpsilence_ogtags() ?>
     <!--=== WP HEAD ===-->
-    <? wp_head(); ?>
+    <? phpwp_head(); ?>
   </head>
 
   <body <?php body_class(); ?>>
-    <? silence_gtm('body') ?>
+    <? phpsilence_gtm('body') ?>
 
-     <? $custom_logo_id = get_theme_mod( 'custom_logo' );
+     <? php$custom_logo_id = get_theme_mod( 'custom_logo' );
         $image = wp_get_attachment_image_src( $custom_logo_id , 'full' ); ?>
 
 <nav class="navbar navbar-expand-lg menu">
   <div class="container">
   <a class="navbar-brand" href="<?php echo site_url(); ?>">
-    <div class="logo" style="background-image: url('<? if($image[0]): echo $image[0]; else: echo get_template_directory_uri()?>/assets/images/stanlee_logo_texte.png<?endif; ?>')"></div>
+    <div class="logo" style="background-image: url('<? phpif($image[0]): echo $image[0]; else: echo get_template_directory_uri()?>/assets/images/stanlee_logo_texte.png<?endif; ?>')"></div>
   </a>
   <?php if (have_rows('rs', 'options')) : ?>
             <ul class="footer__rs mr-5">
@@ -74,9 +74,9 @@
                       </a>
                     </li>
                   <?php endif; ?>
-              <? endwhile;?>
+              <? phpendwhile;?>
             </ul>
-          <? endif;?>
+          <? phpendif;?>
     <div class="collapse navbar-collapse" id="navbar-content">
         <?php
         wp_nav_menu( array(
@@ -96,7 +96,7 @@
 <button class="navbar-toggler btn-menu collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'theme-textdomain' ); ?>">
   <span class="btn-menu__burger"></span>
 </button>
-<? if (is_archive() || is_category()): ?>
+<? phpif (is_archive() || is_category()): ?>
   <header>
     <h1 class="page-title screen-reader-text">
     <?php
@@ -112,5 +112,5 @@
 					?>
     </h1>
   </header>
-<? endif; ?>
+<? phpendif; ?>
     <div id="content" class="site-content">
