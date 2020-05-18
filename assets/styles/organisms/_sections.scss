@@ -21,8 +21,31 @@ main#sections {
             position: relative;
         }
 
-        .section__title {
-            margin-bottom: 2rem;
+        &__header {
+            margin-bottom: $space-xl;
+
+            &__title {
+                font-weight: 300;
+            }
+
+            &__slogan {
+                margin-bottom: 1rem;
+                    @include breakpoint(tablet) {
+                        margin-bottom: 0;
+                    }
+            }
+
+            &-right .row {
+                @include breakpoint(tablet) {
+                    flex-direction: row-reverse;
+                }
+            }
+
+            .divider {
+                @include breakpoint(mobile) {
+                    margin-bottom: $space-md;
+                }
+            }
         }
 
         .section__background-image {
@@ -49,17 +72,20 @@ main#sections {
     }
 }
 
-@import "section-text";
-@import "section-text-image";
-@import "section-testimonials";
-@import "section-stats";
-@import "section-services";
-@import "section-price";
-@import "section-portfolio";
-@import "section-logos";
-@import "section-link";
-@import "section-gallery";
-@import "section-faq";
 @import "section-contact";
-@import "section-carousel";
+@import "section-faq";
+@import "section-gallery";
+@import "section-link";
+@import "section-newsletter";
+@import "section-portfolio";
+@import "section-price";
+@import "section-s-formations";
+@import "section-s-images";
+@import "section-s-video";
+@import "section-services";
+@import "section-slider";
+@import "section-stats";
 @import "section-teams";
+@import "section-testimonials";
+@import "section-text-image";
+@import "section-text";

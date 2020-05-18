@@ -91,51 +91,68 @@ $args = array(
 
 register_post_type( "testimonials", $args );
 
-/**
- * Post Type: Projets.
- */
 
-$labels = array(
-    "name" => __( "Projets", "" ),
-    "singular_name" => __( "Projet", "" ),
-    "menu_name" => __( "Projet", "" ),
-    "all_items" => __( "Tous les projets", "" ),
-    "add_new" => __( "Ajouter un projet", "" ),
-    "add_new_item" => __( "Ajouter un nouveau projet", "" ),
-    "edit_item" => __( "Modifier un projet", "" ),
-    "new_item" => __( "Nouveau projet", "" ),
-    "view_item" => __( "Voir le projet", "" ),
-    "view_items" => __( "Voir les projets", "" ),
-    "search_items" => __( "Chercher un projet", "" ),
-    "not_found" => __( "Rien trouvé", "" ),
-    "not_found_in_trash" => __( "Rien n'a été trouvé dans la corbeille", "" ),
-);
+	/**
+	 * Post Type: Formations.
+	 */
 
-$args = array(
-    "label" => __( "Projets", "" ),
-    "labels" => $labels,
-    "description" => "",
-    "public" => true,
-    "publicly_queryable" => true,
-    "show_ui" => true,
-    "show_in_rest" => false,
-    "rest_base" => "",
-    "has_archive" => false,
-    "show_in_menu" => true,
-    "show_in_nav_menus" => true,
-    "exclude_from_search" => false,
-    "capability_type" => "post",
-    "map_meta_cap" => true,
-    "hierarchical" => false,
-    "rewrite" => array( "slug" => "portfolio", "with_front" => true ),
-    "query_var" => true,
-    "menu_icon" => "dashicons-format-gallery",
-    "supports" => array( "title", "editor", "thumbnail" ),
-);
+	$labels = [
+		"name" => __( "Formations", "silence" ),
+		"singular_name" => __( "Formation", "silence" ),
+		"menu_name" => __( "Nos formations", "silence" ),
+		"all_items" => __( "Toutes les formations", "silence" ),
+		"add_new" => __( "Ajouter une formation", "silence" ),
+		"add_new_item" => __( "Ajouter une formation", "silence" ),
+		"edit_item" => __( "Modifier la formation", "silence" ),
+		"new_item" => __( "Nouvelle formation", "silence" ),
+		"view_item" => __( "Voir la formation", "silence" ),
+		"view_items" => __( "Voir les formations", "silence" ),
+		"search_items" => __( "Chercher une formation", "silence" ),
+		"not_found" => __( "Aucune formation trouvée", "silence" ),
+		"not_found_in_trash" => __( "Aucune formation trouvée dans la corbeille", "silence" ),
+		"featured_image" => __( "Couverture", "silence" ),
+		"set_featured_image" => __( "Définir la couverture", "silence" ),
+		"remove_featured_image" => __( "Retirer la couverture", "silence" ),
+		"use_featured_image" => __( "Utiliser la couverture", "silence" ),
+		"filter_items_list" => __( "Filtrer les formations", "silence" ),
+		"items_list" => __( "Liste des formations", "silence" ),
+		"name_admin_bar" => __( "Nouvelle formation", "silence" ),
+		"item_published" => __( "Formation publiée", "silence" ),
+		"item_published_privately" => __( "Formation publiée en privée", "silence" ),
+		"item_reverted_to_draft" => __( "Formation repassé en brouillon", "silence" ),
+		"item_updated" => __( "Formation mise à jour", "silence" ),
+	];
 
-register_post_type( "portfolio", $args );
+	$args = [
+		"label" => __( "Formations", "silence" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => [ "slug" => "formations", "with_front" => true ],
+		"query_var" => true,
+		"menu_icon" => "dashicons-groups",
+		"supports" => [ "title", "editor", "thumbnail"],
+		"taxonomies" => [ "category",'post_tag' ],
+	];
+
+	register_post_type( "formations", $args );
 }
 
 add_action( 'init', 'cptui_register_my_cpts' );
 
 ?>
+
+

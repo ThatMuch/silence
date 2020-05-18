@@ -14,8 +14,6 @@
     <? silence_gtm('head') ?>
     <!--=== OPEN-GRAPH TAGS ===-->
     <? silence_ogtags() ?>
-    <!--=== PRELOAD FONTS ===-->
-    <? silence_preload_fonts() ?>
     <!--=== WP HEAD ===-->
     <? wp_head(); ?>
   </head>
@@ -26,25 +24,67 @@
      <? $custom_logo_id = get_theme_mod( 'custom_logo' );
         $image = wp_get_attachment_image_src( $custom_logo_id , 'full' ); ?>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg menu">
   <div class="container">
   <a class="navbar-brand" href="<?php echo site_url(); ?>">
     <div class="logo" style="background-image: url('<? if($image[0]): echo $image[0]; else: echo get_template_directory_uri()?>/assets/images/stanlee_logo_texte.png<?endif; ?>')"></div>
   </a>
-    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'theme-textdomain' ); ?>">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
+  <?php if (have_rows('rs', 'options')) : ?>
+            <ul class="footer__rs mr-5">
+              <?php while ( have_rows('rs', 'options') ) : the_row(); ?>
+                <?php if (get_sub_field('facebook') ) : ?>
+                    <li class="footer__rs__item">
+                      <a href="<?php the_sub_field('facebook');?>">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  <?php endif; ?>
+                <?php if (get_sub_field('twitter') ) : ?>
+                    <li class="footer__rs__item">
+                      <a href="<?php the_sub_field('twitter');?>">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  <?php endif; ?>
+                <?php if (get_sub_field('instagram') ) : ?>
+                    <li class="footer__rs__item">
+                      <a href="<?php the_sub_field('instagram');?>">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  <?php endif; ?>
+                <?php if (get_sub_field('google') ) : ?>
+                    <li class="footer__rs__item">
+                      <a href="<?php the_sub_field('google');?>">
+                        <i class="fab fa-google" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  <?php endif; ?>
+                <?php if (get_sub_field('linkedin') ) : ?>
+                    <li class="footer__rs__item">
+                      <a href="<?php the_sub_field('linkedin');?>">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  <?php endif; ?>
+                <?php if (get_sub_field('youtube') ) : ?>
+                    <li class="footer__rs__item">
+                      <a href="<?php the_sub_field('youtube');?>">
+                        <i class="fab fa-youtube" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  <?php endif; ?>
+              <? endwhile;?>
+            </ul>
+          <? endif;?>
     <div class="collapse navbar-collapse" id="navbar-content">
-
-
         <?php
         wp_nav_menu( array(
             'theme_location' => 'mainmenu', // Defined when registering the menu
             'menu_id'        => 'menu-main',
             'container'      => false,
             'depth'          => 2,
-            'menu_class'     => 'navbar-nav ml-auto',
+            'menu_class'     => 'navbar-nav',
             'walker'         => new Bootstrap_NavWalker(), // This controls the display of the Bootstrap Navbar
             'fallback_cb'    => 'Bootstrap_NavWalker::fallback', // For menu fallback
         ) );
@@ -52,11 +92,10 @@
     </div>
   </div>
 </nav>
-<?php if ( is_home()): ?>
-            <header>
-                <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-            </header>
-<?php endif; ?>
+
+<button class="navbar-toggler btn-menu collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'theme-textdomain' ); ?>">
+  <span class="btn-menu__burger"></span>
+</button>
 <? if (is_archive() || is_category()): ?>
   <header>
     <h1 class="page-title screen-reader-text">

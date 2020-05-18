@@ -1,0 +1,13 @@
+.section-s-formations{
+    background-color: $color_grey;
+
+    .column-grid-card{
+
+        @media screen and (max-width: 991px) {
+            -ms-flex: 0 0 50%!important;
+            flex: 0 0 50%!important;
+            max-width: 0 0 50%!important;
+        }
+        
+    }
+}

@@ -1,5 +1,16 @@
 .section-faq {
     &__accordion {
+        &__title {
+            font-weight: 700;
+            color: $color-secondary;
+            font-size: 1.5em;
+        }
+
+        .row {
+            border-bottom: 1px solid $color-grey;
+            padding-bottom: 15px;
+        }
+
         .card {
             border: none;
             background-color: transparent;
@@ -14,11 +25,23 @@
             }
 
             &-expand {
-                color: rgba($color: $color-primary, $alpha: 0.5);
+                color: rgba($color: $color_primary, $alpha: 0.5);
             }
 
             &:hover {
                 cursor: pointer;
+            }
+        }
+
+        .card-header {
+            i:before {
+                content: "\f068" !important;
+            }
+        }
+
+        .card-header.collapsed {
+            i:before {
+                content: "\f067" !important;
             }
         }
     }

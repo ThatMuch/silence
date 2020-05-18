@@ -1,4 +1,20 @@
 .section-contact {
+    fieldset {
+        padding: 0.35em 0.75em 0.625em !important;
+        margin-bottom: $space-md;
+
+        padding: .35em 0.75em 0.9em!important;
+    
+        legend {
+            letter-spacing: 2px !important;
+            font-size: 12px !important;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+
     .form-control {
         @media screen and (max-width: 530px) {
             font-size: 1.4rem;
@@ -27,11 +43,15 @@
     }
 
     &__form {
-        width: 40%;
+        width: 100%;
         margin: 0 auto;
 
         @include breakpoint(mobile) {
             width: 90%;
+        }
+
+        .wpcf7{
+            width: 100%;
         }
 
 
@@ -41,6 +61,24 @@
 
         input[type="submit"] {
             width: 100%;
+        }
+
+        .col-textarea{
+            fieldset{
+                min-height: 89%; 
+            }
+        }
+        .wpcf7-not-valid-tip {
+            color: red;
+            font-size: 14px;
+            position: absolute;
+            left: 4px;
+            background: #fff;
+            display: abs;
+            padding: 0 1rem;
+            margin-top: 5px;
+            min-width: 165px;
+            right: 0;
         }
     }
 }

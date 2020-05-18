@@ -5,30 +5,55 @@
  * @since       silence_1.0.0.0
  *
  */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700 !important;
+}
+
 h1 {
     @include heading-size(6);
+    text-transform: uppercase;
 }
 
 h2 {
     @include heading-size(5);
+    font-size: 30px!important;
 }
 
 h3 {
     @include heading-size(4);
+
+    color: $color-primary;
 }
 
 h4 {
     @include heading-size(3);
+
+    color: $color_secondary-darker;
 }
 
 h5 {
     @include heading-size(2);
 
     letter-spacing: 1px;
+    margin-bottom: 0 !important;
 }
 
 h6 {
     @include heading-size(1);
 
     letter-spacing: 1px;
+}
+
+.subtitle {
+    font-size: 17px;
+}
+
+.section__title{
+    margin-top: -1px;
+    font-size: 1.8vw!important;
+}
+
+.section__header__slogan{
+    font-size: 1.8vw!important;
 }

@@ -9,52 +9,108 @@
 .footer {
     width: 100vw;
     margin-top: auto;
-    color: $color-grey;
-    background: $color-dark;
+    color: #fff;
+    background: $color_secondary;
+    padding: 3rem 0 5rem;
+
+    .block-round {
+        filter: grayscale(100%) invert(1) brightness(200%);
+        height: 30px;
+        min-height: 30px;
+    }
 
     &__rs {
-        text-align: center;
+        margin-bottom: 0;
 
         &__item {
             display: inline-block;
             list-style: none;
             margin-right: .5rem;
+            height: 40px;
+            width: 40px;
+            border: 3px solid $color-primary;
+            background-color: #fff;
+            border-radius: 100%;
 
             a {
-                color: $color-grey1;
-                font-size: 1.5rem;
+                color: $color_primary !important;
+                font-size: 1rem;
+                line-height: 35px;
+                text-align: center;
+                display: block;
             }
         }
     }
 
     &__inner {
-        padding: 1.5rem 0;
         font-size: 0.8rem;
     }
 
     &__credits {
-        background-color: $color-black;
-        color: $color-grey2;
+        background-color: $color_black;
+        color: $color_grey2;
         text-align: center;
 
         a {
-            color: $color-grey2;
+            color: $color_grey2;
+        }
+    }
+
+    &__contact {
+        margin-bottom: 2rem;
+
+        @include breakpoint(laptop) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__header {
+        @include breakpoint(laptop) {
+            flex-direction: row-reverse;
         }
     }
 
     /*----------  Widgets  ----------*/
+    .widget-list {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(4, 70px);
+        gap: 15px;
+
+        @include breakpoint(laptop) {
+            display: grid;
+        }
+
+
+        .widget:first-child() {
+            grid-row: span 4;
+        }
+
+        .widget:nth-child(2) {
+            grid-row: span 2;
+        }
+
+        .widget:nth-child(3) {
+            grid-row: span 2;
+        }
+
+        .widget:last-child {
+            grid-column-end: -1;
+        }
+    }
 
     .widget-title {
-        color: $color-grey1;
+        color: $color_secondary-darker;
         margin-bottom: 1rem;
+        font-size: 1.2rem;
     }
 
     .nav {
         padding: 0;
 
         .nav-link {
-            color: $color-light;
+            color: $color_light;
             padding: 0 0 0.5rem 0;
+            text-align: left;
         }
     }
 }

@@ -23,7 +23,7 @@
 /* SETTINGS
 /===================================================== */
 // local domain used by browsersync
-var browsersync_proxy = "localhost";
+var browsersync_proxy = "localhost:10010";
 
 // default asset paths
 var assets = {
@@ -84,6 +84,8 @@ var watch = require('gulp-watch');
 var del = require('del');
 // zip
 var zip = require('gulp-zip');
+// images
+var imagemin = require('gulp-imagemin');
 
 
 /* TASKS
@@ -94,8 +96,9 @@ var zip = require('gulp-zip');
 // delete compiled files/folders (before running the build)
 // css
 gulp.task('clean:css', function() { return del(['dist/*.css', 'dist/rev-manifest.json'])});
-gulp.task('clean:cachebust', function() { return del(['./style-*.min.css'])});
+gulp.task('clean:cachebust', function() { return del(['dist/style-*.min.css'])});
 gulp.task('clean:javascript', function() { return del(['dist/*.js'])});
+gulp.task('clean:images', function() { return del(['dist/images'])});
 
 /* BROWSERSYNC
 /––––––––––––––––––––––––*/
@@ -119,16 +122,18 @@ gulp.task('browsersync', function() {
 // actions: compile, minify, prefix, rename
 // to:      ./style.min.css
 gulp.task('css', gulp.series('clean:css', function() {
+  console.log('CSS-------------------------------');
   return gulp
     .src(assets['css'].concat(vendors['css']))
-    .pipe(plumber({errorHandler: notify.onError("Error")}))
+    .pipe(plumber({errorHandler: notify.onError("<%= error.message %>")}))
     .pipe(concat('style.min.css'))
     .pipe(sass())
     .pipe(autoprefixer('last 2 version', { cascade: false }))
     .pipe(cleanCSS())
-    .pipe(rename('./style.min.css'))
+    .pipe(rename('dist/style.min.css'))
     .pipe(gulp.dest('./'))
-    .pipe(browserSync.stream());
+    .pipe(browserSync.stream())
+
 }));
 
 
@@ -139,11 +144,11 @@ gulp.task('css', gulp.series('clean:css', function() {
 // to:      dist/style-[hash].min.css
 gulp.task('cachebust', gulp.series('clean:cachebust', 'css', function() {
   return gulp
-    .src('./style.min.css')
+    .src('dist/style.min.css')
     .pipe(rev())
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest('dist'))
     .pipe(rev.manifest({merge: true}))
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest('dist'))
 }));
 
 
@@ -160,12 +165,24 @@ gulp.task('javascript', gulp.series('clean:javascript', function() {
       'assets/scripts/modernizr.js',
       'assets/scripts/*.js'
     ], { base: './' }))
-    .pipe(plumber({errorHandler: notify.onError("Error")}))
+    .pipe(plumber({errorHandler: notify.onError("<%= error.message %>")}))
     .pipe(concat('script.min.js'))
     .pipe(uglify())
-    .pipe(rename('./script.min.js'))
+    .pipe(rename('dist/script.min.js'))
     .pipe(gulp.dest('./'))
     .pipe(browserSync.stream());
+}));
+
+/* IMAGES
+/––––––––––––––––––––––––*/
+// from:    assets/images/
+// actions: minify
+// to:      dist/images
+gulp.task('images', gulp.series('clean:images', function() {
+  return gulp
+    .src(assets['images'].concat(vendors['images']), {allowEmpty: true})
+    .pipe(imagemin())
+    .pipe(gulp.dest('dist/images'))
 }));
 
 /* LANGUAGES
@@ -192,10 +209,11 @@ gulp.task('makepot', function () {
 /––––––––––––––––––––––––*/
 // watch for modifications in
 // styles, scripts, images, php files, html files
-gulp.task('watch',  gulp.parallel('browsersync', function() {
-  watch(assets['css_watch'], gulp.series('css', 'cachebust'));
+gulp.task('watch', gulp.parallel('browsersync', function() {
+  watch(assets['css_watch'], gulp.series('cachebust'));
   watch(assets['javascript'], gulp.series('javascript'));
-  watch('**/*.php', browserSync.reload);
+  watch(assets['images'], gulp.series('images'));
+  watch('*.php', browserSync.reload);
   watch('*.html', browserSync.reload);
 }));
 
@@ -220,12 +238,11 @@ gulp.task('build-delete', function() {
   return del(['dist/**/*', '!dist/silence.zip']);
 });
 
-gulp.task('build',
-  gulp.series('default','build-clean', 'build-copy', 'build-zip', 'build-delete')
-);
-
-
 /* DEFAULT
 /––––––––––––––––––––––––*/
 // default gulp tasks executed with `gulp`
 gulp.task('default', gulp.series('css', 'cachebust', 'javascript','makepot'));
+
+gulp.task('build',
+  gulp.series('default','build-clean', 'build-copy', 'build-zip', 'build-delete')
+);

@@ -5,43 +5,123 @@
  * @since       silence_1.0.0.0
  *
  */
-
+//
 button, .btn {
-    &:hover, &:active, &:focus {
-        //
-   
+    padding: 8px 50px !important;
+    transition: 0,2s;
+    display: inline-block;
+    position: relative;
+    border-radius: 30px;
+    font-size: .8rem !important;
+    text-transform: uppercase;
+    font-weight: 300 !important;
+
+    i {
+        position: absolute;
+        right: 1rem;
+        bottom: 0;
+        top: 55%;
+        transform: translateY(-50%);
     }
 
-    &:disabled {
-        //
-   
+    span {
+        margin-right: 32px;
+    }
+
+    &:hover, &:active, &:focus {
+        transition: $transition_fast;
+        outline: 0 !important;
     }
 }
 
 .btn.btn-primary {
-    &:hover, &:active, &:focus {
-        //
-   
-    }
-}
+    background-color: $color_primary;
+    border: 3px solid $color_primary;
+    color: $color_light;
 
-.btn.btn-secondary {
     &:hover, &:active, &:focus {
-        //
-   
+        background-color: transparent;
+        color: $color_primary;
     }
 }
 
 .btn.btn-outline-primary {
+    background-color: #fff;
+    border-width: 3px;
+
     &:hover, &:active, &:focus {
-        //
-   
+        color: #fff;
     }
 }
 
-.btn.btn-outline-secondary {
-    &:hover, &:active, &:focus {
-        //
-   
+.btn-menu {
+    height: 64px;
+    width: 64px;
+    min-width: inherit;
+    border-radius: 100% !important;
+    padding: 0 !important;
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    box-shadow: $shadow;
+    z-index: 201;
+    background-color: #fff !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s ease-in-out;
+
+    @include breakpoint(laptop) {
+        display: none;
     }
+
+
+    &__burger {
+        width: 24px;
+        height: 2px;
+        border-radius: 5px;
+        transition: all .5s ease-in-out;
+        transform: translateX(-50px);
+        background: transparent;
+        margin: 0;
+
+        &:before, &:after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            background: $color-primary;
+            border-radius: 5px;
+            transition: all .5s ease-in-out;
+            left: 0;
+        }
+
+        &:before {
+            transform: rotate(45deg) translate(35px, -35px);
+        }
+
+        &:after {
+            transform: rotate(-45deg) translate(35px, 35px);
+        }
+    }
+
+    &.collapsed {
+        .btn-menu__burger {
+            background: $color-primary;
+            transform: translateX(0%);
+
+            &:before {
+                transform: translateY(-10px);
+            }
+
+            &:after {
+                transform: translateY(10px);
+            }
+        }
+    }
+}
+
+.container-button {
+    text-align: center;
+    margin-top: 1.5rem;
 }

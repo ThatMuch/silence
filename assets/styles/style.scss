@@ -39,7 +39,6 @@
 /*=====  Molecules  ======*/
 @import "./molecules/_breadcrumbs";
 @import "./molecules/_cards";
-@import "./molecules/_carousels";
 @import "./molecules/_collapse";
 @import "./molecules/_contact-form";
 @import "./molecules/_gallery";
@@ -56,7 +55,10 @@
 @import "./organisms/_footer";
 @import "./organisms/_header";
 @import "./organisms/_hero";
-@import "./organisms/sections";
+@import "./organisms/_sections";
+@import "./organisms/_article";
+
+//////////
 
 /*=====  Templates  ======*/
 @import "./templates/_blog";
@@ -67,6 +69,6 @@
 /*==================================================================================
   BOOTSTRAP
 ==================================================================================*/
-$theme-colors: ("primary": $color-primary, "secondary": $color-secondary);
+$theme-colors: ("primary": $color_primary, "secondary": $color_secondary);
 
 @import "../../node_modules/bootstrap/scss/bootstrap";

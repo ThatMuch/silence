@@ -6,8 +6,18 @@
  *
  */
 
+input, textarea {
+    border: 0 !important;
+    background-color: transparent !important;
+    outline: none;
+}
+
+input:focus, textarea:focus {
+    border-color: transparent !important;
+    box-shadow: inherit !important;
+}
+
 input, select {
-    //
     &:active, &:hover, &:focus {
         //
    
@@ -15,10 +25,48 @@ input, select {
 }
 
 input[type="radio"],
-input[type="checkbox"] {
-    //
+input[type="checkbox"] {}
+
+input[type="submit"] {
+    background-color: $color_primary !important;
+    padding: 5px 20px;
+    border: 2px solid $color_primary !important;
+    transition: 0,2s;
+    color: $color_light;
+    border-radius: 30px;
+    display: block;
+    max-width: 200px;
+    margin: auto;
+}
+
+input[type="submit"]:hover {
+    background-color: transparent !important;
+    color: $color_primary;
+    transition: 0,2s;
 }
 
 textarea {
     //
+}
+
+fieldset {
+    border: 1px solid $color_black !important;
+    border-radius: $border-radius;
+    display: block;
+    padding: 1em 1.75em 0.65em !important;
+
+    legend {
+        color: $color_black;
+        padding-left: 12px;
+        padding-right: 12px;
+        width: auto;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-left: 2rem;
+        margin-bottom: 0;
+
+        * {
+            font-weight: 300 !important;
+        }
+    }
 }

@@ -171,10 +171,10 @@ function get_the_date_stanlee() {
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	echo '<span class="posted-on">' . $posted_on . '</span> | <span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+	echo '<span class="byline post_author"> ' . $byline . '</span> , <span class="posted-on post_date">le ' . $posted_on . '</span>'; // WPCS: XSS OK.
 
     if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-        echo ' | <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i> ';
+        echo ' , <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i> ';
         /* translators: %s: post title */
         comments_popup_link( sprintf( wp_kses( __( '<span class="screen-reader-text"> %s</span>', 'stanlee-starter' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
         echo '</span>';
@@ -215,4 +215,4 @@ function is_login_page() {
 if (false && !is_user_logged_in() && is_main_query() && !is_admin() && !is_login_page()){
   wp_redirect('/admin'); die();
 }
-?>
+
