@@ -8,11 +8,11 @@
  */
 ?>
 
-<? phpget_header(); ?>
+<?php get_header(); ?>
 
 
   <main id="post">
-  <? phpif (have_posts() ) : while (have_posts()) : the_post(); ?>
+  <?php if (have_posts() ) : while (have_posts()) : the_post(); ?>
   <?php if (has_post_thumbnail()) : ?>
     <section class="page__header page__header-post">
       <div class="page__header__content">
@@ -32,10 +32,10 @@
 <section class="content container">
     <article>
     <h1 class="page__header__title "><?php the_title(); ?></h1>
-      <? phpthe_content(); ?>
+      <?php the_content(); ?>
     </article>
 </section>
-<? phpendwhile; endif; ?>
+<?php endwhile; endif; ?>
 </main>
 
-<? phpget_footer(); ?>
+<?php get_footer(); ?>

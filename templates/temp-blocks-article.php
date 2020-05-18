@@ -23,7 +23,7 @@
     ?>
 
     <div class="text">
-      <h2><? phpthe_title(); ?></h2>
+      <h2><?php the_title(); ?></h2>
       <a class="anchor" id="<?= slugify(get_sub_field('title')) ?>">&nbsp;</a>
       <?php the_sub_field('content') ?>
     </div>

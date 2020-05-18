@@ -1,1 +1,1 @@
-<? phpget_template_part('templates/wp', 'page'); ?>
+<?php get_template_part('templates/wp', 'page'); ?>

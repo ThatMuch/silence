@@ -9,9 +9,9 @@
  *
  */
 ?>
-<? php/* Template Name: Sections */ ?>
+<?php /* Template Name: Sections */ ?>
 
-<? phpget_header(); ?>
+<?php get_header(); ?>
 
 <main id="sections">
 <?php if (has_post_thumbnail()) : ?>
@@ -29,10 +29,10 @@
     </section>
   <?php endif?>
 
-  <? phpif (have_posts()): while (have_posts()): the_post() ?>
-    <? phpstanlee_sections() ?>
-  <? phpendwhile; endif ?>
+  <?php if (have_posts()): while (have_posts()): the_post() ?>
+    <?php stanlee_sections() ?>
+  <?php endwhile; endif ?>
 
 </main>
 
-<? phpget_footer() ?>
+<?php get_footer() ?>
