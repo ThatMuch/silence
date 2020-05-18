@@ -149,6 +149,16 @@ button, .btn {
     }
 }
 
+.btn-close {
+    position: absolute;
+    right: -60px;
+    top: -5px;
+
+    i {
+        font-size: 24px;
+    }
+}
+
 .container-button {
     text-align: center;
     margin-top: 1.5rem;

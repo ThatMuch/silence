@@ -10,10 +10,14 @@ $taxonomy = 'category';
 $terms = get_terms($taxonomy, array( 'parent' => 0, 'exclude' => 1 ) );
 $selectedCat = 3;
 $subTerms = get_terms($taxonomy, array( 'parent' => $selectedCat , 'exclude' => 1 ) );
+
+function selectCat($cat) {
+  $selectedCat = $cat;
+}
 ?>
 <div class="search p-5">
 <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" id="formations-searchform">
-  <div class="container h-100">
+  <div class="container h-100 position-relative">
     <div class="search__header">
 			  <div class="row">
           <div class="col-sm-4">
@@ -50,14 +54,14 @@ $subTerms = get_terms($taxonomy, array( 'parent' => $selectedCat , 'exclude' => 
 <div class="card-search">
   <fieldset>
     <legend>
-      Je cherche
+     <?php echo $selectedCat === 3 ? 'Je cherche' : 'Je désire' ?>
     </legend>
     <div class="p-5">
       <img src="<?php echo get_template_directory_uri()?>/assets/images/user-2.svg" alt="">
     </div>
 <div class="card-search__dropdown">
   <div class="select-container">
-    <select name="model" id="model">
+    <select name="model" id="model" >
             <option value=""><?php _e( 'Selectionner', 'textdomain' ); ?></option>
             <?php foreach ( $subTerms as $term ) { ?>
               <option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?></option>
@@ -77,7 +81,7 @@ $subTerms = get_terms($taxonomy, array( 'parent' => $selectedCat , 'exclude' => 
     </div>
 <div class="card-search__dropdown">
   <div class="select-container">
-    <select name="model" id="model">
+    <select name="model" id="model" disabled="<?php echo $selectCat === 3 ? true : false ?>">
             <option value=""><?php _e( 'Selectionner', 'textdomain' ); ?></option>
             <option value=""><?php _e( 'Selectionner', 'textdomain' ); ?></option>
             <?php foreach ( $subTerms as $term ) { ?>
@@ -92,6 +96,7 @@ $subTerms = get_terms($taxonomy, array( 'parent' => $selectedCat , 'exclude' => 
     <input type="hidden" name="post_type" value="formations" />
 	<button type="submit" id="searchsubmit" class="btn btn-primary">Appliquer<i class="fas fa-arrow-right"></i></button>
     </div>
+    <button class="btn btn-close close-search"><i class="fas fa-times"></i></button>
   </div>
 </form>
 </div>

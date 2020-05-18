@@ -52,6 +52,7 @@ function debounce(func, wait, immediate) {
 
 /* Menu burger */
 var menuBtn = document.querySelector('.btn-menu');
+var closeBtn = document.querySelector('.close-search');
 var nav = document.querySelector('.menu');
 
 // This is a flag so the class open can be added and removed at the correct time.
@@ -67,6 +68,11 @@ menuBtn.addEventListener('click', function() {
     nav.classList.remove('d-block');
     menuOpen = false;
   }
+});
+
+closeBtn.addEventListener('click', function() {
+    nav.classList.remove('d-block');
+    menuOpen = false;
 });
 
 /* SELECT OPTIONS */

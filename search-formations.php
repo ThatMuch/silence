@@ -68,10 +68,6 @@
                                     </div>
             <?php endwhile; ?>
         <?php endif; ?>
-
-
-
-
                </div><!-- content -->
             </div><!-- contentarea -->
             <div class="d-flex justify-content-center mt-3 mb-5">
