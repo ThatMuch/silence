@@ -59,7 +59,7 @@ $subTermsP = get_terms($taxonomy, array( 'parent' => 3 , 'exclude' => 1, 'hide_e
     </div>
 <div class="card-search__dropdown">
   <div class="select-container">
-    <select name="subCat" id="subCat" >
+    <select name="category__in" id="subCat" >
       <option value="0"><?php _e( 'Selectionner', 'textdomain' ); ?></option>
     </select>
   </div>
@@ -88,7 +88,7 @@ $subTermsP = get_terms($taxonomy, array( 'parent' => 3 , 'exclude' => 1, 'hide_e
 </div>
     </div>
     <input type="hidden" name="post_type" value="formations" />
-	<button type="submit" id="searchsubmit" class="btn btn-primary">Appliquer<i class="fas fa-arrow-right"></i></button>
+	  <button type="submit" id="searchsubmit" class="btn btn-primary">Appliquer<i class="fas fa-arrow-right"></i></button>
     </div>
     <button class="btn btn-close close-search"><i class="fas fa-times"></i></button>
   </div>
@@ -116,7 +116,8 @@ $subTermsP = get_terms($taxonomy, array( 'parent' => 3 , 'exclude' => 1, 'hide_e
   }
 
   function toggleTagSelect() {
-    var tag = !$('#tag').attr('disabled')
+    var tag = $('#cat').val() == 3
+
     $('#tag').prop('disabled', tag)
     if(tag) {
       $('#tag').parent().addClass('disabled')
