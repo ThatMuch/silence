@@ -20,7 +20,7 @@
     }
 
     form{
-        background-color: #fff;
+        background-color: $color_light;
         border-radius: 60px;
         padding: 12px;
         vertical-align: middle;
@@ -28,6 +28,7 @@
         max-width: 720px;
         margin: 2.5rem auto 0px;
         justify-content: flex-end; 
+        position: relative;
 
         @media screen and (max-width: 500px) {
             display: block;
@@ -47,7 +48,7 @@
 
             input{ 
                 @media screen and (max-width: 500px) {
-                    background-color: #fff!important;
+                    background-color: $color_light!important;
                     text-align: center;
                 }
             }
@@ -61,7 +62,51 @@
             width: 100%;
 
             @media screen and (max-width: 500px) {
-                background-color: #fff!important;
+                background-color: $color_light!important;
+            }
+        }
+
+        .wpcf7-not-valid-tip{
+            display: none;
+        }
+        .wpcf7-response-output {
+            border: 0;
+            position: absolute;
+            border-radius: 20px;
+            font-size: 14px;
+            width: inherit;
+            background-color: #ff0000;
+            color: $color_light;
+            margin-top: 2.2rem;
+            width: 195px;
+            left: 84px;
+            font-weight: 700;
+            border: 2px solid $color_light;
+
+            @media screen and (max-width: 680px) {
+            margin-top: 2.7rem;
+            }
+
+            @media screen and (max-width: 500px) {
+                position: relative;
+                margin-top: 2.2rem;
+                font-weight: 700;
+                text-align: center;
+                border: 0;
+                left: 0;
+                margin-top: 0;
+                width: inherit;
+            }
+        }
+
+        .wpcf7-mail-sent-ok{
+            position: absolute;
+            width: 215px;
+            background-color: #398f14;
+
+            @media screen and (max-width: 500px) {
+                width: inherit; 
+                position: relative;
             }
         }
     }
