@@ -13,7 +13,7 @@
             <div class="block-round"></div>
           </div>
           <div class="col-sm-2">
-            <? $footer_logo = get_theme_mod( 'footer-logo' );?>
+            <?php $footer_logo = get_theme_mod( 'footer-logo' );?>
             <img src="<?php echo $footer_logo ? $footer_logo : get_template_directory_uri()."/assets/images/stanlee_logo_texte.png" ?>" alt="" srcset="">
           </div>
 
@@ -72,12 +72,12 @@
                       </a>
                     </li>
                   <?php endif; ?>
-              <? endwhile;?>
+              <?php endwhile;?>
             </ul>
-          <? endif;?>
+          <?php endif;?>
           </div>
           <div class="widget-list col-sm-9">
-          <? if(is_active_sidebar('footer-1')){
+          <?php if(is_active_sidebar('footer-1')){
       dynamic_sidebar('footer-1');
         } ?>
           </div>
@@ -91,6 +91,6 @@
       </div>
     </div> -->
     </footer>
-    <? wp_footer() ?>
+    <?php wp_footer() ?>
   </body>
 </html>

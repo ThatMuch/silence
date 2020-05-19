@@ -40,8 +40,6 @@ var build_files = [
   '!node_modules/**',
   '!bower_components',
   '!bower_components/**',
-  '!dist',
-  '!dist/**',
   '!sass',
   '!sass/**',
   '!.git',

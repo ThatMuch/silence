@@ -1,4 +1,4 @@
-<?
+<?php
 /**
  * @author      ThatMuch
  * @version     0.1.0
@@ -6,28 +6,28 @@
  */
 ?>
 <!DOCTYPE html>
-<html <? language_attributes(); ?>>
+<html <?php language_attributes(); ?>>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, initial-scale=1">
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-    <? silence_gtm('head') ?>
+    <?php silence_gtm('head') ?>
     <!--=== OPEN-GRAPH TAGS ===-->
-    <? silence_ogtags() ?>
+    <?php silence_ogtags() ?>
     <!--=== WP HEAD ===-->
-    <? wp_head(); ?>
+    <?php wp_head(); ?>
   </head>
 
   <body <?php body_class(); ?>>
-    <? silence_gtm('body') ?>
+    <?php silence_gtm('body') ?>
 
-     <? $custom_logo_id = get_theme_mod( 'custom_logo' );
+     <?php $custom_logo_id = get_theme_mod( 'custom_logo' );
         $image = wp_get_attachment_image_src( $custom_logo_id , 'full' ); ?>
 <!-- MENU -->
 <nav class="navbar navbar-expand-lg menu">
   <div class="container">
   <a class="navbar-brand" href="<?php echo site_url(); ?>">
-    <div class="logo" style="background-image: url('<? if($image[0]): echo $image[0]; else: echo get_template_directory_uri()?>/assets/images/stanlee_logo_texte.png<?endif; ?>')"></div>
+    <div class="logo" style="background-image: url('<?php if($image[0]): echo $image[0]; else: echo get_template_directory_uri()?>/assets/images/stanlee_logo_texte.png<?php endif; ?>')"></div>
   </a>
   <?php if (have_rows('rs', 'options')) : ?>
             <ul class="footer__rs mr-5">
@@ -74,9 +74,9 @@
                       </a>
                     </li>
                   <?php endif; ?>
-              <? endwhile;?>
+              <?php endwhile;?>
             </ul>
-          <? endif;?>
+          <?php endif;?>
     <div class="collapse navbar-collapse" id="navbar-content">
         <?php
         wp_nav_menu( array(

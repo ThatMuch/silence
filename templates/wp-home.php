@@ -9,7 +9,7 @@
 
 ?>
 
-<? get_header(); ?>
+<?php get_header(); ?>
 <?php $page_id = get_queried_object_id();?>
   <main id="blog">
   <?php if (has_post_thumbnail()) : ?>
@@ -24,7 +24,7 @@
 
         </div>
       </div>
-      <? echo get_the_post_thumbnail($page_id,'large'); ?>
+      <?php echo get_the_post_thumbnail($page_id,'large'); ?>
     </section>
   <?php endif?>
 
@@ -46,10 +46,10 @@
 			</div>
 		</div>
 		<!-- Header Section -->
-      <? if (have_posts() ) : ?>
+      <?php if (have_posts() ) : ?>
         <?php while (have_posts()) : the_post(); ?>
         <?php get_template_part('templates/wp', 'post')?>
-      <? endwhile; endif; ?>
+      <?php endwhile; endif; ?>
       <?php
       if (  $wp_query->max_num_pages > 1 ) : ?>
         <button class="btn btn-outline-primary misha_loadmore">Voir tous les articles</button>
@@ -58,4 +58,4 @@
   </main>
 
 
-<? get_footer(); ?>
+<?php get_footer(); ?>

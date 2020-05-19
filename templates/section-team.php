@@ -44,7 +44,7 @@
                                     <div class="img__inner">
                                         <img src="<?php the_post_thumbnail_url('medium')?>" alt="<?php the_title()?>">
                                     </div>
-                                <? endif;?>
+                                <?php endif;?>
                                 <!-- Image -->
                           </div>
                           <div class="col-sm-8">
@@ -122,7 +122,7 @@
                           </div>
 
                           </div>
-                      <? endwhile; ?>
-                  <? endif; wp_reset_query(); ?>
+                      <?php endwhile; ?>
+                  <?php endif; wp_reset_query(); ?>
       </div>
  </section>
