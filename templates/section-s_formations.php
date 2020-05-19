@@ -30,7 +30,7 @@
 					</div>
 			</div>
 
-     <div class="row">
+     <div class="row justify-content-center">
 
 
 
