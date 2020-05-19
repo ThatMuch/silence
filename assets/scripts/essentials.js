@@ -52,6 +52,7 @@ function debounce(func, wait, immediate) {
 
 /* Menu burger */
 var menuBtn = document.querySelector('.btn-menu');
+var closeBtn = document.querySelector('.close-search');
 var nav = document.querySelector('.menu');
 
 // This is a flag so the class open can be added and removed at the correct time.
@@ -68,3 +69,75 @@ menuBtn.addEventListener('click', function() {
     menuOpen = false;
   }
 });
+
+closeBtn.addEventListener('click', function() {
+    nav.classList.remove('d-block');
+    menuOpen = false;
+});
+
+/* SELECT OPTIONS */
+
+/*
+Reference: http://jsfiddle.net/BB3JK/47/
+*/
+
+function generateListItems(select, list) {
+  list.children().remove()
+  for (var i = 1; i < select.children('option').length; i++) {
+    $('<li />', {
+        text: select.children('option').eq(i).text(),
+        rel: select.children('option').eq(i).val()
+    }).appendTo(list);
+}
+
+list.children('li').click(function() {
+  // e.stopPropagation();
+   select.next('div.select-styled').text($(this).text()).removeClass('active');
+   select.val($(this).attr('rel')).trigger('change');
+   list.hide();
+});
+}
+
+$('select').each(function(){
+  var $this = $(this);
+  $this.addClass('select-hidden');
+  $this.wrap('<div class="select"></div>');
+  $this.after('<div class="select-styled"></div>');
+
+  var $styledSelect = $this.next('div.select-styled');
+  $styledSelect.text($this.children('option').eq(0).text());
+
+  var $list = $('<ul />', {
+      'class': 'select-options'
+  }).insertAfter($styledSelect);
+
+
+  generateListItems($this, $list)
+
+  $styledSelect.click(function(e) {
+    if($this.is(':enabled')) {
+      e.stopPropagation();
+      $('div.select-styled.active').not(this).each(function(){
+          $(this).removeClass('active').next('ul.select-options').hide();
+      });
+      $(this).toggleClass('active').next('ul.select-options').toggle();
+    }
+  });
+
+  $(document).click(function() {
+      $styledSelect.removeClass('active');
+      $list.hide();
+  });
+
+});
+
+/* DISPLAY SEARCH */
+
+$(".btn-search").click(function() {
+  $(".search").toggleClass("d-block");
+  $('.site-content').toggle(function () {
+    $(".site-content").css({height: "100%",overflow: "hidden"});
+}, function () {
+    $(".site-content").css({height: "100%"});
+});
+})

@@ -23,7 +23,7 @@
 
      <? $custom_logo_id = get_theme_mod( 'custom_logo' );
         $image = wp_get_attachment_image_src( $custom_logo_id , 'full' ); ?>
-
+<!-- MENU -->
 <nav class="navbar navbar-expand-lg menu">
   <div class="container">
   <a class="navbar-brand" href="<?php echo site_url(); ?>">
@@ -90,12 +90,22 @@
         ) );
         ?>
     </div>
+    <button  class="ml-auto btn btn-primary btn-search d-none d-md-block">
+  <span class="btn-search__text">Formation et coaching</span>
+  <i class="fas fa-search"></i> </button>
   </div>
 </nav>
 
 <button class="navbar-toggler btn-menu collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'theme-textdomain' ); ?>">
   <span class="btn-menu__burger"></span>
 </button>
+<button  class="ml-auto btn btn-primary btn-search d-md-none d-block">
+  <span class="btn-search__text">Formation et coaching</span>
+  <i class="fas fa-search"></i> </button>
+<!-- SEARCH -->
+<?php get_template_part( 'formations', 'searchform' ); ?>
+<!-- SEARCH -->
+<!-- HEADER -->
 <? if (is_archive() || is_category()): ?>
   <header>
     <h1 class="page-title screen-reader-text">
@@ -106,11 +116,11 @@
 						echo get_the_date( _x( 'F Y', 'monthly archives date format', 'stanlee' ) );
 					elseif ( is_year() ) :
 						echo get_the_date( _x( 'Y', 'yearly archives date format', 'stanlee' ) );
-					else :
-						single_cat_title();
+
 					endif;
 					?>
     </h1>
   </header>
 <? endif; ?>
+<!-- HEADER -->
     <div id="content" class="site-content">
