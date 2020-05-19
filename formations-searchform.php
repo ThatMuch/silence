@@ -9,12 +9,10 @@ $args = array(
 $taxonomy = 'category';
 $terms = get_terms($taxonomy, array( 'parent' => 0, 'exclude' => 1 ) );
 $selectedCat = 3;
-$subTerms = get_terms($taxonomy, array( 'parent' => $selectedCat , 'exclude' => 1 ) );
-
-function selectCat($cat) {
-  $selectedCat = $cat;
-}
+$subTermsO = get_terms($taxonomy, array( 'parent' => 2 , 'exclude' => 1, 'hide_empty' => false ) );
+$subTermsP = get_terms($taxonomy, array( 'parent' => 3 , 'exclude' => 1, 'hide_empty' => false ) );
 ?>
+
 <div class="search p-5">
 <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" id="formations-searchform">
   <div class="container h-100 position-relative">
@@ -42,30 +40,27 @@ function selectCat($cat) {
 <div class="card-search__dropdown">
   <div class="select-container">
     <select name="cat" id="cat">
-            <option value="">Selectionner</option>
-            <?php foreach ( $terms as $term ) { ?>
-              <option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?></option>
-              <?php } ?>
+      <option value="0" disabled>Selectionner</option>
+        <?php foreach ( $terms as $term ) { ?>
+          <option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?></option>
+        <?php } ?>
     </select>
   </div>
 </div>
   </fieldset>
 </div>
-<div class="card-search">
+<div id="card-sub" class="card-search">
   <fieldset>
     <legend>
-     <?php echo $selectedCat === 3 ? 'Je cherche' : 'Je désire' ?>
+     Je cherche
     </legend>
     <div class="p-5">
       <img src="<?php echo get_template_directory_uri()?>/assets/images/user-2.svg" alt="">
     </div>
 <div class="card-search__dropdown">
   <div class="select-container">
-    <select name="model" id="model" >
-            <option value=""><?php _e( 'Selectionner', 'textdomain' ); ?></option>
-            <?php foreach ( $subTerms as $term ) { ?>
-              <option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?></option>
-              <?php } ?>
+    <select name="subCat" id="subCat" >
+      <option value="0"><?php _e( 'Selectionner', 'textdomain' ); ?></option>
     </select>
   </div>
 </div>
@@ -81,10 +76,9 @@ function selectCat($cat) {
     </div>
 <div class="card-search__dropdown">
   <div class="select-container">
-    <select name="model" id="model" disabled="<?php echo $selectCat === 3 ? true : false ?>">
-            <option value=""><?php _e( 'Selectionner', 'textdomain' ); ?></option>
-            <option value=""><?php _e( 'Selectionner', 'textdomain' ); ?></option>
-            <?php foreach ( $subTerms as $term ) { ?>
+    <select name="tag" id="tag">
+            <option value="0"><?php _e( 'Selectionner', 'textdomain' ); ?></option>
+            <?php foreach ( $subTermsO as $term ) { ?>
               <option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?></option>
               <?php } ?>
     </select>
@@ -101,3 +95,59 @@ function selectCat($cat) {
 </form>
 </div>
 <!-- SEARCH -->
+
+<script type="text/javascript">
+  var subTermsO = <?php echo json_encode($subTermsO); ?>;
+  var subTermsP = <?php echo json_encode($subTermsP); ?>;
+
+  function updateOptions(select, optionsArray) {
+    select.children('option').slice(1).remove()
+    // Ajouter les options
+    optionsArray.forEach(({term_id,name}) => {
+      select.append(
+        $('<option>', {
+          'value': term_id,
+          'text': name
+        })
+      );
+    })
+
+    generateListItems(select, select.siblings('.select-options'))
+  }
+
+  function toggleTagSelect() {
+    var tag = !$('#tag').attr('disabled')
+    $('#tag').prop('disabled', tag)
+    if(tag) {
+      $('#tag').parent().addClass('disabled')
+    } else {
+      $('#tag').parent().removeClass('disabled')
+    }
+
+  }
+
+ $('#cat').on('change', function(e) {
+  var value = e.target.value;
+  var select = $('#subCat');
+  var label = $('#subCat+.select-styled');
+  var legend = $('#card-sub legend');
+
+  //select.val("0")
+  if(value == 3) {
+    toggleTagSelect()
+    legend.html('Je désire')
+    // Réinitialiser label du select
+    label.text("Selectionner")
+    // Retirer les options précedentes
+    updateOptions(select, subTermsP)
+
+  } else {
+    toggleTagSelect()
+    legend.html('Je cherche')
+    // Réinitialiser label du select
+    label.text("Selectionner")
+    // Retirer les options précedentes
+    updateOptions(select, subTermsO)
+  }
+ });
+</script>

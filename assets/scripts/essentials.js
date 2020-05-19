@@ -81,16 +81,27 @@ closeBtn.addEventListener('click', function() {
 Reference: http://jsfiddle.net/BB3JK/47/
 */
 
+function generateListItems(select, list) {
+  list.children().remove()
+  for (var i = 1; i < select.children('option').length; i++) {
+    $('<li />', {
+        text: select.children('option').eq(i).text(),
+        rel: select.children('option').eq(i).val()
+    }).appendTo(list);
+}
+
+list.children('li').click(function() {
+  // e.stopPropagation();
+   select.next('div.select-styled').text($(this).text()).removeClass('active');
+   select.val($(this).attr('rel')).trigger('change');
+   list.hide();
+});
+}
+
 $('select').each(function(){
-  var $this = $(this), numberOfOptions = $(this).children('option').length;
-
-
+  var $this = $(this);
   $this.addClass('select-hidden');
-  if($this.is(':enabled')) {
-    $this.wrap('<div class="select"></div>');
-  }else {
-    $this.wrap('<div class="select disabled"></div>');
-  }
+  $this.wrap('<div class="select"></div>');
   $this.after('<div class="select-styled"></div>');
 
   var $styledSelect = $this.next('div.select-styled');
@@ -101,15 +112,7 @@ $('select').each(function(){
   }).insertAfter($styledSelect);
 
 
-
-  for (var i = 0; i < numberOfOptions; i++) {
-      $('<li />', {
-          text: $this.children('option').eq(i).text(),
-          rel: $this.children('option').eq(i).val()
-      }).appendTo($list);
-  }
-
-  var $listItems = $list.children('li');
+  generateListItems($this, $list)
 
   $styledSelect.click(function(e) {
     if($this.is(':enabled')) {
@@ -119,14 +122,6 @@ $('select').each(function(){
       });
       $(this).toggleClass('active').next('ul.select-options').toggle();
     }
-  });
-
-  $listItems.click(function(e) {
-      e.stopPropagation();
-      $styledSelect.text($(this).text()).removeClass('active');
-      $this.val($(this).attr('rel'));
-      $list.hide();
-      //console.log($this.val());
   });
 
   $(document).click(function() {
