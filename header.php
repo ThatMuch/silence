@@ -1,4 +1,4 @@
-<?
+<?php
 /**
  * @author      ThatMuch
  * @version     0.1.0
@@ -27,7 +27,7 @@
 <nav class="navbar navbar-expand-lg menu">
   <div class="container">
   <a class="navbar-brand" href="<?php echo site_url(); ?>">
-    <div class="logo" style="background-image: url('<?php if($image[0]): echo $image[0]; else: echo get_template_directory_uri()?>/assets/images/stanlee_logo_texte.png<?endif; ?>')"></div>
+    <div class="logo" style="background-image: url('<?php if($image[0]): echo $image[0]; else: echo get_template_directory_uri()?>/assets/images/stanlee_logo_texte.png<?php endif; ?>')"></div>
   </a>
   <?php if (have_rows('rs', 'options')) : ?>
             <ul class="footer__rs mr-5">

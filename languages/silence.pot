@@ -15,90 +15,90 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: custom-post-type.php:100, custom-post-type.php:127
+#: custom-post-type.php:100, custom-post-type.php:127, dist/silence/custom-post-type.php:100, dist/silence/custom-post-type.php:127
 msgid "Formations"
 msgstr ""
 
-#: custom-post-type.php:101
+#: custom-post-type.php:101, dist/silence/custom-post-type.php:101
 msgid "Formation"
 msgstr ""
 
-#: custom-post-type.php:102
+#: custom-post-type.php:102, dist/silence/custom-post-type.php:102
 msgid "Nos formations"
 msgstr ""
 
-#: custom-post-type.php:103
+#: custom-post-type.php:103, dist/silence/custom-post-type.php:103
 msgid "Toutes les formations"
 msgstr ""
 
-#: custom-post-type.php:104, custom-post-type.php:105
+#: custom-post-type.php:104, custom-post-type.php:105, dist/silence/custom-post-type.php:104, dist/silence/custom-post-type.php:105
 msgid "Ajouter une formation"
 msgstr ""
 
-#: custom-post-type.php:106
+#: custom-post-type.php:106, dist/silence/custom-post-type.php:106
 msgid "Modifier la formation"
 msgstr ""
 
-#: custom-post-type.php:107, custom-post-type.php:119
+#: custom-post-type.php:107, custom-post-type.php:119, dist/silence/custom-post-type.php:107, dist/silence/custom-post-type.php:119
 msgid "Nouvelle formation"
 msgstr ""
 
-#: custom-post-type.php:108
+#: custom-post-type.php:108, dist/silence/custom-post-type.php:108
 msgid "Voir la formation"
 msgstr ""
 
-#: custom-post-type.php:109
+#: custom-post-type.php:109, dist/silence/custom-post-type.php:109
 msgid "Voir les formations"
 msgstr ""
 
-#: custom-post-type.php:110
+#: custom-post-type.php:110, dist/silence/custom-post-type.php:110
 msgid "Chercher une formation"
 msgstr ""
 
-#: custom-post-type.php:111
+#: custom-post-type.php:111, dist/silence/custom-post-type.php:111
 msgid "Aucune formation trouvée"
 msgstr ""
 
-#: custom-post-type.php:112
+#: custom-post-type.php:112, dist/silence/custom-post-type.php:112
 msgid "Aucune formation trouvée dans la corbeille"
 msgstr ""
 
-#: custom-post-type.php:113
+#: custom-post-type.php:113, dist/silence/custom-post-type.php:113
 msgid "Couverture"
 msgstr ""
 
-#: custom-post-type.php:114
+#: custom-post-type.php:114, dist/silence/custom-post-type.php:114
 msgid "Définir la couverture"
 msgstr ""
 
-#: custom-post-type.php:115
+#: custom-post-type.php:115, dist/silence/custom-post-type.php:115
 msgid "Retirer la couverture"
 msgstr ""
 
-#: custom-post-type.php:116
+#: custom-post-type.php:116, dist/silence/custom-post-type.php:116
 msgid "Utiliser la couverture"
 msgstr ""
 
-#: custom-post-type.php:117
+#: custom-post-type.php:117, dist/silence/custom-post-type.php:117
 msgid "Filtrer les formations"
 msgstr ""
 
-#: custom-post-type.php:118
+#: custom-post-type.php:118, dist/silence/custom-post-type.php:118
 msgid "Liste des formations"
 msgstr ""
 
-#: custom-post-type.php:120
+#: custom-post-type.php:120, dist/silence/custom-post-type.php:120
 msgid "Formation publiée"
 msgstr ""
 
-#: custom-post-type.php:121
+#: custom-post-type.php:121, dist/silence/custom-post-type.php:121
 msgid "Formation publiée en privée"
 msgstr ""
 
-#: custom-post-type.php:122
+#: custom-post-type.php:122, dist/silence/custom-post-type.php:122
 msgid "Formation repassé en brouillon"
 msgstr ""
 
-#: custom-post-type.php:123
+#: custom-post-type.php:123, dist/silence/custom-post-type.php:123
 msgid "Formation mise à jour"
 msgstr ""

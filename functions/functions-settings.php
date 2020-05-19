@@ -277,6 +277,8 @@ add_filter('get_the_excerpt', 'wp_trim_all_excerpt');
 
 
 function misha_my_load_more_scripts() {
+  global $wp_query;
+
 
 	// In most cases it is already included on the page and this line can be removed
 	wp_enqueue_script('jquery');
