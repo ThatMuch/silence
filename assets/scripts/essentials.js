@@ -84,8 +84,13 @@ Reference: http://jsfiddle.net/BB3JK/47/
 $('select').each(function(){
   var $this = $(this), numberOfOptions = $(this).children('option').length;
 
+
   $this.addClass('select-hidden');
-  $this.wrap('<div class="select"></div>');
+  if($this.is(':enabled')) {
+    $this.wrap('<div class="select"></div>');
+  }else {
+    $this.wrap('<div class="select disabled"></div>');
+  }
   $this.after('<div class="select-styled"></div>');
 
   var $styledSelect = $this.next('div.select-styled');
@@ -94,6 +99,8 @@ $('select').each(function(){
   var $list = $('<ul />', {
       'class': 'select-options'
   }).insertAfter($styledSelect);
+
+
 
   for (var i = 0; i < numberOfOptions; i++) {
       $('<li />', {
@@ -105,11 +112,13 @@ $('select').each(function(){
   var $listItems = $list.children('li');
 
   $styledSelect.click(function(e) {
+    if($this.is(':enabled')) {
       e.stopPropagation();
       $('div.select-styled.active').not(this).each(function(){
           $(this).removeClass('active').next('ul.select-options').hide();
       });
       $(this).toggleClass('active').next('ul.select-options').toggle();
+    }
   });
 
   $listItems.click(function(e) {

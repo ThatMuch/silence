@@ -58,16 +58,6 @@ select {
     position: relative;
     height: 100%;
     text-align: center;
-
-    &::after {
-        font-family: 'Font Awesome 5 Free' !important;
-        content: "\f107";
-        position: absolute;
-        bottom: 2px;
-        left: 50%;
-        font-weight: 700;
-        z-index: 0;
-    }
 }
 
 $background: #fff;
@@ -89,6 +79,21 @@ $select-height: 40px;
 
     &:not(:empty) {
         font-weight: 700;
+    }
+
+    &.disabled {
+        color: $color_grey1;
+        cursor: inherit;
+    }
+
+    &::after {
+        font-family: 'Font Awesome 5 Free' !important;
+        content: "\f107";
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        font-weight: 700;
+        z-index: 0;
     }
 }
 
