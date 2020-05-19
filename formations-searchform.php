@@ -2,15 +2,12 @@
 
 <?php
 
-$args = array(
- 'parent' => 0
-);
-
 $taxonomy = 'category';
 $terms = get_terms($taxonomy, array( 'parent' => 0, 'exclude' => 1 ) );
 $selectedCat = 3;
 $subTermsO = get_terms($taxonomy, array( 'parent' => 2 , 'exclude' => 1, 'hide_empty' => false ) );
 $subTermsP = get_terms($taxonomy, array( 'parent' => 3 , 'exclude' => 1, 'hide_empty' => false ) );
+$tags = get_tags(array('type' => 'formations', 'exclude' => 9));
 ?>
 
 <div class="search p-5">
@@ -76,10 +73,10 @@ $subTermsP = get_terms($taxonomy, array( 'parent' => 3 , 'exclude' => 1, 'hide_e
     </div>
 <div class="card-search__dropdown">
   <div class="select-container">
-    <select name="tag" id="tag">
+    <select name="tag_id" id="tag">
             <option value="0"><?php _e( 'Selectionner', 'textdomain' ); ?></option>
-            <?php foreach ( $subTermsO as $term ) { ?>
-              <option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?></option>
+            <?php foreach ( $tags as $tag ) { ?>
+              <option value="<?php echo $tag->term_id; ?>"><?php echo $tag->name; ?></option>
               <?php } ?>
     </select>
   </div>

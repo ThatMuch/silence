@@ -1,9 +1,20 @@
 <?php
         /* Template Name: Formations */
         get_header();
+        $tag = $_GET['tag_id'];
+        $cat = $_GET['cat'];
+        $category__in = $_GET['category__in'];
+        $query = new WP_Query( array(
+            'tag_id' => $tag,
+            'posts_per_page' => -1,
+            'post_type' => 'formations',
+            'cat' => $cat,
+            'category__in' => $category__in
+
+            )
+        );
         ?>
         <div class="container">
-
             <div class="contentarea">
             <div class="search__header">
                 <div class="row">
@@ -17,7 +28,7 @@
               </div>
               <p class="text-center mb-5">Résultats de la recherche</p>
                 <div id="content" class="row">
-                         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                         <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
                     <div class="col-sm-4 d-flex justify-content-center">
                         <div class="card-training card" id="post-<?php the_ID(); ?>">
                                        <div class="card__inner">
