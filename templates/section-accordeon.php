@@ -46,7 +46,7 @@
                             <div class="col-10 col-md-11"><span class="section-faq__accordion__title"><?php the_sub_field('title'); ?></span></div>
                             <div class="col-2 col-md-1 d-flex">
                                 <span class="card-header-expand ml-auto">
-                                    <i class="fas fa-plus"></i>
+                                    <i class="icon minus"></i>
                                 </span>
                              </div>
                         </div>

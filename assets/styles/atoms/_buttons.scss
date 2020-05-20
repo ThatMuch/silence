@@ -20,8 +20,8 @@ button, .btn {
         position: absolute;
         right: 1rem;
         bottom: 0;
-        top: 55%;
-        transform: translateY(-50%);
+        top: 0;
+        margin: auto;
     }
 
     span {
@@ -39,10 +39,18 @@ button, .btn {
     border-width: 3px;
     color: $color_light;
 
+    .icon {
+        filter: grayscale(100%) brightness(200%);
+    }
+
     &:hover, &:active, &:focus {
         background-color: #fff;
         color: $color_primary;
         box-shadow: none !important;
+
+        .icon {
+            filter: inherit;
+        }
     }
 }
 
@@ -52,6 +60,10 @@ button, .btn {
 
     &:hover, &:active, &:focus {
         color: #fff;
+
+        .icon {
+            filter: grayscale(100%) brightness(200%);
+        }
     }
 }
 

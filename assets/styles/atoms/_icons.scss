@@ -1,0 +1,39 @@
+.icon {
+    height: 20px;
+    width: 20px;
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &.download {
+        background-image: url("./images/download.svg");
+    }
+
+    &.arrow-right {
+        background-image: url("./images/arrow-right.svg");
+    }
+
+    &.chevron-down {
+        background-image: url("./images/chevron-down.svg");
+    }
+
+    &.close {
+        background-image: url("./images/close.svg");
+    }
+
+    &.plus {
+        background-image: url("./images/plus.svg");
+    }
+
+    &.search-wen {
+        background-image: url("./images/search.svg");
+    }
+
+    &.mobile {
+        background-image: url("./images/mobile.svg");
+    }
+
+    &.minus {
+        background-image: url("./images/minus.svg");
+    }
+}

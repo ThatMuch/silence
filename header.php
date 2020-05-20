@@ -92,7 +92,7 @@
     </div>
     <button  class="ml-auto btn btn-primary btn-search d-none d-md-block">
   <span class="btn-search__text">Formation et coaching</span>
-  <i class="fas fa-search"></i> </button>
+  <i class="icon search-wen"></i></button>
   </div>
 </nav>
 
@@ -101,7 +101,7 @@
 </button>
 <button  class="ml-auto btn btn-primary btn-search d-md-none d-block">
   <span class="btn-search__text">Formation et coaching</span>
-  <i class="fas fa-search"></i> </button>
+  <i class="icon search-wen"></i> </button>
 <!-- SEARCH -->
 <?php get_template_part( 'formations', 'searchform' ); ?>
 <!-- SEARCH -->
