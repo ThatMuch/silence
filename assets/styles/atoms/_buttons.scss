@@ -83,6 +83,7 @@ button, .btn {
     justify-content: center;
     align-items: center;
     transition: all .5s ease-in-out;
+    z-index: 999;
 
     @include breakpoint(laptop) {
         display: none;
