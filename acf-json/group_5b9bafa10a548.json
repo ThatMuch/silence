@@ -56,8 +56,8 @@
                             },
                             "default_value": "",
                             "tabs": "all",
-                            "toolbar": "full",
-                            "media_upload": 0,
+                            "toolbar": "basic",
+                            "media_upload": 1,
                             "delay": 0
                         }
                     ],
@@ -902,7 +902,7 @@
                         {
                             "key": "field_5ea83c637e68d",
                             "label": "Titre",
-                            "name": "titre",
+                            "name": "title",
                             "type": "wysiwyg",
                             "instructions": "",
                             "required": 0,
@@ -919,10 +919,10 @@
                             "delay": 0
                         },
                         {
-                            "key": "field_5ea83c6e7e68e",
-                            "label": "Label de l'input",
-                            "name": "label_input",
-                            "type": "text",
+                            "key": "field_5ec2a2377a23a",
+                            "label": "Formulaire d'inscription",
+                            "name": "formulaire_dinscription",
+                            "type": "cf7",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -931,29 +931,9 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_5ea83c887e68f",
-                            "label": "Email de réception",
-                            "name": "email",
-                            "type": "email",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": ""
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "disable": ""
                         }
                     ],
                     "min": "",
@@ -1057,5 +1037,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1588602750
+    "modified": 1589888868
 }

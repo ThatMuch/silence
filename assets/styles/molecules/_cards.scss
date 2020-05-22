@@ -25,12 +25,10 @@
     &:hover .card__inner {
         transform: rotateY(180deg);
 
-        .card__back{
+        .card__back {
             backface-visibility: hidden;
         }
     }
-
-    
 
     &__front, &__back {
         position: absolute;
@@ -45,7 +43,9 @@
     &__front {
         z-index: 2;
         backface-visibility: hidden;
+
         // transform: rotateY(0deg);
+   
     }
 
     &__back {
@@ -89,7 +89,7 @@
 .card-training {
     height: 500px;
     width: 350px;
-    background-color: transparent!important;
+    background-color: transparent !important;
 
     .btn {
         display: block;
@@ -163,5 +163,31 @@
         display: inline-block;
         margin-top: 0;
         max-width: 200px;
+    }
+}
+
+.card-search {
+    margin-bottom: 2rem;
+
+    fieldset {
+        padding: 1rem 0 0 !important;
+        border-color: $color-secondary !important;
+    }
+
+    legend {
+        text-transform: initial;
+        color: $color-secondary;
+    }
+
+    img {
+        width: 80px;
+    }
+
+    &__dropdown {
+        background-color: $color-grey;
+        width: 100%;
+        padding: 0 0 1rem;
+        height: 100px;
+        border-radius: 0 0 $border-radius $border-radius;
     }
 }

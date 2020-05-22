@@ -10,6 +10,7 @@
 ==================================================================================*/
 nav.navbar.menu {
     display: none;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
 
     @include breakpoint(laptop) {
         display: block;
@@ -20,7 +21,7 @@ nav.navbar {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 200;
+    z-index: 210;
     width: 100vw;
     height: $header_height;
     justify-content: inherit;
@@ -69,9 +70,11 @@ nav.navbar {
 .nav.nav-tab {
     justify-content: center;
     margin-bottom: $space-xl;
+}
 
+@include breakpoint(laptop) {
     .nav-item {
-        .nav-link {
+        a.nav-link {
             text-transform: uppercase;
             color: $color_secondary;
             position: relative;
@@ -83,8 +86,8 @@ nav.navbar {
                     content: '';
                     position: absolute;
                     height: 1px;
-                    width: 33%;
-                    left: 33%;
+                    width: 42px;
+                    left: 0;
                     bottom: 0;
                     background-color: $color-primary;
                 }
