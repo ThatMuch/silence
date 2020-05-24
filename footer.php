@@ -83,13 +83,16 @@
           </div>
           </div>
       </div>
- <!--    <div class="footer__credits">
-      <div class="container">
-        <div class="footer__inner">
-          Un site crée par <a href="https://_a.fr" target="_blank" rel="noopener noreferrer"><strong>_a</strong></a>
-        </div>
-      </div>
-    </div> -->
+      <div class="footer__credits">
+		<div class="container">
+			<div class="footer__inner">
+			<span>	© Copyright 2020, Tous droits réservés Silence</span>
+			<a class="footer__credits__thatmuch" href="https://thatmuch.fr" target="_blank" rel="noopener noreferrer">
+				<img src="<?php echo  get_template_directory_uri() ?>/dist/images/thatmuch-logo.png" alt="logo that much">
+			</a>
+			</div>
+		</div>
+	</div>
     </footer>
     <?php wp_footer() ?>
   </body>
