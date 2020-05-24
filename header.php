@@ -120,6 +120,6 @@
 					?>
     </h1>
   </header>
-<? endif; ?>
+<?php endif; ?>
 <!-- HEADER -->
     <div id="content" class="site-content">
