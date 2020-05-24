@@ -11,7 +11,7 @@
     margin-top: auto;
     color: #fff;
     background: $color_secondary;
-    padding: 3rem 0 5rem;
+    padding: 3rem 0 0;
 
     .block-round {
         filter: grayscale(100%) invert(1) brightness(200%);
@@ -44,15 +44,29 @@
 
     &__inner {
         font-size: 0.8rem;
+        display: flex;
+        align-items: center;
     }
 
     &__credits {
-        background-color: $color_black;
-        color: $color_grey2;
+        background-color: $color_secondary-darker;
+        color: $color_secondary;
         text-align: center;
+        padding: $space-xs;
+        margin-top: 5rem;
 
-        a {
-            color: $color_grey2;
+        &__thatmuch {
+            margin-left: auto;
+            opacity: .6;
+            transition-duration: $transition_slow;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            img {
+                width: 100px;
+            }
         }
     }
 

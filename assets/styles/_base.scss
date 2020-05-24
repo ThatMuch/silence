@@ -49,9 +49,9 @@ html {
 main {
     position: relative;
 
-    @include breakpoint(laptop) {
-        margin-top: $header_height;
-    }
+    // @include breakpoint(laptop) {
+    //     margin-top: $header_height;
+    // }
 
 
     article,

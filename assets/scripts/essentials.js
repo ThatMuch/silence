@@ -141,3 +141,9 @@ $(".btn-search").click(function() {
     $(".site-content").css({height: "100%"});
 });
 })
+
+$(".close-search").click(function () {
+  $(".search").toggleClass("d-block");
+  $(".site-content").css({height: "100%", display: "block"});
+
+})
