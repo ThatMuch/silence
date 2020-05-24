@@ -106,7 +106,7 @@
 <?php get_template_part( 'formations', 'searchform' ); ?>
 <!-- SEARCH -->
 <!-- HEADER -->
-<? if (is_archive() || is_category()): ?>
+<?php if (is_archive() || is_category()): ?>
   <header>
     <h1 class="page-title screen-reader-text">
     <?php
@@ -116,8 +116,7 @@
 						echo get_the_date( _x( 'F Y', 'monthly archives date format', 'stanlee' ) );
 					elseif ( is_year() ) :
 						echo get_the_date( _x( 'Y', 'yearly archives date format', 'stanlee' ) );
-
-					endif;
+          endif;
 					?>
     </h1>
   </header>
