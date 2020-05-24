@@ -87,7 +87,7 @@ $tags = get_tags(array('type' => 'formations', 'exclude' => 9));
     <input type="hidden" name="post_type" value="formations" />
 	  <button type="submit" id="searchsubmit" class="btn btn-primary">Appliquer<i class="icon arrow-right"></i></button>
     </div>
-    <button class="btn btn-close close-search"><i class="icon close"></i></button>
+    <a class="btn btn-close close-search"><i class="icon close"></i></a>
   </div>
 </form>
 </div>
