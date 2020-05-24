@@ -16,7 +16,7 @@
 
 $base_size: 1.5vw; // scales all `rem` based elements by adding this value as html font-size
 
-$header_height: 4rem; // define the height of the header
+$header_height: 64px; // define the height of the header
 $element_width: 90vw; // default width of the inner elements --> nav, article, div.element, footer
 $element_maxwidth: 1200px; // max-width of the inner elements (should be <= $scaling_endpoint)
 
@@ -117,7 +117,7 @@ $transition_slow: 0.7s;
   SHADOWS
 ==================================================================================*/
 
-$shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+$shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 $shadow__soft: 0 1px 2px 0 rgba(0, 0, 0, 0.08), 0 1px 5px 0 rgba(0, 0, 0, 0.06);
 
 $border-radius: 20px;

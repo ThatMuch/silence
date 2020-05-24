@@ -30,7 +30,7 @@
 					</div>
 			</div>
 
-     <div class="row">
+     <div class="row justify-content-center">
 
 
 
@@ -90,8 +90,8 @@
 											<?php if ( get_field('desc') ) : ?>
 												<p class="card__back__text"><?php echo get_field('desc'); ?></p>
 											<?php endif; ?>
-											<a class="btn btn-primary mt-auto">Nous contacter<i class="fas fa-arrow-right"></i></a>
-											<a class="btn btn-outline-primary">Télécharger la brochure<i class="fas fa-download"></i></a>
+											<a class="btn btn-primary mt-auto">Nous contacter<i class="icon arrow-right"></i></a>
+											<a class="btn btn-outline-primary">Télécharger la brochure<i class="icon download"></i></a>
 										</div>
 									</div>
 									</div>
@@ -110,7 +110,7 @@ if( $link ):
     $link_title = $link['title'];
 ?>
 <div class="container-button">
-	<a class="btn btn-primary mt-auto" href="<?php echo esc_url( $link_url ); ?>"><i class="fas fa-search"></i><?php echo esc_html( $link_title ); ?></a>
+	<a class="btn btn-primary mt-auto" href="<?php echo esc_url( $link_url ); ?>"><i class="icon search-wen"></i><?php echo esc_html( $link_title ); ?></a>
 </div>
 <?php endif; ?>
 </div>

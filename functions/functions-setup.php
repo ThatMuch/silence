@@ -117,7 +117,7 @@ add_action( 'widgets_init', 'stanlee_widgets_init' );
 
 
 // Custom search widget
- function my_search_form( $form ) {
+/*  function my_search_form( $form ) {
   $form = '<form role="search" method="get" id="searchform" class="search-form" action="' . home_url( '/' ) . '" >
   <div><label>
   <input class="search-field form-control" placeholder="Rechercher" type="text" value="' . get_search_query() . '" name="s" id="s" />
@@ -128,5 +128,17 @@ add_action( 'widgets_init', 'stanlee_widgets_init' );
   return $form;
 }
 
-add_filter( 'get_search_form', 'my_search_form', 100 );
+add_filter( 'get_search_form', 'my_search_form', 100 ); */
+
+
+function search_filter($query) {
+  if ( ! is_admin() && $query->is_main_query() ) {
+      if ( $query->is_search ) {
+          $query->set( 'post_type', 'formations' );
+          $query->set( 'posts_per_page', 15 );
+      }
+  }
+}
+add_action( 'pre_get_posts', 'search_filter' );
+
 ?>

@@ -13,10 +13,11 @@
 
   <section class="section section-slider">
       <div class="container">
+
           <div class="section__header">
               <div class="row">
                   <div class="col-sm-9 divider">
-                  <div class="block-round"></div>
+                    <div class="block-round"></div>
                   </div>
                   <div class="col-sm-3">
                     <?php if ( get_sub_field('title') ) : ?>

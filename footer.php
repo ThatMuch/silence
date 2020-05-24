@@ -24,7 +24,7 @@
             <h4 class="mb-3">Contactez nous</h4>
             <a href="http://" class="btn btn-outline-primary mb-3">
               <?php echo get_field('phone','options'); ?>
-            <i class="fas fa-phone"></i>
+            <i class="icon mobile"></i>
             </a>
             <?php endif; ?>
             <?php if (have_rows('rs', 'options')) : ?>

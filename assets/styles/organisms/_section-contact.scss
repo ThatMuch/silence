@@ -65,7 +65,7 @@
 
         .col-textarea{
             fieldset{
-                min-height: 89%; 
+                min-height: 85.5%;
             }
         }
         .wpcf7-not-valid-tip {
@@ -73,7 +73,7 @@
             font-size: 14px;
             position: absolute;
             left: 4px;
-            background: #fff;
+            background: $color_light;
             display: abs;
             padding: 0 1rem;
             margin-top: 5px;
