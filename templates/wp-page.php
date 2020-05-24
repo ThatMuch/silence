@@ -9,8 +9,7 @@
 <?php get_header(); ?>
 <div class="container">
 
-<main id="page">
-
+<main id="page" class="<?php echo has_post_thumbnail() ? "" : "mt-header" ?>">
 <?php if (has_post_thumbnail()) : ?>
     <section class="page__header">
       <div class="page__header__content">
@@ -22,15 +21,28 @@
           <?php endif; ?>
         </div>
       </div>
-        <?php the_post_thumbnail('large'); ?>
+        <?php the_post_thumbnail('large');/* img */ ?>
     </section>
   <?php endif?>
 
   <section>
     <?php while (have_posts()) : the_post(); ?>
       <article>
+              			<!-- Header Section-->
+                    <div class="section__header mt-5 mb-5">
+			<div class="row">
+      <div class="col-sm-5 divider text-right">
         <h1><?php the_title(); ?></h1>
-        <?php the_content(); ?>
+        </div>
+				<div class="col-sm-7 d-flex align-items-center">
+        <div class="block-round"></div>
+        </div>
+			</div>
+		</div>
+    <!-- Header Section -->
+    <div class="content">
+      <?php the_content(); ?>
+    </div>
       </article>
     <?php endwhile; ?>
   </section>
