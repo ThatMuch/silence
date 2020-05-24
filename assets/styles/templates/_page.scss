@@ -28,6 +28,19 @@ main#page {
             }
         }
     }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .block-round {
+        max-height: 88px;
+    }
+
+    .content {
+        margin: 0 auto;
+        max-width: 1000px;
+    }
 }
 
 .site-content {

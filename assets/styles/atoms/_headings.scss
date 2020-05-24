@@ -12,20 +12,20 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     @include heading-size(6);
+
     text-transform: uppercase;
 
     @media screen and (max-width: 500px) {
-        font-size: 27px!important;
+        font-size: 27px !important;
     }
 
     @media screen and (max-width: 320px) {
-        font-size: 20px!important;
+        font-size: 20px !important;
     }
 }
 
 h2 {
-    @include heading-size(5);
-    font-size: 30px!important;
+    font-size: 25px;
 }
 
 h3 {
@@ -57,21 +57,22 @@ h6 {
     font-size: 17px;
 }
 
-.section__title{
+.section__title {
     margin-top: -1px;
-    font-size: 1.8vw!important;
+    font-size: 1.8vw !important;
 
     @media screen and (max-width: 991px) {
-        font-size: 19px!important;
+        font-size: 19px !important;
     }
 }
 
-.section__header__slogan{
-    font-size: 1.8vw!important;
+.section__header__slogan {
+    font-size: 1.8vw !important;
 
     @media screen and (max-width: 991px) {
-        font-size: 19px!important;
+        font-size: 19px !important;
     }
+
     // @media screen and (max-width: 791px) {
     //     font-size: 3vw!important;
     // }
