@@ -37,13 +37,12 @@ nav.navbar {
 
         @media screen and (max-width: 991px) {
             width: 6rem;
-        } 
-
+        }
     }
 
     @media screen and (max-width: 991px) {
-        .mr-5{
-            margin-right: 0rem!important;
+        .mr-5 {
+            margin-right: 0rem !important;
         }
     }
 
@@ -112,10 +111,15 @@ nav.navbar {
     }
 }
 
+
 .nav-item {
     a.nav-link {
         @media screen and (max-width: 991px) {
             font-size: 15px;
         }
     }
+}
+
+.dropdown-toggle::after {
+    border: none;
 }
