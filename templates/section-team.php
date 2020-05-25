@@ -42,7 +42,7 @@
                                  <!-- Image -->
                                  <?php if (get_the_post_thumbnail()) : ?>
                                     <div class="img__inner">
-                                        <img src="<?php the_post_thumbnail_url('medium')?>" alt="<?php the_title()?>">
+                                        <img src="<?php the_post_thumbnail_url()?>" alt="<?php the_title()?>">
                                     </div>
                                 <?php endif;?>
                                 <!-- Image -->

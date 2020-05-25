@@ -51,7 +51,7 @@
        <?php if ( get_sub_field('button') ) : $link = get_sub_field('button');?>
                 <div class="section-slider__btn">
                     <a class="btn btn-outline-primary" href="<?php echo  $link['url']; ?>" target="<?php echo $link['target'];?>">
-                        <?php echo  $link['title']; ?><i class="fas fa-download"></i>
+                        <?php echo  $link['title']; ?><i class="icon download"></i>
                     </a>
                 </div>
                 <?php endif; ?>

@@ -28,19 +28,17 @@ nav.navbar {
     background-color: #fff;
 
     .logo  {
-        width: 12rem;
+        width: 7rem;
         height: 3rem;
-
-        //margin-right: 2rem;
         background-repeat: no-repeat;
         background-size: contain;
 
-        @media screen and (max-width: 991px) {
-            width: 6rem;
+        @media screen and (max-width: 1199px) {
+            width: 5.5rem !important;
         }
     }
 
-    @media screen and (max-width: 991px) {
+    @media screen and (max-width: 1199px) {
         .mr-5 {
             margin-right: 0rem !important;
         }
@@ -60,9 +58,6 @@ nav.navbar {
         padding: 15px;
 
         .navbar-nav {
-            // display: flex;
-            // justify-content: space-around;
-            // height: 100%;
             position: absolute;
             transform: translateY(-50%);
             top: 50%;
@@ -74,6 +69,18 @@ nav.navbar {
     .container {
         justify-content: inherit;
         height: 100%;
+        
+        .btn-search{
+            @media screen and (max-width: 1065px) {
+                padding: 8px 45px!important;
+            }
+
+            span{
+                @media screen and (max-width: 1065px) {
+                    margin-right: 0!important; 
+                }
+            }
+        }
     }
 }
 
@@ -83,8 +90,11 @@ nav.navbar {
 }
 
 .nav.nav-tab {
-    justify-content: center;
     margin-bottom: $space-xl;
+
+    .nav-link {
+        padding-left: 0;
+    }
 }
 
 @include breakpoint(laptop) {
@@ -94,17 +104,21 @@ nav.navbar {
             color: $color_secondary;
             position: relative;
 
+            &:after {
+                content: '';
+                display: block;
+                width: 0;
+                height: 2px;
+                transition: width .5s;
+                background-color: $color-primary;
+                margin-left: 0;
+            }
+
             &.active, &:hover {
                 color: $color-primary !important;
 
                 &:after {
-                    content: '';
-                    position: absolute;
-                    height: 1px;
-                    width: 42px;
-                    left: 0;
-                    bottom: 0;
-                    background-color: $color-primary;
+                    width: 35px;
                 }
             }
         }

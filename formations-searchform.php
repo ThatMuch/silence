@@ -4,9 +4,8 @@
 
 $taxonomy = 'category';
 $terms = get_terms($taxonomy, array( 'parent' => 0, 'exclude' => 1 ) );
-$selectedCat = 3;
-$subTermsO = get_terms($taxonomy, array( 'parent' => 2 , 'exclude' => 1, 'hide_empty' => false ) );
-$subTermsP = get_terms($taxonomy, array( 'parent' => 3 , 'exclude' => 1, 'hide_empty' => false ) );
+$subTermsO = get_terms($taxonomy, array( 'parent' => 7 , 'exclude' => 1, 'hide_empty' => false ) );
+$subTermsP = get_terms($taxonomy, array( 'parent' => 11 , 'exclude' => 1, 'hide_empty' => false ) );
 $tags = get_tags(array('type' => 'formations', 'exclude' => 9));
 ?>
 
@@ -130,7 +129,6 @@ $tags = get_tags(array('type' => 'formations', 'exclude' => 9));
   var label = $('#subCat+.select-styled');
   var legend = $('#card-sub legend');
 
-  //select.val("0")
   if(value == 3) {
     toggleTagSelect()
     legend.html('Je désire')
