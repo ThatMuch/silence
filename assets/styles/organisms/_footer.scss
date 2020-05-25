@@ -31,6 +31,15 @@
             border: 3px solid $color-primary;
             background-color: #fff;
             border-radius: 100%;
+            transition-duration: $transition-fast;
+
+            &:hover {
+                background-color: $color-primary;
+
+                a {
+                    color: #fff !important;
+                }
+            }
 
             a {
                 color: $color_primary !important;
