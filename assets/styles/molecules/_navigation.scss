@@ -69,6 +69,18 @@ nav.navbar {
     .container {
         justify-content: inherit;
         height: 100%;
+        
+        .btn-search{
+            @media screen and (max-width: 1065px) {
+                padding: 8px 45px!important;
+            }
+
+            span{
+                @media screen and (max-width: 1065px) {
+                    margin-right: 0!important; 
+                }
+            }
+        }
     }
 }
 
