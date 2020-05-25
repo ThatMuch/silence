@@ -23,6 +23,7 @@ button, .btn {
         top: 0;
         margin: auto;
         line-height: 35px;
+        transition: all .5s ease-in-out;
     }
 
     span {
@@ -33,6 +34,10 @@ button, .btn {
         transition: $transition_fast;
         outline: 0 !important;
         box-shadow: none !important;
+
+        i {
+            right: .7rem;
+        }
     }
 }
 
