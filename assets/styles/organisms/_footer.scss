@@ -31,6 +31,15 @@
             border: 3px solid $color-primary;
             background-color: #fff;
             border-radius: 100%;
+            transition-duration: $transition-fast;
+
+            &:hover {
+                background-color: $color-primary;
+
+                a {
+                    color: #fff !important;
+                }
+            }
 
             a {
                 color: $color_primary !important;
@@ -44,14 +53,13 @@
 
     &__inner {
         font-size: 0.8rem;
-        display: flex;
-        align-items: center;
     }
 
     &__credits {
         background-color: $color_secondary-darker;
         color: $color_secondary;
-        text-align: center;
+
+        // text-align: center;
         padding: $space-xs;
         margin-top: 5rem;
 
@@ -67,6 +75,11 @@
             img {
                 width: 100px;
             }
+        }
+
+        .footer__inner {
+            display: flex;
+            align-items: center;
         }
     }
 
@@ -121,10 +134,21 @@
     .nav {
         padding: 0;
 
-        .nav-link {
-            color: $color_light;
+        a.nav-link {
+            color: $color_light !important;
+            opacity: .7;
             padding: 0 0 0.5rem 0;
             text-align: left;
+            transition-duration: .5s;
+
+            &:hover {
+                color: $color_light !important;
+                opacity: 1;
+            }
+
+            &:after {
+                display: none;
+            }
         }
     }
 }

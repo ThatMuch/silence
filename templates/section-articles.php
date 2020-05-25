@@ -70,7 +70,7 @@
                                                             <div class="card__back">
                                                                   <h3 class="card__back__title"><?php the_title(); ?></h3>
                                                                   <p class="card__back__text"><?php  the_excerpt(); ?></p>
-                                                                  <a href="<?php the_permalink() ?>" class="btn btn-outline-primary">Lire<i class="fa fa-chevron-right"></i></a>
+                                                                  <a href="<?php the_permalink() ?>" class="btn btn-outline-primary">Lire<i class="icon arrow-right"></i></a>
                                                             </div>
                                                       </div>
                                                 </div>

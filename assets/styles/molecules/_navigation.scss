@@ -34,7 +34,7 @@ nav.navbar {
         background-size: contain;
 
         @media screen and (max-width: 1199px) {
-            width: 5.5rem!important;
+            width: 5.5rem !important;
         }
     }
 
@@ -90,8 +90,11 @@ nav.navbar {
 }
 
 .nav.nav-tab {
-    justify-content: center;
     margin-bottom: $space-xl;
+
+    .nav-link {
+        padding-left: 0;
+    }
 }
 
 @include breakpoint(laptop) {
