@@ -28,10 +28,8 @@ nav.navbar {
     background-color: #fff;
 
     .logo  {
-        width: 12rem;
+        width: 7rem;
         height: 3rem;
-
-        //margin-right: 2rem;
         background-repeat: no-repeat;
         background-size: contain;
 
@@ -60,9 +58,6 @@ nav.navbar {
         padding: 15px;
 
         .navbar-nav {
-            // display: flex;
-            // justify-content: space-around;
-            // height: 100%;
             position: absolute;
             transform: translateY(-50%);
             top: 50%;

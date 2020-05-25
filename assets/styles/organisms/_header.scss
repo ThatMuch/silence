@@ -57,7 +57,9 @@ header, .mt-header {
     }
 
     &__title, &__title p {
-        font-size: 2em;
+        font-size: 40px;
+        line-height: 50px;
+        margin-bottom: 0;
     }
 
     &__slogan {
