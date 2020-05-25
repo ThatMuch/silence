@@ -29,7 +29,7 @@
   <?php endif?>
 
     <section class="container">
-      			<!-- Header Section-->
+      	<!-- Header Section-->
 			<div class=" section__header">
 			<?php if ( get_sub_field('title') ) : ?>
 				<p class="section__header__title text-left"><?php echo get_sub_field('title'); ?></p>
