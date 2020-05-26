@@ -1,6 +1,6 @@
 main#sections {
     .section-text {
-        h2 {
+        h2:not(.section__title) {
             color: $color_primary;
             font-size: 23px !important;
             margin-bottom: 15px !important;
