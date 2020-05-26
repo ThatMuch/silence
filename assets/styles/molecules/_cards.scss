@@ -160,6 +160,10 @@
     height: 360px;
     margin-bottom: 16px;
 
+    @media screen and (max-width: 767px) {
+        margin-bottom: 40px;
+    }
+
     .btn {
         display: inline-block;
         margin-top: 0;
