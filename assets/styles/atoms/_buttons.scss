@@ -42,7 +42,7 @@ button, .btn {
 }
 
 .btn.btn-primary {
-    border-width: 3px;
+    border-width: 2px;
     color: $color_light;
 
     .icon {
@@ -62,7 +62,7 @@ button, .btn {
 
 .btn.btn-outline-primary {
     background-color: #fff;
-    border-width: 3px;
+    border-width: 2px;
 
     &:hover, &:active, &:focus {
         color: #fff;

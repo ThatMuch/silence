@@ -13,6 +13,17 @@
         p {
             margin-bottom: 0;
         }
+
+        .form-control{
+            border-radius: 9px;
+        }   
+    }
+
+    .your-message{
+        textarea{
+            height: 95%;
+            resize: none;
+        }
     }
 
     .form-control {
@@ -65,8 +76,12 @@
 
         .col-textarea{
             fieldset{
-                min-height: 85.5%;
+                height: 85%;
             }
+            p{
+                height: 100%;
+            }
+
         }
         .wpcf7-not-valid-tip {
             color: red;

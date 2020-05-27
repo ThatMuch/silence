@@ -208,12 +208,20 @@ nav.navbar {
                 margin-left: 0;
             }
 
-            &.active, &:hover {
+            &:hover {
                 color: $color-primary !important;
-
                 &:after {
-                    width: 35px;
+                    width: 35px!important;
                 }
+            }
+        }
+    }
+
+    .active{
+        .nav-link {
+            color: $color-primary !important;
+            &:after {
+                width: 35px!important;
             }
         }
     }
@@ -231,3 +239,17 @@ nav.navbar {
 .dropdown-toggle::after {
     border: none !important;
 }
+
+
+.dropdown-toggle::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f107";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 700;
+    float: right;
+    margin-left: 5px;
+    font-size: 22px;
+    line-height: 23px;
+ }
