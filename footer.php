@@ -8,11 +8,11 @@
 	</div><!-- #content -->
     <footer class="footer">
       <div class="container">
-      <div class="footer__header row d-flex align-items-center mb-5">
+      <div class="footer__header row d-flex align-items-end mb-5">
       <div class="col-sm-10">
             <div class="block-round"></div>
           </div>
-          <div class="col-sm-2">
+          <div class="col-sm-2 footer__logo">
             <?php $footer_logo = get_theme_mod( 'footer-logo' );?>
             <img src="<?php echo $footer_logo ? $footer_logo : get_template_directory_uri()."/assets/images/stanlee_logo_texte.png" ?>" alt="" srcset="">
           </div>
