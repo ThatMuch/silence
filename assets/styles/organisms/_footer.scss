@@ -136,14 +136,15 @@
 
         a.nav-link {
             color: $color_light !important;
-            opacity: .7;
+            opacity: 1;
             padding: 0 0 0.5rem 0;
             text-align: left;
             transition-duration: .5s;
+            font-weight: 400;
 
             &:hover {
                 color: $color_light !important;
-                opacity: 1;
+                opacity: .7;
             }
 
             &:after {

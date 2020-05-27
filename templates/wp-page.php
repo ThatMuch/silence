@@ -31,10 +31,10 @@
               			<!-- Header Section-->
                     <div class="section__header mt-5 mb-5">
 			<div class="row">
-      <div class="col-sm-5 divider text-right">
+      <div class="col-sm-4 text-right">
         <h1><?php the_title(); ?></h1>
         </div>
-				<div class="col-sm-7 d-flex align-items-center">
+				<div class="col-sm-8 d-flex align-items-center divider">
         <div class="block-round"></div>
         </div>
 			</div>

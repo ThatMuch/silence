@@ -147,3 +147,10 @@ $(".close-search").click(function () {
   $(".site-content").css({height: "100%", display: "block"});
 
 })
+
+/* Form search */
+var select = $('#subCat');
+var label = $('#subCat+.select-styled');
+var legend = $('#card-sub legend');
+
+select.parent().addClass('disabled');

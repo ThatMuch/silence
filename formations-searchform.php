@@ -4,9 +4,12 @@
 
 $taxonomy = 'category';
 $terms = get_terms($taxonomy, array( 'parent' => 0, 'exclude' => 1 ) );
-$subTermsO = get_terms($taxonomy, array( 'parent' => 7 , 'exclude' => 1, 'hide_empty' => false ) );
-$subTermsP = get_terms($taxonomy, array( 'parent' => 11 , 'exclude' => 1, 'hide_empty' => false ) );
+$orgId = get_term_by("slug", "organisations", $taxonomy)->term_id;
+$partId= get_term_by("slug", "particulier", $taxonomy)->term_id;
+$subTermsO = get_terms($taxonomy, array( 'parent' => $orgId , 'exclude' => 1, 'hide_empty' => false ) );
+$subTermsP = get_terms($taxonomy, array( 'parent' => $partId , 'exclude' => 1, 'hide_empty' => false ) );
 $tags = get_tags(array('type' => 'formations', 'exclude' => 9));
+
 ?>
 
 <div class="search p-5">
@@ -36,9 +39,9 @@ $tags = get_tags(array('type' => 'formations', 'exclude' => 9));
 <div class="card-search__dropdown">
   <div class="select-container">
     <select name="cat" id="cat">
-      <option value="0" disabled>Selectionner</option>
+      <option value="" disabled>Selectionner</option>
         <?php foreach ( $terms as $term ) { ?>
-          <option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?></option>
+          <option value="<?php echo $term->slug; ?>"><?php echo $term->name; ?></option>
         <?php } ?>
     </select>
   </div>
@@ -55,8 +58,8 @@ $tags = get_tags(array('type' => 'formations', 'exclude' => 9));
     </div>
 <div class="card-search__dropdown">
   <div class="select-container">
-    <select name="category__in" id="subCat" >
-      <option value="0"><?php _e( 'Selectionner', 'textdomain' ); ?></option>
+    <select name="category__in" id="subCat" disabled="disabled" >
+      <option value=""><?php _e( 'Selectionner', 'textdomain' ); ?></option>
     </select>
   </div>
 </div>
@@ -73,7 +76,7 @@ $tags = get_tags(array('type' => 'formations', 'exclude' => 9));
 <div class="card-search__dropdown">
   <div class="select-container">
     <select name="tag_id" id="tag">
-            <option value="0"><?php _e( 'Selectionner', 'textdomain' ); ?></option>
+            <option value=""><?php _e( 'Selectionner', 'textdomain' ); ?></option>
             <?php foreach ( $tags as $tag ) { ?>
               <option value="<?php echo $tag->term_id; ?>"><?php echo $tag->name; ?></option>
               <?php } ?>
@@ -96,6 +99,7 @@ $tags = get_tags(array('type' => 'formations', 'exclude' => 9));
   var subTermsO = <?php echo json_encode($subTermsO); ?>;
   var subTermsP = <?php echo json_encode($subTermsP); ?>;
 
+
   function updateOptions(select, optionsArray) {
     select.children('option').slice(1).remove()
     // Ajouter les options
@@ -107,15 +111,16 @@ $tags = get_tags(array('type' => 'formations', 'exclude' => 9));
         })
       );
     })
-
+    select.parent().removeClass('disabled');
+    select.prop('disabled', false)
     generateListItems(select, select.siblings('.select-options'))
   }
 
   function toggleTagSelect() {
-    var tag = $('#cat').val() == 3
+    var cat = $('#cat').val() == "particulier"
 
-    $('#tag').prop('disabled', tag)
-    if(tag) {
+    $('#tag').prop('disabled', cat)
+    if(cat) {
       $('#tag').parent().addClass('disabled')
     } else {
       $('#tag').parent().removeClass('disabled')
@@ -125,11 +130,7 @@ $tags = get_tags(array('type' => 'formations', 'exclude' => 9));
 
  $('#cat').on('change', function(e) {
   var value = e.target.value;
-  var select = $('#subCat');
-  var label = $('#subCat+.select-styled');
-  var legend = $('#card-sub legend');
-
-  if(value == 3) {
+  if(value == "particulier") {
     toggleTagSelect()
     legend.html('Je désire')
     // Réinitialiser label du select
@@ -146,4 +147,6 @@ $tags = get_tags(array('type' => 'formations', 'exclude' => 9));
     updateOptions(select, subTermsO)
   }
  });
+
+
 </script>
