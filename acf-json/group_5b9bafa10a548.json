@@ -934,6 +934,30 @@
                             "allow_null": 0,
                             "multiple": 0,
                             "disable": ""
+                        },
+                        {
+                            "key": "field_5ece80173f936",
+                            "label": "Background",
+                            "name": "background",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
                         }
                     ],
                     "min": "",
@@ -1037,5 +1061,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1589888868
+    "modified": 1590591020
 }

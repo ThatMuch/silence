@@ -63,6 +63,7 @@
         display: flex;
         flex-direction: column;
         box-sizing: border-box;
+        overflow: hidden;
 
         &__title {
             font-weight: bold;
