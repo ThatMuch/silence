@@ -12,6 +12,7 @@
     border: 0 !important;
     perspective: 1000px;
     border-radius: $border-radius;
+
     // margin-bottom: $space-lg;
     margin-bottom: 3.5em;
 
@@ -177,6 +178,8 @@
     fieldset {
         padding: 1rem 0 0 !important;
         border-color: $color-secondary !important;
+        height: 325px;
+        overflow: hidden;
     }
 
     legend {
@@ -188,11 +191,18 @@
         width: 80px;
     }
 
+    &__icon {
+        height: 166px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     &__dropdown {
         background-color: $color-grey;
         width: 100%;
         padding: 0 0 1rem;
-        height: 100px;
+        height: 115px;
         border-radius: 0 0 $border-radius $border-radius;
     }
 }

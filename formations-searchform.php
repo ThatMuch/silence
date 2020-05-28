@@ -16,12 +16,12 @@ $tags = get_tags(array('type' => 'formations', 'exclude' => 9));
 <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" id="formations-searchform">
   <div class="container h-100 position-relative">
     <div class="search__header">
-			  <div class="row">
+			  <div class="row align-items-center">
           <div class="col-sm-4">
             <h2 class="search__header__slogan text-left">Recherche avancée</h2>
           </div>
           <div class="col-sm-8 divider">
-            <div class="block-round"></div>
+            <div class="block-round l-2"></div>
           </div>
       </div>
       </div>
@@ -33,7 +33,7 @@ $tags = get_tags(array('type' => 'formations', 'exclude' => 9));
     <legend>
       Je suis
     </legend>
-    <div class="p-5">
+    <div class="p-5 card-search__icon">
       <img src="<?php echo get_template_directory_uri()?>/assets/images/user-2.svg" alt="">
     </div>
 <div class="card-search__dropdown">
@@ -53,8 +53,8 @@ $tags = get_tags(array('type' => 'formations', 'exclude' => 9));
     <legend>
      Je cherche
     </legend>
-    <div class="p-5">
-      <img src="<?php echo get_template_directory_uri()?>/assets/images/user-2.svg" alt="">
+    <div class="p-5 card-search__icon">
+      <img src="<?php echo get_template_directory_uri()?>/assets/images/search_B.svg" alt="">
     </div>
 <div class="card-search__dropdown">
   <div class="select-container">
@@ -70,8 +70,8 @@ $tags = get_tags(array('type' => 'formations', 'exclude' => 9));
     <legend>
       Je désire
     </legend>
-    <div class="p-5">
-      <img src="<?php echo get_template_directory_uri()?>/assets/images/user-2.svg" alt="">
+    <div class="p-5 card-search__icon">
+      <img src="<?php echo get_template_directory_uri()?>/assets/images/screen.svg" alt="">
     </div>
 <div class="card-search__dropdown">
   <div class="select-container">
