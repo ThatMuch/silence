@@ -16,7 +16,11 @@
     background-size: 15px;
 }
 
-.divider{
+.block-round.l-2 {
+    height: 30px;
+}
+
+.divider {
     @media screen and (max-width: 575px) {
         height: 30px;
         margin-bottom: 1rem;
