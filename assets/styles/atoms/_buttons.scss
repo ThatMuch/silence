@@ -22,6 +22,8 @@ button, .btn {
         bottom: 0;
         top: 0;
         margin: auto;
+        line-height: 35px;
+        transition: all .5s ease-in-out;
     }
 
     span {
@@ -32,11 +34,15 @@ button, .btn {
         transition: $transition_fast;
         outline: 0 !important;
         box-shadow: none !important;
+
+        i {
+            right: .7rem;
+        }
     }
 }
 
 .btn.btn-primary {
-    border-width: 3px;
+    border-width: 2px;
     color: $color_light;
 
     .icon {
@@ -56,7 +62,7 @@ button, .btn {
 
 .btn.btn-outline-primary {
     background-color: #fff;
-    border-width: 3px;
+    border-width: 2px;
 
     &:hover, &:active, &:focus {
         color: #fff;
@@ -75,7 +81,7 @@ button, .btn {
     padding: 0 !important;
     position: fixed;
     right: 30px;
-    top: 30px;
+    top: 20px;
     box-shadow: $shadow;
     z-index: 201;
     background-color: #fff !important;
@@ -83,7 +89,7 @@ button, .btn {
     justify-content: center;
     align-items: center;
     transition: all .5s ease-in-out;
-    z-index: 999;
+    z-index: 280;
 
     @include breakpoint(laptop) {
         display: none;
@@ -153,6 +159,7 @@ button, .btn {
         width: 64px;
         border-radius: 100% !important;
         padding: 0 !important;
+        z-index: 280;
 
         i {
             position: relative;

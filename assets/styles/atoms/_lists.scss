@@ -5,9 +5,14 @@
  * @since       silence_1.0.0.0
  *
  */
-ul {
+ul, ol {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+ol {
     li {
-        //
-   
+        font-weight: 700;
+        color: $color-primary;
     }
 }

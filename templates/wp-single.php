@@ -31,7 +31,6 @@
   <?php endif?>
 <section class="content container">
     <article>
-    <h1 class="page__header__title "><?php the_title(); ?></h1>
       <?php the_content(); ?>
     </article>
 </section>

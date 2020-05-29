@@ -46,6 +46,8 @@
 
             h1{
 
+
+               p{
                 @include breakpoint(tablet) {
                     font-size: 33px;
                     line-height: 45px;
@@ -56,16 +58,42 @@
                     line-height: 50px;
                 }
 
-              
-               p{
                    margin-bottom: 0;
                }
             }
         }
     }
-    .slick-active h1 {
-        -webkit-animation: fadeInDown 1s both 1s;
-        animation: fadeInDown 1s both 1s;
+    .slick-active  section{
+        -webkit-animation: fadeInDownt .5s ease forwards;
+        animation: fadeInDown .5s ease forwards;
     }
+
+    .slick-active h1 p {
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        animation-name: fadeInDown;
+    }
+
+    .slick-active h1 p:nth-of-type(1) {
+        -webkit-animation-delay: 0.20s;
+        animation-delay: 0.20s;
+    }  
+
+    .slick-active h1 p:nth-of-type(2) {
+        -webkit-animation-delay: 0.90s;
+        animation-delay: 0.90s;
+    }  
+
+    .slick-active h1 p:nth-of-type(3) {
+        -webkit-animation-delay: 1.60s;
+        animation-delay: 1.60s;
+    } 
+
+    .slick-active h1 p:nth-of-type(4) {
+        -webkit-animation-delay: 2.20s;
+        animation-delay: 2.20s;
+    } 
 }
 

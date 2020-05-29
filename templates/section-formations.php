@@ -44,6 +44,11 @@ $subCat = get_categories( array('child_of' => $cat, 'orderby' => 'name', 'hide_e
 			</a>
 			</li>
 		<?php } ?>
+		<li class="nav-item">
+		<a class="nav-link" id="pills-contact-tab" data-toggle="pill" data-target="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="true">
+				Conseil sur mesure
+			</a>
+		</li>
 		</ul>
 		<!-- Tab Content -->
 		<div class="tab-content" id="pills-tabContent">
@@ -118,6 +123,12 @@ $subCat = get_categories( array('child_of' => $cat, 'orderby' => 'name', 'hide_e
 				</div>
 				</div>
 			<?php endforeach; ?>
+			<div class="tab-pane fade " id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+				<?php if( get_sub_field('conseil_sur_mesure') ) : ?>
+					<?php echo get_sub_field('conseil_sur_mesure'); ?>
+				<?php endif; ?>
+
+		</div>
 		</div>
 	</div>
 </section>

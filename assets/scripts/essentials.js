@@ -104,6 +104,7 @@ $('select').each(function(){
   $this.wrap('<div class="select"></div>');
   $this.after('<div class="select-styled"></div>');
 
+
   var $styledSelect = $this.next('div.select-styled');
   $styledSelect.text($this.children('option').eq(0).text());
 
@@ -115,6 +116,7 @@ $('select').each(function(){
   generateListItems($this, $list)
 
   $styledSelect.click(function(e) {
+    console.log("toto");
     if($this.is(':enabled')) {
       e.stopPropagation();
       $('div.select-styled.active').not(this).each(function(){
@@ -147,3 +149,10 @@ $(".close-search").click(function () {
   $(".site-content").css({height: "100%", display: "block"});
 
 })
+
+/* Form search */
+var select = $('#subCat');
+var label = $('#subCat+.select-styled');
+var legend = $('#card-sub legend');
+
+select.parent().addClass('disabled');

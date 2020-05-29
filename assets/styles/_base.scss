@@ -53,7 +53,6 @@ main {
     //     margin-top: $header_height;
     // }
 
-
     article,
     .element {
         padding: 1rem 0;
@@ -97,4 +96,12 @@ footer .inner {
     font-weight: 400;
     color: $color-secondary;
     margin-bottom: 2rem;
+}
+
+p{
+    line-height: 28px;
+}
+
+strong {
+    font-weight: bold!important;
 }

@@ -1,0 +1,19 @@
+blockquote {
+    text-align: center;
+    color: $color_primary;
+    font-family: $text-quote;
+    font-size: 1.5rem;
+    margin: 5rem auto  !important;
+    width: 80%;
+    font-weight: 700;
+
+    p {
+        line-height: 1.8;
+    }
+
+    cite {
+        font-family: $text-ff;
+        font-style: italic;
+        font-weight: 300;
+    }
+}

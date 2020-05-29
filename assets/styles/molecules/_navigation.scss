@@ -9,117 +9,202 @@
   NAV
 ==================================================================================*/
 nav.navbar.menu {
-    display: none;
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-
-    @include breakpoint(laptop) {
-        display: block;
-    }
-}
-
-nav.navbar {
     position: fixed;
     top: 0;
     left: 0;
     z-index: 210;
     width: 100vw;
-    height: $header_height;
     justify-content: inherit;
     background-color: #fff;
+    display: none;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    padding-top: 2rem;
+    height: 100vh;
 
-    .logo  {
-        width: 12rem;
-        height: 3rem;
-
-        //margin-right: 2rem;
-        background-repeat: no-repeat;
-        background-size: contain;
-
-        @media screen and (max-width: 991px) {
-            width: 6rem;
-        }
+    @include breakpoint(laptop) {
+        display: block;
+        height: $header_height;
+        padding-top: .5rem;
     }
 
-    @media screen and (max-width: 991px) {
-        .mr-5 {
-            margin-right: 0rem !important;
-        }
-    }
 
-    a {
-        color: $color-secondary-darker;
-    }
-
-    .navbar-collapse.show {
-        background-color: #fff;
-        width: 100vw;
-        height: 100vh;
-        position: absolute;
-        left: 0;
-        top: $header_height;
-        padding: 15px;
-
-        .navbar-nav {
-            // display: flex;
-            // justify-content: space-around;
-            // height: 100%;
-            position: absolute;
-            transform: translateY(-50%);
-            top: 50%;
-            left: 10px;
-            right: 10px;
+    .btn-search {
+        &__text {
+            margin-right: 0;
         }
     }
 
     .container {
-        justify-content: inherit;
+        max-width: 100%;
         height: 100%;
+
+        @media screen and (min-width: 1150px) {
+            max-width: 86%;
+        }
     }
-}
 
-.navbar-brand {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-}
+    .footer__rs {
+        position: absolute;
+        display: inline-block;
+        right: 0;
+        top: 35px;
+        left: 0;
+        text-align: center;
 
-.nav.nav-tab {
-    justify-content: center;
-    margin-bottom: $space-xl;
-}
-
-@include breakpoint(laptop) {
-    .nav-item {
-        a.nav-link {
-            text-transform: uppercase;
-            color: $color_secondary;
+        @include breakpoint(laptop) {
             position: relative;
+            top: inherit;
+        }
+    }
 
-            &.active, &:hover {
-                color: $color-primary !important;
+    .navbar-brand {
+        padding-top: 0;
+        padding-bottom: 0;
+        position: absolute;
+        top: 25px;
 
-                &:after {
-                    content: '';
-                    position: absolute;
-                    height: 1px;
-                    width: 42px;
-                    left: 0;
-                    bottom: 0;
-                    background-color: $color-primary;
+        @include breakpoint(laptop) {
+            position: relative;
+            top: inherit;
+        }
+
+
+        .logo  {
+            width: 5.5rem;
+            height: 3rem;
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            @include breakpoint(laptop) {
+                width: 7rem;
+            }
+        }
+    }
+
+    .navbar-collapse {
+        padding: 15px;
+
+        @include breakpoint(laptop) {
+            padding: inherit;
+        }
+
+
+        .navbar-nav {
+            margin: auto;
+
+            .nav-item {
+                .nav-link {
+                    text-transform: uppercase;
+                    color: $color-secondary-darker;
+                    font-size: 21px;
+                    position: relative;
+
+                    @include breakpoint(laptop) {
+                        font-size: 1rem;
+                    }
+
+
+                    &:after {
+                        content: '';
+                        display: block;
+                        width: 0;
+                        height: 2px;
+                        transition: width .5s;
+                        background-color: $color-primary;
+                        margin-left: 0;
+                    }
+
+                    &:hover {
+                        color: $color-primary !important;
+
+                        &:after {
+                            width: 35px !important;
+                        }
+                    }
+                }
+
+                &.active {
+                    .dropdown-toggle::before {
+                        background-image: url("./images/chevron-down.svg");
+                    }
+
+                    .nav-link {
+                        color: $color-primary !important;
+
+                        &:after {
+                            width: 0;
+
+                            @include breakpoint(laptop) {
+                                width: 35px !important;
+                            }
+                        }
+                    }
                 }
             }
         }
     }
 }
 
+.dropdown-toggle {
+    padding-right: 20px !important;
 
-.nav-item {
-    a.nav-link {
-        @media screen and (max-width: 991px) {
-            font-size: 15px;
-        }
+    &:after {
+        border: none !important;
+    }
+
+    &:before {
+        content: "";
+        background-image: url("./images/chevron-downDark.svg");
+        height: 20px;
+        width: 20px;
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 0;
+    }
+
+    &:hover:before {
+        background-image: url("./images/chevron-down.svg");
     }
 }
 
-.dropdown-toggle::after {
-    border: none !important;
+.nav.nav-tab {
+    margin-bottom: $space-xl;
+    justify-content: center;
+
+    .nav-item {
+        .nav-link {
+            padding-left: 0;
+
+            &:after {
+                content: '';
+                display: block;
+                width: 0;
+                height: 2px;
+                transition: width .5s;
+                background-color: $color-primary;
+                margin-left: 0;
+            }
+
+            &:hover {
+                color: $color-primary !important;
+
+                &:after {
+                    width: 35px !important;
+                }
+            }
+
+            &.active {
+                color: $color-primary !important;
+
+                &:after {
+                    @include breakpoint(laptop) {
+                        width: 35px !important;
+                    }
+                }
+            }
+        }
+    }
 }
