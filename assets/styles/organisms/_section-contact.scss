@@ -20,8 +20,12 @@
 
     .your-message {
         textarea {
-            height: 94%;
+            height: 92%;
             resize: none;
+
+            @include breakpoint(laptop) {
+                height: 94%;
+            }
         }
     }
 
