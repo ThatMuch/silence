@@ -55,6 +55,7 @@ nav.navbar.menu {
 
         @include breakpoint(laptop) {
             position: relative;
+            margin-left: 2rem;
             top: inherit;
         }
     }
