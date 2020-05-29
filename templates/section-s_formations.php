@@ -90,8 +90,12 @@
 											<?php if ( get_field('desc') ) : ?>
 												<p class="card__back__text"><?php echo get_field('desc'); ?></p>
 											<?php endif; ?>
-											<a class="btn btn-primary mt-auto">Nous contacter<i class="icon arrow-right"></i></a>
-											<a class="btn btn-outline-primary">Télécharger la brochure<i class="icon download"></i></a>
+											<?php if ( get_field('contact') ) : ?>
+												<a class="btn btn-primary mt-auto" href="<?php echo get_field('contact'); ?>">Nous contacter <i class="icon arrow-right"></i></a>
+											<?php endif; ?>
+											<?php if ( get_field('brochure') ) : ?>
+												<a href="<?php the_field('brochure'); ?>" >Télécharger la brochure<i class="icon download"></a>
+											<?php endif; ?>
 										</div>
 									</div>
 									</div>
