@@ -57,13 +57,36 @@ header, .mt-header {
     }
 
     &__title, &__title p {
-        font-size: 40px;
-        line-height: 50px;
         margin-bottom: 0;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-name: fadeInDown;
+        animation-name: fadeInDown;
+        -webkit-animation-delay: .9s;
+        animation-delay: .9s;
+
+
+        @include breakpoint(tablet) {
+            font-size: 33px;
+            line-height: 45px;
+        }
+
+        @include breakpoint(laptop) {
+            font-size: 40px;
+            line-height: 50px;
+        }
     }
 
     &__slogan {
         max-width: 50%;
+        padding: 0 2.5rem;
+
+        @media screen and (max-width: 600px) {
+            max-width: 100%;
+            padding: 0;
+         } 
     }
 
     img {

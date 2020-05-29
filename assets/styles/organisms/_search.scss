@@ -2,22 +2,40 @@
     display: none;
     background-color: #fff;
     position: fixed;
-    top: $header-height;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    height: calc(100vh - #{$header-height});
+    // height: calc(100vh - #{$header-height});
     width: 100vw;
-    z-index: 205;
+    z-index: 290;
+
+    @media screen and (max-width: 770px) {
+        overflow: scroll;
+    }
+
+    h2{
+        @media screen and (max-width: 660px) {
+            font-size: 20px;
+        }
+    }
 
     .d-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 15px;
+
+        @media screen and (max-width: 770px) {
+            display: block;
+        }
     }
 
     &__header {
         margin-bottom: $space-xl;
+        
+        @media screen and (max-width: 660px) {
+            margin-bottom: 0.25em;
+        }
 
         &__title {
             font-weight: 300;

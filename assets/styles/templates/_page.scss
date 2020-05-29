@@ -43,6 +43,13 @@ main#page {
     }
 }
 
+main#post {
+    article {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+}
+
 .site-content {
     width: 100vw;
 }

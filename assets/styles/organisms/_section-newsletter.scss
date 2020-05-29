@@ -1,4 +1,6 @@
 .section-newsletter {
+    padding: 3rem!important;
+
     h2{
         color: $color_light;
         text-transform: uppercase;
@@ -17,6 +19,15 @@
             font-size: 19px!important;
             margin-bottom: 0;
         }
+
+        p{
+            line-height: 45px;
+
+
+            @media screen and (max-width: 500px) {
+                line-height: 30px;
+            }
+        }
     }
 
     form{
@@ -26,13 +37,14 @@
         vertical-align: middle;
         display: flex;
         max-width: 720px;
-        margin: 2.5rem auto 0px;
+        margin: 2.5rem auto 0;
         justify-content: flex-end; 
         position: relative;
 
         @media screen and (max-width: 500px) {
             display: block;
             background-color: inherit;
+            margin: 1.5rem auto 0;
         }
     
         p{

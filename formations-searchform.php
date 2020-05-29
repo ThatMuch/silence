@@ -4,21 +4,24 @@
 
 $taxonomy = 'category';
 $terms = get_terms($taxonomy, array( 'parent' => 0, 'exclude' => 1 ) );
-$subTermsO = get_terms($taxonomy, array( 'parent' => 7 , 'exclude' => 1, 'hide_empty' => false ) );
-$subTermsP = get_terms($taxonomy, array( 'parent' => 11 , 'exclude' => 1, 'hide_empty' => false ) );
+$orgId = get_term_by("slug", "organisations", $taxonomy)->term_id;
+$partId= get_term_by("slug", "particulier", $taxonomy)->term_id;
+$subTermsO = get_terms($taxonomy, array( 'parent' => $orgId , 'exclude' => 1, 'hide_empty' => false ) );
+$subTermsP = get_terms($taxonomy, array( 'parent' => $partId , 'exclude' => 1, 'hide_empty' => false ) );
 $tags = get_tags(array('type' => 'formations', 'exclude' => 9));
+
 ?>
 
 <div class="search p-5">
 <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" id="formations-searchform">
   <div class="container h-100 position-relative">
     <div class="search__header">
-			  <div class="row">
+			  <div class="row align-items-center">
           <div class="col-sm-4">
             <h2 class="search__header__slogan text-left">Recherche avancée</h2>
           </div>
           <div class="col-sm-8 divider">
-            <div class="block-round"></div>
+            <div class="block-round l-2"></div>
           </div>
       </div>
       </div>
@@ -30,15 +33,15 @@ $tags = get_tags(array('type' => 'formations', 'exclude' => 9));
     <legend>
       Je suis
     </legend>
-    <div class="p-5">
+    <div class="p-5 card-search__icon">
       <img src="<?php echo get_template_directory_uri()?>/assets/images/user-2.svg" alt="">
     </div>
 <div class="card-search__dropdown">
   <div class="select-container">
     <select name="cat" id="cat">
-      <option value="0" disabled>Selectionner</option>
+      <option value="" disabled>Selectionner</option>
         <?php foreach ( $terms as $term ) { ?>
-          <option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?></option>
+          <option value="<?php echo $term->slug; ?>"><?php echo $term->name; ?></option>
         <?php } ?>
     </select>
   </div>
@@ -50,13 +53,13 @@ $tags = get_tags(array('type' => 'formations', 'exclude' => 9));
     <legend>
      Je cherche
     </legend>
-    <div class="p-5">
-      <img src="<?php echo get_template_directory_uri()?>/assets/images/user-2.svg" alt="">
+    <div class="p-5 card-search__icon">
+      <img src="<?php echo get_template_directory_uri()?>/assets/images/search_B.svg" alt="">
     </div>
 <div class="card-search__dropdown">
   <div class="select-container">
-    <select name="category__in" id="subCat" >
-      <option value="0"><?php _e( 'Selectionner', 'textdomain' ); ?></option>
+    <select name="category__in" id="subCat" disabled="disabled" >
+      <option value=""><?php _e( 'Selectionner', 'textdomain' ); ?></option>
     </select>
   </div>
 </div>
@@ -67,13 +70,13 @@ $tags = get_tags(array('type' => 'formations', 'exclude' => 9));
     <legend>
       Je désire
     </legend>
-    <div class="p-5">
-      <img src="<?php echo get_template_directory_uri()?>/assets/images/user-2.svg" alt="">
+    <div class="p-5 card-search__icon">
+      <img src="<?php echo get_template_directory_uri()?>/assets/images/screen.svg" alt="">
     </div>
 <div class="card-search__dropdown">
   <div class="select-container">
     <select name="tag_id" id="tag">
-            <option value="0"><?php _e( 'Selectionner', 'textdomain' ); ?></option>
+            <option value=""><?php _e( 'Selectionner', 'textdomain' ); ?></option>
             <?php foreach ( $tags as $tag ) { ?>
               <option value="<?php echo $tag->term_id; ?>"><?php echo $tag->name; ?></option>
               <?php } ?>
@@ -96,6 +99,7 @@ $tags = get_tags(array('type' => 'formations', 'exclude' => 9));
   var subTermsO = <?php echo json_encode($subTermsO); ?>;
   var subTermsP = <?php echo json_encode($subTermsP); ?>;
 
+
   function updateOptions(select, optionsArray) {
     select.children('option').slice(1).remove()
     // Ajouter les options
@@ -107,15 +111,16 @@ $tags = get_tags(array('type' => 'formations', 'exclude' => 9));
         })
       );
     })
-
+    select.parent().removeClass('disabled');
+    select.prop('disabled', false)
     generateListItems(select, select.siblings('.select-options'))
   }
 
   function toggleTagSelect() {
-    var tag = $('#cat').val() == 3
+    var cat = $('#cat').val() == "particulier"
 
-    $('#tag').prop('disabled', tag)
-    if(tag) {
+    $('#tag').prop('disabled', cat)
+    if(cat) {
       $('#tag').parent().addClass('disabled')
     } else {
       $('#tag').parent().removeClass('disabled')
@@ -125,11 +130,7 @@ $tags = get_tags(array('type' => 'formations', 'exclude' => 9));
 
  $('#cat').on('change', function(e) {
   var value = e.target.value;
-  var select = $('#subCat');
-  var label = $('#subCat+.select-styled');
-  var legend = $('#card-sub legend');
-
-  if(value == 3) {
+  if(value == "particulier") {
     toggleTagSelect()
     legend.html('Je désire')
     // Réinitialiser label du select
@@ -146,4 +147,6 @@ $tags = get_tags(array('type' => 'formations', 'exclude' => 9));
     updateOptions(select, subTermsO)
   }
  });
+
+
 </script>

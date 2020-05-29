@@ -17,6 +17,10 @@
         .article_content {
             padding-right: 70px !important;
             padding-left: inherit !important;
+
+            @media screen and (max-width: 575px) {    
+                 padding: 15px!important;
+            }
         }
     }
 
@@ -25,10 +29,29 @@
         justify-content: center;
         flex-direction: column;
         padding-left: 70px !important;
+
+        @media screen and (max-width: 575px) {    
+            padding-left: inherit !important;
+            padding: 15px!important;
+       }
+
+       h2 {
+          @media screen and (max-width: 660px) {    
+                font-size: 1.5rem;
+          }
+       }
     }
 
     .btn {
         display: block;
         margin-right: auto;
+    }
+}
+
+.blog{
+    .divider{
+        @media screen and (max-width: 575px) {
+           display: none;
+        }   
     }
 }
