@@ -68,7 +68,7 @@
                                               <!-- Facebook -->
                                               <?php if (get_sub_field('facebook') ) : ?>
 
-                                                  <a href="<?php the_sub_field('facebook');?>" class="btn btn-icon">
+                                                  <a target="_blank" href="<?php the_sub_field('facebook');?>" class="btn btn-icon">
                                                   Facebook
                                                       <i class="fab fa-facebook" aria-hidden="true"></i>
                                                   </a>
@@ -78,7 +78,7 @@
                                               <!-- Twitter -->
                                               <?php if (get_sub_field('twitter') ) : ?>
 
-                                                  <a href="<?php the_sub_field('twitter');?>" class="btn btn-icon btn-outline-primary">
+                                                  <a target="_blank" href="<?php the_sub_field('twitter');?>" class="btn btn-icon btn-outline-primary">
                                                   Twitter
                                                   <i class="fab fa-twitter" aria-hidden="true"></i>
                                                   </a>
@@ -88,7 +88,7 @@
                                               <!-- Linkedin -->
                                               <?php if (get_sub_field('linkedin') ) : ?>
 
-                                                  <a href="<?php the_sub_field('linkedin');?>" class="btn btn-icon btn-outline-primary">
+                                                  <a target="_blank" href="<?php the_sub_field('linkedin');?>" class="btn btn-icon btn-outline-primary">
                                                   Linkedin
                                                   <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                                                   </a>
@@ -98,23 +98,13 @@
                                               <!-- Instagram -->
                                               <?php if (get_sub_field('instagram') ) : ?>
 
-                                                  <a href="<?php the_sub_field('instagram');?>" class="btn btn-outline-primary btn-icon">
+                                                  <a target="_blank" href="<?php the_sub_field('instagram');?>" class="btn btn-outline-primary btn-icon">
                                                   Instagram
                                                   <i class="fab fa-instagram" aria-hidden="true"></i>
                                                   </a>
 
                                               <?php endif; ?>
                                               <!-- Instagram -->
-                                              <!-- Google + -->
-                                              <?php if (get_sub_field('google') ) : ?>
-
-                                                  <a href="<?php the_sub_field('google');?>" class="btn btn-outline-primary btn-icon">
-                                                  Google +
-                                                  <i class="fab fa-google-plus-g" aria-hidden="true"></i>
-                                                  </a>
-
-                                              <?php endif; ?>
-                                              <!-- Google + -->
                                       <?php endwhile; ?>
                                           </div>
                                   <?php endif; ?>

@@ -30,46 +30,46 @@
     <div class="logo" style="background-image: url('<?php if($image[0]): echo $image[0]; else: echo get_template_directory_uri()?>/assets/images/stanlee_logo_texte.png<?php endif; ?>')"></div>
   </a>
   <?php if (have_rows('rs', 'options')) : ?>
-            <ul class="footer__rs ">
+            <ul class="footer__rs mr-5">
               <?php while ( have_rows('rs', 'options') ) : the_row(); ?>
                 <?php if (get_sub_field('facebook') ) : ?>
                     <li class="footer__rs__item">
-                      <a href="<?php the_sub_field('facebook');?>">
+                      <a target="_blank" href="<?php the_sub_field('facebook');?>">
                         <i class="fab fa-facebook-f" aria-hidden="true"></i>
                       </a>
                     </li>
                   <?php endif; ?>
                 <?php if (get_sub_field('twitter') ) : ?>
                     <li class="footer__rs__item">
-                      <a href="<?php the_sub_field('twitter');?>">
+                      <a target="_blank" href="<?php the_sub_field('twitter');?>">
                         <i class="fab fa-twitter" aria-hidden="true"></i>
                       </a>
                     </li>
                   <?php endif; ?>
                 <?php if (get_sub_field('instagram') ) : ?>
                     <li class="footer__rs__item">
-                      <a href="<?php the_sub_field('instagram');?>">
+                      <a target="_blank" href="<?php the_sub_field('instagram');?>">
                         <i class="fab fa-instagram" aria-hidden="true"></i>
                       </a>
                     </li>
                   <?php endif; ?>
                 <?php if (get_sub_field('google') ) : ?>
                     <li class="footer__rs__item">
-                      <a href="<?php the_sub_field('google');?>">
+                      <a target="_blank" href="<?php the_sub_field('google');?>">
                         <i class="fab fa-google" aria-hidden="true"></i>
                       </a>
                     </li>
                   <?php endif; ?>
                 <?php if (get_sub_field('linkedin') ) : ?>
                     <li class="footer__rs__item">
-                      <a href="<?php the_sub_field('linkedin');?>">
+                      <a target="_blank" href="<?php the_sub_field('linkedin');?>">
                         <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                       </a>
                     </li>
                   <?php endif; ?>
                 <?php if (get_sub_field('youtube') ) : ?>
                     <li class="footer__rs__item">
-                      <a href="<?php the_sub_field('youtube');?>">
+                      <a target="_blank" href="<?php the_sub_field('youtube');?>">
                         <i class="fab fa-youtube" aria-hidden="true"></i>
                       </a>
                     </li>
@@ -120,6 +120,6 @@
 					?>
     </h1>
   </header>
-<?php endif; ?>
+<? endif; ?>
 <!-- HEADER -->
     <div id="content" class="site-content">
