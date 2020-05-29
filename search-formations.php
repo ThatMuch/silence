@@ -82,7 +82,7 @@
                </div><!-- content -->
             </div><!-- contentarea -->
             <div class="d-flex justify-content-center mt-3 mb-5">
-                <a href="http://" class="btn btn-outline-primary ">Découvrez d'autres formations ou coaching <i class="icon arrow-right"></i></a>
+                <a href="<?php echo site_url()?>/<?php echo $cat?>" class="btn btn-outline-primary ">Découvrez d'autres formations ou coaching <i class="icon arrow-right"></i></a>
             </div>
         </div>
 
