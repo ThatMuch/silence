@@ -14,19 +14,21 @@
  <section class="section section-text">
  <div class="container">
 
-                      			<!-- Header Section-->
+                            <!-- Header Section-->
+                            <?php if(get_sub_field('title') ) : ?>
                                   <div class="section__header mt-5 mb-5">
 			<div class="row">
       <div class="col-sm-5 ">
-      <?php if(get_sub_field('title') ) : ?>
+
             <h2 class="section__title text-uppercase"><?php echo get_sub_field('title'); ?></h2>
-        <?php endif; ?>
+
         </div>
 				<div class="col-sm-7 d-flex align-items-center divider">
         <div class="block-round"></div>
         </div>
 			</div>
-		</div>
+    </div>
+    <?php endif; ?>
     <!-- Header Section -->
         <!-- Texte -->
         <?php if(get_sub_field('text') ) : ?>

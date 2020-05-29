@@ -1,10 +1,11 @@
 .section-contact {
+    padding-top: 5rem !important;
+
     fieldset {
         padding: 0.35em 0.75em 0.625em !important;
         margin-bottom: $space-md;
+        padding: 0.35em 0.75em 0.9em !important;
 
-        padding: .35em 0.75em 0.9em!important;
-    
         legend {
             letter-spacing: 2px !important;
             font-size: 12px !important;
@@ -14,15 +15,19 @@
             margin-bottom: 0;
         }
 
-        .form-control{
+        .form-control {
             border-radius: 9px;
-        }   
+        }
     }
 
-    .your-message{
-        textarea{
-            height: 95%;
+    .your-message {
+        textarea {
+            height: 92%;
             resize: none;
+
+            @include breakpoint(laptop) {
+                height: 94%;
+            }
         }
     }
 
@@ -61,10 +66,10 @@
             width: 90%;
         }
 
-        .wpcf7{
+
+        .wpcf7 {
             width: 100%;
         }
-
 
         label {
             width: 100%;
@@ -74,15 +79,16 @@
             width: 100%;
         }
 
-        .col-textarea{
-            fieldset{
-                height: 85%;
-            }
-            p{
-                height: 100%;
+        .col-textarea {
+            fieldset {
+                height: 86%;
             }
 
+            p {
+                height: 100%;
+            }
         }
+
         .wpcf7-not-valid-tip {
             color: red;
             font-size: 14px;
