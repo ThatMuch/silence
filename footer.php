@@ -22,7 +22,7 @@
         <div class="footer__contact col-sm-3">
             <?php if ( get_field('phone','options') ) : ?>
             <h4 class="mb-3">Contactez nous</h4>
-            <a target="_blank" href="tel:<?php echo get_field('phone','options'); ?>" class="btn btn-outline-primary mb-3">
+            <a target="_blank" href="tel:<?php echo get_field('phone','options'); ?>" class="btn btn-outline-primary btn-icon mb-3">
               <?php echo get_field('phone','options'); ?>
             <i class="icon mobile"></i>
             </a>

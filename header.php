@@ -90,7 +90,7 @@
         ) );
         ?>
     </div>
-    <button  class="ml-auto btn btn-primary btn-search d-none d-md-block">
+    <button  class="ml-auto btn btn-primary btn-search btn-icon d-none d-md-block">
   <span class="btn-search__text">Formation et coaching</span>
   <i class="icon search-wen"></i></button>
   </div>
@@ -99,7 +99,7 @@
 <button class="navbar-toggler btn-menu collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'theme-textdomain' ); ?>">
   <span class="btn-menu__burger"></span>
 </button>
-<button  class="ml-auto btn btn-primary btn-search d-md-none d-block">
+<button  class="ml-auto btn btn-primary btn-search btn-icon d-md-none d-block">
   <span class="btn-search__text">Formation et coaching</span>
   <i class="icon search-wen"></i> </button>
 <!-- SEARCH -->

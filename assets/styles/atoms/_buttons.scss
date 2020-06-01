@@ -6,8 +6,8 @@
  *
  */
 //
-button, .btn {
-    padding: 8px 50px !important;
+button.btn, a.btn {
+    padding: 8px 50px;
     transition: 0,2s;
     display: inline-block;
     position: relative;
@@ -39,6 +39,10 @@ button, .btn {
             right: .7rem;
         }
     }
+}
+
+button.btn-icon, a.btn-icon {
+    padding-left: 30px;
 }
 
 .btn.btn-primary {
