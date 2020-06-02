@@ -17,7 +17,9 @@ button.btn, a.btn {
     font-weight: 300 !important;
 
     i {
-        position: absolute;
+        // position: absolute;
+        display: inline-block;
+        vertical-align: middle;
         right: 1rem;
         bottom: 0;
         top: 0;
@@ -150,7 +152,8 @@ button.btn-icon, a.btn-icon {
         display: none;
 
         @include breakpoint(laptop) {
-            display: block;
+            display: inline-block;
+            vertical-align: middle;
         }
     }
 
