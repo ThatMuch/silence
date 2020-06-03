@@ -120,7 +120,7 @@
 					?>
     </h1>
   </header>
-<? endif; ?>
+<?php endif; ?>
 
 <a class="button_call">
 <i class="icon mobile"></i>
