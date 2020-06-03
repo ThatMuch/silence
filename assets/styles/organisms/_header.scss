@@ -17,7 +17,7 @@ header, .mt-header {
     position: fixed;
     bottom: 20px;
     right: 30px;
-    background-color: #fff;
+    background-color: #d8ac4d;
     width: 55px;
     height: 55px;
     z-index: 9;
@@ -25,6 +25,20 @@ header, .mt-header {
     border-radius: 50%;
     border: 2px solid #d8ac4d;
     padding: 10px;
+    transition: 0.2s;
+
+    i{
+        -webkit-filter: grayscale(100%) brightness(200%);
+        filter: grayscale(100%) brightness(200%);
+    }
+}
+
+.button_call:hover{
+    background-color: #fff;
+    i{
+        -webkit-filter: inherit;
+        filter: inherit;
+    }
 }
 
 .page__header {
