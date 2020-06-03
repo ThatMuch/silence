@@ -156,3 +156,23 @@ var label = $('#subCat+.select-styled');
 var legend = $('#card-sub legend');
 
 select.parent().addClass('disabled');
+
+
+
+
+/* Button call scroll bottom */
+$('.button_call').click(function () {
+    $('html, body').animate({scrollTop:$(document).height()}, 'slow');
+    return false;
+});
+           
+
+$(window).on("scroll", function() {
+	var scrollHeight = $(document).height();
+	var scrollPosition = $(window).height() + $(window).scrollTop();
+	if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
+    $('.button_call').css('display','none');
+	}else{
+    $('.button_call').css('display','block');
+  }
+});

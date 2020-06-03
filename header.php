@@ -30,7 +30,7 @@
     <div class="logo" style="background-image: url('<?php if($image[0]): echo $image[0]; else: echo get_template_directory_uri()?>/assets/images/stanlee_logo_texte.png<?php endif; ?>')"></div>
   </a>
   <?php if (have_rows('rs', 'options')) : ?>
-            <ul class="footer__rs mr-5">
+            <ul class="footer__rs">
               <?php while ( have_rows('rs', 'options') ) : the_row(); ?>
                 <?php if (get_sub_field('facebook') ) : ?>
                     <li class="footer__rs__item">
@@ -121,5 +121,11 @@
     </h1>
   </header>
 <? endif; ?>
+
+<a class="button_call">
+<i class="icon mobile"></i>
+</a>
+
+
 <!-- HEADER -->
     <div id="content" class="site-content">
