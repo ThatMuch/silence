@@ -7,7 +7,7 @@
  */
 //
 button.btn, a.btn {
-    padding: 5px 35px;
+    padding: 8px 50px;
     transition: 0,2s;
     display: inline-block;
     position: relative;
@@ -15,13 +15,14 @@ button.btn, a.btn {
     font-size: .8rem !important;
     text-transform: uppercase;
     font-weight: 300 !important;
+    transition: 0,2s;
 
-    @media screen and (max-width: 1090px) {
-        padding: 5px 20px;
-    }
+    /*   @media screen and (max-width: 1090px) {
+          padding: 5px 20px;
+      } */
 
     i {
-        // position: absolute;
+        position: absolute;
         display: inline-block;
         vertical-align: middle;
         right: 1rem;
@@ -47,9 +48,9 @@ button.btn, a.btn {
     }
 }
 
-// button.btn-icon, a.btn-icon {
-//     padding-left: 30px;
-// }
+button.btn-icon, a.btn-icon {
+    padding-left: 30px;
+}
 
 .btn.btn-primary {
     border-width: 2px;
