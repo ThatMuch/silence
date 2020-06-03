@@ -80,6 +80,20 @@ button.btn-icon, a.btn-icon {
     }
 }
 
+.btn.btn-link {
+    color: $color-primary;
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    padding: 0;
+    width: auto;
+    margin-bottom: 2rem;
+
+    &:focus, &:active {
+        text-decoration: none;
+    }
+}
+
 .btn-menu {
     height: 64px;
     width: 64px;

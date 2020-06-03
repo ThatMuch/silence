@@ -156,3 +156,13 @@ var label = $('#subCat+.select-styled');
 var legend = $('#card-sub legend');
 
 select.parent().addClass('disabled');
+
+$(".showMore").click(function(){
+  var $this = $(this);
+  $this.prev().toggleClass('full');
+  if ($this.text() === "lire +") {
+    $this.text('lire -')
+  } else {
+    $this.text('lire +')
+  }
+})

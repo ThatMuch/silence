@@ -35,7 +35,7 @@
                   'post_type' => 'team'
                   );
               $the_query = new WP_Query($args);
-              if ($the_query->have_posts() ): ?>
+              if ($the_query->have_posts() ): $i = 0 ?>
                       <?php  while ( $the_query->have_posts() ): $the_query->the_post(); ?>
                           <div class="row section-team__member">
                           <div class="col-sm-4 section-team__member__img">
@@ -58,7 +58,10 @@
                                   <!-- Job -->
                                   <!-- Description -->
                                   <?php if (get_field('description') ) : ?>
-                                      <p class="section-team__member__desc"> <?php echo get_field('description'); ?></p>
+                                      <div  class="section-team__member__desc"> <?php echo get_field('description'); ?></div>
+                                    <?php if (intval(strlen(get_field('description'))) > 538) : ?>
+                                      <button  class="btn btn-link showMore">lire +</button>
+                                      <?php endif; ?>
                                   <?php endif; ?>
                                   <!-- Description -->
                                   <!-- Social medias -->
@@ -105,7 +108,7 @@
 
                                               <?php endif; ?>
                                               <!-- Instagram -->
-                                      <?php endwhile; ?>
+                                      <?php $i++; endwhile; ?>
                                           </div>
                                   <?php endif; ?>
                                   <!-- Social media -->
