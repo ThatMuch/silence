@@ -76,6 +76,11 @@
         &__text {
             text-align: justify;
         }
+
+        p{
+            font-size: 18px;
+            text-align: justify;
+        }
     }
 
     &__title {
@@ -94,6 +99,10 @@
     width: 350px;
     background-color: transparent !important;
 
+    @media screen and (max-width: 500px) {
+        height: 410px;
+    }
+
     .btn {
         display: block;
         margin-top: 1rem;
@@ -102,7 +111,7 @@
     &__category {
         position: absolute;
         color: #fff;
-        width: 145px;
+        width: 200px;
         font-size: 12px;
         top: 1rem;
         left: 0;

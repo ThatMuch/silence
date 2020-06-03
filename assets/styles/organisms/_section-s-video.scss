@@ -1,22 +1,25 @@
-.section-accueil{
+.section-accueil {
     height: 600px;
     overflow: hidden;
 
-    &-video{
+    h1 p {
+        color: black;
+    }
+
+    &-video {
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
         object-fit: cover;
         position: absolute;
-        width: 125%;
+        width: 100%;
         z-index: -1;
-        transform: rotateY(3.142rad);
+        // transform: rotateY(3.142rad);
         height: 600px;
     }
 
-    &-background{
-
+    &-background {
         top: 0;
         right: 0;
         bottom: 0;
@@ -26,7 +29,7 @@
         width: 100%;
         height: 100%;
 
-        img{
+        img {
             width: 100%;
             height: 100%;
             -o-object-fit: cover;
@@ -35,35 +38,34 @@
         }
     }
 
-
-
     .container {
-        top: 50%; 
+        top: 50%;
         transform: translateY(-50%);
 
-        section{
+        section {
             max-width: 700px;
 
-            h1{
+            h1 {
+                p {
+                    @include breakpoint(tablet) {
+                        font-size: 33px;
+                        line-height: 45px;
+                    }
 
 
-               p{
-                @include breakpoint(tablet) {
-                    font-size: 33px;
-                    line-height: 45px;
+                    @include breakpoint(laptop) {
+                        font-size: 40px;
+                        line-height: 50px;
+                    }
+
+
+                    margin-bottom: 0;
                 }
-
-                @include breakpoint(laptop) {
-                    font-size: 40px;
-                    line-height: 50px;
-                }
-
-                   margin-bottom: 0;
-               }
             }
         }
     }
-    .slick-active  section{
+
+    .slick-active section {
         -webkit-animation: fadeInDownt .5s ease forwards;
         animation: fadeInDown .5s ease forwards;
     }
@@ -79,21 +81,20 @@
     .slick-active h1 p:nth-of-type(1) {
         -webkit-animation-delay: 0.20s;
         animation-delay: 0.20s;
-    }  
+    }
 
     .slick-active h1 p:nth-of-type(2) {
         -webkit-animation-delay: 0.90s;
         animation-delay: 0.90s;
-    }  
+    }
 
     .slick-active h1 p:nth-of-type(3) {
         -webkit-animation-delay: 1.60s;
         animation-delay: 1.60s;
-    } 
+    }
 
     .slick-active h1 p:nth-of-type(4) {
         -webkit-animation-delay: 2.20s;
         animation-delay: 2.20s;
-    } 
+    }
 }
-

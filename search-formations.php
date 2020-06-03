@@ -68,7 +68,7 @@
                                                <?php if ( get_field('desc') ) : ?>
                                                    <p class="card__back__text"><?php echo get_field('desc'); ?></p>
                                                <?php endif; ?>
-                                               <a class="btn btn-primary mt-auto">Nous contacter<i class="icon arrow-right"></i></a>
+                                               <a class="btn btn-primary mt-auto btn-icon">Nous contacter<i class="icon arrow-right"></i></a>
                                                <a class="btn btn-outline-primary btn-icon">Télécharger la brochure<i class="icon download"></i></a>
                                            </div>
                                        </div>
@@ -82,7 +82,7 @@
                </div><!-- content -->
             </div><!-- contentarea -->
             <div class="d-flex justify-content-center mt-3 mb-5">
-                <a href="<?php echo site_url()?>/<?php echo $cat?>" class="btn btn-outline-primary ">Découvrez d'autres formations ou coaching <i class="icon arrow-right"></i></a>
+                <a target="_blank" href="<?php echo site_url()?>/<?php echo $cat?>" class="btn btn-outline-primary ">Découvrez d'autres formations ou coaching <i class="icon arrow-right"></i></a>
             </div>
         </div>
 

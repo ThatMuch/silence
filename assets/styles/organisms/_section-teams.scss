@@ -12,6 +12,33 @@
         }
 
 
+        &__desc {
+            position: relative;
+            height: 228px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            transition-duration: 1s;
+
+            &:after {
+                content: "";
+                text-align: right;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 70%;
+                height: 28px;
+                background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+            }
+
+            &.full {
+                height: auto;
+
+                &:after {
+                    display: none;
+                }
+            }
+        }
+
         &__job {
             font-weight: 300 !important;
             text-transform: uppercase;

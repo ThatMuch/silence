@@ -6,8 +6,8 @@
 	$('.slider-fade').slick({
 		autoplay: true,
 		infinite: true,
-		autoplaySpeed:10000,
-        speed:600,
+		autoplaySpeed:8000,
+    speed:600,
 		fade: !0,
 		cssEase: 'linear',
 		arrows: false,
