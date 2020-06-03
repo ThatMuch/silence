@@ -7,7 +7,7 @@
  */
 //
 button.btn, a.btn {
-    padding: 8px 50px;
+    padding: 5px 35px;
     transition: 0,2s;
     display: inline-block;
     position: relative;
@@ -15,6 +15,10 @@ button.btn, a.btn {
     font-size: .8rem !important;
     text-transform: uppercase;
     font-weight: 300 !important;
+
+    @media screen and (max-width: 1090px) {
+        padding: 5px 20px;
+    }
 
     i {
         // position: absolute;
@@ -43,9 +47,9 @@ button.btn, a.btn {
     }
 }
 
-button.btn-icon, a.btn-icon {
-    padding-left: 30px;
-}
+// button.btn-icon, a.btn-icon {
+//     padding-left: 30px;
+// }
 
 .btn.btn-primary {
     border-width: 2px;

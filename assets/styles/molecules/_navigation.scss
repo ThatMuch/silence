@@ -58,6 +58,10 @@ nav.navbar.menu {
             margin-left: 2rem;
             top: inherit;
         }
+
+        @media screen and (max-width: 1090px) {
+            margin-left: 1rem;
+        }
     }
 
     .navbar-brand {
