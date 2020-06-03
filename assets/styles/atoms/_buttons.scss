@@ -17,10 +17,6 @@ button.btn, a.btn {
     font-weight: 300 !important;
     transition: 0,2s;
 
-    /*   @media screen and (max-width: 1090px) {
-          padding: 5px 20px;
-      } */
-
     i {
         position: absolute;
         display: inline-block;
@@ -182,7 +178,7 @@ button.btn-icon, a.btn-icon {
 }
 
 .btn-close {
-    position: absolute;
+    position: absolute !important;
     right: -60px;
     top: 5px;
 
