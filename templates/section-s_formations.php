@@ -91,10 +91,10 @@
 												<p class="card__back__text"><?php echo get_field('desc'); ?></p>
 											<?php endif; ?>
 											<?php if ( get_field('contact') ) : ?>
-												<a class="btn btn-primary mt-auto btn-icon" href="<?php echo get_field('contact'); ?>">Nous contacter <i class="icon arrow-right"></i></a>
+												<a class="btn btn-primary mt-auto btn-icon" href="<?php echo site_url()?>/contact">Nous contacter <i class="icon arrow-right"></i></a>
 											<?php endif; ?>
 											<?php if ( get_field('brochure') ) : ?>
-												<a href="<?php the_field('brochure'); ?>" >Télécharger la brochure<i class="icon download"></a>
+											 <a href="<?php  the_field('brochure'); ?>" target="_blank" >Télécharger la brochure<i class="icon download"></i></a>
 											<?php endif; ?>
 										</div>
 									</div>
@@ -114,7 +114,7 @@ if( $link ):
     $link_title = $link['title'];
 ?>
 <div class="container-button">
-	<a class="btn btn-primary mt-auto btn-icon" href="<?php echo esc_url( $link_url ); ?>"><i class="icon search-wen"></i><?php echo esc_html( $link_title ); ?></a>
+	<a class="btn btn-primary mt-auto btn-icon" href="<?php echo esc_url( $link_url ); ?>"><?php echo esc_html( $link_title ); ?> <i class="icon search-wen"></i></a>
 </div>
 <?php endif; ?>
 </div>

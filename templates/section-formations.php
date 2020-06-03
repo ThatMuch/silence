@@ -107,8 +107,10 @@ $subCat = get_categories( array('child_of' => $cat, 'orderby' => 'name', 'hide_e
 											<?php if ( get_field('desc') ) : ?>
 												<p class="card__back__text"><?php echo get_field('desc'); ?></p>
 											<?php endif; ?>
-											<a class="btn btn-primary mt-auto btn-icon">Nous contacter<i class="icon arrow-right"></i></a>
-											<a class="btn btn-outline-primary btn-icon">Télécharger la brochure<i class="icon download"></i></a>
+											<a href="<?php echo site_url()?>/contact" class="btn btn-primary mt-auto btn-icon">Nous contacter<i class="icon arrow-right"></i></a>
+											<?php if ( get_field('brochure') ) : ?>
+											 <a href="<?php  the_field('brochure'); ?>" target="_blank" >Télécharger la brochure<i class="icon download"></i></a>
+											<?php endif; ?>
 										</div>
 									</div>
 
