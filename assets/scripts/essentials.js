@@ -166,3 +166,22 @@ $(".showMore").click(function(){
     $this.text('lire +')
   }
 })
+
+
+
+/* Button call scroll bottom */
+$('.button_call').click(function () {
+    $('html, body').animate({scrollTop:$(document).height()}, 'slow');
+    return false;
+});
+
+
+$(window).on("scroll", function() {
+	var scrollHeight = $(document).height();
+	var scrollPosition = $(window).height() + $(window).scrollTop();
+	if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
+    $('.button_call').css('display','none');
+	}else{
+    $('.button_call').css('display','block');
+  }
+});

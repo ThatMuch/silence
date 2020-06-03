@@ -61,7 +61,7 @@
                                       <div  class="section-team__member__desc"> <?php echo get_field('description'); ?></div>
                                     <?php if (intval(strlen(get_field('description'))) > 538) : ?>
                                       <button  class="btn btn-link showMore">lire +</button>
-                                      <?php endif; ?>
+                                    <?php endif; ?>
                                   <?php endif; ?>
                                   <!-- Description -->
                                   <!-- Social medias -->
