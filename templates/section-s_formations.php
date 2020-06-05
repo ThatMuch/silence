@@ -86,7 +86,7 @@
 												<a class="btn btn-primary mt-auto btn-icon" href="<?php echo site_url()?>/contact">Nous contacter <i class="icon arrow-right"></i></a>
 
 											<?php if ( get_field('brochure') ) : ?>
-											 <a href="<?php  the_field('brochure'); ?>" target="_blank" >Télécharger la brochure<i class="icon download"></i></a>
+											 <a href="<?php  the_field('brochure'); ?>" target="_blank" class="btn btn-outline-primary mt-auto btn-icon" >Télécharger la brochure<i class="icon download"></i></a>
 											<?php endif; ?>
 										</div>
 									</div>
