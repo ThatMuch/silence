@@ -87,4 +87,11 @@ function my_mce_before_init_insert_formats( $init_array ) {
   }
   // Attach callback to 'tiny_mce_before_init'
   add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );
+  add_filter('use_block_editor_for_post_type', 'prefix_disable_gutenberg', 10, 2);
+function prefix_disable_gutenberg($current_status, $post_type)
+{
+    // Use your post type key instead of 'product'
+    if ($post_type === 'formations') return false;
+    return $current_status;
+}
 
