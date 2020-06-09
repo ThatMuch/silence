@@ -112,17 +112,35 @@ $subCat = get_categories( array('child_of' => $cat, 'orderby' => 'name', 'hide_e
 							</div>
 				<?php
 						endwhile;
-					endif;
+					else: ?>
+					<p class="text-center w-100">Aucune formation</p>
+					<?php endif;
 					wp_reset_query();
 				?>
 				</div>
 				</div>
 			<?php endforeach; ?>
 			<div class="tab-pane fade " id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-				<?php if( get_sub_field('conseil_sur_mesure') ) : ?>
-					<?php echo get_sub_field('conseil_sur_mesure'); ?>
-				<?php endif; ?>
+			<div class="col-sm-4 d-flex justify-content-center">
+			<div class="card-training card">
+									<div class="card__inner">
+										<div class="card__front">
+											<div class="img__inner"><img src="<?php the_post_thumbnail_url();?>" alt="<?php the_title()?>" /></div>
 
+											<div class="content-center-verticale">
+												<h3 class="card__title">Nos conseils sur mesure</h3>
+											</div>
+										</div>
+										<div class="card__back ">
+											<h3 class="card__back__title">Nos conseils sur mesure</h3>
+
+												<p class="card__back__text">Les séances de coaching individuel “Gagner confiance à l’oral” sont destinées aux personnes souhaitant mieux gérer leurs peurs, leurs appréhensions, leurs émotions et leur stress à l’oral. Vous acquérez ainsi un solide socle d’outils techniques pour réussir vos prises de parole.
+Vous déterminez le nombre de séances nécessaires et choisissez les thèmes de chacune de vos séances de coaching parmi la liste proposée dans le document à télécharger.</p>
+<button  class="btn btn-link showMore">lire +</button>
+
+											<a href="<?php echo site_url()?>/contact" class="btn btn-primary mt-auto btn-icon">Nous contacter<i class="icon arrow-right"></i></a>
+				</div>
+										</div>
 		</div>
 		</div>
 	</div>
