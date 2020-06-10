@@ -23,7 +23,6 @@
             <h1 class="page__header__title "><?php the_title(); ?></h1>
           <?php endif; ?>
           <div class="page__header-post__info"><?php echo get_the_date_stanlee(); ?></div>
-          <a href="" class="btn btn-primary page__header-post__btn">Partager</a>
         </div>
       </div>
         <?php the_post_thumbnail('large'); ?>
