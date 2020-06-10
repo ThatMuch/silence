@@ -83,7 +83,7 @@
 												<p class="card__back__text"><?php echo get_field('desc'); ?></p>
 											<?php endif; ?>
 
-												<a class="btn btn-primary mt-auto btn-icon" href="<?php echo site_url()?>/contact">Nous contacter <i class="icon arrow-right"></i></a>
+												<a class="btn btn-primary mt-auto btn-icon mb-2" href="<?php echo site_url()?>/contact">Nous contacter <i class="icon arrow-right"></i></a>
 
 											<?php if ( get_field('brochure') ) : ?>
 											 <a href="<?php  the_field('brochure'); ?>" target="_blank" class="btn btn-outline-primary mt-auto btn-icon" >Télécharger la brochure<i class="icon download"></i></a>
