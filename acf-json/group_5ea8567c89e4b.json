@@ -115,6 +115,25 @@
                     "maxlength": ""
                 }
             ]
+        },
+        {
+            "key": "field_5ed7f605c9595",
+            "label": "Brochure",
+            "name": "brochure",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
         }
     ],
     "location": [
@@ -137,5 +156,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1588090900
+    "modified": 1591212927
 }

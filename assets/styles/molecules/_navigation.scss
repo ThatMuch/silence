@@ -55,7 +55,12 @@ nav.navbar.menu {
 
         @include breakpoint(laptop) {
             position: relative;
+            margin-left: 2rem;
             top: inherit;
+        }
+
+        @media screen and (max-width: 1090px) {
+            margin-left: 1rem;
         }
     }
 
@@ -177,6 +182,7 @@ nav.navbar.menu {
     .nav-item {
         .nav-link {
             padding-left: 0;
+            padding-right: 2.5rem;
 
             &:after {
                 content: '';

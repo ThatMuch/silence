@@ -6,14 +6,16 @@
  *
  */
 
+.form-control:focus {
+    background-color: #f2f2f2 !important;
+}
 
- .form-control:focus{
-    background-color: #f2f2f2!important;
-} 
-
-.your-message{
-    
-    input{
+.your-message {
+    input {
         height: 100%;
     }
+}
+
+.wpcf7-checkbox.form-control {
+    display: none;
 }

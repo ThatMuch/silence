@@ -65,16 +65,8 @@
 												<ul>
 												<?php while ( have_rows( 'details' ) ) : the_row(); ?>
 												<li>
-													<img src="<?php echo get_template_directory_uri(); ?>/assets/images/ordi.svg" />
-													<span><?php the_sub_field( 'time_present' ); ?></span>
-												</li>
-												<li>
 													<img src="<?php echo get_template_directory_uri(); ?>/assets/images/clock.svg" />
 													<span><?php the_sub_field( 'time_remot' ); ?></span>
-												</li>
-												<li>
-													<img src="<?php echo get_template_directory_uri(); ?>/assets/images/pin.svg" />
-													<span><?php the_sub_field( 'location' ); ?></span>
 												</li>
 												<li>
 													<img src="<?php echo get_template_directory_uri(); ?>/assets/images/user.svg" />
@@ -90,8 +82,12 @@
 											<?php if ( get_field('desc') ) : ?>
 												<p class="card__back__text"><?php echo get_field('desc'); ?></p>
 											<?php endif; ?>
-											<a class="btn btn-primary mt-auto">Nous contacter<i class="icon arrow-right"></i></a>
-											<a class="btn btn-outline-primary">Télécharger la brochure<i class="icon download"></i></a>
+
+												<a class="btn btn-primary mt-auto btn-icon mb-2" href="<?php echo site_url()?>/contact">Nous contacter <i class="icon arrow-right"></i></a>
+
+											<?php if ( get_field('brochure') ) : ?>
+											 <a href="<?php  the_field('brochure'); ?>" target="_blank" class="btn btn-outline-primary mt-auto btn-icon" >Télécharger la brochure<i class="icon download"></i></a>
+											<?php endif; ?>
 										</div>
 									</div>
 									</div>
@@ -110,7 +106,7 @@ if( $link ):
     $link_title = $link['title'];
 ?>
 <div class="container-button">
-	<a class="btn btn-primary mt-auto" href="<?php echo esc_url( $link_url ); ?>"><i class="icon search-wen"></i><?php echo esc_html( $link_title ); ?></a>
+	<a class="btn btn-primary mt-auto btn-icon" href="<?php echo esc_url( $link_url ); ?>"><?php echo esc_html( $link_title ); ?> <i class="icon search-wen"></i></a>
 </div>
 <?php endif; ?>
 </div>

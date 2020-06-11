@@ -144,7 +144,7 @@ register_post_type( "testimonials", $args );
 		"rewrite" => [ "slug" => "formations", "with_front" => true ],
 		"query_var" => true,
 		"menu_icon" => "dashicons-groups",
-		"supports" => [ "title", "editor", "thumbnail"],
+		"supports" => [ "title", "thumbnail"],
 		"taxonomies" => [ "category",'post_tag' ],
 	];
 

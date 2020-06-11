@@ -76,6 +76,11 @@
         &__text {
             text-align: justify;
         }
+
+        p {
+            font-size: 18px;
+            text-align: justify;
+        }
     }
 
     &__title {
@@ -94,6 +99,10 @@
     width: 350px;
     background-color: transparent !important;
 
+    @media screen and (max-width: 500px) {
+        height: 410px;
+    }
+
     .btn {
         display: block;
         margin-top: 1rem;
@@ -102,7 +111,7 @@
     &__category {
         position: absolute;
         color: #fff;
-        width: 145px;
+        width: 200px;
         font-size: 12px;
         top: 1rem;
         left: 0;
@@ -124,7 +133,7 @@
         ul {
             width: 100%;
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             margin: 10px 0;
             padding: 10px 30px;
 
@@ -134,6 +143,10 @@
 
             li {
                 list-style: none;
+
+                &:not(:last-child) {
+                    margin-right: 15px;
+                }
 
                 img {
                     width: 30px;
@@ -153,6 +166,34 @@
                     }
                 }
             }
+        }
+    }
+}
+
+.card__back__text {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    transition-duration: 1s;
+
+    &:after {
+        content: "";
+        text-align: right;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 70%;
+        height: 28px;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+    }
+
+    &.full {
+        height: auto;
+        overflow: scroll;
+
+        &:after {
+            display: none;
         }
     }
 }

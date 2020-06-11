@@ -35,7 +35,7 @@
                   'post_type' => 'team'
                   );
               $the_query = new WP_Query($args);
-              if ($the_query->have_posts() ): ?>
+              if ($the_query->have_posts() ): $i = 0 ?>
                       <?php  while ( $the_query->have_posts() ): $the_query->the_post(); ?>
                           <div class="row section-team__member">
                           <div class="col-sm-4 section-team__member__img">
@@ -58,7 +58,10 @@
                                   <!-- Job -->
                                   <!-- Description -->
                                   <?php if (get_field('description') ) : ?>
-                                      <p class="section-team__member__desc"> <?php echo get_field('description'); ?></p>
+                                      <div  class="section-team__member__desc"> <?php echo get_field('description'); ?></div>
+                                    <?php if (intval(strlen(get_field('description'))) > 538) : ?>
+                                      <button  class="btn btn-link showMore">lire +</button>
+                                    <?php endif; ?>
                                   <?php endif; ?>
                                   <!-- Description -->
                                   <!-- Social medias -->
@@ -68,7 +71,7 @@
                                               <!-- Facebook -->
                                               <?php if (get_sub_field('facebook') ) : ?>
 
-                                                  <a href="<?php the_sub_field('facebook');?>" class="btn btn-icon">
+                                                  <a target="_blank" href="<?php the_sub_field('facebook');?>" class="btn btn-icon">
                                                   Facebook
                                                       <i class="fab fa-facebook" aria-hidden="true"></i>
                                                   </a>
@@ -78,7 +81,7 @@
                                               <!-- Twitter -->
                                               <?php if (get_sub_field('twitter') ) : ?>
 
-                                                  <a href="<?php the_sub_field('twitter');?>" class="btn btn-icon btn-outline-primary">
+                                                  <a target="_blank" href="<?php the_sub_field('twitter');?>" class="btn btn-icon btn-outline-primary">
                                                   Twitter
                                                   <i class="fab fa-twitter" aria-hidden="true"></i>
                                                   </a>
@@ -88,7 +91,7 @@
                                               <!-- Linkedin -->
                                               <?php if (get_sub_field('linkedin') ) : ?>
 
-                                                  <a href="<?php the_sub_field('linkedin');?>" class="btn btn-icon btn-outline-primary">
+                                                  <a target="_blank" href="<?php the_sub_field('linkedin');?>" class="btn btn-icon btn-outline-primary">
                                                   Linkedin
                                                   <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                                                   </a>
@@ -98,24 +101,14 @@
                                               <!-- Instagram -->
                                               <?php if (get_sub_field('instagram') ) : ?>
 
-                                                  <a href="<?php the_sub_field('instagram');?>" class="btn btn-outline-primary btn-icon">
+                                                  <a target="_blank" href="<?php the_sub_field('instagram');?>" class="btn btn-outline-primary btn-icon">
                                                   Instagram
                                                   <i class="fab fa-instagram" aria-hidden="true"></i>
                                                   </a>
 
                                               <?php endif; ?>
                                               <!-- Instagram -->
-                                              <!-- Google + -->
-                                              <?php if (get_sub_field('google') ) : ?>
-
-                                                  <a href="<?php the_sub_field('google');?>" class="btn btn-outline-primary btn-icon">
-                                                  Google +
-                                                  <i class="fab fa-google-plus-g" aria-hidden="true"></i>
-                                                  </a>
-
-                                              <?php endif; ?>
-                                              <!-- Google + -->
-                                      <?php endwhile; ?>
+                                      <?php $i++; endwhile; ?>
                                           </div>
                                   <?php endif; ?>
                                   <!-- Social media -->

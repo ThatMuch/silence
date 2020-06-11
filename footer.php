@@ -22,7 +22,7 @@
         <div class="footer__contact col-sm-3">
             <?php if ( get_field('phone','options') ) : ?>
             <h4 class="mb-3">Contactez nous</h4>
-            <a  href="tel:<?php echo get_field('phone','options'); ?>" class="btn btn-outline-primary mb-3">
+            <a target="_blank" href="tel:<?php echo get_field('phone','options'); ?>" class="btn btn-outline-primary btn-icon mb-3">
               <?php echo get_field('phone','options'); ?>
             <i class="icon mobile"></i>
             </a>
@@ -32,42 +32,42 @@
               <?php while ( have_rows('rs', 'options') ) : the_row(); ?>
                 <?php if (get_sub_field('facebook') ) : ?>
                     <li class="footer__rs__item">
-                      <a href="<?php the_sub_field('facebook');?>">
+                      <a target="_blank" href="<?php the_sub_field('facebook');?>">
                         <i class="fab fa-facebook-f" aria-hidden="true"></i>
                       </a>
                     </li>
                   <?php endif; ?>
                 <?php if (get_sub_field('twitter') ) : ?>
                     <li class="footer__rs__item">
-                      <a href="<?php the_sub_field('twitter');?>">
+                      <a target="_blank" href="<?php the_sub_field('twitter');?>">
                         <i class="fab fa-twitter" aria-hidden="true"></i>
                       </a>
                     </li>
                   <?php endif; ?>
                 <?php if (get_sub_field('instagram') ) : ?>
                     <li class="footer__rs__item">
-                      <a href="<?php the_sub_field('instagram');?>">
+                      <a target="_blank" href="<?php the_sub_field('instagram');?>">
                         <i class="fab fa-instagram" aria-hidden="true"></i>
                       </a>
                     </li>
                   <?php endif; ?>
                 <?php if (get_sub_field('google') ) : ?>
                     <li class="footer__rs__item">
-                      <a href="<?php the_sub_field('google');?>">
+                      <a target="_blank" href="<?php the_sub_field('google');?>">
                         <i class="fab fa-google" aria-hidden="true"></i>
                       </a>
                     </li>
                   <?php endif; ?>
                 <?php if (get_sub_field('linkedin') ) : ?>
                     <li class="footer__rs__item">
-                      <a href="<?php the_sub_field('linkedin');?>">
+                      <a target="_blank" href="<?php the_sub_field('linkedin');?>">
                         <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                       </a>
                     </li>
                   <?php endif; ?>
                 <?php if (get_sub_field('youtube') ) : ?>
                     <li class="footer__rs__item">
-                      <a href="<?php the_sub_field('youtube');?>">
+                      <a target="_blank" href="<?php the_sub_field('youtube');?>">
                         <i class="fab fa-youtube" aria-hidden="true"></i>
                       </a>
                     </li>

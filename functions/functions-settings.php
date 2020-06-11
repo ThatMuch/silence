@@ -260,7 +260,7 @@ function wp_trim_all_excerpt($text)
     }
     $text = strip_shortcodes($text);
     $text = strip_tags($text);
-    $excerpt_length = apply_filters('excerpt_length', 55);
+    $excerpt_length = apply_filters('excerpt_length', 30);
     $excerpt_more = apply_filters('excerpt_more', ' ... ');
     $words = explode(' ', $text, $excerpt_length + 1);
     if (count($words)> $excerpt_length) {

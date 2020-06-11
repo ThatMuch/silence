@@ -4,7 +4,7 @@
 
 $taxonomy = 'category';
 $terms = get_terms($taxonomy, array( 'parent' => 0, 'exclude' => 1 ) );
-$orgId = get_term_by("slug", "organisations", $taxonomy)->term_id;
+$orgId = get_term_by("slug", "organisation", $taxonomy)->term_id;
 $partId= get_term_by("slug", "particulier", $taxonomy)->term_id;
 $subTermsO = get_terms($taxonomy, array( 'parent' => $orgId , 'exclude' => 1, 'hide_empty' => false ) );
 $subTermsP = get_terms($taxonomy, array( 'parent' => $partId , 'exclude' => 1, 'hide_empty' => false ) );
