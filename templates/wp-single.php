@@ -35,6 +35,56 @@
     </article>
 </section>
 <?php endwhile; endif; ?>
+
+<section class="section section-moreArticles">
+  <div class="container">
+    <div class="section__header mb-5">
+      <p class="section__header__title text-right">autres articles</p>
+      <div class="row">
+        <div class="col-sm-5">
+          <h2 class="section__title mb-0">Voici quelques unes de nos articles les plus populaires</h2>
+        </div>
+        <div class="col-sm-7 divider">
+            <div class="block-round"></div>
+         </div>
+      </div>
+    </div>
+<div class="slider slider-articles">
+  <?php $args = array(
+        'post_type' => 'post',
+        'posts_per_page' => 4
+    );
+    $query = new WP_Query( $args );
+
+    if ( $query->have_posts() ) {
+
+    while ( $query->have_posts() ) {
+
+          $query->the_post();
+    ?>
+     <div class="card-post card">
+        <div class="card__inner">
+                                                            <div class="card__front">
+                                                            <div class="img__inner">
+                                                            <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+                                                            <img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>"/>
+                                                            </div>
+                                                            <div class="content-center-verticale">
+                                                                  <h3 class="card__title"><?php the_title(); ?></h3>
+                                                            </div>
+                                                            </div>
+                                                            <div class="card__back">
+                                                                  <h3 class="card__back__title"><?php the_title(); ?></h3>
+                                                                  <p class="card__back__text"><?php  the_excerpt(); ?></p>
+                                                                  <a href="<?php the_permalink() ?>" class="btn btn-outline-primary">Lire<i class="icon arrow-right"></i></a>
+                                                            </div>
+                                                      </div>
+                                                </div>
+
+    <?php } } 	wp_reset_query();?>
+</div>
+</div>
+</section>
 </main>
 
 <?php get_footer(); ?>
