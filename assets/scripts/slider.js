@@ -54,8 +54,17 @@
   });
 
   $('.slider-articles').slick({
-	infinite: true,
-	slidesToShow: 3,
-	slidesToScroll: 3,
+	infinite: false,
+	slidesToShow: 2,
+	slidesToScroll: 2,
 	arrows: true,
+	responsive :[
+		{
+			breakpoint: 600,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1,
+			}
+		}
+	]
   });

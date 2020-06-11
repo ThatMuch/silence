@@ -93,6 +93,10 @@ main#sections {
             content: url("./images/next.svg");
         }
     }
+
+    .slick-arrow.slick-disabled {
+        display: none !important;
+    }
 }
 
 @import "section-contact";

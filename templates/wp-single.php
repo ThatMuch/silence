@@ -10,7 +10,6 @@
 
 <?php get_header(); ?>
 
-
   <main id="post">
   <?php if (have_posts() ) : while (have_posts()) : the_post(); ?>
   <?php if (has_post_thumbnail()) : ?>
@@ -51,7 +50,8 @@
 <div class="slider slider-articles">
   <?php $args = array(
         'post_type' => 'post',
-        'posts_per_page' => 4
+        'post__not_in' => array( get_the_ID() ),
+
     );
     $query = new WP_Query( $args );
 
