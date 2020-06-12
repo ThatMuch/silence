@@ -73,6 +73,7 @@ button.btn-icon, a.btn-icon {
 
     &:hover, &:active, &:focus {
         color: #fff;
+        background-color: $color_primary;
 
         .icon {
             filter: grayscale(100%) brightness(200%);

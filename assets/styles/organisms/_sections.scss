@@ -30,9 +30,10 @@ main#sections {
 
             &__slogan {
                 margin-bottom: 1rem;
-                    @include breakpoint(tablet) {
-                        margin-bottom: 0;
-                    }
+
+                @include breakpoint(tablet) {
+                    margin-bottom: 0;
+                }
             }
 
             &-right .row {
@@ -69,6 +70,32 @@ main#sections {
 .bg-primary:not(.section-price) {
     .btn {
         @extend .btn-light;
+    }
+}
+
+.section-moreArticles {
+    .slick-slide {
+        margin-right: 2rem;
+    }
+
+    .slick-prev {
+        left: -50px;
+
+        &:before {
+            content: url("./images/previous.svg");
+        }
+    }
+
+    .slick-next {
+        right: -50px;
+
+        &:before {
+            content: url("./images/next.svg");
+        }
+    }
+
+    .slick-arrow.slick-disabled {
+        display: none !important;
     }
 }
 

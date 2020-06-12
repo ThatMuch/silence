@@ -59,6 +59,7 @@ nav.navbar.menu {
             top: inherit;
         }
 
+
         @media screen and (max-width: 1090px) {
             margin-left: 1rem;
         }
@@ -178,6 +179,9 @@ nav.navbar.menu {
 .nav.nav-tab {
     margin-bottom: $space-xl;
     justify-content: center;
+    background-color: $color-grey;
+    border-radius: $border-radius;
+    padding: 10px;
 
     .nav-item {
         .nav-link {
@@ -191,14 +195,15 @@ nav.navbar.menu {
                 height: 2px;
                 transition: width .5s;
                 background-color: $color-primary;
-                margin-left: 0;
+                margin: 0 auto;
+                left: 33%;
             }
 
             &:hover {
                 color: $color-primary !important;
 
                 &:after {
-                    width: 35px !important;
+                    width: 33% !important;
                 }
             }
 
@@ -207,7 +212,7 @@ nav.navbar.menu {
 
                 &:after {
                     @include breakpoint(laptop) {
-                        width: 35px !important;
+                        width: 33% !important;
                     }
                 }
             }

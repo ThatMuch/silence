@@ -96,7 +96,10 @@ $subCat = get_categories( array('child_of' => $cat, 'orderby' => 'name', 'hide_e
 											</div>
 										</div>
 										<div class="card__back ">
-											<h3 class="card__back__title"><?php the_title();?></h3>
+											<h3 class="card__back__title mb-4"><?php the_title();?></h3>
+											<?php if(has_tag('Formation à distance')): ?>
+											<span class="badge badge-light">Format à distance disponible</span>
+											<?php endif; ?>
 											<?php if ( get_field('desc') ) : ?>
 												<p class="card__back__text"><?php echo get_field('desc'); ?></p>
 											<?php endif; ?>

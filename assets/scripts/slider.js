@@ -53,4 +53,18 @@
 	});
   });
 
-
+  $('.slider-articles').slick({
+	infinite: false,
+	slidesToShow: 2,
+	slidesToScroll: 2,
+	arrows: true,
+	responsive :[
+		{
+			breakpoint: 600,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1,
+			}
+		}
+	]
+  });
