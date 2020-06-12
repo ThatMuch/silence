@@ -29,6 +29,7 @@
 
         .card__back {
             backface-visibility: hidden;
+            z-index: 2;
         }
     }
 
