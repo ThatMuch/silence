@@ -77,27 +77,8 @@
                     "step": ""
                 },
                 {
-                    "key": "field_5ea857c6a43e6",
-                    "label": "Temps en présentiel",
-                    "name": "time_present",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
                     "key": "field_5ea857d6a43e7",
-                    "label": "Temps à distance",
+                    "label": "Fréquence des séances",
                     "name": "time_remot",
                     "type": "text",
                     "instructions": "",
@@ -150,10 +131,6 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [
-        "featured_image",
-        "categories"
-    ],
     "active": 1,
     "description": "",
     "modified": 1591212927

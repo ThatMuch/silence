@@ -101,8 +101,11 @@ $subCat = get_categories( array('child_of' => $cat, 'orderby' => 'name', 'hide_e
 											<span class="badge badge-light">Format à distance disponible</span>
 											<?php endif; ?>
 											<?php if ( get_field('desc') ) : ?>
-												<p class="card__back__text"><?php echo get_field('desc'); ?></p>
+												<div class="card__back__text"><?php echo get_field('desc'); ?></div>
 											<?php endif; ?>
+											<?php if (intval(strlen(get_field('desc'))) > 200) : ?>
+                                      <button  class="btn btn-link showMore">lire +</button>
+                                    <?php endif; ?>
 											<a href="<?php echo site_url()?>/contact" class="btn btn-primary mt-auto btn-icon mb-2">Nous contacter<i class="icon arrow-right"></i></a>
 											<?php if ( get_field('brochure') ) : ?>
 											 <a href="<?php  the_field('brochure'); ?>" target="_blank" class="btn btn-outline-primary mt-auto btn-icon">Télécharger la brochure<i class="icon download"></i></a>

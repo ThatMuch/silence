@@ -168,6 +168,14 @@
             }
         }
     }
+
+    .card__back__text {
+        height: 170px;
+    }
+
+    .card__back__text.has_tag {
+        height: 118px;
+    }
 }
 
 .card__back__text {

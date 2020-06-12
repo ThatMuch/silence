@@ -66,7 +66,7 @@
                                            <div class="card__back ">
                                                <h3 class="card__back__title"><?php the_title();?></h3>
                                                <?php if ( get_field('desc') ) : ?>
-                                                   <p class="card__back__text"><?php echo get_field('desc'); ?></p>
+                                                   <div class="card__back__text"><?php echo get_field('desc'); ?></div>
                                                <?php endif; ?>
                                                <a class="btn btn-primary mt-auto btn-icon">Nous contacter<i class="icon arrow-right"></i></a>
                                                <a class="btn btn-outline-primary btn-icon">Télécharger la brochure<i class="icon download"></i></a>
