@@ -98,10 +98,17 @@ footer .inner {
     margin-bottom: 2rem;
 }
 
-p{
+p {
     line-height: 28px;
 }
 
 strong {
-    font-weight: bold!important;
+    font-weight: bold !important;
+}
+
+// Video + img
+
+article .fb-video span, article iframe, img {
+    margin: 2rem auto 2rem;
+    display: block;
 }
