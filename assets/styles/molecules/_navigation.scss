@@ -59,6 +59,7 @@ nav.navbar.menu {
             top: inherit;
         }
 
+
         @media screen and (max-width: 1090px) {
             margin-left: 1rem;
         }
@@ -178,6 +179,9 @@ nav.navbar.menu {
 .nav.nav-tab {
     margin-bottom: $space-xl;
     justify-content: center;
+    background-color: $color-grey;
+    border-radius: $border-radius;
+    padding: 10px;
 
     .nav-item {
         .nav-link {
