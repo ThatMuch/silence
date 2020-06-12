@@ -101,9 +101,9 @@ $subCat = get_categories( array('child_of' => $cat, 'orderby' => 'name', 'hide_e
 											<span class="badge badge-light">Format à distance disponible</span>
 											<?php endif; ?>
 											<?php if ( get_field('desc') ) : ?>
-												<div class="card__back__text"><?php echo get_field('desc'); ?></div>
+												<div class="card__back__text <?php echo has_tag('Formation à distance') ? "has_tag" : ""?>"><?php echo get_field('desc'); ?></div>
 											<?php endif; ?>
-											<?php if (intval(strlen(get_field('desc'))) > 200) : ?>
+											<?php if (intval(strlen(get_field('desc'))) > 250) : ?>
                                       <button  class="btn btn-link showMore">lire +</button>
                                     <?php endif; ?>
 											<a href="<?php echo site_url()?>/contact" class="btn btn-primary mt-auto btn-icon mb-2">Nous contacter<i class="icon arrow-right"></i></a>

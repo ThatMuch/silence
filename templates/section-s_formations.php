@@ -85,7 +85,7 @@
 											<?php if ( get_field('desc') ) : ?>
 												<div class="card__back__text <?php echo has_tag('Formation à distance') ? "has_tag" : ""?>"><?php echo get_field('desc'); ?></div>
 											<?php endif; ?>
-											<?php if (intval(strlen(get_field('desc'))) > 200) : ?>
+											<?php if (intval(strlen(get_field('desc'))) > 250) : ?>
                                       <button  class="btn btn-link showMore">lire +</button>
                                     <?php endif; ?>												<a class="btn btn-primary mt-auto btn-icon mb-2" href="<?php echo site_url()?>/contact">Nous contacter <i class="icon arrow-right"></i></a>
 
