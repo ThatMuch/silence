@@ -14,7 +14,7 @@
           </div>
           <div class="col-sm-2 footer__logo">
             <?php $footer_logo = get_theme_mod( 'footer-logo' );?>
-            <img src="<?php echo $footer_logo ? $footer_logo : get_template_directory_uri()."/assets/images/stanlee_logo_texte.png" ?>" alt="" srcset="">
+            <img src="<?php echo $footer_logo ? $footer_logo : get_template_directory_uri()."/assets/images/stanlee_logo_texte.png" ?>" alt="Silence">
           </div>
 
         </div>
