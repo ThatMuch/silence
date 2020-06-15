@@ -64,14 +64,18 @@
 											<?php if ( have_rows( 'details' ) ) : ?>
 												<ul>
 												<?php while ( have_rows( 'details' ) ) : the_row(); ?>
+												<?php if (get_sub_field( 'time_remot' )): ?>
 												<li>
 													<img src="<?php echo get_template_directory_uri(); ?>/assets/images/clock.svg" />
 													<span><?php the_sub_field( 'time_remot' ); ?></span>
 												</li>
+											<?php endif; ?>
+											<?php if (get_sub_field( 'people' )): ?>
 												<li>
 													<img src="<?php echo get_template_directory_uri(); ?>/assets/images/user.svg" />
 													<span><?php the_sub_field( 'people' ); ?> Pers</span>
 												</li>
+											<?php endif; ?>
 												<?php endwhile; ?>
 												</u>
 											<?php endif; ?>
