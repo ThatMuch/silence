@@ -106,9 +106,9 @@ $subCat = get_categories( array('child_of' => $cat, 'orderby' => 'name', 'hide_e
 											<?php if ( get_field('desc') ) : ?>
 												<div class="card__back__text <?php echo has_tag('Formation à distance') ? "has_tag" : ""?>"><?php echo get_field('desc'); ?></div>
 											<?php endif; ?>
-											<?php if (intval(strlen(get_field('desc'))) > 250) : ?>
-                                      <button  class="btn btn-link showMore">lire +</button>
-                                    <?php endif; ?>
+											<?php //if (intval(strlen(get_field('desc'))) > 250) : ?>
+                                      <!-- <button  class="btn btn-link showMore">lire +</button> -->
+                                    <?php // endif; ?>
 											<a href="<?php echo site_url()?>/contact" class="btn btn-primary mt-auto btn-icon mb-2">Nous contacter<i class="icon arrow-right"></i></a>
 											<?php if ( get_field('brochure') ) : ?>
 											 <a href="<?php  the_field('brochure'); ?>" target="_blank" class="btn btn-outline-primary btn-icon">Télécharger la brochure<i class="icon download"></i></a>

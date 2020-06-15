@@ -64,8 +64,9 @@
         transform: rotateY(180deg);
         display: flex;
         flex-direction: column;
-        box-sizing: border-box;
-        overflow: hidden;
+
+        //box-sizing: border-box;
+        // overflow: scroll;
 
         &__title {
             font-weight: bold;
@@ -172,39 +173,7 @@
     }
 
     .card__back__text {
-        height: 170px;
-    }
-
-    .card__back__text.has_tag {
-        height: 146px;
-    }
-}
-
-.card__back__text {
-    position: relative;
-    height: 220px;
-    overflow: hidden;
-    margin-bottom: 1rem;
-    transition-duration: 1s;
-
-    &:after {
-        content: "";
-        text-align: right;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 70%;
-        height: 28px;
-        background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
-    }
-
-    &.full {
-        height: auto;
-        overflow: scroll;
-
-        &:after {
-            display: none;
-        }
+        margin-bottom: 1rem;
     }
 }
 

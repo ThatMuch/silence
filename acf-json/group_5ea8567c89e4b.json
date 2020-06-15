@@ -6,8 +6,8 @@
             "key": "field_5ea85688a43e2",
             "label": "Description",
             "name": "desc",
-            "type": "wysiwyg",
-            "instructions": "",
+            "type": "textarea",
+            "instructions": "La description de la formation est limitée à 350 caractères.",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -16,10 +16,10 @@
                 "id": ""
             },
             "default_value": "",
-            "tabs": "all",
-            "toolbar": "basic",
-            "media_upload": 0,
-            "delay": 0
+            "placeholder": "",
+            "maxlength": 350,
+            "rows": "",
+            "new_lines": ""
         },
         {
             "key": "field_5ea85741a43e3",
@@ -137,5 +137,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1592210050
+    "modified": 1592212362
 }
