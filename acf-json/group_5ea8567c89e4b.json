@@ -78,7 +78,7 @@
                 },
                 {
                     "key": "field_5ea857d6a43e7",
-                    "label": "Fréquence des séances",
+                    "label": "Durée",
                     "name": "time_remot",
                     "type": "text",
                     "instructions": "",
@@ -131,7 +131,11 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
+    "hide_on_screen": [
+        "featured_image",
+        "categories"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1591212927
+    "modified": 1592210050
 }
