@@ -94,5 +94,4 @@ function prefix_disable_gutenberg($current_status, $post_type)
     if ($post_type === 'formations') return false;
     return $current_status;
 }
-add_filter('use_block_editor_for_post_type', '__return_false');
 
