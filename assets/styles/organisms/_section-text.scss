@@ -15,11 +15,11 @@ main#sections {
                 margin-bottom: 1rem;
 
                 .block_certifications_img{
-                    width: 180px;
-                    height: 180px;
+                    width: 75%;
+                    height: 75%;
                     display: inline-block;
      
-                    @media screen and (max-width: 950px){
+                    @media screen and (max-width: 1050px){
                      width: 140px;
                      height: 140px;
                     }

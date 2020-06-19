@@ -68,9 +68,11 @@
                                                             </div>
                                                             </div>
                                                             <div class="card__back">
-                                                                  <h3 class="card__back__title"><?php the_title(); ?></h3>
-                                                                  <div class="card__back__text"><?php  the_excerpt(); ?></div>
-                                                                  <a href="<?php the_permalink() ?>" class="btn btn-outline-primary btn-icon">Lire<i class="icon arrow-right"></i></a>
+                                                                  <div class="card__back__content">
+                                                                        <h3 class="card__back__title"><?php the_title(); ?></h3>
+                                                                        <div class="card__back__text"><?php  the_excerpt(); ?></div>
+                                                                        <a href="<?php the_permalink() ?>" class="btn btn-outline-primary btn-icon">Lire<i class="icon arrow-right"></i></a>
+                                                                  </div>
                                                             </div>
                                                       </div>
                                                 </div>

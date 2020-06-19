@@ -174,7 +174,7 @@ button.btn-icon, a.btn-icon {
     }
 
     @media screen and (max-width: 991px) {
-        position: fixed;
+        position: fixed!important;
         right: 30px;
         bottom: 15px;
         z-index: 201;
@@ -205,4 +205,9 @@ button.btn-icon, a.btn-icon {
 .container-button {
     text-align: center;
     margin-top: 1.5rem;
+}
+
+
+button{
+    outline: none!important;
 }
