@@ -34,7 +34,7 @@
         <?php endif; ?>
         <!-- Texte -->
 
-        <div class="row row_certifications">
+        <div class="row row_certifications align-items-center">
     <?php 
 
 $certifications = get_sub_field('certifications');
