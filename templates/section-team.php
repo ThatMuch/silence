@@ -71,7 +71,7 @@
                                               <!-- Facebook -->
                                               <?php if (get_sub_field('facebook') ) : ?>
 
-                                                  <a target="_blank" href="<?php the_sub_field('facebook');?>" class="btn btn-icon">
+                                                  <a target="_blank" href="<?php the_sub_field('facebook');?>" class="btn btn-icon btn-outline-primary">
                                                   Facebook
                                                       <i class="fab fa-facebook" aria-hidden="true"></i>
                                                   </a>
