@@ -77,8 +77,8 @@ $subCat = get_categories( array('child_of' => $cat, 'orderby' => 'name', 'hide_e
 											<div class="content-center-verticale">
 												<h3 class="card__title"><?php the_title();?></h3>
 											</div>
-											
-											<?php if ( have_rows( 'details' ) && get_sub_field( 'time_remot' ) || get_sub_field( 'people' ) ) : ?>
+
+											<?php if ( have_rows( 'details' )) : ?>
 											<div class="card-training__details">
 												<ul>
 												<?php while ( have_rows( 'details' ) ) : the_row(); ?>
@@ -98,7 +98,7 @@ $subCat = get_categories( array('child_of' => $cat, 'orderby' => 'name', 'hide_e
 												</u>
 												</div>
 											<?php endif; ?>
-											
+
 										</div>
 										<div class="card__back ">
 											<h3 class="card__back__title mb-4"><?php the_title();?></h3>
