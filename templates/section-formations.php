@@ -83,13 +83,13 @@ $subCat = get_categories( array('child_of' => $cat, 'orderby' => 'name', 'hide_e
 												<?php while ( have_rows( 'details' ) ) : the_row(); ?>
 											<?php if (get_sub_field( 'time_remot' )): ?>
 												<li>
-													<img src="<?php echo get_template_directory_uri(); ?>/assets/images/clock.svg" />
+													<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons_silenceoratoire_Timer.svg" />
 													<span><?php the_sub_field( 'time_remot' ); ?></span>
 												</li>
 											<?php endif; ?>
 											<?php if (get_sub_field( 'people' )): ?>
 												<li>
-													<img src="<?php echo get_template_directory_uri(); ?>/assets/images/user.svg" />
+													<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons_silenceoratoire_Participants.svg" />
 													<span><?php the_sub_field( 'people' ); ?> Pers</span>
 												</li>
 											<?php endif; ?>
