@@ -60,7 +60,7 @@
                 <?php endif; ?>
                 <ul>
                     <?php while( have_rows('price_list') ): the_row(); ?>
-                    <li class="<?php  if( $counter == 2 ) { ?>last_list_price<?php } ?>"><p class="price_formation"><?php the_sub_field('prix'); ?> euros</p>
+                    <li class="<?php  if( $counter == 2 ) { ?>last_list_price<?php } ?>"><p class="price_formation"><?php the_sub_field('prix'); ?> €</p>
                         <p class="libelle_price"><?php the_sub_field('condition'); ?></p>
 
                         <?php 
