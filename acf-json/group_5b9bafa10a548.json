@@ -761,75 +761,6 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_5ea839bb27bff": {
-                    "key": "layout_5ea839bb27bff",
-                    "name": "s_video",
-                    "label": "Slider - Video",
-                    "display": "row",
-                    "sub_fields": [
-                        {
-                            "key": "field_5ea839e927c02",
-                            "label": "Background",
-                            "name": "background",
-                            "type": "file",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "array",
-                            "library": "all",
-                            "min_size": "",
-                            "max_size": "",
-                            "mime_types": ""
-                        },
-                        {
-                            "key": "field_5ea83ac727c03",
-                            "label": "Slogans",
-                            "name": "slogans",
-                            "type": "repeater",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "collapsed": "",
-                            "min": 0,
-                            "max": 4,
-                            "layout": "table",
-                            "button_label": "Ajouter un slogan",
-                            "sub_fields": [
-                                {
-                                    "key": "field_5ea83ae327c04",
-                                    "label": "",
-                                    "name": "text",
-                                    "type": "wysiwyg",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "tabs": "all",
-                                    "toolbar": "full",
-                                    "media_upload": 1,
-                                    "delay": 0
-                                }
-                            ]
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
                 "layout_5ea83b2a8ab72": {
                     "key": "layout_5ea83b2a8ab72",
                     "name": "articles",
@@ -1054,10 +985,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": [
-        "revisions",
-        "slug",
-        "author",
-        "featured_image"
+        "slug"
     ],
     "active": 1,
     "description": "",

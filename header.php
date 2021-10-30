@@ -90,21 +90,13 @@
         ) );
         ?>
     </div>
-    <button  class="ml-auto btn btn-primary btn-search btn-icon d-none d-md-block">
-  <span class="btn-search__text">Formation et coaching</span>
-  <i class="icon search-wen"></i></button>
+
   </div>
 </nav>
 
 <button class="navbar-toggler btn-menu collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'theme-textdomain' ); ?>">
   <span class="btn-menu__burger"></span>
-</button>
-<button  class="ml-auto btn btn-primary btn-search btn-icon d-md-none d-block">
-  <span class="btn-search__text">Formation et coaching</span>
-  <i class="icon search-wen"></i> </button>
-<!-- SEARCH -->
-<?php get_template_part( 'formations', 'searchform' ); ?>
-<!-- SEARCH -->
+        </button>
 <!-- HEADER -->
 <?php if (is_archive() || is_category()): ?>
   <header>
