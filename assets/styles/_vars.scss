@@ -1,0 +1,123 @@
+/**
+ * Variables
+ * Contains re-usable variables like colors, sizes, breakpoints etc.
+ * Normally, you don't have to change anything in essentials.css and general.css
+ * because you'll define the basic-values here.
+ *
+ * @author     ThatMuch
+ * @version    0.1.0
+ * @since      silence_1.0.0
+ *
+ */
+
+/*==================================================================================
+  SCALING
+==================================================================================*/
+
+$base_size: 1.5vw; // scales all `rem` based elements by adding this value as html font-size
+
+$header_height: 64px; // define the height of the header
+$element_width: 90vw; // default width of the inner elements --> nav, article, div.element, footer
+$element_maxwidth: 1200px; // max-width of the inner elements (should be <= $scaling_endpoint)
+
+$element_width_mobile: 95vw; // default width of the .element content-div
+
+/*==================================================================================
+  COLORS
+==================================================================================*/
+
+/* Presets
+/––––––––––––––––––––––––*/
+$color_primary: #D8AC4D;
+$color_primary-darker: #bd9236;
+$color_secondary: #83988D;
+$color_secondary-darker: #253D38;
+$color_black: #212529;
+$color_dark: #343a40;
+$color_grey2: #495057;
+$color_grey1: #868e96;
+$color_grey: #F2F2F2;
+$color_light: #fff;
+
+/*=============================================
+  FONTS
+=============================================*/
+
+/* set base values */
+$text-fz: 1em;
+$text-scale-ratio: 1.2;
+$text-ff: 'Poppins', sans-serif;
+$text-c: $color_secondary-darker;
+$text-fw: 400;
+$text-lh: 28px;
+$text-quote: "Merriweather", serif;
+
+/* type scale */
+$text-xs: calc(1em / (#{$text-scale-ratio} * #{$text-scale-ratio}));
+$text-sm: calc(1em / #{$text-scale-ratio});
+$text-md: calc(1em * #{$text-scale-ratio});
+$text-lg: calc(1em * #{$text-scale-ratio} * #{$text-scale-ratio});
+$text-xl: calc(1em * #{$text-scale-ratio} * #{$text-scale-ratio} * #{$text-scale-ratio});
+$text-xxl: calc(1em * #{$text-scale-ratio} * #{$text-scale-ratio} * #{$text-scale-ratio} * #{$text-scale-ratio});
+$text-xxxl: calc(1em * #{$text-scale-ratio} * #{$text-scale-ratio} * #{$text-scale-ratio} * #{$text-scale-ratio} * #{$text-scale-ratio});
+
+@include breakpoint(mobile) {
+    $text-scale-ratio: 1.25;
+}
+
+
+/*=====  End of FONTS                  ======*/
+
+/*=============================================
+=            Space                            =
+=============================================*/
+
+$space-xxxs: 0.25em;
+$space-xxs: 0.375em;
+$space-xs: 0.5em;
+$space-sm: 0.75em;
+$space-md: 1.25em;
+$space-lg: 2em;
+$space-xl: 3.25em;
+$space-xxl: 5.25em;
+$space-xxxl: 8.5em;
+
+/*=====  End of Space                  ======*/
+
+/*==================================================================================
+  DEFAULTS
+==================================================================================*/
+// these basic defaults are applied to the 'html', 'body', 'nav' or 'a' tags
+
+/* HTML
+/––––––––––––––––––––––––*/
+$html__bgcolor: $color_light;
+
+/* NAV
+/––––––––––––––––––––––––*/
+$nav__linkcolor: $color_dark;
+$nav__hovercolor: $color_primary;
+$nav__activecolor: $color_primary;
+$nav__spacercolor: $color_dark;
+
+/* ANCHORS
+/––––––––––––––––––––––––*/
+$a__linkcolor: $color_dark;
+$a__hovercolor: $color_dark;
+$a__textdecoration: "none";
+
+/*==================================================================================
+  TRANSITIONS
+==================================================================================*/
+
+$transition_fast: 0.3s;
+$transition_slow: 0.7s;
+
+/*==================================================================================
+  SHADOWS
+==================================================================================*/
+
+$shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+$shadow__soft: 0 1px 2px 0 rgba(0, 0, 0, 0.08), 0 1px 5px 0 rgba(0, 0, 0, 0.06);
+
+$border-radius: 15px;

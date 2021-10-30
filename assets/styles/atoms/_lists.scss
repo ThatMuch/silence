@@ -1,0 +1,18 @@
+/**
+ *
+ * @author      ThatMuch
+ * @version     0.1.0
+ * @since       silence_1.0.0.0
+ *
+ */
+ul, ol {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+ol {
+    li {
+        font-weight: 700;
+        color: $color-primary;
+    }
+}

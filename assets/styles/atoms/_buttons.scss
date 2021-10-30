@@ -1,0 +1,213 @@
+/**
+ *
+ * @author      ThatMuch
+ * @version     0.1.0
+ * @since       silence_1.0.0.0
+ *
+ */
+//
+button.btn, a.btn {
+    padding: 8px 50px;
+    transition: 0,2s;
+    display: inline-block;
+    position: relative;
+    border-radius: 30px !important;
+    font-size: .8rem !important;
+    text-transform: uppercase;
+    font-weight: 300 !important;
+    transition: 0,2s;
+
+    i {
+        position: absolute;
+        display: inline-block;
+        vertical-align: middle;
+        right: 1rem;
+        bottom: 0;
+        top: 0;
+        margin: auto;
+        line-height: 35px;
+        transition: all .5s ease-in-out;
+    }
+
+    span {
+        margin-right: 32px;
+    }
+
+    &:hover, &:active, &:focus {
+        transition: $transition_fast;
+        outline: 0 !important;
+        box-shadow: none !important;
+
+        i {
+            right: .7rem;
+        }
+    }
+}
+
+button.btn-icon, a.btn-icon {
+    padding-left: 30px;
+}
+
+.btn.btn-primary {
+    border-width: 2px;
+    color: $color_light;
+
+    .icon {
+        filter: grayscale(100%) brightness(200%);
+    }
+
+    &:hover, &:active, &:focus {
+        background-color: #fff;
+        color: $color_primary;
+        box-shadow: none !important;
+
+        .icon {
+            filter: inherit;
+        }
+    }
+}
+
+.btn.btn-outline-primary {
+    background-color: #fff;
+    border-width: 2px;
+
+    &:hover, &:active, &:focus {
+        color: #fff;
+        background-color: $color_primary;
+
+        .icon {
+            filter: grayscale(100%) brightness(200%);
+        }
+    }
+}
+
+.btn.btn-link {
+    color: $color-primary;
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    padding: 0;
+    width: auto;
+    margin-bottom: 2rem;
+
+    &:focus, &:active {
+        text-decoration: none;
+    }
+}
+
+.btn-menu {
+    height: 64px;
+    width: 64px;
+    min-width: inherit;
+    border-radius: 100% !important;
+    padding: 0 !important;
+    position: fixed;
+    right: 30px;
+    top: 20px;
+    box-shadow: $shadow;
+    z-index: 201;
+    background-color: #fff !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s ease-in-out;
+    z-index: 280;
+
+    @include breakpoint(laptop) {
+        display: none;
+    }
+
+
+    &__burger {
+        width: 24px;
+        height: 2px;
+        border-radius: 5px;
+        transition: all .5s ease-in-out;
+        transform: translateX(-50px);
+        background: transparent;
+        margin: 0;
+
+        &:before, &:after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            background: $color-primary;
+            border-radius: 5px;
+            transition: all .5s ease-in-out;
+            left: 0;
+        }
+
+        &:before {
+            transform: rotate(45deg) translate(35px, -35px);
+        }
+
+        &:after {
+            transform: rotate(-45deg) translate(35px, 35px);
+        }
+    }
+
+    &.collapsed {
+        .btn-menu__burger {
+            background: $color-primary;
+            transform: translateX(0%);
+
+            &:before {
+                transform: translateY(-10px);
+            }
+
+            &:after {
+                transform: translateY(10px);
+            }
+        }
+    }
+}
+
+.btn-search {
+    &__text {
+        display: none;
+
+        @include breakpoint(laptop) {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        position: fixed!important;
+        right: 30px;
+        bottom: 30px;
+        z-index: 201;
+        height: 64px;
+        width: 64px;
+        border-radius: 100% !important;
+        padding: 0 !important;
+        z-index: 280;
+
+        i {
+            position: relative;
+            transform: inherit;
+            right: initial;
+        }
+    }
+}
+
+.btn-close {
+    position: absolute !important;
+    right: -60px;
+    top: 5px;
+
+    i {
+        font-size: 24px;
+    }
+}
+
+.container-button {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+
+button{
+    outline: none!important;
+}

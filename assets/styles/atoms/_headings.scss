@@ -1,0 +1,80 @@
+/**
+ *
+ * @author      ThatMuch
+ * @version     0.1.0
+ * @since       silence_1.0.0.0
+ *
+ */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700 !important;
+}
+
+h1 {
+    @include heading-size(6);
+
+
+    text-transform: uppercase;
+
+    @media screen and (max-width: 500px) {
+        font-size: 27px !important;
+    }
+
+    @media screen and (max-width: 320px) {
+        font-size: 20px !important;
+    }
+}
+
+h2 {
+    font-size: 25px;
+}
+
+h3 {
+    @include heading-size(4);
+
+    color: $color-primary;
+}
+
+h4 {
+    @include heading-size(3);
+
+    color: $color_secondary-darker;
+}
+
+h5 {
+    @include heading-size(2);
+
+    letter-spacing: 1px;
+    margin-bottom: 0 !important;
+}
+
+h6 {
+    @include heading-size(1);
+
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    font-size: 17px;
+}
+
+.section__title {
+    margin-top: -1px;
+    font-size: 1.8vw !important;
+
+    @media screen and (max-width: 991px) {
+        font-size: 19px !important;
+    }
+}
+
+.section__header__slogan {
+    font-size: 1.8vw !important;
+
+    @media screen and (max-width: 991px) {
+        font-size: 19px !important;
+    }
+
+    // @media screen and (max-width: 791px) {
+    //     font-size: 3vw!important;
+    // }
+}

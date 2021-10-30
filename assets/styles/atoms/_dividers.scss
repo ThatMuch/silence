@@ -1,0 +1,28 @@
+/**
+ *
+ * @author      ThatMuch
+ * @version     0.1.0
+ * @since       silence_1.0.0.0
+ *
+ */
+
+.block-round {
+    background: transparent url("./images/texture-points.svg") round 0 0;
+    width: 100%;
+
+    // min-height: 60px;
+    height: 100%;
+    // background-repeat: space;
+    background-size: 15px;
+}
+
+.block-round.l-2 {
+    height: 30px;
+}
+
+.divider {
+    @media screen and (max-width: 575px) {
+        height: 30px;
+        margin-bottom: 1rem;
+    }
+}

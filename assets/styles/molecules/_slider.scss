@@ -1,0 +1,68 @@
+/**
+ *
+ * @author      ThatMuch
+ * @version     0.1.0
+ * @since       silence_1.0.0.0
+ *
+ */
+.slider {
+    &__img {
+        img {
+            margin: 0 auto;
+        }
+    }
+
+    &__content {
+        p {
+            font-weight: 300;
+        }
+    }
+
+    .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        align-items: center;
+    }
+
+    .slick-arrow {
+        padding: 0 !important;
+        display: none !important;
+
+        &:before {
+            color: $color-secondary-darker;
+        }
+
+        @include breakpoint(laptop) {
+            display: block !important;
+        }
+    }
+
+    .slick-prev {
+        left: -50px;
+
+        &:before {
+            content: url("./images/previous.svg");
+        }
+    }
+
+    .slick-next {
+        right: -50px;
+
+        &:before {
+            content: url("./images/next.svg");
+        }
+    }
+
+    .slick-dots {
+        .slick-active button:before {
+            color: $color-primary;
+        }
+
+        li button:before {
+            content: "■";
+            color: $color-secondary;
+            font-size: 20px;
+            opacity: 1;
+        }
+    }
+}

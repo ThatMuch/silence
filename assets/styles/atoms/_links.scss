@@ -1,0 +1,22 @@
+/**
+ *
+ * @author      ThatMuch
+ * @version     0.1.0
+ * @since       silence_1.0.0.0
+ *
+ */
+
+a {
+    color: $a__linkcolor;
+    text-decoration: none;
+    transition: $transition_fast;
+    text-transform: uppercase;
+    max-width: 100%;
+    text-align: center;
+
+    &:hover {
+        color: $a__hovercolor;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,14 @@
+/**
+ *
+ * @author      ThatMuch
+ * @version     0.1.0
+ * @since       silence_1.0.0.0
+ *
+ */
+.content-center-verticale {
+    position: absolute;
+    width: 100%;
+    transform: translateY(-50%);
+    top: 50%;
+    z-index: 2;
+}

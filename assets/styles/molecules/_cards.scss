@@ -1,0 +1,271 @@
+/**
+ *
+ * @author      ThatMuch
+ * @version     0.1.0
+ * @since       silence_1.0.0.0
+ *
+ */
+
+.card {
+    position: relative;
+    perspective: 1000px;
+    border: 0 !important;
+    perspective: 1000px;
+    border-radius: $border-radius;
+
+    // margin-bottom: $space-lg;
+    margin-bottom: 3.5em;
+
+    &__inner {
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: all 0.6s linear;
+        position: relative;
+    }
+
+    &:hover .card__inner {
+        transform: rotateY(180deg);
+
+        .card__back {
+            backface-visibility: hidden;
+            z-index: 2;
+        }
+    }
+
+    &__front, &__back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: $border-radius;
+    }
+
+    &__front {
+        z-index: 2;
+        backface-visibility: hidden;
+
+        // transform: rotateY(0deg);
+   
+    }
+
+    &__back {
+        background-color: #fff;
+        transition: transform .5s linear 0s;
+        padding: 30px;
+        font-weight: 300;
+        font-size: 1.2em;
+        -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        overflow: scroll;
+        transform: rotateY(180deg);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        //box-sizing: border-box;
+        // overflow: scroll;
+
+        &__title {
+            font-weight: bold;
+            color: $color_primary;
+            font-size: 22px;
+            line-height: 28px;
+            text-align: center;
+
+            @media screen and (max-width: 1160px) {
+                 font-size: 20px;
+                 line-height: 25px;
+
+            }
+        }
+
+        &__text {
+            text-align: justify;
+        }
+
+        p {
+            font-size: 18px;
+            text-align: justify;
+
+            @media screen and (max-width: 1160px) {
+                font-size: 15px;
+                line-height: 23px;
+            }
+        }
+    }
+
+    &__title {
+        text-align: center;
+        font-weight: bold;
+        color: $color_light;
+        padding: 10px;
+        font-size: 23px;
+        line-height: 30px;
+        text-transform: uppercase;
+    }
+}
+
+.card-training {
+    height: 500px;
+    width: 350px;
+    background-color: transparent !important;
+
+    @media screen and (max-width: 500px) {
+        height: 410px;
+    }
+
+    .btn {
+        display: block;
+        margin-top: 1rem;
+    }
+
+    &__category {
+        position: absolute;
+        color: #fff;
+        width: 200px;
+        font-size: 12px;
+        top: 1rem;
+        left: 0;
+        right: 0;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+        text-transform: uppercase;
+        z-index: 2;
+    }
+
+    &__details {
+        position: absolute;
+        bottom: 0;
+        background: #83988D;
+        left: 0;
+        right: 0;
+        z-index: 3;
+
+        ul {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+            padding: 10px 30px;
+
+            @media screen and (max-width: 1150px) {
+                padding: 10px 20px;
+            }
+
+            li {
+                list-style: none;
+
+                &:not(:last-child) {
+                    margin-right: 15px;
+                }
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                    display: block;
+                    margin: auto;
+                }
+
+                span {
+                    font-size: 11px;
+                    color: #fff;
+                    padding: 0 8px;
+                    text-transform: uppercase;
+
+                    @media screen and (max-width: 1090px) {
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .card__back__text {
+        margin-bottom: 1rem;
+    }
+}
+
+.card-post {
+    max-width: 100%;
+    height: 360px;
+    margin-bottom: 16px;
+
+    .card__back__content{
+        position: absolute;
+        top: 50%; 
+        transform: translateY(-50%); 
+        right: 30px;
+        left: 30px;
+
+        @media screen and (max-width: 1060px) {
+            right: inherit; 
+            left: inherit; 
+            position: relative;
+            transform: translateY(0); 
+            top: inherit; 
+        }
+
+        @media screen and (max-width: 767px) {
+            margin-bottom: 40px;
+        }
+        
+        h3{
+            text-align: left;
+        }
+        
+        .btn {
+            display: inline-block;
+            margin-top: 0;
+            width: 200px;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        margin-bottom: 40px;
+    }
+
+    .btn {
+        display: inline-block;
+        margin-top: 0;
+        max-width: 200px;
+    }
+}
+
+.card-search {
+    margin-bottom: 2rem;
+
+    fieldset {
+        padding: 1rem 0 0 !important;
+        border-color: $color-secondary !important;
+        height: 326px;
+    }
+
+    legend {
+        text-transform: initial;
+        color: $color-secondary;
+    }
+
+    img {
+        width: 80px;
+    }
+
+    &__icon {
+        height: 166px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__dropdown {
+        background-color: $color-grey;
+        width: 100%;
+        padding: 0 0 1rem;
+        height: 115px;
+        border-radius: 0 0 $border-radius $border-radius;
+    }
+}
