@@ -40,7 +40,7 @@
             <?php if ( have_rows('items') ) :  $i =0; ?>
 
                 <?php while( have_rows('items') ) : the_row();?>
-                    <div class="card">
+                    <div class="card accordion-item">
                         <div class="card-header collapsed" id="heading-<?php echo $i ?>" data-bs-toggle="collapse" data-bs-target="#collapse-<?php echo $i ?>" aria-expanded="true" aria-controls="collapseOne">
                         <div class="row">
                             <div class="col-10 col-md-11"><span class="section-faq__accordion__title"><?php the_sub_field('title'); ?></span></div>

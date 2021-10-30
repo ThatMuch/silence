@@ -137,24 +137,28 @@
         font-size: 1.2rem;
     }
 
-    .nav {
+    .widget {
         padding: 0;
 
-        a.nav-link {
-            color: $color_light !important;
-            opacity: 1;
-            padding: 0 0 0.5rem 0;
-            text-align: left;
-            transition-duration: .5s;
-            font-weight: 400;
+        li {
+            list-style: none;
 
-            &:hover {
+            a {
                 color: $color_light !important;
-                opacity: .7;
-            }
+                opacity: 1;
+                padding: 0 0 0.5rem 0;
+                text-align: left;
+                transition-duration: .5s;
+                font-weight: 400;
 
-            &:after {
-                display: none;
+                &:hover {
+                    color: $color_light !important;
+                    opacity: .7;
+                }
+
+                &:after {
+                    display: none;
+                }
             }
         }
     }
