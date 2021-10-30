@@ -94,7 +94,7 @@
   </div>
 </nav>
 
-<button class="navbar-toggler btn-menu collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'theme-textdomain' ); ?>">
+<button class="navbar-toggler btn-menu collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'theme-textdomain' ); ?>">
   <span class="btn-menu__burger"></span>
         </button>
 <!-- HEADER -->

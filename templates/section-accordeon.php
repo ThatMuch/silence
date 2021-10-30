@@ -41,18 +41,18 @@
 
                 <?php while( have_rows('items') ) : the_row();?>
                     <div class="card">
-                        <div class="card-header collapsed" id="heading-<?php echo $i ?>" data-toggle="collapse" data-target="#collapse-<?php echo $i ?>" aria-expanded="true" aria-controls="collapseOne">
+                        <div class="card-header collapsed" id="heading-<?php echo $i ?>" data-bs-toggle="collapse" data-bs-target="#collapse-<?php echo $i ?>" aria-expanded="true" aria-controls="collapseOne">
                         <div class="row">
                             <div class="col-10 col-md-11"><span class="section-faq__accordion__title"><?php the_sub_field('title'); ?></span></div>
                             <div class="col-2 col-md-1 d-flex">
-                                <span class="card-header-expand ml-auto">
+                                <span class="card-header-expand me-auto">
                                     <i class="icon minus"></i>
                                 </span>
                              </div>
                         </div>
                         </div>
 
-                        <div id="collapse-<?php echo $i ?>" class="collapse" aria-labelledby="heading-<?php echo $i ?>" data-parent="#faq-accordion">
+                        <div id="collapse-<?php echo $i ?>" class="collapse" aria-labelledby="heading-<?php echo $i ?>" data-bs-parent="#faq-accordion">
                             <div class="card-body">
                                 <div class="row d-flex align-items-center">
                                     <div class="col-sm-4">
