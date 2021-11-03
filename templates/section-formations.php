@@ -39,13 +39,13 @@ $subCat = get_categories( array('child_of' => $cat, 'orderby' => 'name', 'hide_e
 		<ul class="nav nav-tab" id="pills-tab" role="tablist">
 		<?php foreach ($subCat as $key=>$value) { ?>
 			<li class="nav-item">
-			<a class="nav-link <?php echo $key === 0 ? 'active' : '' ?>" id="pills-<?php echo $key?>-tab" data-toggle="pill" data-target="#pills-<?php echo $key?>" role="tab" aria-controls="pills-<?php echo $key?>" aria-selected="true">
+			<a class="nav-link <?php echo $key === 0 ? 'active' : '' ?>" id="pills-<?php echo $key?>-tab" data-bs-toggle="pill" data-bs-target="#pills-<?php echo $key?>" role="tab" aria-controls="pills-<?php echo $key?>" aria-selected="true">
 				<?php echo $value-> name; ?>
 			</a>
 			</li>
 		<?php } ?>
 		<li class="nav-item">
-		<a class="nav-link" id="pills-contact-tab" data-toggle="pill" data-target="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="true">
+		<a class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="true">
 				Conseil sur mesure
 			</a>
 		</li>
