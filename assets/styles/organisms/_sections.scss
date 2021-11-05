@@ -23,6 +23,20 @@ main#sections {
 
         &__header {
             margin-bottom: $space-xl;
+            position: relative;
+
+            &-line:after {
+                content: "";
+                position: absolute;
+                right: -3rem;
+                top: 50%;
+                width: calc(33% + 3rem);
+                border-bottom: 1px solid $color-primary;
+
+                @include breakpoint(mobile) {
+                    width: calc(20% + 3rem);
+                }
+            }
 
             &__img {
                 overflow: hidden;
@@ -125,3 +139,4 @@ main#sections {
 @import "section-text-image";
 @import "section-text";
 @import "section-list_items";
+@import "section-list_items_image";

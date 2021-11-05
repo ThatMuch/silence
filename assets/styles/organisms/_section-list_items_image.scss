@@ -1,7 +1,7 @@
-.section__list_items {
+.section__list_items_image {
     .grid {
         width: 100%;
-        grid-template-columns: repeat(auto-fit, 178px);
+        grid-template-columns: repeat(auto-fit, 300px);
         gap: 10px;
         margin-bottom: 50px;
         margin-top: 30px;
@@ -9,12 +9,13 @@
 
         .item {
             text-align: center;
+            text-transform: uppercase;
 
             img {
                 display: block;
                 max-width: 100%;
-                width: 178px;
-                height: 178px;
+                width: 300px;
+                height: 250px;
                 object-fit: cover;
                 border-radius: $border-radius;
                 margin: 0 auto 15px;
