@@ -1,0 +1,24 @@
+.section__list_items {
+    .grid {
+        width: 100%;
+        grid-template-columns: repeat(auto-fit, 178px);
+        gap: 10px;
+        margin-bottom: 50px;
+        margin-top: 30px;
+        justify-content: center;
+
+        .item {
+            text-align: center;
+
+            img {
+                display: block;
+                max-width: 100%;
+                width: 178px;
+                height: 178px;
+                object-fit: cover;
+                border-radius: 10px;
+                margin: 0 auto 15px;
+            }
+        }
+    }
+}

@@ -13,10 +13,9 @@
 
  <section class="section section-text">
  <div class="container">
-
-                            <!-- Header Section-->
-                            <?php if(get_sub_field('title') ) : ?>
-                                  <div class="section__header mt-5 mb-5">
+      <!-- Header Section-->
+      <?php if(get_sub_field('title') ) : ?>
+            <div class="section__header mt-5 mb-5">
 			<div class="row">
       <div class="col-sm-5 ">
 

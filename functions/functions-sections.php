@@ -117,7 +117,7 @@ function stanlee_sections() {
   }
 /* TEAM - FORMATEURS
 /––––––––––––––––––––––––*/
-  function stanlee_section_content() {
+  function stanlee_section_team_formateurs() {
     ob_start('sanitize_output');
       include (get_template_directory().'/templates/section-team_formateurs.php');
     return ob_get_flush();
