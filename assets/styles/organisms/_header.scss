@@ -10,10 +10,9 @@ $header_h-m: 390px;
 
 header, .mt-header {
     margin-top: $header_height;
-
 }
 
-.button_call{
+.button_call {
     position: fixed;
     bottom: 20px;
     right: 30px;
@@ -27,15 +26,16 @@ header, .mt-header {
     padding: 10px;
     transition: 0.2s;
 
-    i{
+    i {
         -webkit-filter: grayscale(100%) brightness(200%);
         filter: grayscale(100%) brightness(200%);
     }
 }
 
-.button_call:hover{
+.button_call:hover {
     background-color: #fff;
-    i{
+
+    i {
         -webkit-filter: inherit;
         filter: inherit;
     }
@@ -59,7 +59,7 @@ header, .mt-header {
         position: absolute;
         width: 100%;
         height: 100%;
-        background-color: $color-secondary-darker;
+        background-color: $color-dark;
         z-index: 1;
         filter: opacity(0.5); // Change here for more opacity
    
@@ -96,12 +96,11 @@ header, .mt-header {
         -webkit-animation-delay: .9s;
         animation-delay: .9s;
 
-
-
         @include breakpoint(tablet) {
             font-size: 33px;
             line-height: 45px;
         }
+
 
         @include breakpoint(laptop) {
             font-size: 40px;
@@ -116,7 +115,7 @@ header, .mt-header {
         @media screen and (max-width: 600px) {
             max-width: 100%;
             padding: 0;
-         } 
+        }
     }
 
     img {

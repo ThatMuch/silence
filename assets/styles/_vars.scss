@@ -25,15 +25,38 @@ $element_width_mobile: 95vw; // default width of the .element content-div
 /*==================================================================================
   COLORS
 ==================================================================================*/
+$vert_opale: #81B29A;
+$jaune: #F9DE6C;
+$terracota: #E07A5F;
+$bleu_electrique: #93C9CB;
+$bleu_marine: #3D405B;
+$light_opale: #CCE3DE;
+$jaune_pastel: #FCEFB9;
+$light_terracota: #FBEDEA;
+$dark_terracota: #733E31;
+$dark_opale: #537363;
+$dark_jaune: #736632;
 
 /* Presets
 /––––––––––––––––––––––––*/
-$color_primary: #D8AC4D;
-$color_primary-darker: #bd9236;
-$color_secondary: #83988D;
-$color_secondary-darker: #253D38;
-$color_black: #212529;
-$color_dark: #343a40;
+/* Primary */
+$color_primary: $terracota;
+$color_secondary: $bleu_electrique;
+$color_ternary: $jaune;
+
+/* Light */
+$color_primary-light: $light_terracota;
+$color_secondary-light: $light_opale;
+$color_ternary-light: $jaune_pastel;
+
+/* Dark */
+$color_primary-darker: $dark_terracota;
+$color_secondary-darker: $dark_opale;
+$color_ternary-darker: $dark_jaune;
+
+/* Neutral */
+$color_black: $bleu_marine;
+$color_dark: $bleu_marine;
 $color_grey2: #495057;
 $color_grey1: #868e96;
 $color_grey: #F2F2F2;

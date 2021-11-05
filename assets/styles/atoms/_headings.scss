@@ -30,14 +30,10 @@ h2 {
 
 h3 {
     @include heading-size(4);
-
-    color: $color-primary;
 }
 
 h4 {
     @include heading-size(3);
-
-    color: $color_secondary-darker;
 }
 
 h5 {
@@ -59,7 +55,8 @@ h6 {
 
 .section__title {
     margin-top: -1px;
-    font-size: 1.8vw !important;
+    font-size: 1.8vw;
+    color: $color-primary;
 
     @media screen and (max-width: 991px) {
         font-size: 19px !important;
