@@ -1,18 +1,7 @@
 <section class="section section__list_items">
 	<div class="container">
 		<!-- Header Section-->
-			<?php if(get_sub_field('title') ) : ?>
-				<div class="section__header mt-5 mb-5">
-					<div class="row">
-						<div class="col-sm-5 ">
-							<h2 class="section__title text-uppercase"><?php echo get_sub_field('title'); ?></h2>
-						</div>
-						<div class="col-sm-7 d-flex align-items-center divider">
-							<div class="block-round"></div>
-						</div>
-					</div>
-				</div>
-			<?php endif; ?>
+		<?php include get_template_directory() . '/components/section_header-dotted.php'?>
     	<!-- Header Section -->
 		<?php if ( get_sub_field('txt') ) : ?>
 			<?php echo get_sub_field('txt'); ?>
