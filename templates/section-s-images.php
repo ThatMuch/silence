@@ -13,13 +13,12 @@
 
   <section class="section section-logos">
       <div class="container">
-      <fieldset>
+      <div class="slider-wrapper">
             <?php if( get_sub_field('title') ) : ?>
-                  <legend class="text-center">
-                  <h5><?php echo get_sub_field('title'); ?></h5>
-                  </legend>
+              <div class="title-wrapper">
+                <h5 class="section__title"><?php echo get_sub_field('title'); ?></h5>
+              </div>
             <?php endif; ?>
-   
         <?php if( get_sub_field('slogan') ) : ?>
 	 <?php echo get_sub_field('slogan'); ?>
  <?php endif; ?>
@@ -31,15 +30,18 @@ $size = 'medium';
 $i = 8;
 
 if( $images ): ?>
-<div class="multiple-items slider slider-logo">
-    <?php foreach( $images as $image ): ?> 
+<div class="slider slider-logo">
+
+    <?php foreach( $images as $image ): ?>
       <div class="block-img-logo">
              <img src="<?php echo $image['sizes'][$size]; ?>" alt="<?php echo $image['alt']; ?>" />
       </div>
-    <?php endforeach; ?> 
+    <?php endforeach; ?>
+
+
 </div>
 <?php endif; ?>
-</fieldset>
+</div>
     </div>
 </section>
 
