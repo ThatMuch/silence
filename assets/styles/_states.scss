@@ -12,3 +12,120 @@
     top: 50%;
     z-index: 2;
 }
+
+// Text
+.fw {
+    &-medium {
+        font-weight: 500 !important;
+    }
+}
+
+.text {
+    font-size: 16px;
+    font-weight: 300;
+
+    p {
+        margin-bottom: 25px;
+    }
+
+    strong {
+        font-weight: 700;
+    }
+
+    &-b {
+        font-weight: 700;
+        letter-spacing: -0.011em;
+        line-height: 24px;
+    }
+
+    &-bx {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 33px;
+
+        strong {
+            font-weight: 700;
+        }
+    }
+
+    &-bs {
+        text-align: center;
+        letter-spacing: -0.011em;
+        font-size: 14px;
+        font-weight: 300;
+
+        h5 {
+            font-size: 19px;
+            letter-spacing: 1px;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+    }
+
+    &-bb {
+        text-align: center;
+        font-size: 21px;
+        line-height: 33px;
+    }
+
+    &-bc {
+        text-align: center;
+        font-size: 21px;
+        line-height: 33px;
+        letter-spacing: 2px;
+    }
+
+    &-orange {
+        color: var(--orange) !important;
+    }
+
+    &-primary {
+        color: var(--primary) !important;
+    }
+
+    &-green {
+        color: var(--green) !important;
+
+        &-vet {
+            color: var(--green-vet) !important;
+        }
+    }
+
+    &-yellow {
+        color: var(--yellow) !important;
+    }
+
+    &-gray {
+        color: var(--gray) !important;
+    }
+}
+
+// Background
+.bg {
+    &-gray {
+        background-color: var(--gray) !important;
+    }
+
+    &-green {
+        background-color: var(--green) !important;
+    }
+
+    &-yellow {
+        background-color: var(--yellow) !important;
+
+        .contact__input label {
+            background: var(--yellow);
+        }
+    }
+
+    &-white {
+        background-color: #fff !important;
+    }
+
+    &-primary {
+        background-color: var(--primary) !important;
+        color: #fff;
+    }
+}

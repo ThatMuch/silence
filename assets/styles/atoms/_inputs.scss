@@ -5,6 +5,17 @@
  * @since       silence_1.0.0.0
  *
  */
+input,
+button,
+a,
+textarea,
+select {
+    &:focus,
+    &:active {
+        outline: 0 !important;
+        box-shadow: 0 0 0 !important;
+    }
+}
 
 input, textarea, select {
     border: 0 !important;
@@ -15,7 +26,6 @@ input, textarea, select {
 
 input:focus, textarea:focus {
     border-color: transparent !important;
-    box-shadow: inherit !important;
 }
 
 input, select {

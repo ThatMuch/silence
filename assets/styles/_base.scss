@@ -42,8 +42,12 @@ html {
         align-items: center;
         min-height: 100vh;
         background-color: $html__bgcolor;
-        color: $color-dark;
+        color: $primary;
     }
+}
+
+img {
+    max-width: 100%;
 }
 
 main {
