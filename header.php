@@ -24,67 +24,32 @@
      <?php $custom_logo_id = get_theme_mod( 'custom_logo' );
         $image = wp_get_attachment_image_src( $custom_logo_id , 'full' ); ?>
 <!-- MENU -->
-<nav class="navbar navbar-expand-lg menu">
+<nav class="header__area navbar navbar-expand-lg">
   <div class="container">
+    <!-- Navbar brand -->
   <a class="navbar-brand" href="<?php echo site_url(); ?>">
-  <div class="logo" style="background-image: url('<?php if($image[0]): echo $image[0]; else: echo get_template_directory_uri(); ?>/assets/images/stanlee_logo_texte.png')<?php endif;?>"></div>
+  <?php if($image[0]) : ?>
+    <img src="<?php $image[0]?>" alt="<?php echo get_bloginfo( 'name' ); ?>">
+    <?php else: ?>
+  <div class="logo" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/images/stanlee_logo_texte.png')"></div>
+  <?php endif;?>
   </a>
-  <?php if (have_rows('rs', 'options')) : ?>
-            <ul class="footer__rs">
-              <?php while ( have_rows('rs', 'options') ) : the_row(); ?>
-                <?php if (get_sub_field('facebook') ) : ?>
-                    <li class="footer__rs__item">
-                      <a target="_blank" href="<?php the_sub_field('facebook');?>">
-                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                      </a>
-                    </li>
-                  <?php endif; ?>
-                <?php if (get_sub_field('twitter') ) : ?>
-                    <li class="footer__rs__item">
-                      <a target="_blank" href="<?php the_sub_field('twitter');?>">
-                        <i class="fab fa-twitter" aria-hidden="true"></i>
-                      </a>
-                    </li>
-                  <?php endif; ?>
-                <?php if (get_sub_field('instagram') ) : ?>
-                    <li class="footer__rs__item">
-                      <a target="_blank" href="<?php the_sub_field('instagram');?>">
-                        <i class="fab fa-instagram" aria-hidden="true"></i>
-                      </a>
-                    </li>
-                  <?php endif; ?>
-                <?php if (get_sub_field('google') ) : ?>
-                    <li class="footer__rs__item">
-                      <a target="_blank" href="<?php the_sub_field('google');?>">
-                        <i class="fab fa-google" aria-hidden="true"></i>
-                      </a>
-                    </li>
-                  <?php endif; ?>
-                <?php if (get_sub_field('linkedin') ) : ?>
-                    <li class="footer__rs__item">
-                      <a target="_blank" href="<?php the_sub_field('linkedin');?>">
-                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                      </a>
-                    </li>
-                  <?php endif; ?>
-                <?php if (get_sub_field('youtube') ) : ?>
-                    <li class="footer__rs__item">
-                      <a target="_blank" href="<?php the_sub_field('youtube');?>">
-                        <i class="fab fa-youtube" aria-hidden="true"></i>
-                      </a>
-                    </li>
-                  <?php endif; ?>
-              <?php endwhile;?>
-            </ul>
-          <?php endif;?>
-    <div class="collapse navbar-collapse" id="navbar-content">
+
+  <!-- Button Toggler -->
+  <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'theme-textdomain' ); ?>">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="text">MENU</span>
+  </button>
+
+    <div class="collapse navbar-collapse w-100" id="navbar-content">
         <?php
         wp_nav_menu( array(
             'theme_location' => 'mainmenu', // Defined when registering the menu
             'menu_id'        => 'menu-main',
             'container'      => false,
             'depth'          => 2,
-            'menu_class'     => 'navbar-nav',
+            'menu_class'     => 'navbar-nav ms-auto',
             'walker'         => new Bootstrap_NavWalker(), // This controls the display of the Bootstrap Navbar
             'fallback_cb'    => 'Bootstrap_NavWalker::fallback', // For menu fallback
         ) );
@@ -94,29 +59,35 @@
   </div>
 </nav>
 
-<button class="navbar-toggler btn-menu collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'theme-textdomain' ); ?>">
-  <span class="btn-menu__burger"></span>
-        </button>
-<!-- HEADER -->
-<?php if (is_archive() || is_category()): ?>
-  <header>
-    <h1 class="page-title screen-reader-text">
-    <?php
-				if ( is_day() ) :
-					echo get_the_date();
-					elseif ( is_month() ) :
-						echo get_the_date( _x( 'F Y', 'monthly archives date format', 'stanlee' ) );
-					elseif ( is_year() ) :
-						echo get_the_date( _x( 'Y', 'yearly archives date format', 'stanlee' ) );
-          endif;
-					?>
-    </h1>
-  </header>
-<?php endif; ?>
 
-<a class="button_call">
-<i class="icon mobile"></i>
-</a>
+<!-- HEADER -->
+<header class="hero hero__area">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="hero__text">
+          <h1><?php the_title(); ?></h1>
+          <?php if ( get_field('slogan_page')) : ?>
+            <p><?php the_field( 'slogan_page' ); ?></p>
+          <?php endif; ?>
+            <?php if (is_archive() || is_category()): ?>
+            <h1>
+            <?php
+                if ( is_day() ) :
+                  echo get_the_date();
+                  elseif ( is_month() ) :
+                    echo get_the_date( _x( 'F Y', 'monthly archives date format', 'stanlee' ) );
+                  elseif ( is_year() ) :
+                    echo get_the_date( _x( 'Y', 'yearly archives date format', 'stanlee' ) );
+                  endif;
+                  ?>
+            </h1>
+            <?php endif; ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
 
 <!-- HEADER -->

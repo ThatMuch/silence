@@ -50,43 +50,22 @@ function debounce(func, wait, immediate) {
   };
 }
 
-/* Menu burger */
-var menuBtn = document.querySelector('.btn-menu');
+// /* Menu burger */
+// var menuBtn = document.querySelector('.btn-menu');
 
-var nav = document.querySelector('.menu');
+// var nav = document.querySelector('.menu');
 
-// This is a flag so the class open can be added and removed at the correct time.
-// There are other ways of doing this such as multiplying 1 by -1 and storing the
-// result each time but this way is clearer I think.
-var menuOpen = false;
+// // This is a flag so the class open can be added and removed at the correct time.
+// // There are other ways of doing this such as multiplying 1 by -1 and storing the
+// // result each time but this way is clearer I think.
+// var menuOpen = false;
 
-menuBtn.addEventListener('click', function() {
-  if(!menuOpen) {
-    nav.classList.add('d-block');
-    menuOpen = true;
-  } else {
-    nav.classList.remove('d-block');
-    menuOpen = false;
-  }
-});
-
-
-
-
-
-/* Button call scroll bottom */
-$('.button_call').click(function () {
-    $('html, body').animate({scrollTop:$(document).height()}, 'slow');
-    return false;
-});
-
-
-$(window).on("scroll", function() {
-	var scrollHeight = $(document).height();
-	var scrollPosition = $(window).height() + $(window).scrollTop();
-	if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
-    $('.button_call').css('display','none');
-	}else{
-    $('.button_call').css('display','block');
-  }
-});
+// menuBtn.addEventListener('click', function() {
+//   if(!menuOpen) {
+//     nav.classList.add('d-block');
+//     menuOpen = true;
+//   } else {
+//     nav.classList.remove('d-block');
+//     menuOpen = false;
+//   }
+// });

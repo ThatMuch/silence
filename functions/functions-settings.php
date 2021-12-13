@@ -52,7 +52,7 @@ function silence_enqueue() {
   wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', false, '3.3.1');
   wp_enqueue_script( 'jquery' );
   // scripts
-  wp_register_script('silence_/scripts', get_template_directory_uri() . '/dist/script.min.js', false, array( 'jquery' ), true);
+  wp_register_script('silence_/scripts', get_template_directory_uri() . '/script.min.js', false, array( 'jquery' ), true);
   wp_enqueue_script('silence_/scripts');
   //Slick
   wp_enqueue_style('slick-css', get_template_directory_uri() .'/inc/assets/slick/slick.css');
@@ -191,11 +191,11 @@ function silence_preload_fonts() {
 function silence_get_cachebusted_css() {
   $current_tld = get_bloginfo('url');
   if (strpos($current_tld, "localhost") || strpos($current_tld, ".local")) :
-    $css_src = '/dist/style.min.css';
+    $css_src = '/style.min.css';
   else :
-    $css_manifest_url = get_template_directory_uri() . '/dist/rev-manifest.json';
+    $css_manifest_url = get_template_directory_uri() . '/rev-manifest.json';
     $css_manifest_content = json_decode(file_get_contents($css_manifest_url), true);
-    $css_src = '/dist/'.$css_manifest_content['style.min.css'];
+    $css_src = '/'.$css_manifest_content['style.min.css'];
   endif;
   return $css_src;
 }
