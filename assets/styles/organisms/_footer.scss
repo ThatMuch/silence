@@ -10,7 +10,7 @@
     width: 100vw;
     margin-top: auto;
     color: #fff;
-    background: $color_secondary;
+    background: $color_dark;
     padding: 3rem 0 0;
     line-height: 1.5;
     font-weight: normal;
@@ -62,7 +62,7 @@
     }
 
     &__credits {
-        background-color: $color_secondary-darker;
+        background-color: $color_dark;
         color: $color_secondary;
 
         // text-align: center;

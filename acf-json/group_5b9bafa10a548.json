@@ -154,6 +154,25 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_61852edbf23ed",
+                            "label": "Titre",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_618291862b3b3",
                             "label": "",
                             "name": "list_items",
@@ -1935,7 +1954,7 @@
         "author",
         "featured_image"
     ],
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1635951470
+    "modified": 1636118254
 }

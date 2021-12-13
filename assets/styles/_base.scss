@@ -42,7 +42,7 @@ html {
         align-items: center;
         min-height: 100vh;
         background-color: $html__bgcolor;
-        color: $color-secondary-darker;
+        color: $color-dark;
     }
 }
 
@@ -104,4 +104,8 @@ p {
 
 strong {
     font-weight: bold !important;
+}
+
+.grid {
+    display: grid;
 }
