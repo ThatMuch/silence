@@ -64,7 +64,7 @@ var rename      = require("gulp-rename");
 var order       = require("gulp-order");
 var browserSync = require('browser-sync').create();
 // css
-var sass         = require('gulp-sass');
+var sass = require('gulp-sass')(require('sass'));
 var cleanCSS     = require('gulp-clean-css');
 var autoprefixer = require('gulp-autoprefixer');
 // cache busting
