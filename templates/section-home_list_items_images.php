@@ -1,23 +1,26 @@
-<section class="section section__list_items_image">
+<section class="section__area border-top">
 	<div class="container">
-		<!-- Header -->
-			<?php include get_template_directory().'/components/section_header-line.php' ?>
-		<!-- Header -->
-			<?php if ( have_rows( 'list_items' ) ) : ?>
-				<div class="grid">
-					<?php while ( have_rows( 'list_items' ) ) : the_row(); ?>
-						<?php $img = get_sub_field( 'img' ); ?>
-						<div class="item">
+		<div class="row">
+			<div class="col-md-12">
+				<h2 class="title mb-100"><?php echo get_sub_field('title'); ?></h2>
+			</div>
+		</div>
+	<?php if ( have_rows( 'list_items' ) ) : ?>
+		<div class="row">
+			<?php while ( have_rows( 'list_items' ) ) : the_row(); ?>
+				<?php $img = get_sub_field( 'img' ); ?>
+				<div class="col-md-6 col-lg-3">
+					<div class="promo__item">
+						<div class="promo__image">
 							<?php if ( $img ) : ?>
 								<img src="<?php echo esc_url( $img['url'] ); ?>" alt="<?php echo esc_attr( $img['alt'] ); ?>" />
 							<?php endif; ?>
-							<?php the_sub_field( 'txt' ); ?>
 						</div>
-					<?php endwhile; ?>
-				<?php else : ?>
-					Vide
+						<h2><?php the_sub_field( 'txt' ); ?></h2>
+					</div>
 				</div>
-					<?php endif; ?>
-
+			<?php endwhile; ?>
+		</div>
+	<?php endif; ?>
 	</div>
 </section>
