@@ -68,7 +68,7 @@
         <div class="hero__text">
           <h1><?php the_title(); ?></h1>
           <?php if ( get_field('slogan_page')) : ?>
-            <p><?php the_field( 'slogan_page' ); ?></p>
+            <?php the_field( 'slogan_page' ); ?>
           <?php endif; ?>
             <?php if (is_archive() || is_category()): ?>
             <h1>
