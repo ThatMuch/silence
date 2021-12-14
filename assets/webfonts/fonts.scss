@@ -1,11 +1,7 @@
 @font-face {
     font-family: 'Neue Machina';
-    src: url('NeueMachina-Ultrabold.eot');
-    src: url('NeueMachina-Ultrabold.eot?#iefix') format('embedded-opentype'),
-        url('NeueMachina-Ultrabold.woff2') format('woff2'),
-        url('NeueMachina-Ultrabold.woff') format('woff'),
-        url('NeueMachina-Ultrabold.ttf') format('truetype'),
-        url('NeueMachina-Ultrabold.svg#NeueMachina-Ultrabold') format('svg');
+    src: url("./assets/webfonts/NeueMachina-Ultrabold.eot");
+    src: url("./assets/webfonts/NeueMachina-Ultrabold.eot?#iefix") format("embedded-opentype"), url("./assets/webfonts/NeueMachina-Ultrabold.woff2") format("woff2"), url("./assets/webfonts/NeueMachina-Ultrabold.woff") format("woff"), url("./assets/webfonts/NeueMachina-Ultrabold.ttf") format("truetype"), url("./assets/webfonts/NeueMachina-Ultrabold.svg#NeueMachina-Ultrabold") format("svg");
     font-weight: 800;
     font-style: normal;
     font-display: swap;
@@ -13,12 +9,8 @@
 
 @font-face {
     font-family: 'Neue Machina';
-    src: url('NeueMachina-Light.eot');
-    src: url('NeueMachina-Light.eot?#iefix') format('embedded-opentype'),
-        url('NeueMachina-Light.woff2') format('woff2'),
-        url('NeueMachina-Light.woff') format('woff'),
-        url('NeueMachina-Light.ttf') format('truetype'),
-        url('NeueMachina-Light.svg#NeueMachina-Light') format('svg');
+    src: url("./assets/webfonts/NeueMachina-Light.eot");
+    src: url("./assets/webfonts/NeueMachina-Light.eot?#iefix") format("embedded-opentype"), url("./assets/webfonts/NeueMachina-Light.woff2") format("woff2"), url("./assets/webfonts/NeueMachina-Light.woff") format("woff"), url("./assets/webfonts/NeueMachina-Light.ttf") format("truetype"), url("./assets/webfonts/NeueMachina-Light.svg#NeueMachina-Light") format("svg");
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -26,12 +18,8 @@
 
 @font-face {
     font-family: 'Neue Machina';
-    src: url('NeueMachina-Regular.eot');
-    src: url('NeueMachina-Regular.eot?#iefix') format('embedded-opentype'),
-        url('NeueMachina-Regular.woff2') format('woff2'),
-        url('NeueMachina-Regular.woff') format('woff'),
-        url('NeueMachina-Regular.ttf') format('truetype'),
-        url('NeueMachina-Regular.svg#NeueMachina-Regular') format('svg');
+    src: url("./assets/webfonts/NeueMachina-Regular.eot");
+    src: url("./assets/webfonts/NeueMachina-Regular.eot?#iefix") format("embedded-opentype"), url("./assets/webfonts/NeueMachina-Regular.woff2") format("woff2"), url("./assets/webfonts/NeueMachina-Regular.woff") format("woff"), url("./assets/webfonts/NeueMachina-Regular.ttf") format("truetype"), url("./assets/webfonts/NeueMachina-Regular.svg#NeueMachina-Regular") format("svg");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
