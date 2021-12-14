@@ -2,7 +2,7 @@
     padding: 0;
     margin: 80px 0;
 
-    .entry-title{
+    .entry-title {
         font-size: 25px;
         line-height: 35px;
     }
@@ -22,10 +22,10 @@
         .article_content {
             padding-right: 70px !important;
             padding-left: inherit !important;
-            padding-left: 15px!important;
+            padding-left: 15px !important;
 
-            @media screen and (max-width: 575px) {    
-                 padding: 15px!important;
+            @media screen and (max-width: 575px) {
+                padding: 15px !important;
             }
         }
     }
@@ -36,16 +36,16 @@
         flex-direction: column;
         padding-left: 70px !important;
 
-        @media screen and (max-width: 575px) {    
+        @media screen and (max-width: 575px) {
             padding-left: inherit !important;
-            padding: 15px!important;
-       }
+            padding: 15px !important;
+        }
 
-       h2 {
-          @media screen and (max-width: 660px) {    
+        h2 {
+            @media screen and (max-width: 660px) {
                 font-size: 1.5rem;
-          }
-       }
+            }
+        }
     }
 
     .btn {
@@ -54,10 +54,115 @@
     }
 }
 
-.blog{
-    .divider{
+.blog {
+    .divider {
         @media screen and (max-width: 575px) {
-           display: none;
-        }   
+            display: none;
+        }
+    }
+}
+
+.post {
+    &__box {
+        margin-bottom: 30px;
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(180deg, rgba(147, 201, 203, 0) 0%, #93C9CB 100%);
+        padding: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include breakpoint(ipad) {
+            padding: 20px;
+        }
+
+
+        @include breakpoint(tablet) {
+            display: block;
+            text-align: center;
+        }
+
+
+        h2 {
+            font-family: $barlow;
+            font-size: 32px;
+            line-height: 38px;
+            font-weight: 700;
+            color: #fff;
+            flex: 0 0 73%;
+            margin: 0;
+
+            @include breakpoint(laptop) {
+                font-size: 27px;
+                line-height: 35px;
+            }
+
+
+            @include breakpoint(ipad) {
+                font-size: 22px;
+                line-height: 25px;
+            }
+        }
+
+        a {
+            width: 60px;
+            height: 60px;
+            background: $orange;
+            border-radius: 50%;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
+
+            @include breakpoint(tablet) {
+                margin: 30px auto 0;
+            }
+
+
+            &:hover {
+                background: $primary;
+            }
+        }
+    }
+
+    &__list {
+        .owl-dots {
+            position: relative;
+            margin-top: 0;
+            text-align: center;
+
+            button {
+                background: $orange;
+                width: 12px;
+                height: 12px;
+                border: 0;
+                border-radius: 50%;
+                margin: 0 25px;
+                opacity: .5;
+
+                @include breakpoint(mobile) {
+                    margin: 0 10px;
+                }
+
+
+                &.active {
+                    opacity: 1;
+                }
+            }
+        }
     }
 }
