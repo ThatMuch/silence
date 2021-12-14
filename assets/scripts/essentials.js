@@ -69,3 +69,75 @@ function debounce(func, wait, immediate) {
 //     menuOpen = false;
 //   }
 // });
+
+
+(function ($) {
+  "use strict";
+
+  $(document).ready(function ($) {
+
+    $('.client__wrapper').owlCarousel({
+      loop:true,
+      dots: true,
+      margin: 20,
+      autoplay: true,
+      responsive: {
+        0: {
+          items: 2
+        },
+        668: {
+          items: 3
+        },
+        991: {
+          items: 5
+        }
+      }
+    });
+
+    $('.modules__list').owlCarousel({
+      loop: true,
+      dots: true,
+      margin: 20,
+      autoplay: true,
+      responsive: {
+        0: {
+          items: 1,
+          dots: false,
+          autoWidth: true
+        },
+        668: {
+          items: 3
+        },
+        991: {
+          items: 4
+        }
+      }
+    });
+
+    $('.box__list').owlCarousel({
+      loop: true,
+      dots: true,
+      margin: 40,
+      autoplay: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        668: {
+          items: 2
+        },
+        991: {
+          items: 3
+        }
+      }
+    });
+
+    $('.post__list').owlCarousel({
+      loop: true,
+      dots: true,
+      autoplay: true,
+      items: 1
+    });
+  });
+
+}(jQuery));

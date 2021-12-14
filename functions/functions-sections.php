@@ -42,6 +42,7 @@ function stanlee_sections() {
       if (get_row_layout() == 'newsletter') : stanlee_section_newsletter(); endif;
       if (get_row_layout() == 's-formations') : stanlee_section_s_formations(); endif;
       if (get_row_layout() == 's-images') : stanlee_section_s_images(); endif;
+      if (get_row_layout() == 'sl-images') : stanlee_section_sl_images(); endif;
       if (get_row_layout() == 'slider') : stanlee_section_slider(); endif;
       if (get_row_layout() == 'team') : stanlee_section_team(); endif;
       if (get_row_layout() == 'testimonials') : stanlee_section_testimonials(); endif;
@@ -198,6 +199,13 @@ function stanlee_sections() {
   function stanlee_section_s_images() {
     ob_start('sanitize_output');
       include (get_template_directory().'/templates/section-s-images.php');
+    return ob_get_flush();
+  }
+/* sl_images
+/––––––––––––––––––––––––*/
+  function stanlee_section_sl_images() {
+    ob_start('sanitize_output');
+      include (get_template_directory().'/templates/section-sl-images.php');
     return ob_get_flush();
   }
 

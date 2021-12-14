@@ -1248,7 +1248,7 @@
                 "layout_5ba6725ceb0fa": {
                     "key": "layout_5ba6725ceb0fa",
                     "name": "s-images",
-                    "label": "Slider - Images",
+                    "label": "List - Images",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -1296,6 +1296,62 @@
                             "mime_types": "",
                             "return_format": "array",
                             "preview_size": "medium"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_61b8d56de3470": {
+                    "key": "layout_61b8d56de3470",
+                    "name": "sl-images",
+                    "label": "Slider - Images ",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_61b8d56de3471",
+                            "label": "Titre",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_61b8d56de3472",
+                            "label": "",
+                            "name": "logo_list",
+                            "type": "gallery",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "insert": "append",
+                            "library": "all",
+                            "min": "",
+                            "max": "",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
                         }
                     ],
                     "min": "",
@@ -1956,5 +2012,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1636118254
+    "modified": 1639503247
 }
