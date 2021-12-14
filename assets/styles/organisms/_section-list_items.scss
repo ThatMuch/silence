@@ -1,23 +1,89 @@
-.section__list_items {
-    .grid {
-        width: 100%;
-        grid-template-columns: repeat(auto-fit, 178px);
-        gap: 10px;
-        margin-bottom: 50px;
-        margin-top: 30px;
-        justify-content: center;
+.service {
+    &__list {
+        display: flex;
+        grid-column-gap: 15px;
+        overflow: auto;
+        padding-bottom: 30px;
+    }
 
-        .item {
-            text-align: center;
+    &__item {
+        text-align: center;
+        flex: 1;
+
+        h2 {
+            font-family: $barlow;
+            font-size: 16px;
+            line-height: 21px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        h3 {
+            color: $orange;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px;
+            letter-spacing: -0.011em;
+        }
+
+        p {
+            line-height: 30px;
+            font-size: 15px;
+            transition: 0.2s;
+            font-size: 16px;
+            font-weight: 700;
+
+            @include breakpoint(laptop) {
+                font-size: 14px;
+            }
+        }
+    }
+
+    &__icon {
+        border-radius: 12px;
+        margin: 0 0 15px;
+        overflow: hidden;
+        position: relative;
+
+        &:after {
+            content: "";
+            background-image: url("./assets/images/icon-1.svg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0 auto;
+            height: 63px;
+        }
+
+        div {
+            height: 196px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
             img {
-                display: block;
-                max-width: 100%;
-                width: 178px;
-                height: 178px;
                 object-fit: cover;
-                border-radius: $border-radius;
-                margin: 0 auto 15px;
+                height: 100%;
+                width: 100%;
+            }
+
+            @include breakpoint(laptop) {
+                height: 173px;
+            }
+
+
+            @include breakpoint(ipad) {
+                height: 143px;
+            }
+
+
+            @include breakpoint(tablet) {
+                width: 196px;
+                height: 196px;
             }
         }
     }
