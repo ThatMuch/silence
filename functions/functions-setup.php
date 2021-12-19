@@ -104,10 +104,28 @@ function stanlee_widgets_init() {
       'after_title'   => '</h3>',
   ) );
   register_sidebar( array(
-      'name'          => esc_html__( 'Footer 1', 'stanlee' ),
-      'id'            => 'footer-1',
+      'name'          => esc_html__( 'Footer Details', 'stanlee' ),
+      'id'            => 'footer-details',
       'description'   => esc_html__( 'Add widgets here.', 'stanlee' ),
       'before_widget' => '<div id="%1$s" class="widget widget-col %2$s ">',
+      'after_widget'  => '</div>',
+      'before_title'  => '<h4 class="widget-title">',
+      'after_title'   => '</h4>',
+  ) );
+  register_sidebar( array(
+      'name'          => esc_html__( 'Footer menu', 'stanlee' ),
+      'id'            => 'footer-menu',
+      'description'   => esc_html__( 'Add widgets here.', 'stanlee' ),
+      'before_widget' => '<div id="%1$s" class="widget widget-col %2$s ">',
+      'after_widget'  => '</div>',
+      'before_title'  => '<h4 class="widget-title">',
+      'after_title'   => '</h4>',
+  ) );
+  register_sidebar( array(
+      'name'          => esc_html__( 'Footer widget', 'stanlee' ),
+      'id'            => 'footer-widget',
+      'description'   => esc_html__( 'Add widgets here.', 'stanlee' ),
+      'before_widget' => '<div id="%1$s" class="footer__widget">',
       'after_widget'  => '</div>',
       'before_title'  => '<h4 class="widget-title">',
       'after_title'   => '</h4>',
