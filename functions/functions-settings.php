@@ -5,47 +5,47 @@
  * @author      ThatMuch
  * @version     0.1.0
  * @since       silence_1.0.0
- *
- *
- */
 
-
-/*==================================================================================
+/*
+==================================================================================
  Table of Contents:
 –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+	1.0 THEME SETTINGS
+		1.1 enqueue scripts/styles
+		1.2 theme support
+
+	2.0 GENERAL SETTINGS
+		2.1 wphead cleanup
+		2.2 loag og-tags
+		2.3 preload fonts
+		2.4 get cache-busted css file
+		2.5 allow svg uploads
+		2.6 reset inline image dimensions (for css-scaling of images)
+		2.7 reset image-processing
+		2.8 hide core-updates for non-admins
+		2.9 disable backend-theme-editor
+		2.10 load textdomain (based on locale)
+		2.11 manage excerpt length
+==================================================================================
+*/
+
+/*
+==================================================================================
   1.0 THEME SETTINGS
-    1.1 enqueue scripts/styles
-    1.2 theme support
-
-  2.0 GENERAL SETTINGS
-    2.1 wphead cleanup
-    2.2 loag og-tags
-    2.3 preload fonts
-    2.4 get cache-busted css file
-    2.5 allow svg uploads
-    2.6 reset inline image dimensions (for css-scaling of images)
-    2.7 reset image-processing
-    2.8 hide core-updates for non-admins
-    2.9 disable backend-theme-editor
-    2.10 load textdomain (based on locale)
-    2.11 manage excerpt length
-==================================================================================*/
+==================================================================================
+*/
 
 
-
-/*==================================================================================
-  1.0 THEME SETTINGS
-==================================================================================*/
-
-
-/* 1.1 ENQUEUE SCRIPTS/STYLES
-/––––––––––––––––---––––––––*/
+/*
+ 1.1 ENQUEUE SCRIPTS/STYLES
+ ---------------------------
+*/
 // enqueues  sctipts and styles (optional typekit embed)
 // » https://developer.wordpress.org/reference/functions/wp_enqueue_script/
 function silence_enqueue() {
   // load bootstrap css
 	// wp_enqueue_style( 'wp-bootstrap-starter-bootstrap-css', get_template_directory_uri() . '/inc/assets/css/bootstrap.min.css' );
-  // fontawesome cdn
+  // fontawesome cdn.
   wp_enqueue_style( 'fontawesome', 'https://use.fontawesome.com/releases/v5.1.0/css/all.css' );
   // jQuery (from wp core)
   wp_deregister_script( 'jquery' );
@@ -54,7 +54,7 @@ function silence_enqueue() {
   // scripts
   wp_register_script('silence_/scripts', get_template_directory_uri() . '/script.min.js', false, array( 'jquery' ), true);
   wp_enqueue_script('silence_/scripts');
-  //Slick
+  // Slick
   wp_enqueue_style('slick-css', get_template_directory_uri() .'/inc/assets/slick/slick.css');
   wp_enqueue_style('slick-theme', get_template_directory_uri() .'/inc/assets/slick/slick-theme.css');
   wp_enqueue_script('slick-js', get_template_directory_uri() .'/inc/assets/slick/slick.js');
@@ -75,74 +75,80 @@ function silence_enqueue() {
 add_action('wp_enqueue_scripts', 'silence_enqueue');
 
 
-/* 1.2 THEME SUPPORT
-/––––––––––––––––––––––––*/
+/**
+ 1.2 THEME SUPPORT
+/––––––––––––––––––––––––
+ */
 function silence_theme_support()  {
 
   // Enable plugins to manage the document title
-  // => http://codex.wordpress.org/Function_Reference/add_theme_support#Title_Tag
+  // => http://codex.wordpress.org/Function_Reference/add_theme_support#Title_Tag .
   add_theme_support( 'title-tag');
 
   // Add Theme Support for Menus
-  // => http://codex.wordpress.org/Navigation_Menus
+  // => http://codex.wordpress.org/Navigation_Menus .
   add_theme_support('menus');
 
   // Add HTML5 markup for search forms, comment forms, comment lists, gallery, and caption
-  // => https://codex.wordpress.org/Theme_Markup
+  // => https://codex.wordpress.org/Theme_Markup .
   add_theme_support('html5');
 
   // Add Theme Support for Post thumbnails
   // => http://codex.wordpress.org/Post_Thumbnails
   // => http://codex.wordpress.org/Function_Reference/set_post_thumbnail_size
-  // => http://codex.wordpress.org/Function_Reference/add_image_size
+  // => http://codex.wordpress.org/Function_Reference/add_image_size .
   add_theme_support('post-thumbnails');
 
 }
 add_action( 'after_setup_theme', 'silence_theme_support');
 
 
-/*==================================================================================
+/*
+==================================================================================
   2.0 GENERAL SETTINGS
-==================================================================================*/
+==================================================================================
+*/
 
 
-/* 2.1 WPHEAD CLEANUP
-/––––––––––––––––––––––––*/
-// remove unused stuff from wp_head()
-
+/**
+ 2.1 WPHEAD CLEANUP
+/––––––––––––––––––––––––
+ */
 function silence_wphead_cleanup () {
-  // remove the generator meta tag
+  // remove the generator meta tag.
   remove_action('wp_head', 'wp_generator');
-  // remove wlwmanifest link
+  // remove wlwmanifest link.
   remove_action('wp_head', 'wlwmanifest_link');
-  // remove RSD API connection
+  // remove RSD API connection.
   remove_action('wp_head', 'rsd_link');
-  // remove wp shortlink support
+  // remove wp shortlink support.
   remove_action('wp_head', 'wp_shortlink_wp_head');
-  // remove next/previous links (this is not affecting blog-posts)
+  // remove next/previous links (this is not affecting blog-posts).
   remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10);
-  // remove generator name from RSS
+  // remove generator name from RSS.
   add_filter('the_generator', '__return_false');
   add_filter('show_admin_bar','__return_false');
-  // disable emoji support
+  // disable emoji support.
   remove_action('wp_head', 'print_emoji_detection_script', 7);
   remove_action('wp_print_styles', 'print_emoji_styles');
-  // disable automatic feeds
+  // disable automatic feeds.
   remove_action('wp_head', 'feed_links_extra', 3);
   remove_action('wp_head', 'feed_links', 2);
-  // remove rest API link
+  // remove rest API link.
   remove_action( 'wp_head', 'rest_output_link_wp_head', 10);
-  // remove oEmbed link
+  // remove oEmbed link.
   remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10);
   remove_action('wp_head', 'wp_oembed_add_host_js');
 }
 add_action('after_setup_theme', 'silence_wphead_cleanup');
 
 
-/* 2.2 LOAG OG-TAGS
-/––––––––––––––––––––––––*/
-// loads open graph tags » http://ogp.me/
-// use 'silence_load_ogtags(true)' to also display the og:image tag
+/**
+ 2.2 LOAG OG-TAGS
+/––––––––––––––––––––––––
+// loads open graph tags » http://ogp.me/ .
+// use 'silence_load_ogtags(true)' to also display the og:image tag.
+ */
 function silence_ogtags() {
   echo '
   <meta property="og:title" content="'.get_bloginfo('name').' - '.get_the_title().'">
@@ -162,7 +168,8 @@ function silence_ogtags() {
   endif;
 }
 
-/* 2.3 PRELOAD FONTS
+/*
+ 2.3 PRELOAD FONTS
 /––––––––––––––––––––––––*/
 // preloads fonts that are hosted locally into the page header
 // add your desired fonts and font-types into $font_names and $font_formats
@@ -184,7 +191,8 @@ function silence_preload_fonts() {
 
 
 
-/* 2.4 GET CACHE-BUSTED CSS FILE
+/*
+ 2.4 GET CACHE-BUSTED CSS FILE
 /––––––––––––––––––––––––––––––*/
 // get the url to the busted css-file, or the default css-file if working locally (on the TLD `.vm`)
 // the busted css file is generated by `gulp cachebust` and is located through dist/rev-manifest.json
@@ -201,7 +209,8 @@ function silence_get_cachebusted_css() {
 }
 
 
-/* 2.5 ALLOW SVG UPLOADS
+/*
+ 2.5 ALLOW SVG UPLOADS
 /–––––––––––––––––––––––*/
 function cc_mime_types($mimes) {
   $mimes['svg'] = 'image/svg+xml';
@@ -210,7 +219,8 @@ function cc_mime_types($mimes) {
 add_filter('upload_mimes', 'cc_mime_types');
 
 
-/* 2.6 RESET INLINE IMAGE DIMENSIONS (FOR CSS-SCALING OF IMAGES)
+/*
+ 2.6 RESET INLINE IMAGE DIMENSIONS (FOR CSS-SCALING OF IMAGES)
 /–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
 function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
   $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html);
@@ -219,13 +229,15 @@ function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
 add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3);
 
 
-/* 2.7 RESET IMAGE-PROCESSING
+/*
+ 2.7 RESET IMAGE-PROCESSING
 /––––––––––––––––––––––––*/
 add_filter('jpeg_quality', function($arg){return 100;});
 add_filter('wp_editor_set_quality', function($arg){return 100;});
 
 
-/* 2.8 HIDE CORE-UPDATES FOR NON-ADMINS
+/*
+ 2.8 HIDE CORE-UPDATES FOR NON-ADMINS
 /––––––––––––––––––––––––––––––––––––*/
 function onlyadmin_update() {
   if (!current_user_can('update_core')) { remove_action( 'admin_notices', 'update_nag', 3 ); }
@@ -233,19 +245,23 @@ function onlyadmin_update() {
 add_action( 'admin_head', 'onlyadmin_update', 1 );
 
 
-/* 2.9 DISABLE BACKEND-THEME-EDITOR
+/*
+ 2.9 DISABLE BACKEND-THEME-EDITOR
 /–––––––––––––––––––––––––––––––––*/
-/* function remove_editor_menu() {
+/*
+ function remove_editor_menu() {
   remove_action('admin_menu', '_add_themes_utility_last', 101);
 }
 add_action('_admin_menu', 'remove_editor_menu', 1); */
 
 
-/* 2.10 LOAD TEXTDOMAIN (BASED ON LOCALE)
+/*
+ 2.10 LOAD TEXTDOMAIN (BASED ON LOCALE)
 /––––––––––––––––––––––––––––––––––––––*/
 load_theme_textdomain('_s', get_template_directory() . '/languages');
 
-/* 2.11 MANAGE EXCERPT LENGTH
+/*
+ 2.11 MANAGE EXCERPT LENGTH
 /––––––––––––––––––––––––––––––––––––––*/
 function wp_trim_all_excerpt($text)
 {

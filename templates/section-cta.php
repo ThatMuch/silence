@@ -38,8 +38,8 @@
        <!-- Button -->
   <?php if ( get_sub_field('button') ) : $link = get_sub_field('button');?>
                 <div class="section-text-image__btn">
-                    <a class="btn <?php echo  $fond == "Couleur" ? "btn-dark" : "btn-primary" ?>" href="<?php echo  $link['url']; ?>" target="<?php echo $link['target'];?>">
-                        <?php echo  $link['title']; ?>
+                    <a class="btn <?php echo $fond == "Couleur" ? "btn-dark" : "btn-primary" ?>" href="<?php echo $link['url']; ?>" target="<?php echo $link['target'];?>">
+                        <?php echo $link['title']; ?>
                     </a>
                 </div>
                 <?php endif; ?>

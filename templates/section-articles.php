@@ -39,7 +39,7 @@
                         <div class="post__text">
                               <h2><?php the_title(); ?></h2>
                               <a href="<?php the_permalink() ?>">
-                                    <img src="<?php echo  get_template_directory_uri() ?>/assets/images/icon-2.svg" alt="<?php the_title(); ?>">
+                                    <img src="<?php echo get_template_directory_uri() ?>/assets/images/icon-2.svg" alt="<?php the_title(); ?>">
                               </a>
                         </div>
                         </div>

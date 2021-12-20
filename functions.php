@@ -8,43 +8,46 @@
  * @author      ThatMuch
  * @version     0.1.0
  * @since       silence_1.0.0
- *
  */
 
 
-/*==================================================================================
+/*
+==================================================================================
   DEVELOPER TOOLKIT
 ==================================================================================*/
-require('functions/functions-dev.php');
+require 'functions/functions-dev.php';
 
 
 
-/*==================================================================================
+/*
+==================================================================================
   WP SETUP & SETTINGS
 ==================================================================================*/
-require('functions/functions-setup.php');
-require('functions/functions-settings.php');
+require 'functions/functions-setup.php';
+require 'functions/functions-settings.php';
 
-/*==================================================================================
+/*
+==================================================================================
   SECTIONS
 ==================================================================================*/
 // Sections using the ACF Flexible Content
 // » https://www.advancedcustomfields.com/resources/flexible-content/
-require('functions/functions-sections.php');
-//require('acf.php');
+require 'functions/functions-sections.php';
+// require('acf.php');
 
 
-/*==================================================================================
+/*
+==================================================================================
   CUSTOM
 ==================================================================================*/
-require('functions/functions-custom.php');
+require 'functions/functions-custom.php';
 require get_template_directory() . '/bootstrap-navwalker.php';
 
 // Plugins
 require_once get_stylesheet_directory() . '/inc/plugin-activation.php';
 
 // Post Types
-require('custom-post-type.php');
+require 'custom-post-type.php';
 ?>
 
 

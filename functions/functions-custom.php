@@ -2,16 +2,17 @@
 /**
  * Add your own custom functions here
  * For example, your shortcodes...
- *
  */
 
 
-/*==================================================================================
+/*
+==================================================================================
  SHORTCODES
 ==================================================================================*/
 
 
-/* BUTTON
+/*
+ BUTTON
 /––––––––––––––––––––––––*/
 // Usage: [button link="https://twitter.com" text="Twitter"]
 function shortcode_button($atts) {
@@ -34,7 +35,7 @@ function your_theme_customizer_setting($wp_customize) {
   // Add a control to upload the hover logo
       $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'footer-logo', array(
           'label' => 'Footer Logo',
-          'section' => 'title_tagline', //this is the section where the custom-logo from WordPress is
+          'section' => 'title_tagline', // this is the section where the custom-logo from WordPress is
           'settings' => 'footer-logo',
           'priority' => 8 // show it just below the custom-logo
       )));

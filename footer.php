@@ -37,14 +37,14 @@
                 <div class="footer__inner">
                 <span>	© Copyright 2020, Tous droits réservés Silence</span>
                 <a class="footer__credits__thatmuch" href="https://thatmuch.fr" target="_blank" rel="noopener noreferrer">
-                  <img src="<?php echo  get_template_directory_uri() ?>/assets/images/thatmuch-logo.png" alt="logo that much">
+                  <img src="<?php echo get_template_directory_uri() ?>/assets/images/thatmuch-logo.png" alt="logo that much">
                 </a>
                 </div>
             </div>
         </div>
     </div>
       <?php if(is_active_sidebar('footer-1')){
-        //  dynamic_sidebar('footer-1');
+        // dynamic_sidebar('footer-1');
             } ?>
     <?php wp_footer() ?>
   </body>
