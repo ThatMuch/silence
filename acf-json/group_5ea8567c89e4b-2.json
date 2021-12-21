@@ -20,6 +20,23 @@
             "toolbar": "basic",
             "media_upload": 0,
             "delay": 0
+        },
+        {
+            "key": "field_61c22d8d959e8",
+            "label": "Couleur",
+            "name": "color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#3D405B",
+            "enable_opacity": 0,
+            "return_format": "string"
         }
     ],
     "location": [
@@ -41,5 +58,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1639565259
+    "modified": 1640115737
 }

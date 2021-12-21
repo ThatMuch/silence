@@ -134,7 +134,7 @@
     color: $orange;
     font-family: $nene;
     font-weight: 800;
-    max-width: 500px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -220,4 +220,17 @@
             }
         }
     }
+}
+
+.round-image {
+    border-radius: 12px;
+    width: 100%;
+}
+
+.alternate-row {
+    &:nth-child(odd) {
+        .row {
+            flex-direction: row-reverse;
+        }
+}
 }

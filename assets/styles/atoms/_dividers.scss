@@ -151,7 +151,7 @@
         }
 
         &-yellow {
-            padding-bottom: 200px;
+            padding-bottom: 200px !important;
             z-index: 1;
 
             .container {
@@ -177,7 +177,7 @@
         }
 
         &-green {
-            padding-bottom: 200px;
+            padding-bottom: 200px !important;
             z-index: 1;
 
             .container {
@@ -197,7 +197,7 @@
         }
 
         &-white {
-            padding-bottom: 200px;
+            padding-bottom: 200px !important;
             border-bottom: 80px solid $green;
             z-index: 1;
 

@@ -47,7 +47,7 @@
         backface-visibility: hidden;
 
         // transform: rotateY(0deg);
-   
+
     }
 
     &__back {
@@ -245,5 +245,180 @@
         padding: 0 0 1rem;
         height: 115px;
         border-radius: 0 0 $border-radius $border-radius;
+    }
+}
+
+.box {
+    &__list {
+        .owl-dots {
+            position: relative;
+            margin-top: 40px;
+            text-align: center;
+
+            button {
+                background: $orange;
+                width: 12px;
+                height: 12px;
+                border: 0;
+                border-radius: 50%;
+                margin: 0 25px;
+                opacity: .5;
+
+                @include breakpoint(mobile) {
+                    margin: 0 10px;
+                }
+
+
+                &.active {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__text {
+        font-size: 21px;
+        letter-spacing: 2px;
+        text-align: center;
+        line-height: 31.5px;
+    }
+
+    &__item {
+        text-align: center;
+        max-width: 192px;
+        margin: 30px auto 0;
+
+        h2 {
+            letter-spacing: -0.011em;
+            font-size: 13px;
+            line-height: 24px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        p {
+            color: #733E31;
+            font-size: 11px;
+            line-height: 16px;
+        }
+
+        &__title {
+            background: url(./assets/images/item-bg-1.svg) no-repeat scroll center center;
+            min-height: 115px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            h1 {
+                color: $orange;
+                font-family: $barlow;
+                font-weight: 500;
+                font-size: 72px;
+                margin: 0;
+            }
+
+            &.two {
+                background-image: url(./assets/images/item-bg-2.svg);
+            }
+
+            &.three {
+                background-image: url(./assets/images/item-bg-3.svg);
+            }
+
+            &.four {
+                background-image: url(./assets/images/item-bg-4.svg);
+            }
+        }
+    }
+
+    &__promo {
+        background: $yellow;
+        border-radius: 12px;
+        padding: 20px;
+        text-align: right;
+        height: 100%;
+
+        @include breakpoint(ipad) {
+            height: auto;
+        }
+
+
+        @include breakpoint(mobile) {
+            text-align: center;
+            padding-bottom: 100px;
+        }
+
+
+        h2 {
+            color: $orange;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 32px;
+
+            @include breakpoint(ipad) {
+                font-size: 16px;
+            }
+        }
+
+        .btn-list {
+            justify-content: end;
+            margin-top: 20px;
+        }
+
+        &tion {
+            background: $gray;
+            border-radius: 12px;
+
+            @include breakpoint(ipad) {
+                margin-bottom: 30px;
+            }
+
+
+            &__body {
+                text-align: center;
+                padding: 20px 20px 0;
+                font-size: 10px;
+                min-height: 222px;
+
+                h4 {
+                    font-size: 11px;
+                    line-height: 16px;
+                }
+
+                h2 {
+                    letter-spacing: -0.022em;
+                    font-size: 45px;
+                    font-family: $barlow;
+                    font-weight: 400;
+                    color: $orange;
+                    margin: 0 0 20px;
+                }
+
+                span {
+                    font-size: 25px;
+                }
+
+                h3 {
+                    font-weight: 500;
+                    font-size: 13px;
+                    line-height: 20px;
+                    font-family: $barlow;
+                    text-transform: uppercase;
+                    margin: 0 0 6px;
+                }
+            }
+
+            .btn {
+                color: $primary;
+                width: 100%;
+                border-radius: 0 0 12px 12px;
+            }
+
+            &.green {
+                h2 {
+                    color: $green;
+                }
+            }
+        }
     }
 }
