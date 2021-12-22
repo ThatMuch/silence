@@ -10,7 +10,6 @@ a {
     color: $a__linkcolor;
     text-decoration: none;
     transition: $transition_fast;
-    text-transform: uppercase;
     max-width: 100%;
     text-align: center;
 
@@ -18,5 +17,29 @@ a {
         color: $a__hovercolor;
         text-decoration: none;
         cursor: pointer;
+    }
+}
+
+.linked {
+    color: $orange;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    position: relative;
+    transition: 0.4s;
+
+    &:hover {
+        filter: brightness(0) contrast(0.5);
+    }
+
+    &::after {
+        content: "";
+        background: url(./assets/images/arrow-up-right.svg) no-repeat scroll 0 0;
+        width: 13px;
+        height: 13px;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        margin-left: 8px;
     }
 }

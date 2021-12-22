@@ -6,19 +6,12 @@
  *
  */
 
-.block-round {
-    background: transparent url("./assets/images/texture-points.svg") round 0 0;
-    width: 100%;
-
-    // min-height: 60px;
-    height: 100%;
-
-    // background-repeat: space;
-    background-size: 15px;
-}
-
-.block-round.l-2 {
-    height: 30px;
+hr {
+    border-top: 1px solid #e5e4e4;
+    background: transparent;
+    opacity: 1;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .divider {

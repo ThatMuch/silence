@@ -232,5 +232,17 @@
         .row {
             flex-direction: row-reverse;
         }
+    }
 }
+
+.mt {
+    &-lg {
+        &-200 {
+            margin-top: 200px;
+
+            @include breakpoint(tablet) {
+                margin-top: 0;
+            }
+        }
+    }
 }
