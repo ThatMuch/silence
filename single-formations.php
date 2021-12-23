@@ -217,52 +217,32 @@ get_header();
             </div>
         </div>
 
-        <div class="section__area bg-yellow">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="title mb-5">Nos actualités</h2>
-                    </div>
-                </div>
-                <div class="row gx-4 d-none d-lg-flex">
-                    <div class="col-lg-6">
-                        <div class="post__box">
-                            <img src="assets/img/image-10.jpg" alt="">
-                            <div class="post__text">
-                                <h2>5 secret pour être enfin à l’aise à l’oral</h2>
-                                <a href="#"><img src="assets/img/icon-2.svg" alt=""></a>
-                            </div>
+ <section class="section__area bg-yellow">
+	<div class="container">
+                  <div class="row">
+                        <div class="col-md-12">
+                              <h2 class="title mb-5">Nos actualités</h2>
                         </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="post__box">
-                            <img src="assets/img/image-11.jpg" alt="">
-                            <div class="post__text">
-                                <h2>Êtes-vous victime du triangle de Karpman à l’oral ?</h2>
-                                <a href="#"><img src="assets/img/icon-2.svg" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row d-lg-none">
-                    <div class="col-md-12">
-                        <div class="post__list owl-carousel">
-                            <div class="post__box">
-                                <img src="assets/img/image-10.jpg" alt="">
-                                <div class="post__text">
-                                    <h2>5 secret pour être enfin à l’aise à l’oral</h2>
-                                    <a href="#"><img src="assets/img/icon-2.svg" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="post__box">
-                                <img src="assets/img/image-11.jpg" alt="">
-                                <div class="post__text">
-                                    <h2>Êtes-vous victime du triangle de Karpman à l’oral ?</h2>
-                                    <a href="#"><img src="assets/img/icon-2.svg" alt=""></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                  </div>
+            <div class="row gx-4 d-none d-lg-flex">
+                  <?php
+                  $args = array(
+                        'post_type' => 'post',
+                        'posts_per_page' => 2
+                  );
+
+                  $query = new WP_Query( $args );
+
+                  if ( $query->have_posts() ) {
+                        while ( $query->have_posts() ) {
+                              $query->the_post();
+                                    ?>
+                  <div class="col-lg-6">
+                    <?php get_template_part('templates/wp', 'post-card'); ?>
+                  </div>
+                  <?php }}
+                        wp_reset_postdata();
+                  ?>
             </div>
-        </div>
+      </div>
+ </section>
