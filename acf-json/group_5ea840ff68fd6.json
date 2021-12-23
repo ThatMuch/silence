@@ -1,12 +1,12 @@
 {
     "key": "group_5ea840ff68fd6",
-    "title": "Slogan de page",
+    "title": "Informations de la page",
     "fields": [
         {
-            "key": "field_5ea84123a1a46",
-            "label": "Slogan",
-            "name": "slogan_page",
-            "type": "wysiwyg",
+            "key": "field_61c33f32896af",
+            "label": "Titre - H1",
+            "name": "title_page",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,10 +16,48 @@
                 "id": ""
             },
             "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ea84123a1a46",
+            "label": "Lead",
+            "name": "slogan_page",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61c33f4a896b0",
+            "label": "Subtitle - H2",
+            "name": "subtitle_page",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -28,11 +66,6 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "page"
-            },
-            {
-                "param": "page",
-                "operator": "!=",
-                "value": "6"
             }
         ],
         [
@@ -49,7 +82,15 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1588521325
+    "show_in_rest": 0,
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1640185945
 }

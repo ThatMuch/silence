@@ -12,21 +12,6 @@
 
   <main id="post">
   <?php if (have_posts() ) : while (have_posts()) : the_post(); ?>
-  <?php if (has_post_thumbnail()) : ?>
-    <section class="page__header page__header-post">
-      <div class="page__header__content">
-        <div class="container page__header__content__inner">
-          <?php if ( get_field('slogan_page')) : ?>
-            <h1 class="page__header__title "><?php echo get_field( 'slogan_page' ); ?></h1>
-            <?php else : ?>
-            <h1 class="page__header__title "><?php the_title(); ?></h1>
-          <?php endif; ?>
-          <div class="page__header-post__info"><?php echo get_the_date_stanlee(); ?></div>
-        </div>
-      </div>
-        <?php the_post_thumbnail('large'); ?>
-    </section>
-  <?php endif?>
 <section class="content container">
     <article>
       <?php the_content(); ?>
@@ -80,7 +65,7 @@
                                                       </div>
                                                 </div>
 
-    <?php } } 	wp_reset_query();?>
+    <?php } } 	wp_reset_postdata();?>
 </div>
 
 </div>

@@ -63,16 +63,18 @@
   </div>
 </nav>
 
-
+<?php $page_id = get_queried_object_id();?>
 <!-- HEADER -->
 <header class="hero hero__area">
   <div class="container">
     <div class="row">
       <div class="col-12">
         <div class="hero__text">
-          <h1><?php the_title(); ?></h1>
-          <?php if ( get_field('slogan_page')) : ?>
-            <?php the_field( 'slogan_page' ); ?>
+          <h1>
+			  <?php echo esc_html_e(get_field('title_page',$page_id) ? get_field('title_page', $page_id) : single_post_title()); ?>
+			</h1>
+          <?php if ( get_field('slogan_page', $page_id)) : ?>
+            <?php the_field( 'slogan_page', $page_id ); ?>
           <?php endif; ?>
             <?php if (is_archive() || is_category()): ?>
             <h1>
