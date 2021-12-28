@@ -74,6 +74,13 @@
                 "operator": "==",
                 "value": "post"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "formations"
+            }
         ]
     ],
     "menu_order": 0,
@@ -92,5 +99,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1640185945
+    "modified": 1640271800
 }

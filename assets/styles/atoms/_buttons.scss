@@ -6,21 +6,42 @@
  *
  */
 //
-button.btn, a.btn, .btn {
+
+input[type="submit"] {
+    background-color: $color_primary;
+    padding: 5px 20px;
+    border: 2px solid $color_primary;
+    transition: 0,2s;
+    color: $color_light;
+    border-radius: 30px;
+    display: block;
+    max-width: 200px;
+    margin: auto;
+
+    &:hover {
+        background-color: transparent;
+        color: $color_primary;
+        transition: 0,2s;
+    }
+}
+
+button.btn, a.btn, .btn, input[type="submit"].btn {
     padding: 15px;
     transition: 0,2s;
     display: inline-block;
-    position: relative;
     border-radius: 6px !important;
+    border: 0;
     font-size: 14px !important;
     text-transform: uppercase;
     font-weight: 700 !important;
-    transition: 0,2s;
-        letter-spacing: 1px;
+    letter-spacing: 1px;
+    color: #212529;
 
-	@include breakpoint(laptop) {
+    @include breakpoint(laptop) {
         font-size: 12px;
     }
+
+
     i {
         position: absolute;
         display: inline-block;
@@ -46,7 +67,8 @@ button.btn, a.btn, .btn {
             right: .7rem;
         }
     }
-	    &:hover {
+
+    &:hover {
         opacity: 0.5;
     }
 
@@ -75,6 +97,11 @@ button.btn, a.btn, .btn {
 
     &-green {
         background: $green;
+    }
+
+    &-white {
+        background: #fff;
+        color: $green;
     }
 
     &-border {

@@ -39,3 +39,35 @@
             z-index: 1;
         } */
 }
+
+.round-image-half {
+    border-radius: 125px;
+}
+
+.round-circle {
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.round-circle:before {
+    content: "";
+    top: 30px;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    position: absolute;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+.round-image {
+    border-radius: 12px;
+    width: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+    .round-image {
+        margin-bottom: 30px;
+    }
+}
