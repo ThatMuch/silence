@@ -18,70 +18,95 @@ get_header();
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="text-center m-title">Une équipe d’experts, riche de sa <br/>diversité de parcours</h2>
+                        <?php if ( get_field('subtitle_page') ) : ?>
+							<h2 class="text-center m-title"><?php echo esc_html_e(get_field('subtitle_page')); ?></h2>
+						<?php endif; ?>
                     </div>
                 </div>
             </div>
         </div>
-
+<?php if ( have_rows( 'team_section_1' ) ) : ?>
+	<?php while ( have_rows( 'team_section_1' ) ) : the_row(); ?>
         <div class="section__area border-bottom pb-150">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3">
-                        <img src="assets/img/image-24.jpg" alt="" class="round-image">
+						<?php $image = get_sub_field( 'img' ); ?>
+		<?php if ( $image ) : ?>
+			<img class="round-image" src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
+		<?php endif; ?>
                     </div>
                     <div class="col-lg-8 ms-auto">
                         <div class="text-bx">
-                            <p>SILENCE. c’est une équipe composée de femmes et d’hommes aux parcours différents, aux compétences diverses et qui partagent la même conviction. </p>
-                            <p>Compétences : un savoir-faire et un savoir-être <br>Nous unissons nos forces pour libérer la parole, révéler vos potentiels, que vous soyez habituée ou pour l’instant stressée par cet exercice d’expression orale. Notre méthode : vous accompagner dans un cadre sécurisant et bienveillant ! Nous sommes : </p>
-                            <ul class="fw-bold">
-                                <li>Formateurs en prise de parole en public</li>
-                                <li>Coach professionnels </li>
-                                <li>Journalistes et média trainers</li>
-                                <li>Psychologues</li>
-                                <li>Comédiens et Metteur en scène</li>
-                                <li>Experts en leadership </li>
-                                <li>Auteurs.. </li>
-                            </ul>
-                            <a href="#" class="btn btn-green">découvrir les modules</a>
+                            	<?php the_sub_field( 'text' ); ?>
+								<?php $btn_link = get_sub_field( 'link' ); ?>
+								<?php if ( $btn_link ) : ?>
+									<a class="btn btn-green" href="<?php echo esc_url( $btn_link['url'] ); ?>" target="<?php echo esc_attr( $btn_link['target'] ); ?>"><?php echo esc_html( $btn_link['title'] ); ?></a>
+								<?php endif; ?>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+	<?php endwhile; ?>
+<?php endif; ?>
+
 
         <div class="section__area bg-gray">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-3 order-lg-1">
-                        <img src="assets/img/image-25.jpg" alt="" class="round-image-half border-green">
-                    </div>
-                    <div class="col-lg-7 me-auto text-center">
-                        <h2 class="m-title mb-30">Vous donnez les clés de la prise de parole, notre objectif !</h2>
-                        <div class="text-bx">
-                            <p>SILENCE. a philosophie propre. Notre but: nous investir, relever les manches pour mener à bien des actions sociales, bénévoles, solidaires. Aider son prochain, grandir ensemble, tout simplement faire société, c’est ce qui nous caractérise. </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <hr>
-                    </div>
-                </div>
-                <div class="row align-items-center">
-                    <div class="col-lg-3">
-                        <img src="assets/img/image-26.jpg" alt="" class="round-image-half border-green">
-                    </div>
-                    <div class="col-lg-7 ms-auto text-center">
-                        <h2 class="m-title mb-30">Une grande proximité avec vous, un facteur important pour nous !</h2>
-                        <div class="text-bx">
-                            <p>Notre équipe intervient en Ile de France principalement. Et si vous souhaitez développer et faire perpétuer ce concept dans votre ville</p>
-                            <a href="#" class="btn btn-green link">nous contacter</a>
-                        </div>
-                    </div>
-                </div>
+				<?php if ( have_rows( 'team_section_2' ) ) : ?>
+					<?php while ( have_rows( 'team_section_2' ) ) : the_row(); ?>
+								<div class="row align-items-center">
+									<div class="col-lg-3 order-lg-1">
+										<?php $img = get_sub_field( 'img' ); ?>
+										<?php if ( $img ) : ?>
+											<img class="round-image-half border-green" src="<?php echo esc_url( $img['url'] ); ?>" alt="<?php echo esc_attr( $img['alt'] ); ?>" />
+										<?php endif; ?>
+									</div>
+									<div class="col-lg-7 me-auto text-center">
+										<h2 class="m-title mb-30"><?php the_sub_field( 'title' ); ?></h2>
+										<div class="text-bx">
+											<?php the_sub_field( 'text' ); ?>
+											<?php $btn_link = get_sub_field( 'link' ); ?>
+											<?php if ( $btn_link ) : ?>
+												<a class="btn btn-green link" href="<?php echo esc_url( $link['url'] ); ?>" target="<?php echo esc_attr( $btn_link['target'] ); ?>"><?php echo esc_html( $btn_link['title'] ); ?></a>
+											<?php endif; ?>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-12">
+										<hr>
+									</div>
+								</div>
+					<?php endwhile; ?>
+				<?php endif; ?>
+				<?php if ( have_rows( 'team_section_3' ) ) : ?>
+					<?php while ( have_rows( 'team_section_3' ) ) : the_row(); ?>
+								<div class="row align-items-center" style="flex-direction:row-reverse;">
+									<div class="col-lg-7 me-auto text-center">
+										<h2 class="m-title mb-30"><?php the_sub_field( 'title' ); ?></h2>
+										<div class="text-bx">
+											<?php the_sub_field( 'text' ); ?>
+											<?php $btn_link = get_sub_field( 'link' ); ?>
+											<?php if ( $btn_link ) : ?>
+												<a class="btn btn-green link" href="<?php echo esc_url( $link['url'] ); ?>" target="<?php echo esc_attr( $btn_link['target'] ); ?>"><?php echo esc_html( $btn_link['title'] ); ?></a>
+											<?php endif; ?>
+										</div>
+									</div>
+									<div class="col-lg-3 order-lg-1">
+										<?php $img = get_sub_field( 'img' ); ?>
+										<?php if ( $img ) : ?>
+											<img class="round-image-half border-green" src="<?php echo esc_url( $img['url'] ); ?>" alt="<?php echo esc_attr( $img['alt'] ); ?>" />
+										<?php endif; ?>
+									</div>
+								</div>
+					<?php endwhile; ?>
+				<?php endif; ?>
+
             </div>
         </div>
+
 
         <div class="section__area border-top border-bottom pb-150">
             <div class="container">
