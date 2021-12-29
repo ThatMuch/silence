@@ -33,7 +33,7 @@
 		<div class="row">
 			<?php  foreach($cats as $cat) {?>
 			<div class="col-lg-6">
-				<h4 class="title-2 text-center"> <?php echo $cat->name; ?></h4>
+				<h4 class="title-2 text-center"> <?php echo esc_html_e($cat->name); ?></h4>
 				<div class="row">
 					<?php
 						$args = array(

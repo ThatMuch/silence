@@ -23,15 +23,25 @@
         }
     }
 
+    &__role {
+        text-transform: uppercase;
+        font-weight: normal;
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
     &__image {
         border-radius: 110px;
         overflow: hidden;
         width: 230px;
+        height: 350px;
         margin: 0 auto 20px;
         border: 1px solid $green;
 
         img {
-            transform: scale(1.05);
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
         }
     }
 }

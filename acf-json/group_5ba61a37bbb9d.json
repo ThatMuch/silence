@@ -1,24 +1,6 @@
 {
     "key": "group_5ba61a37bbb9d",
     "title": "Informations",
-    "location": [
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "team"
-            }
-        ]
-    ],
-    "menu_order": 0,
-    "position": "normal",
-    "style": "default",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": 1,
-    "description": "",
-    "modified": 1588586239,
     "fields": [
         {
             "key": "field_5ba61a9963d92",
@@ -138,22 +120,6 @@
                     "placeholder": ""
                 },
                 {
-                    "key": "field_5ba61aef63d98",
-                    "label": "Google+",
-                    "name": "google",
-                    "type": "url",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": ""
-                },
-                {
                     "key": "field_5ba61afb63d99",
                     "label": "Linkedin",
                     "name": "linkedin",
@@ -187,7 +153,15 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1588527941
+    "show_in_rest": 0,
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1640788175
 }
