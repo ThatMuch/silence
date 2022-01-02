@@ -43,6 +43,7 @@ $args = array(
     "query_var" => true,
     "menu_icon" => "dashicons-groups",
     "supports" => array( "title", "thumbnail" ),
+	"taxonomies" => [ "roles"],
 );
 
 register_post_type( "team", $args );
@@ -145,7 +146,7 @@ register_post_type( "testimonials", $args );
 		"query_var" => true,
 		"menu_icon" => "dashicons-groups",
 		"supports" => [ "title", "thumbnail"],
-		"taxonomies" => [ "category",'post_tag' ],
+		"taxonomies" => [ "category"],
 	];
 
 	register_post_type( "formations", $args );

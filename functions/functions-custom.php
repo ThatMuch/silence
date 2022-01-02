@@ -2,16 +2,17 @@
 /**
  * Add your own custom functions here
  * For example, your shortcodes...
- *
  */
 
 
-/*==================================================================================
+/*
+==================================================================================
  SHORTCODES
 ==================================================================================*/
 
 
-/* BUTTON
+/*
+ BUTTON
 /––––––––––––––––––––––––*/
 // Usage: [button link="https://twitter.com" text="Twitter"]
 function shortcode_button($atts) {
@@ -34,7 +35,7 @@ function your_theme_customizer_setting($wp_customize) {
   // Add a control to upload the hover logo
       $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'footer-logo', array(
           'label' => 'Footer Logo',
-          'section' => 'title_tagline', //this is the section where the custom-logo from WordPress is
+          'section' => 'title_tagline', // this is the section where the custom-logo from WordPress is
           'settings' => 'footer-logo',
           'priority' => 8 // show it just below the custom-logo
       )));
@@ -93,5 +94,46 @@ function prefix_disable_gutenberg($current_status, $post_type)
     // Use your post type key instead of 'product'
     if ($post_type === 'formations') return false;
     return $current_status;
+}
+
+
+
+add_action( 'init', 'create_topics_nonhierarchical_taxonomy', 0 );
+ /**
+  * Hook into the init action and call create_topics_nonhierarchical_taxonomy when it fires */
+function create_topics_nonhierarchical_taxonomy() {
+
+// Labels part for the GUI.
+
+  $labels = array(
+    'name' => _x( 'Role', 'taxonomy general name' ),
+    'singular_name' => _x( 'Role', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Roles' ),
+    'popular_items' => __( 'Popular Roles' ),
+    'all_items' => __( 'All Roles' ),
+    'parent_item' => null,
+    'parent_item_colon' => null,
+    'edit_item' => __( 'Edit Role' ),
+    'update_item' => __( 'Update Role' ),
+    'add_new_item' => __( 'Add New Role' ),
+    'new_item_name' => __( 'New Role Name' ),
+    'separate_items_with_commas' => __( 'Separate roles with commas' ),
+    'add_or_remove_items' => __( 'Add or remove roles' ),
+    'choose_from_most_used' => __( 'Choose from the most used roles' ),
+    'menu_name' => __( 'Roles' ),
+  );
+
+// Now register the non-hierarchical taxonomy like tag.
+
+  register_taxonomy('roles','books',array(
+    'hierarchical' => false,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_in_rest' => true,
+    'show_admin_column' => true,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'role' ),
+  ));
 }
 

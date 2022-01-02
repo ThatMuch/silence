@@ -15,10 +15,17 @@
   PRESETS/
 ==================================================================================*/
 @import "mixins";
-@import "fonts";
+@import "../webfonts/fonts";
 @import "vars";
 @import "states";
 @import "base";
+
+/*==================================================================================
+  BOOTSTRAP
+==================================================================================*/
+$theme-colors: ("primary": $color_primary, "secondary": $color_secondary);
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
 /*==================================================================================
   ATOMIC DESIGN/
@@ -68,10 +75,3 @@
 @import "./templates/_page";
 @import "./templates/_post";
 @import "./templates/_subsite";
-
-/*==================================================================================
-  BOOTSTRAP
-==================================================================================*/
-$theme-colors: ("primary": $color_primary, "secondary": $color_secondary);
-
-@import "../../node_modules/bootstrap/scss/bootstrap";

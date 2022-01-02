@@ -11,35 +11,29 @@
  */
  ?>
 
-  <section class="section section-logos">
+  <section class="section__area bg-green">
       <div class="container">
-      <fieldset>
-            <?php if( get_sub_field('title') ) : ?>
-                  <legend class="text-center">
-                  <h5><?php echo get_sub_field('title'); ?></h5>
-                  </legend>
-            <?php endif; ?>
-   
-        <?php if( get_sub_field('slogan') ) : ?>
-	 <?php echo get_sub_field('slogan'); ?>
- <?php endif; ?>
-        <!-- Slogan -->
-  <?php
+      <div class="row">
+        <div class="col-md-12">
+          <div class="client__featured__wrapper">
+            <h2><?php echo get_sub_field('title') ?></h2>
+                <?php
+                  $images = get_sub_field('logo_list');
+                  $size = 'medium';
+                  $i = 8;
 
-$images = get_sub_field('logo_list');
-$size = 'medium';
-$i = 8;
-
-if( $images ): ?>
-<div class="multiple-items slider slider-logo">
-    <?php foreach( $images as $image ): ?> 
-      <div class="block-img-logo">
-             <img src="<?php echo $image['sizes'][$size]; ?>" alt="<?php echo $image['alt']; ?>" />
+                  if( $images ): ?>
+              <div class="client__featured__list">
+                  <?php foreach( $images as $image ): ?>
+                    <div class="client__featured">
+                          <img src="<?php echo $image['sizes'][$size]; ?>" alt="<?php echo $image['alt']; ?>" />
+                    </div>
+                  <?php endforeach; ?>
+              </div>
+              <?php endif;?>
+          </div>
+        </div>
       </div>
-    <?php endforeach; ?> 
-</div>
-<?php endif; ?>
-</fieldset>
     </div>
 </section>
 

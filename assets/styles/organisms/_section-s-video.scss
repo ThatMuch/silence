@@ -15,6 +15,7 @@
         position: absolute;
         width: 100%;
         z-index: -1;
+
         // transform: rotateY(3.142rad);
         height: 500px;
     }
@@ -38,6 +39,7 @@
         }
     }
 
+<<<<<<< HEAD
     .container {
         top: 55%;
         transform: translateY(-50%);
@@ -91,6 +93,8 @@
     }
 
     
+=======
+>>>>>>> release/v.2.0.0
     .slick-active section {
         -webkit-animation: fadeInDownt .5s ease forwards;
         animation: fadeInDown .5s ease forwards;

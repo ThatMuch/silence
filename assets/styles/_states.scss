@@ -12,3 +12,232 @@
     top: 50%;
     z-index: 2;
 }
+
+// Text
+.fw {
+    &-medium {
+        font-weight: 500 !important;
+    }
+}
+
+.text {
+    font-size: 16px;
+    font-weight: 300;
+
+    p {
+        margin-bottom: 25px;
+    }
+
+    strong {
+        font-weight: 700;
+    }
+
+    &-b {
+        font-weight: 700;
+        letter-spacing: -0.011em;
+        line-height: 24px;
+    }
+
+    &-bx {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 33px;
+
+        strong {
+            font-weight: 700;
+        }
+    }
+
+    &-bs {
+        text-align: center;
+        letter-spacing: -0.011em;
+        font-size: 14px;
+        font-weight: 300;
+
+        h5 {
+            font-size: 19px;
+            letter-spacing: 1px;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+    }
+
+    &-bb {
+        text-align: center;
+        font-size: 21px;
+        line-height: 33px;
+    }
+
+    &-bc {
+        text-align: center;
+        font-size: 21px;
+        line-height: 33px;
+        letter-spacing: 2px;
+    }
+
+    &-orange {
+        color: $orange !important;
+    }
+
+    &-primary {
+        color: $primary !important;
+    }
+
+    &-green {
+        color: $green !important;
+
+        &-vet {
+            color: $green-vet !important;
+        }
+    }
+
+    &-yellow {
+        color: $yellow !important;
+    }
+
+    &-gray {
+        color: $gray !important;
+    }
+}
+
+// Background
+.bg {
+    &-gray {
+        background-color: $gray !important;
+    }
+
+    &-green {
+        background-color: $green !important;
+    }
+
+    &-yellow {
+        background-color: $yellow !important;
+
+        .contact__input label {
+            background: $yellow;
+        }
+    }
+
+    &-white {
+        background-color: #fff !important;
+    }
+
+    &-primary {
+        background-color: $primary !important;
+        color: #fff;
+    }
+}
+
+.m-title {
+    color: $orange;
+    font-family: $nene;
+    font-weight: 800;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    @include breakpoint(mobile) {
+        br {
+            display: none;
+        }
+    }
+}
+
+.title {
+    color: $orange;
+    font-family: $nene;
+    position: relative;
+    padding-bottom: 25px;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 500;
+
+    &::after {
+        content: "";
+        background: url(./assets/images/signet.svg) no-repeat scroll 0 0 / 100%;
+        width: 66px;
+        height: 23px;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, 0);
+    }
+
+    &-2 {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 21px;
+        line-height: 38px;
+        margin-bottom: 30px;
+
+        @include breakpoint(mobile) {
+            br {
+                display: none;
+            }
+        }
+    }
+
+    &-3 {
+        font-family: $nene;
+        font-weight: 800;
+        margin-bottom: 15px;
+
+        @include breakpoint(mobile) {
+            br {
+                display: none;
+            }
+        }
+    }
+
+    &-4 {
+        font-size: 19px;
+        line-height: 32px;
+        font-weight: 700;
+
+        @include breakpoint(mobile) {
+            text-align: center;
+
+            br {
+                display: none;
+            }
+        }
+    }
+
+    &-5 {
+        font-family: $nene;
+        font-size: 23px;
+        line-height: 33px;
+        letter-spacing: 2px;
+        font-weight: 400;
+        text-align: center;
+
+        @include breakpoint(mobile) {
+            br {
+                display: none;
+            }
+        }
+    }
+}
+
+.alternate-row {
+    &:nth-child(odd) {
+        .row {
+            flex-direction: row-reverse;
+        }
+    }
+}
+
+.mt {
+    &-lg {
+        &-200 {
+            margin-top: 200px;
+
+            @include breakpoint(tablet) {
+                margin-top: 0;
+            }
+        }
+    }
+}

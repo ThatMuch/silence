@@ -1,105 +1,94 @@
-.section-contact {
-    padding-top: 5rem !important;
+.contact {
+    &__title {
+        color: $orange;
+        font-family: $barlow;
+        text-transform: uppercase;
+        font-size: 19px;
+        letter-spacing: 1px;
+    }
 
-    fieldset {
-        padding: 0.35em 0.75em 0.625em !important;
-        margin-bottom: $space-md;
-        padding: 0.35em 0.75em 0.9em !important;
-
-        legend {
-            letter-spacing: 2px !important;
-            font-size: 12px !important;
-        }
+    &__text {
+        text-align: center;
+        font-weight: 300;
+        font-size: 16px;
+        color: #333333;
 
         p {
-            margin-bottom: 0;
+            margin-bottom: 20px;
         }
 
-        .form-control {
-            border-radius: 9px;
-        }
-    }
+        .rounded-circle {
+            height: 154px;
+            width: 154px;
+            margin: 0 auto 30px;
+            overflow: hidden;
 
-    .your-message {
-        textarea {
-            height: 92%;
-            resize: none;
-
-            @include breakpoint(laptop) {
-                height: 93%;
-            }
-        }
-    }
-
-    .form-control {
-        @media screen and (max-width: 530px) {
-            font-size: 1.4rem;
-        }
-    }
-
-    &__infos {
-        text-align: center;
-
-        img {
-            margin-bottom: 1rem;
-            height: 46px;
-
-            @include breakpoint(mobile) {
-                height: 20px;
-            }
-        }
-
-        &__rs {
-            li {
-                display: inline-block;
-                font-size: 1.5rem;
-                margin-right: 1rem;
+            img {
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
             }
         }
     }
 
     &__form {
-        width: 100%;
-        margin: 0 auto;
-
-        @include breakpoint(mobile) {
-            width: 90%;
+        br {
+            display: none;
         }
 
-
-        .wpcf7 {
-            width: 100%;
+        h2 {
+            text-transform: uppercase;
+            font-size: 23px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-family: $barlow;
+            text-align: center;
+            margin-bottom: 35px;
         }
+    }
+
+    &__input {
+        border: 1px solid $orange;
+        border-radius: 6px;
+        margin-bottom: 30px;
+        position: relative;
 
         label {
-            width: 100%;
-        }
-
-        input[type="submit"] {
-            width: 100%;
-        }
-
-        .col-textarea {
-            fieldset {
-                height: 86%;
-            }
-
-            p {
-                height: 100%;
-            }
-        }
-
-        .wpcf7-not-valid-tip {
-            color: red;
-            font-size: 14px;
+            font-weight: 600;
+            font-size: 16px;
+            font-family: $barlow;
+            text-transform: uppercase;
+            color: $orange;
             position: absolute;
-            left: 4px;
-            background: $color_light;
-            display: abs;
-            padding: 0 1rem;
-            margin-top: 5px;
-            min-width: 165px;
-            right: 0;
+            background: $gray;
+            padding: 0 5px;
+            margin: 0;
+            left: 10px;
+            transform: translate(0, -50%);
+
+            @include breakpoint(mobile) {
+                font-size: 12px;
+            }
+        }
+
+        input,
+        textarea,
+        select {
+            background: transparent;
+            border: 0;
+            color: $orange;
+            width: 100%;
+            resize: none;
+            padding: 15px;
+        }
+
+        select {
+            width: 98%;
+            cursor: pointer;
+        }
+
+        textarea {
+            min-height: 210px;
         }
     }
 }

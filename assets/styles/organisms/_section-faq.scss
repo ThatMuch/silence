@@ -1,60 +1,49 @@
-.section-faq {
-    &__accordion {
-        &__title {
-            font-weight: 700;
-            color: $color-secondary;
-            font-size: 1.3em;
+.faq {
+    position: relative;
 
-            @media screen and (max-width: 991px) {
-                font-size: 19px;
-            }
+    .accordion-header {
+        letter-spacing: 2px;
+        font-size: 23px;
+        font-family: $barlow;
+        font-weight: 400;
+        cursor: pointer;
+        position: relative;
+        padding-right: 30px;
 
-            @media screen and (max-width: 500px) {
-                font-size: 17px;
-            }
+        &::before {
+            content: "";
+            background: url(./assets/images/minus.svg) no-repeat scroll center (center / 100%);
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(0, -50%);
+            width: 17px;
+            height: 17px;
         }
 
-        .row {
-            border-bottom: 1px solid $color-grey;
-            padding-bottom: 15px;
-        }
-
-        .card {
-            border: none;
-            background-color: transparent;
-            margin-bottom: 0;
-        }
-
-        .card-header {
-            background-color: transparent;
-            border: none;
-
-            @media screen and (max-width: 767px) {
-                font-size: 19px;
-            }
-
-            &-expand {
-                color: rgba($color: $color_primary, $alpha: 0.5);
-            }
-
-            &:hover {
-                cursor: pointer;
-            }
-
-            .icon {
-                height: 40px;
-                width: 40px;
-            }
-        }
-
-        .card-header.collapsed {
-            .icon {
-                background-image: url("./images/plus.svg");
+        &.collapsed {
+            &::before {
+                background-image: url(./assets/images/plus.svg);
             }
         }
     }
 
-    .answer {
-        text-align: justify;
+    .accordion-item {
+        border-radius: 0;
+        border-width: 0 0 1px;
+        border-style: solid;
+        border-color: #E9E9E9;
+        padding: 20px 0;
+        font-weight: 300;
+        font-size: 16px;
+    }
+
+    .card {
+        border: 0;
+        padding: 25px 0 0;
+
+        @include breakpoint(tablet) {
+            padding-left: 20px;
+        }
     }
 }

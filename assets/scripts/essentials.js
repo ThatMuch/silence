@@ -21,9 +21,9 @@ var $vpWidth = jQuery(window).width();
 var $root = $('html');
 var isTouch = 'ontouchstart' in document.documentElement;
 if (isTouch) {
-  $root.attr('data-touch', 'true');
+	$root.attr('data-touch','true');
 } else {
-  $root.attr('data-touch', 'false');
+	$root.attr('data-touch','false');
 }
 
 
@@ -35,153 +35,117 @@ if (isTouch) {
 //   // function stuff
 // }, 250);
 // window.addEventListener('resize', myfunction);
-function debounce(func, wait, immediate) {
-  var timeout;
-  return function() {
-    var context = this, args = arguments;
-    var later = function() {
-      timeout = null;
-      if (!immediate) func.apply(context, args);
-    };
-    var callNow = immediate && !timeout;
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    if (callNow) func.apply(context, args);
-  };
+function debounce(func,wait,immediate) {
+	var timeout;
+	return function () {
+		var context = this,
+			args = arguments;
+		var later = function () {
+			timeout = null;
+			if (!immediate) {
+				func.apply(context,args);
+			}
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later,wait);
+		if (callNow) {
+			func.apply(context,args);
+		}
+	};
 }
 
-/* Menu burger */
-var menuBtn = document.querySelector('.btn-menu');
-var closeBtn = document.querySelector('.close-search');
-var nav = document.querySelector('.menu');
+// /* Menu burger */
+// var menuBtn = document.querySelector('.btn-menu');
 
-// This is a flag so the class open can be added and removed at the correct time.
-// There are other ways of doing this such as multiplying 1 by -1 and storing the
-// result each time but this way is clearer I think.
-var menuOpen = false;
+// var nav = document.querySelector('.menu');
 
-menuBtn.addEventListener('click', function() {
-  if(!menuOpen) {
-    nav.classList.add('d-block');
-    menuOpen = true;
-  } else {
-    nav.classList.remove('d-block');
-    menuOpen = false;
-  }
-});
+// // This is a flag so the class open can be added and removed at the correct time.
+// // There are other ways of doing this such as multiplying 1 by -1 and storing the
+// // result each time but this way is clearer I think.
+// var menuOpen = false;
 
-closeBtn.addEventListener('click', function() {
-    nav.classList.remove('d-block');
-    menuOpen = false;
-});
-
-/* SELECT OPTIONS */
-
-/*
-Reference: http://jsfiddle.net/BB3JK/47/
-*/
-
-function generateListItems(select, list) {
-  list.children().remove()
-  for (var i = 1; i < select.children('option').length; i++) {
-    $('<li />', {
-        text: select.children('option').eq(i).text(),
-        rel: select.children('option').eq(i).val()
-    }).appendTo(list);
-}
-
-list.children('li').click(function() {
-  // e.stopPropagation();
-   select.next('div.select-styled').text($(this).text()).removeClass('active');
-   select.val($(this).attr('rel')).trigger('change');
-   list.hide();
-});
-}
-
-$('select').each(function(){
-  var $this = $(this);
-  $this.addClass('select-hidden');
-  $this.wrap('<div class="select"></div>');
-  $this.after('<div class="select-styled"></div>');
+// menuBtn.addEventListener('click', function() {
+//   if(!menuOpen) {
+//     nav.classList.add('d-block');
+//     menuOpen = true;
+//   } else {
+//     nav.classList.remove('d-block');
+//     menuOpen = false;
+//   }
+// });
 
 
-  var $styledSelect = $this.next('div.select-styled');
-  $styledSelect.text($this.children('option').eq(0).text());
+(function ($) {
+	'use strict';
 
-  var $list = $('<ul />', {
-      'class': 'select-options'
-  }).insertAfter($styledSelect);
+	$(document).ready(function ($) {
+		$('.modal').appendTo('body');
+
+		$('.client__wrapper').owlCarousel({
+			loop: true,
+			dots: true,
+			margin: 20,
+			autoplay: true,
+			responsive: {
+				0: {
+					items: 2
+				},
+				668: {
+					items: 3
+				},
+				991: {
+					items: 5
+				}
+			}
+		});
+
+		$('.modules__list').owlCarousel({
+			loop: true,
+			dots: true,
+			margin: 20,
+			autoplay: true,
+			responsive: {
+				0: {
+					items: 1,
+					dots: false,
+					autoWidth: true
+				},
+				668: {
+					items: 3
+				},
+				991: {
+					items: 4
+				}
+			}
+		});
+
+		$('.box__list').owlCarousel({
+			loop: true,
+			dots: true,
+			margin: 40,
+			autoplay: true,
+			responsive: {
+				0: {
+					items: 1
+				},
+				668: {
+					items: 2
+				},
+				991: {
+					items: 3
+				}
+			}
+		});
+
+		$('.post__list').owlCarousel({
+			loop: true,
+			dots: true,
+			autoplay: true,
+			items: 1
+		});
+	});
+
+}(jQuery));
 
 
-  generateListItems($this, $list)
-
-  $styledSelect.click(function(e) {
-    console.log("toto");
-    if($this.is(':enabled')) {
-      e.stopPropagation();
-      $('div.select-styled.active').not(this).each(function(){
-          $(this).removeClass('active').next('ul.select-options').hide();
-      });
-      $(this).toggleClass('active').next('ul.select-options').toggle();
-    }
-  });
-
-  $(document).click(function() {
-      $styledSelect.removeClass('active');
-      $list.hide();
-  });
-
-});
-
-/* DISPLAY SEARCH */
-
-$(".btn-search").click(function() {
-  $(".search").toggleClass("d-block");
-  $('.site-content').toggle(function () {
-    $(".site-content").css({height: "100%",overflow: "hidden"});
-}, function () {
-    $(".site-content").css({height: "100%"});
-});
-})
-
-$(".close-search").click(function () {
-  $(".search").toggleClass("d-block");
-  $(".site-content").css({height: "100%", display: "block"});
-
-})
-
-/* Form search */
-var select = $('#subCat');
-var label = $('#subCat+.select-styled');
-var legend = $('#card-sub legend');
-
-select.parent().addClass('disabled');
-
-$(".showMore").click(function(){
-  var $this = $(this);
-  $this.prev().toggleClass('full');
-  if ($this.text() === "lire +") {
-    $this.text('lire -')
-  } else {
-    $this.text('lire +')
-  }
-})
-
-
-
-/* Button call scroll bottom */
-$('.button_call').click(function () {
-    $('html, body').animate({scrollTop:$(document).height()}, 'slow');
-    return false;
-});
-
-
-$(window).on("scroll", function() {
-	var scrollHeight = $(document).height();
-	var scrollPosition = $(window).height() + $(window).scrollTop();
-	if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
-    $('.button_call').css('display','none');
-	}else{
-    $('.button_call').css('display','block');
-  }
-});

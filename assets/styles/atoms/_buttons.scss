@@ -6,16 +6,41 @@
  *
  */
 //
-button.btn, a.btn {
-    padding: 8px 50px;
+
+input[type="submit"] {
+    background-color: $color_primary;
+    padding: 5px 20px;
+    border: 2px solid $color_primary;
+    transition: 0,2s;
+    color: $color_light;
+    border-radius: 30px;
+    display: block;
+    max-width: 200px;
+    margin: auto;
+
+    &:hover {
+        background-color: transparent;
+        color: $color_primary;
+        transition: 0,2s;
+    }
+}
+
+button.btn, a.btn, .btn, input[type="submit"].btn {
+    padding: 15px;
     transition: 0,2s;
     display: inline-block;
-    position: relative;
-    border-radius: 30px !important;
-    font-size: .8rem !important;
+    border-radius: 6px !important;
+    border: 0;
+    font-size: 14px !important;
     text-transform: uppercase;
-    font-weight: 300 !important;
-    transition: 0,2s;
+    font-weight: 700 !important;
+    letter-spacing: 1px;
+    color: #212529;
+
+    @include breakpoint(laptop) {
+        font-size: 12px;
+    }
+
 
     i {
         position: absolute;
@@ -40,6 +65,87 @@ button.btn, a.btn {
 
         i {
             right: .7rem;
+        }
+    }
+
+    &:hover {
+        opacity: 0.5;
+    }
+
+    &.link {
+        padding-right: 30px;
+        position: relative;
+
+        &::after {
+            content: "";
+            background: url(./assets/images/arrow-up-right.svg) no-repeat scroll 0 0;
+            width: 13px;
+            height: 13px;
+            position: absolute;
+            right: 10px;
+            transform: translate(0, -50%);
+            top: 50%;
+            margin-top: -1px;
+            filter: brightness(0) opacity(0.7);
+        }
+    }
+
+    &-orange {
+        background: $orange;
+        color: #fff;
+    }
+
+    &-green {
+        background: $green;
+    }
+
+    &-white {
+        background: #fff;
+        color: $green;
+    }
+
+    &-border {
+        border: 2px solid $primary;
+
+        &.orange {
+            border-color: $orange;
+            color: $orange;
+
+            &::after {
+                filter: none;
+            }
+        }
+    }
+
+    &-list {
+        display: flex;
+        flex-wrap: wrap;
+
+        .btn {
+            margin-right: var(--bs-gutter-x);
+            margin-bottom: var(--bs-gutter-y);
+
+            @include breakpoint(mobile) {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &-box {
+        flex-wrap: wrap;
+
+        @include breakpoint(tablet) {
+            .btn {
+                width: 100%;
+                margin-bottom: 15px;
+            }
         }
     }
 }
@@ -207,7 +313,7 @@ button.btn-icon, a.btn-icon {
     margin-top: 1.5rem;
 }
 
-
-button{
-    outline: none!important;
+.btn-orange {
+    background: $orange;
+    color: #fff;
 }

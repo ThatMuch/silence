@@ -35,15 +35,19 @@ html {
     body {
         font-family: $text-ff;
         font-size: $text-fz; // only used for rem-handling, the actual font-size is $body__fontsize
-        font-weight: 300;
+        //font-weight: 400;
         line-height: $text-lh;
         display: flex;
         flex-direction: column;
         align-items: center;
         min-height: 100vh;
         background-color: $html__bgcolor;
-        color: $color-secondary-darker;
+        color: $primary;
     }
+}
+
+img {
+    max-width: 100%;
 }
 
 main {
@@ -86,12 +90,6 @@ footer .inner {
     }
 }
 
-.site-content .container {
-    @include breakpoint(laptop) {
-        max-width: 90%;
-    }
-}
-
 .chapeau {
     font-weight: 400;
     color: $color-secondary;
@@ -106,6 +104,10 @@ strong {
     font-weight: bold !important;
 }
 
+.grid {
+    display: grid;
+}
+
 // Video + img
 
 article .fb-video span, article iframe {
@@ -117,22 +119,20 @@ article .fb-video {
     width: 100%;
 }
 
-
-.plus-list{
+.plus-list {
     list-style: none;
 }
 
-.plus-list li{
+.plus-list li {
     margin-bottom: 10px;
 }
 
-.plus-list li::before{
-   display: inline-block;
+.plus-list li::before {
+    display: inline-block;
     content: "";
     width: 30px;
     height: 30px;
-    background: transparent url('../assets/images/list-plus.svg') no-repeat;
+    background: transparent url("../assets/images/list-plus.svg") no-repeat;
     vertical-align: middle;
     margin-right: 10px;
-   }
-   
+}

@@ -17,12 +17,34 @@ main#sections {
         }
 
 
-        .container {
-            position: relative;
-        }
-
         &__header {
             margin-bottom: $space-xl;
+            position: relative;
+
+            &-line:after {
+                content: "";
+                position: absolute;
+                right: -33%;
+                top: 50%;
+                width: 50%;
+                border-bottom: 1px solid $color-primary;
+
+                @include breakpoint(mobile) {
+                    width: 100%;
+                    bottom: -20px;
+                    top: inherit;
+                    right: inherit !important;
+                    left: inherit !important;
+                }
+            }
+
+            &__img {
+                overflow: hidden;
+
+                img {
+                    max-width: 100%;
+                }
+            }
 
             &__title {
                 font-weight: 300;
@@ -69,7 +91,7 @@ main#sections {
 
 .bg-primary:not(.section-price) {
     .btn {
-        @extend .btn-light;
+        @extend .btn-light !optional;
     }
 }
 
@@ -99,6 +121,55 @@ main#sections {
     }
 }
 
+.section {
+    &__area {
+        padding: 50px 0;
+        position: relative;
+
+        &.girl {
+            &::before {
+                content: "";
+                background: url(./assets/images/girl.png) no-repeat scroll 0 0 / 100%;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 321px;
+                height: 368px;
+                transform: translate(0, -40%);
+                z-index: 3;
+
+                @include breakpoint(laptop) {
+                    transform: translate(0, 0);
+                    width: 240px;
+                }
+
+
+                @include breakpoint(tablet) {
+                    transform: translate(0, 25%);
+                    width: 200px;
+                }
+
+
+                @include breakpoint(mobile) {
+                    transform: translate(0, 35%);
+                    width: 200px;
+                }
+            }
+        }
+    }
+
+    &__title {
+        h4 {
+            letter-spacing: 2px;
+            font-size: 23px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+    }
+}
+
 @import "section-contact";
 @import "section-faq";
 @import "section-gallery";
@@ -116,3 +187,6 @@ main#sections {
 @import "section-testimonials";
 @import "section-text-image";
 @import "section-text";
+@import "section-list_items";
+@import "section-list_items_image";
+@import "section-logos";

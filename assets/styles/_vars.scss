@@ -25,15 +25,40 @@ $element_width_mobile: 95vw; // default width of the .element content-div
 /*==================================================================================
   COLORS
 ==================================================================================*/
+$orange: #E07A5F;
+$green-vet: #81B29A;
+$green: #93C9CB;
+$yellow: #FCEFB9;
+$gray: #F5F5F5;
+$primary: #3D405B;
+
+$jaune: #F9DE6C;
+$light_opale: #CCE3DE;
+$light_orange: #FBEDEA;
+$dark_orange: #733E31;
+$dark_opale: #537363;
+$dark_jaune: #736632;
 
 /* Presets
 /––––––––––––––––––––––––*/
-$color_primary: #D8AC4D;
-$color_primary-darker: #bd9236;
-$color_secondary: #83988D;
-$color_secondary-darker: #253D38;
-$color_black: #212529;
-$color_dark: #343a40;
+/* Primary */
+$color_primary: $orange;
+$color_secondary: $green;
+$color_ternary: $jaune;
+
+/* Light */
+$color_primary-light: $light_orange;
+$color_secondary-light: $light_opale;
+$color_ternary-light: $yellow;
+
+/* Dark */
+$color_primary-darker: $dark_orange;
+$color_secondary-darker: $dark_opale;
+$color_ternary-darker: $dark_jaune;
+
+/* Neutral */
+$color_black: $primary;
+$color_dark: $primary;
 $color_grey2: #495057;
 $color_grey1: #868e96;
 $color_grey: #F2F2F2;
@@ -43,13 +68,17 @@ $color_light: #fff;
   FONTS
 =============================================*/
 
+$nene: "Neue Machina";
+$poppins: "Poppins", sans-serif;
+$barlow: "Barlow", sans-serif;
+
 /* set base values */
-$text-fz: 1em;
+$text-fz: 14px;
 $text-scale-ratio: 1.2;
-$text-ff: 'Poppins', sans-serif;
+$text-ff: $poppins;
 $text-c: $color_secondary-darker;
 $text-fw: 400;
-$text-lh: 28px;
+$text-lh: 33px;
 $text-quote: "Merriweather", serif;
 
 /* type scale */
@@ -102,8 +131,8 @@ $nav__spacercolor: $color_dark;
 
 /* ANCHORS
 /––––––––––––––––––––––––*/
-$a__linkcolor: $color_dark;
-$a__hovercolor: $color_dark;
+$a__linkcolor: $primary;
+$a__hovercolor: $orange;
 $a__textdecoration: "none";
 
 /*==================================================================================
@@ -120,4 +149,29 @@ $transition_slow: 0.7s;
 $shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 $shadow__soft: 0 1px 2px 0 rgba(0, 0, 0, 0.08), 0 1px 5px 0 rgba(0, 0, 0, 0.06);
 
-$border-radius: 15px;
+$border-radius: 12px;
+
+// Margin & Padding fix
+$spaceamounts: 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100, 150, 200;
+$sides: top, bottom, left, right;
+
+@each $space in $spaceamounts {
+    @each $side in $sides {
+        .m#{str-slice($side, 0, 1)}-#{$space} {
+            margin-#{$side}: #{$space}px !important;
+        }
+
+        .p#{str-slice($side, 0, 1)}-#{$space} {
+            padding-#{$side}: #{$space}px !important;
+        }
+    }
+}
+
+// Font Size
+$sizeamounts: 14, 15, 16, 18, 20, 21, 22, 24, 26, 28, 30, 32, 69;
+
+@each $size in $sizeamounts {
+    .f-#{$size} {
+        font-size: #{$size}px !important;
+    }
+}
