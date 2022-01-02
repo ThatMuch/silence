@@ -16,6 +16,26 @@
             line-height: 21px;
             text-transform: uppercase;
             margin: 0;
+            height: 196px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+
+            @include breakpoint(laptop) {
+                height: 173px;
+            }
+
+
+            @include breakpoint(ipad) {
+                height: 143px;
+            }
+
+
+            @include breakpoint(tablet) {
+                width: 196px;
+                height: 196px;
+            }
         }
 
         h3 {
@@ -37,6 +57,64 @@
                 font-size: 14px;
             }
         }
+
+        // a {
+        //     transition: 0.2s;
+        //     font-size: 16px;
+        //     font-weight: 700;
+
+        //     @include breakpoint(laptop) {
+        //         font-size: 14px;
+        //     }
+        // }
+
+        &:nth-child(1) {
+            .service__icon {
+                background-image: url(./assets/images/bg-2.svg);
+            }
+        }
+
+        &:nth-child(2) {
+            .service__icon {
+                background-image: url(./assets/images/bg-3.svg);
+            }
+        }
+
+        &:nth-child(3) {
+            .service__icon {
+                background-image: url(./assets/images/bg-4.svg);
+            }
+        }
+
+        &:nth-child(4) {
+            .service__icon {
+                background-image: url(./assets/images/bg-5.svg);
+            }
+        }
+
+        &:nth-child(5) {
+            .service__icon {
+                background-image: url(./assets/images/bg-6.svg);
+            }
+        }
+
+        &:nth-child(6) {
+            .service__icon {
+                background-image: url(./assets/images/bg-7.svg);
+            }
+        }
+
+        &:nth-child(7) {
+            .service__icon {
+                background-image: url(./assets/images/bg-8.svg);
+            }
+        }
+
+        &:nth-child(8) {
+            .service__icon {
+                background-image: url(./assets/images/bg-9.svg);
+            }
+        }
     }
 
     &__icon {
@@ -44,12 +122,13 @@
         margin: 0 0 15px;
         overflow: hidden;
         position: relative;
+        background-size: cover;
 
         &:after {
             content: "";
             background-image: url("./assets/images/icon-1.svg");
             background-repeat: no-repeat;
-            background-size: contain;
+            background-size: cover;
             display: block;
             position: absolute;
             left: 50%;
