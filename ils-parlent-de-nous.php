@@ -23,8 +23,48 @@ get_header();
                 </div>
             </div>
         </div>
+<?php if ( have_rows( 'about-us-article' ) ) : ?>
+	<?php $i = 0; ?>
+	<div class="section__blog">
+		<?php while ( have_rows( 'about-us-article' ) ) : the_row(); ?>
+			<div class="section__area <?php echo $i === 0 ? "border-bottom pb-150" : ""; ?>">
+			<div class="container">
+						<div class="row gx-5 align-items-center">
+							<div class="col-lg-6">
+								<div class="post__box">
+									<?php $image = get_sub_field( 'image' ); ?>
+									<?php if ( $image ) : ?>
+										<div class="post__image">
+										<img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
+									</div>
+									<?php endif; ?>
 
-        <div class="section__area border-bottom pb-150">
+									<div class="post__text">
+										<h2 ><a class="post__link" href="<?php echo esc_url( $link['url'] ); ?>" target="<?php echo esc_attr( $link['target'] ); ?>" >
+									<?php the_sub_field( 'title' ); ?></a></h2>
+										<?php $link_article = get_sub_field( 'link' ); ?>
+										<a class="btn-read-more" href="<?php echo esc_url( $link['url'] ); ?>" target="<?php echo esc_attr( $link['target'] ); ?>" >
+										<img src="<?php echo esc_html_e(get_template_directory_uri()) ;?>/assets/images/icon-2.svg" alt="<?php the_sub_field( 'title' ); ?>"></a>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<h2>
+									<a class="m-title text-left"  href="<?php echo esc_url( $link['url'] ); ?>" target="<?php echo esc_attr( $link['target'] ); ?>"><?php the_sub_field( 'title' ); ?> </a>
+								</h2>
+								<div class="text-bx">
+									<?php the_sub_field( 'extract' ); ?>
+								</div>
+							</div>
+						</div>
+					</div>
+			</div>
+		<?php $i++; endwhile; ?>
+	</div>
+<?php else : ?>
+	<?php // no rows found ?>
+<?php endif; ?>
+        <!-- <div class="section__area border-bottom pb-150">
             <div class="container">
                 <div class="row gx-5 align-items-center">
                     <div class="col-lg-6">
@@ -88,4 +128,5 @@ get_header();
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
+ <?php get_footer(); ?>
