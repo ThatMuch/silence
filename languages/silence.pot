@@ -1,4 +1,4 @@
-# Copyright (C) 2021 silence
+# Copyright (C) 2022 silence
 # This file is distributed under the same license as the silence package.
 msgid ""
 msgstr ""
@@ -15,90 +15,126 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: custom-post-type.php:100, custom-post-type.php:127
+#: adn.php:9
+msgid "ADN"
+msgstr ""
+
+#: concept.php:9
+msgid "Concept"
+msgstr ""
+
+#: contact.php:9
+msgid "Contact"
+msgstr ""
+
+#: custom-post-type.php:101, custom-post-type.php:128
 msgid "Formations"
 msgstr ""
 
-#: custom-post-type.php:101
+#: custom-post-type.php:102
 msgid "Formation"
 msgstr ""
 
-#: custom-post-type.php:102
+#: custom-post-type.php:103
 msgid "Nos formations"
 msgstr ""
 
-#: custom-post-type.php:103
+#: custom-post-type.php:104
 msgid "Toutes les formations"
 msgstr ""
 
-#: custom-post-type.php:104, custom-post-type.php:105
+#: custom-post-type.php:105, custom-post-type.php:106
 msgid "Ajouter une formation"
 msgstr ""
 
-#: custom-post-type.php:106
+#: custom-post-type.php:107
 msgid "Modifier la formation"
 msgstr ""
 
-#: custom-post-type.php:107, custom-post-type.php:119
+#: custom-post-type.php:108, custom-post-type.php:120
 msgid "Nouvelle formation"
 msgstr ""
 
-#: custom-post-type.php:108
+#: custom-post-type.php:109
 msgid "Voir la formation"
 msgstr ""
 
-#: custom-post-type.php:109
+#: custom-post-type.php:110
 msgid "Voir les formations"
 msgstr ""
 
-#: custom-post-type.php:110
+#: custom-post-type.php:111
 msgid "Chercher une formation"
 msgstr ""
 
-#: custom-post-type.php:111
+#: custom-post-type.php:112
 msgid "Aucune formation trouvée"
 msgstr ""
 
-#: custom-post-type.php:112
+#: custom-post-type.php:113
 msgid "Aucune formation trouvée dans la corbeille"
 msgstr ""
 
-#: custom-post-type.php:113
+#: custom-post-type.php:114
 msgid "Couverture"
 msgstr ""
 
-#: custom-post-type.php:114
+#: custom-post-type.php:115
 msgid "Définir la couverture"
 msgstr ""
 
-#: custom-post-type.php:115
+#: custom-post-type.php:116
 msgid "Retirer la couverture"
 msgstr ""
 
-#: custom-post-type.php:116
+#: custom-post-type.php:117
 msgid "Utiliser la couverture"
 msgstr ""
 
-#: custom-post-type.php:117
+#: custom-post-type.php:118
 msgid "Filtrer les formations"
 msgstr ""
 
-#: custom-post-type.php:118
+#: custom-post-type.php:119
 msgid "Liste des formations"
 msgstr ""
 
-#: custom-post-type.php:120
+#: custom-post-type.php:121
 msgid "Formation publiée"
 msgstr ""
 
-#: custom-post-type.php:121
+#: custom-post-type.php:122
 msgid "Formation publiée en privée"
 msgstr ""
 
-#: custom-post-type.php:122
+#: custom-post-type.php:123
 msgid "Formation repassé en brouillon"
 msgstr ""
 
-#: custom-post-type.php:123
+#: custom-post-type.php:124
 msgid "Formation mise à jour"
+msgstr ""
+
+#: decouverte.php:9
+msgid "Decouverte"
+msgstr ""
+
+#: entreprises.php:9
+msgid "Entrepries"
+msgstr ""
+
+#: equipe.php:9
+msgid "Equipe"
+msgstr ""
+
+#: faq.php:9
+msgid "FAQ"
+msgstr ""
+
+#: ils-parlent-de-nous.php:9
+msgid "Ils parlent de nous"
+msgstr ""
+
+#: programmes.php:9
+msgid "Programmes"
 msgstr ""

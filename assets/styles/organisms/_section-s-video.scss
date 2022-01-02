@@ -39,68 +39,12 @@
         }
     }
 
-<<<<<<< HEAD
-    .container {
-        top: 55%;
-        transform: translateY(-50%);
-
-        section {
-            max-width: 660px;
-
-            h1 {
-                p {
-                    color: $color_light;
-                    text-shadow: 0px 1px 2px #636161;
-                    margin-bottom: 0;
-
-                    @include breakpoint(tablet) {
-                        font-size: 33px;
-                        line-height: 45px;
-                    }
-
-
-                    @include breakpoint(laptop) {
-                        font-size: 40px;
-                        line-height: 50px;
-                    }
-
-                    @media screen and (max-width: 767px){
-                        line-height: 40px;
-                    }
-
-    
-                    @keyframes revealTextReverse {
-                        0% {
-                          transform: scaleX(0);
-                        }
-                        
-                        100% {
-                          transform: scaleX(1);
-                        }
-                    }
-                    @keyframes fadeIn {
-                        0% {
-                          opacity: 0;
-                        }
-                        
-                        100% {
-                          opacity: 1;
-                        }
-                      }
-                }
-            }
-        }
-    }
-
-    
-=======
->>>>>>> release/v.2.0.0
     .slick-active section {
         -webkit-animation: fadeInDownt .5s ease forwards;
         animation: fadeInDown .5s ease forwards;
 
-        .message{
-            text-shadow: 0 0 0 #636161!important;
+        .message {
+            text-shadow: 0 0 0 #636161 !important;
             background: $color_primary;
             padding: 0 10px;
             color: $color_light;
@@ -111,15 +55,14 @@
             -webkit-animation-delay: 2.15s;
             animation-delay: 2.15s;
 
-            &_text{
+            &_text {
                 opacity: 0;
                 animation: fadeIn 1s linear forwards;
                 animation-delay: 2.85s;
                 -webkit-animation-delay: 2.85s;
-                display: inline-block!important;
+                display: inline-block !important;
             }
-
-        }  
+        }
     }
 
     .slick-active h1 p {
