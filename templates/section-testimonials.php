@@ -10,50 +10,47 @@
  *
  */
  ?>
+<?php
+$args = array(
+'post_type' => 'testimonials'
+);
+$the_query = new WP_Query($args); ?>
 
-  <section class="section section-testimonials">
+  <section class="section__area">
         <div class="container">
-             <!-- Header -->
-	<?php include get_template_directory().'/components/section_header-line.php' ?>
-<!-- Header -->
-        <!-- Slogan -->
-              <?php
-              $args = array(
-              'post_type' => 'testimonials'
-              );
-               $the_query = new WP_Query($args); ?>
-               <div class="slider-wrapper">
-                     <div class="slider slider-autoplay">
-                           <?php if ($the_query->have_posts() ): ?>
-                                <?php  while ( $the_query->have_posts() ): $the_query->the_post(); ?>
-                                <div>
-                                      <div class="grid">
-                                            <?php if (get_the_post_thumbnail()) : ?>
-                                                  <div class="slider__img">
-                                                      <div class="img__inner">
-                                                            <img src="<?php the_post_thumbnail_url()?>" alt="<?php the_title()?>">
-                                                      </div>
-                                                  </div>
-                                            <?php endif;?>
-                                                  <div class="slider__content text-right">
-                                                              <!-- Auteur -->
-                                                              <h5><?php the_title()?></h5>
-                                                              <?php if (get_field('poste') ) : ?>
-                                                                    <span> <?php echo get_field('poste'); ?></span>
-                                                              <?php endif; ?>
-                                                              <!-- Auteur -->
-                                                              <!-- Job -->
-                                                              <?php if (get_field('quote') ) : ?>
-                                                                    <p> <?php echo get_field('quote'); ?></p>
-                                                              <?php endif; ?>
-                                                              <!-- Job -->
-                                                  </div>
-                                      </div>
-
-                                </div>
-                                <?php endwhile;?>
+            <div class="row">
+                  <div class="col-lg-10 mx-auto">
+                        <?php if ( get_sub_field('title') ) : ?>
+                              <h2 class="title"><?php echo get_sub_field('title'); ?></h2>
+                        <?php endif; ?>
+                            <div class="testimonial__wrapper carousel slide" data-bs-ride="carousel" id="testimonial">
+                            <div class="carousel-inner">
+                              <?php if ($the_query->have_posts() ): $i = 0;?>
+                                    <?php  while ( $the_query->have_posts() ): $the_query->the_post(); ?>
+                                          <div class="carousel-item <?php echo $i === 0 ? "active" : "" ?>">
+                                                <div class="testimonial__item">
+                                                <div class="testimonial__image">
+                                                      <img src="<?php the_post_thumbnail_url()?>" alt="<?php the_title()?>">
+                                                </div>
+                                                <div class="testimonial__text">
+                                                      <h2><?php the_title()?></h2>
+                                                      <h3><?php echo get_field('poste'); ?></h3>
+                                                      <p><?php echo get_field('quote'); ?></p>
+                                                </div>
+                                                </div>
+                                          </div>
+                                      <?php $i++; endwhile;?>
+                          <?php endif;?>
+                            </div>
+                            <div class="carousel-indicators">
+                                  <?php if ($the_query->have_posts() ): $i = 0;?>
+                                    <?php  while ( $the_query->have_posts() ): $the_query->the_post(); ?>
+                                <button type="button" data-bs-target="#testimonial" data-bs-slide-to="<?php echo $i?>" class="<?php echo $i === 0 ? "active" : "" ?>"" aria-current="true" aria-label="<?php the_title()?>"></button>
+                                 <?php $i++; endwhile;?>
                           <?php endif; wp_reset_query(); ?>
-                     </div>
-               </div>
+                            </div>
+                        </div>
+                  </div>
+            </div>
 </div>
 </section>

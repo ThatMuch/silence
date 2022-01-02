@@ -6,12 +6,11 @@
  * @author      ThatMuch
  * @version     0.1.0
  * @since       silence_1.0.0
- *
- *
  */
 
 
-/*=======================================================
+/*
+=======================================================
 Table of Contents:
 –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
   1.0 LOCALE SETTING
@@ -24,7 +23,8 @@ Table of Contents:
 
 
 
-/*==================================================================================
+/*
+==================================================================================
   1.0 LOCALE SETTING
 ==================================================================================*/
 // Define local time, date and language-location (PHP-only, does not affect WordPress)
@@ -33,19 +33,22 @@ setlocale(LC_ALL, 'fr_FR.UTF-8');
 
 
 
-/*==================================================================================
+/*
+==================================================================================
   2.0 FONTS
 ==================================================================================*/
 
 
-/* TYPEKIT
+/*
+ TYPEKIT
 /––––––––––––––––––––––––*/
 // enqueue Typekit font-kits => stanlee_enqueue()
 // add your Typekit Kit-ID or leave empty to not enqueue any kit
 $typekit_id = '';
 
 
-/* SELF-HOSTED
+/*
+ SELF-HOSTED
 /––––––––––––––––––––––––*/
 // preload self-hosted fonts => stanlee_preload_fonts()
 // define font-names and font-formats for all fonts that need preloading (usally the same as in assets/styles/fonts.scss)
@@ -54,7 +57,8 @@ $font_formats = ['woff','woff2'];
 
 
 
-/*==================================================================================
+/*
+==================================================================================
   3.0 GOOGLE TAG MANAGER
 ==================================================================================*/
 // embed the GTM-scripts into head and body => silence_gtm()
@@ -63,7 +67,8 @@ $GTM_id = '';
 
 
 
-/*==================================================================================
+/*
+==================================================================================
   4.0 OPEN TAG IMAGE
 ==================================================================================*/
 // open graph tags are returned by default => silence_ogtags()
@@ -78,7 +83,8 @@ $ogimg = [
 
 
 
-/*==================================================================================
+/*
+==================================================================================
   5.0 SETUP WP-MENUS
 ==================================================================================*/
 // loads wordpress-menus, add your custom menus here or remove if not needed
@@ -104,10 +110,28 @@ function stanlee_widgets_init() {
       'after_title'   => '</h3>',
   ) );
   register_sidebar( array(
-      'name'          => esc_html__( 'Footer 1', 'stanlee' ),
-      'id'            => 'footer-1',
+      'name'          => esc_html__( 'Footer Details', 'stanlee' ),
+      'id'            => 'footer-details',
       'description'   => esc_html__( 'Add widgets here.', 'stanlee' ),
       'before_widget' => '<div id="%1$s" class="widget widget-col %2$s ">',
+      'after_widget'  => '</div>',
+      'before_title'  => '<h4 class="widget-title">',
+      'after_title'   => '</h4>',
+  ) );
+  register_sidebar( array(
+      'name'          => esc_html__( 'Footer menu', 'stanlee' ),
+      'id'            => 'footer-menu',
+      'description'   => esc_html__( 'Add widgets here.', 'stanlee' ),
+      'before_widget' => '<div id="%1$s" class="widget widget-col %2$s ">',
+      'after_widget'  => '</div>',
+      'before_title'  => '<h4 class="widget-title">',
+      'after_title'   => '</h4>',
+  ) );
+  register_sidebar( array(
+      'name'          => esc_html__( 'Footer widget', 'stanlee' ),
+      'id'            => 'footer-widget',
+      'description'   => esc_html__( 'Add widgets here.', 'stanlee' ),
+      'before_widget' => '<div id="%1$s" class="footer__widget">',
       'after_widget'  => '</div>',
       'before_title'  => '<h4 class="widget-title">',
       'after_title'   => '</h4>',
@@ -117,7 +141,8 @@ add_action( 'widgets_init', 'stanlee_widgets_init' );
 
 
 // Custom search widget
-/*  function my_search_form( $form ) {
+/*
+  function my_search_form( $form ) {
   $form = '<form role="search" method="get" id="searchform" class="search-form" action="' . home_url( '/' ) . '" >
   <div><label>
   <input class="search-field form-control" placeholder="Rechercher" type="text" value="' . get_search_query() . '" name="s" id="s" />

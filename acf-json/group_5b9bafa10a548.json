@@ -362,35 +362,6 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_6182910e2b3b0": {
-                    "key": "layout_6182910e2b3b0",
-                    "name": "formations",
-                    "label": "Cercles de formations",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_6182911f2b3b1",
-                            "label": "Titre",
-                            "name": "title",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
                 "layout_61829c79aa8f0": {
                     "key": "layout_61829c79aa8f0",
                     "name": "programmes_formations",
@@ -1248,7 +1219,7 @@
                 "layout_5ba6725ceb0fa": {
                     "key": "layout_5ba6725ceb0fa",
                     "name": "s-images",
-                    "label": "Slider - Images",
+                    "label": "List - Images",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -1296,6 +1267,62 @@
                             "mime_types": "",
                             "return_format": "array",
                             "preview_size": "medium"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_61b8d56de3470": {
+                    "key": "layout_61b8d56de3470",
+                    "name": "sl-images",
+                    "label": "Slider - Images ",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_61b8d56de3471",
+                            "label": "Titre",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_61b8d56de3472",
+                            "label": "",
+                            "name": "logo_list",
+                            "type": "gallery",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "insert": "append",
+                            "library": "all",
+                            "min": "",
+                            "max": "",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
                         }
                     ],
                     "min": "",
@@ -1861,7 +1888,7 @@
                 "layout_5ea851585fd94": {
                     "key": "layout_5ea851585fd94",
                     "name": "formations",
-                    "label": "Formations",
+                    "label": "Accueil - Cercles de formations",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -1882,47 +1909,6 @@
                             "prepend": "",
                             "append": "",
                             "maxlength": ""
-                        },
-                        {
-                            "key": "field_5ea8518a6edac",
-                            "label": "Slogan",
-                            "name": "slogan",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_5ea851926edad",
-                            "label": "Catégorie",
-                            "name": "category",
-                            "type": "taxonomy",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "taxonomy": "category",
-                            "field_type": "select",
-                            "allow_null": 0,
-                            "add_term": 0,
-                            "save_terms": 0,
-                            "load_terms": 0,
-                            "return_format": "id",
-                            "multiple": 0
                         }
                     ],
                     "min": "",
@@ -1956,5 +1942,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1636118254
+    "modified": 1639581909
 }

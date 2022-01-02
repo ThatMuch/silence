@@ -8,171 +8,244 @@
 /*==================================================================================
   NAV
 ==================================================================================*/
-nav.navbar.menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 210;
-    width: 100vw;
-    justify-content: inherit;
-    background-color: #fff;
-    display: none;
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    padding-top: 2rem;
-    height: 100vh;
+.navbar-expand-lg {
+    .navbar-nav {
+        .menu-item {
+            .nav-link {
+                text-transform: uppercase;
+                color: $primary;
+                padding: 20px;
 
-    @include breakpoint(laptop) {
-        display: block;
-        height: $header_height;
-        padding-top: .5rem;
-    }
+                @include breakpoint(ipad) {
+                    padding: 10px;
+                    font-size: 13px;
+                }
 
 
-    .btn-search {
-        &__text {
-            margin-right: 0;
-        }
-    }
-
-    .container {
-        max-width: 100%;
-        height: 100%;
-
-        @media screen and (min-width: 1150px) {
-            max-width: 86%;
-        }
-    }
-
-    .footer__rs {
-        position: absolute;
-        display: inline-block;
-        right: 0;
-        top: 35px;
-        left: 0;
-        text-align: center;
-
-        @include breakpoint(laptop) {
-            position: relative;
-            margin-left: 2rem;
-            top: inherit;
-        }
+                @include breakpoint(tablet) {
+                    padding: 20px 45px;
+                }
 
 
-        @media screen and (max-width: 1090px) {
-            margin-left: 1rem;
-        }
-    }
-
-    .navbar-brand {
-        padding-top: 0;
-        padding-bottom: 0;
-        position: absolute;
-        top: 25px;
-
-        @include breakpoint(laptop) {
-            position: relative;
-            top: inherit;
-        }
+                @include breakpoint(mobile) {
+                    padding: 20px 30px;
+                }
 
 
-        .logo  {
-            width: 5.5rem;
-            height: 3rem;
-            background-repeat: no-repeat;
-            background-size: contain;
+                &::before {
+                    content: "";
+                    background: $orange;
+                    width: 0;
+                    height: 1px;
+                    position: absolute;
+                    transition: 0.8s;
+                    margin-top: -3px;
+                }
 
-            @include breakpoint(laptop) {
-                width: 7rem;
-            }
-        }
-    }
+                &:hover {
+                    color: $orange;
 
-    .navbar-collapse {
-        padding: 15px;
-
-        @include breakpoint(laptop) {
-            padding: inherit;
-        }
-
-
-        .navbar-nav {
-            margin: auto;
-
-            .nav-item {
-                .nav-link {
-                    text-transform: uppercase;
-                    color: $color-secondary-darker;
-                    font-size: 21px;
-                    position: relative;
-
-                    @include breakpoint(laptop) {
-                        font-size: 1rem;
+                    &::before {
+                        width: 21px;
                     }
 
-
-                    &:after {
-                        content: '';
-                        display: block;
-                        width: 0;
-                        height: 2px;
-                        transition: width .5s;
-                        background-color: $color-primary;
-                        margin-left: 0;
-                    }
-
-                    &:hover {
-                        color: $color-primary !important;
-
-                        &:after {
-                            width: 35px !important;
-                        }
+                    &::after {
+                        filter: none;
+                        transform: rotate(180deg);
                     }
                 }
 
                 &.active {
-                    .dropdown-toggle::before {
-                        background-image: url("./images/chevron-down.svg");
+                    color: $orange;
+
+                    &::before {
+                        width: 21px;
                     }
 
+                    &::after {
+                        filter: none;
+                    }
+                }
+            }
+
+            &:last-child {
+                .nav-link {
+                    background: linear-gradient(80.08deg, #FCEFB9 -11.53%, #F2A08D 60.32%, #9A6989 133.96%);
+                    color: #fff;
+                    font-weight: 700;
+
+                    &::before {
+                        background: #fff;
+                    }
+
+                    &:hover {
+                        color: #fff;
+                    }
+
+                    &::after {
+                        filter: brightness(10);
+                    }
+                }
+
+                .dropdown-toggle {
+                    &::after {
+                        filter: brightness(10);
+                    }
+                }
+
+                &:hover {
                     .nav-link {
-                        color: $color-primary !important;
+                        color: #fff;
 
-                        &:after {
-                            width: 0;
+                        &::before {
+                            background: #fff;
+                        }
 
-                            @include breakpoint(laptop) {
-                                width: 35px !important;
-                            }
+                        &::after {
+                            filter: brightness(10);
                         }
                     }
                 }
             }
+
+            .dropdown-toggle {
+                &::after {
+                    background: url(./assets/images/dropdown.svg) no-repeat scroll 0 0 / 100%;
+                    border: 0;
+                    width: 13px;
+                    height: 7px;
+                    vertical-align: 1px;
+                    margin-left: 8px;
+                    filter: brightness(0);
+                    transition: 0.4s;
+
+                    @include breakpoint(tablet) {
+                        position: absolute;
+                        right: 45px;
+                        top: 25px;
+                    }
+
+
+                    @include breakpoint(mobile) {
+                        right: 30px;
+                    }
+                }
+            }
+
+            &:hover {
+                .dropdown-menu {
+                    display: block;
+                }
+
+                .nav-link {
+                    color: $orange;
+
+                    &::before {
+                        width: 21px;
+                    }
+
+                    &::after {
+                        filter: none;
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+
+            @include breakpoint(tablet) {
+                .dropdown-menu {
+                    border-radius: 0;
+                    border: 0;
+                    padding: 0 50px;
+                    margin: 0;
+                }
+            }
+
+
+            .dropdown-item {
+                font-size: 13px;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .logo  {
+        width: 5.5rem;
+        height: 3rem;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        @include breakpoint(laptop) {
+            width: 7rem;
         }
     }
 }
 
-.dropdown-toggle {
-    padding-right: 20px !important;
-
-    &:after {
-        border: none !important;
-    }
-
-    &:before {
-        content: "";
-        background-image: url("./images/chevron-downDark.svg");
-        height: 20px;
-        width: 20px;
-        display: block;
-        position: absolute;
+.navbar {
+    &-brand {
+        position: relative;
         top: 10px;
-        right: 0;
     }
 
-    &:hover:before {
-        background-image: url("./images/chevron-down.svg");
+    &-toggler {
+        color: $orange;
+        width: 90px;
+        height: 75px;
+        background: $gray;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: 700;
+
+        span {
+            &.bar {
+                height: 3px;
+                background: $orange;
+                width: 47px;
+                display: block;
+                border-radius: 20px;
+                margin-bottom: 2px;
+                transform: rotate(-15deg);
+
+                &:nth-child(2) {
+                    transform: rotate(15deg);
+                    transform-origin: 40px 0;
+                }
+            }
+
+            &.text {
+                display: none;
+            }
+        }
+
+        &.collapsed {
+            span {
+                &.text {
+                    display: block;
+                }
+
+                &.bar {
+                    transform: none !important;
+                }
+            }
+        }
+    }
+
+    @include breakpoint(tablet) {
+        &-collapse {
+            position: fixed;
+            background: #fff;
+            left: 0;
+            right: 0;
+            top: 74px;
+            z-index: 99;
+
+            &.show {
+                height: calc(100vh - 74px);
+            }
+        }
     }
 }
 

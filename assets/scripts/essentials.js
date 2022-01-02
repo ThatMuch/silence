@@ -21,9 +21,9 @@ var $vpWidth = jQuery(window).width();
 var $root = $('html');
 var isTouch = 'ontouchstart' in document.documentElement;
 if (isTouch) {
-  $root.attr('data-touch', 'true');
+	$root.attr('data-touch','true');
 } else {
-  $root.attr('data-touch', 'false');
+	$root.attr('data-touch','false');
 }
 
 
@@ -35,58 +35,117 @@ if (isTouch) {
 //   // function stuff
 // }, 250);
 // window.addEventListener('resize', myfunction);
-function debounce(func, wait, immediate) {
-  var timeout;
-  return function() {
-    var context = this, args = arguments;
-    var later = function() {
-      timeout = null;
-      if (!immediate) func.apply(context, args);
-    };
-    var callNow = immediate && !timeout;
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    if (callNow) func.apply(context, args);
-  };
+function debounce(func,wait,immediate) {
+	var timeout;
+	return function () {
+		var context = this,
+			args = arguments;
+		var later = function () {
+			timeout = null;
+			if (!immediate) {
+				func.apply(context,args);
+			}
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later,wait);
+		if (callNow) {
+			func.apply(context,args);
+		}
+	};
 }
 
-/* Menu burger */
-var menuBtn = document.querySelector('.btn-menu');
+// /* Menu burger */
+// var menuBtn = document.querySelector('.btn-menu');
 
-var nav = document.querySelector('.menu');
+// var nav = document.querySelector('.menu');
 
-// This is a flag so the class open can be added and removed at the correct time.
-// There are other ways of doing this such as multiplying 1 by -1 and storing the
-// result each time but this way is clearer I think.
-var menuOpen = false;
+// // This is a flag so the class open can be added and removed at the correct time.
+// // There are other ways of doing this such as multiplying 1 by -1 and storing the
+// // result each time but this way is clearer I think.
+// var menuOpen = false;
 
-menuBtn.addEventListener('click', function() {
-  if(!menuOpen) {
-    nav.classList.add('d-block');
-    menuOpen = true;
-  } else {
-    nav.classList.remove('d-block');
-    menuOpen = false;
-  }
-});
-
-
+// menuBtn.addEventListener('click', function() {
+//   if(!menuOpen) {
+//     nav.classList.add('d-block');
+//     menuOpen = true;
+//   } else {
+//     nav.classList.remove('d-block');
+//     menuOpen = false;
+//   }
+// });
 
 
+(function ($) {
+	'use strict';
 
-/* Button call scroll bottom */
-$('.button_call').click(function () {
-    $('html, body').animate({scrollTop:$(document).height()}, 'slow');
-    return false;
-});
+	$(document).ready(function ($) {
+		$('.modal').appendTo('body');
+
+		$('.client__wrapper').owlCarousel({
+			loop: true,
+			dots: true,
+			margin: 20,
+			autoplay: true,
+			responsive: {
+				0: {
+					items: 2
+				},
+				668: {
+					items: 3
+				},
+				991: {
+					items: 5
+				}
+			}
+		});
+
+		$('.modules__list').owlCarousel({
+			loop: true,
+			dots: true,
+			margin: 20,
+			autoplay: true,
+			responsive: {
+				0: {
+					items: 1,
+					dots: false,
+					autoWidth: true
+				},
+				668: {
+					items: 3
+				},
+				991: {
+					items: 4
+				}
+			}
+		});
+
+		$('.box__list').owlCarousel({
+			loop: true,
+			dots: true,
+			margin: 40,
+			autoplay: true,
+			responsive: {
+				0: {
+					items: 1
+				},
+				668: {
+					items: 2
+				},
+				991: {
+					items: 3
+				}
+			}
+		});
+
+		$('.post__list').owlCarousel({
+			loop: true,
+			dots: true,
+			autoplay: true,
+			items: 1
+		});
+	});
+
+}(jQuery));
 
 
-$(window).on("scroll", function() {
-	var scrollHeight = $(document).height();
-	var scrollPosition = $(window).height() + $(window).scrollTop();
-	if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
-    $('.button_call').css('display','none');
-	}else{
-    $('.button_call').css('display','block');
-  }
-});

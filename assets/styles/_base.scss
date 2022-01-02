@@ -35,15 +35,19 @@ html {
     body {
         font-family: $text-ff;
         font-size: $text-fz; // only used for rem-handling, the actual font-size is $body__fontsize
-        font-weight: 300;
+        //font-weight: 400;
         line-height: $text-lh;
         display: flex;
         flex-direction: column;
         align-items: center;
         min-height: 100vh;
         background-color: $html__bgcolor;
-        color: $color-dark;
+        color: $primary;
     }
+}
+
+img {
+    max-width: 100%;
 }
 
 main {
@@ -83,12 +87,6 @@ footer .inner {
 
     @include breakpoint(mobile) {
         width: $element_width_mobile;
-    }
-}
-
-.site-content .container {
-    @include breakpoint(laptop) {
-        max-width: 90%;
     }
 }
 

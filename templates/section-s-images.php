@@ -11,37 +11,29 @@
  */
  ?>
 
-  <section class="section section-logos">
+  <section class="section__area bg-green">
       <div class="container">
-      <div class="slider-wrapper">
-            <?php if( get_sub_field('title') ) : ?>
-              <div class="title-wrapper">
-                <h5 class="section__title"><?php echo get_sub_field('title'); ?></h5>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="client__featured__wrapper">
+            <h2><?php echo get_sub_field('title') ?></h2>
+                <?php
+                  $images = get_sub_field('logo_list');
+                  $size = 'medium';
+                  $i = 8;
+
+                  if( $images ): ?>
+              <div class="client__featured__list">
+                  <?php foreach( $images as $image ): ?>
+                    <div class="client__featured">
+                          <img src="<?php echo $image['sizes'][$size]; ?>" alt="<?php echo $image['alt']; ?>" />
+                    </div>
+                  <?php endforeach; ?>
               </div>
-            <?php endif; ?>
-        <?php if( get_sub_field('slogan') ) : ?>
-	 <?php echo get_sub_field('slogan'); ?>
- <?php endif; ?>
-        <!-- Slogan -->
-  <?php
-
-$images = get_sub_field('logo_list');
-$size = 'medium';
-$i = 8;
-
-if( $images ): ?>
-<div class="slider slider-logo">
-
-    <?php foreach( $images as $image ): ?>
-      <div class="block-img-logo">
-             <img src="<?php echo $image['sizes'][$size]; ?>" alt="<?php echo $image['alt']; ?>" />
+              <?php endif;?>
+          </div>
+        </div>
       </div>
-    <?php endforeach; ?>
-
-
-</div>
-<?php endif; ?>
-</div>
     </div>
 </section>
 

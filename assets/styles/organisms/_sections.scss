@@ -17,10 +17,6 @@ main#sections {
         }
 
 
-        .container {
-            position: relative;
-        }
-
         &__header {
             margin-bottom: $space-xl;
             position: relative;
@@ -122,6 +118,55 @@ main#sections {
 
     .slick-arrow.slick-disabled {
         display: none !important;
+    }
+}
+
+.section {
+    &__area {
+        padding: 50px 0;
+        position: relative;
+
+        &.girl {
+            &::before {
+                content: "";
+                background: url(./assets/images/girl.png) no-repeat scroll 0 0 / 100%;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 321px;
+                height: 368px;
+                transform: translate(0, -40%);
+                z-index: 3;
+
+                @include breakpoint(laptop) {
+                    transform: translate(0, 0);
+                    width: 240px;
+                }
+
+
+                @include breakpoint(tablet) {
+                    transform: translate(0, 25%);
+                    width: 200px;
+                }
+
+
+                @include breakpoint(mobile) {
+                    transform: translate(0, 35%);
+                    width: 200px;
+                }
+            }
+        }
+    }
+
+    &__title {
+        h4 {
+            letter-spacing: 2px;
+            font-size: 23px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
     }
 }
 

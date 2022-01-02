@@ -22,7 +22,7 @@
       <div class="col-sm-8 divider">
 				   <div class="block-round"></div>
         </div>
-        
+
 				<div class="col-sm-4">
               <?php if ( get_sub_field('slogan') ) : ?>
               <h2 class="section__header__slogan text-left"><?php echo get_sub_field('slogan'); ?></h2>
@@ -41,7 +41,9 @@
                 <?php echo $form; ?>
 
           <?php endif; ?>
-          <!-- Contact form -->     
+          <!-- Contact form -->
   </div>
     </div>
  </section>
+
+ <?php get_footer(); ?>

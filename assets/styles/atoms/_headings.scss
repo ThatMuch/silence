@@ -7,25 +7,15 @@
  */
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 700 !important;
+    font-weight: 700;
 }
 
-h1 {
-    @include heading-size(6);
-
-    text-transform: uppercase;
-
-    @media screen and (max-width: 500px) {
-        font-size: 27px !important;
-    }
-
-    @media screen and (max-width: 320px) {
-        font-size: 20px !important;
-    }
+.h1, h1 {
+    font-size: 40px;
 }
 
 h2 {
-    font-size: 25px;
+    font-size: 32px;
 }
 
 h3 {

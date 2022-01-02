@@ -5,168 +5,15 @@
  * @since       silence_1.0.0.0
  *
  */
-
-input, textarea, select {
-    border: 0 !important;
-    background-color: transparent !important;
-    outline: none;
-    color: $color-secondary-darker;
-}
-
-input:focus, textarea:focus {
-    border-color: transparent !important;
-    box-shadow: inherit !important;
-}
-
-input, select {
-    &:active, &:hover, &:focus {
-        //
-   
-    }
-}
-
-input[type="radio"],
-input[type="checkbox"] {}
-
-input[type="submit"] {
-    background-color: $color_primary !important;
-    padding: 5px 20px;
-    border: 2px solid $color_primary !important;
-    transition: 0,2s;
-    color: $color_light;
-    border-radius: 30px;
-    display: block;
-    max-width: 200px;
-    margin: auto;
-}
-
-input[type="submit"]:hover {
-    background-color: transparent !important;
-    color: $color_primary;
-    transition: 0,2s;
-}
-
+input,
+button,
+a,
+textarea,
 select {
-    font-weight: 300;
-}
-
-.select-container {
-    position: relative;
-    height: 100%;
-    text-align: center;
-}
-
-$background: #fff;
-$select-color: #fff;
-$select-background: $color-grey;
-$select-width: 220px;
-$select-height: 40px;
-
-.select-hidden {
-    display: none;
-    visibility: hidden;
-    padding-right: 10px;
-}
-
-.select {
-    cursor: pointer;
-    position: relative;
-    height: 110%;
-
-    &:not(:empty) {
-        font-weight: 700;
-    }
-
-    &.disabled {
-        color: $color_grey1;
-        cursor: inherit;
-    }
-
-    &::after {
-        font-family: 'Font Awesome 5 Free' !important;
-        content: "\f107";
-        position: absolute;
-        bottom: 10px;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        font-weight: 700;
-        z-index: 0;
-    }
-}
-
-.select-styled {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    height: 100%;
-    width: 100%;
-    text-align-last: center;
-    position: absolute;
-    left: 0;
-    z-index: 1;
-    padding: 1.5rem;
-}
-
-.select-options {
-    display: none;
-    position: absolute;
-    top: 120%;
-    right: 0;
-    left: 0;
-    z-index: 999;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    background-color: #fff;
-    box-shadow: $shadow;
-    border-radius: $border-radius;
-
-    li {
-        margin: 0;
-        padding: 12px 0;
-        text-indent: 15px;
-        font-weight: 300;
-
-        &:hover {
-            color: $color-secondary;
-        }
-
-        &[rel="hide"] {
-            display: none;
-        }
-    }
-}
-
-fieldset {
-    border: 1px solid $color_black !important;
-    border-radius: 15px;
-    display: block;
-    padding: 1em 1.75em 0.65em !important;
-
-    legend {
-        color: $color_black;
-        padding-left: 12px;
-        padding-right: 12px;
-        width: auto;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        margin-left: 2rem;
-        margin-bottom: 0;
-
-        * {
-            font-weight: 300 !important;
-        }
-
-        @media screen and (max-width: 500px) {
-            font-size: 15px !important;
-        }
-
-        h5 {
-            @media screen and (max-width: 500px) {
-                font-size: 15px !important;
-            }
-        }
+    &:focus,
+    &:active {
+        outline: 0 !important;
+        box-shadow: 0 0 0 !important;
     }
 }
 
@@ -178,5 +25,36 @@ fieldset {
 
     a {
         border-radius: 10px;
+    }
+}
+
+.custom-check, .wpcf7-checkbox {
+    margin: 7px 0;
+
+    input {
+        display: none;
+
+        &:checked ~ {
+            .wpcf7-list-item-label::before {
+                background-image: url(./assets/images/check.svg);
+            }
+        }
+    }
+
+    .wpcf7-list-item-label {
+        position: relative;
+        cursor: pointer;
+        font-size: 16px;
+        padding-left: 35px;
+
+        &::before {
+            content: "";
+            background: url(./assets/images/un-check.svg) no-repeat scroll 0 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 24px;
+            height: 24px;
+        }
     }
 }

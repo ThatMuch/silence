@@ -5,11 +5,11 @@
  * @author      ThatMuch
  * @version     0.1.0
  * @since       silence_1.0.0
- *
  */
 
 
-/*=======================================================
+/*
+=======================================================
 Table of Contents:
 –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
   1.0 CODING TOOLKIT
@@ -33,12 +33,14 @@ Table of Contents:
 
 
 
-/*==================================================================================
+/*
+==================================================================================
   1.0 CODING TOOLKIT
 ==================================================================================*/
 
 
-/* 1.1 DEBUG / DUMP'N DIE
+/*
+ 1.1 DEBUG / DUMP'N DIE
 /––––––––––––––––––––––––*/
 function debug($var) {
   echo '<pre>'.var_dump($var).'</pre>';
@@ -49,7 +51,8 @@ function dd($var) {
 }
 
 
-/* 1.2 is AJAX/PJAX Request
+/*
+ 1.2 is AJAX/PJAX Request
 /––––––––––––––––––––––––*/
 function is_ajax_request() {
   return !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
@@ -59,13 +62,15 @@ function is_pjax_request() {
 }
 
 
-/* 1.3 VARIABLES
+/*
+ 1.3 VARIABLES
 /––––––––––––––––––––––––*/
 $url = 'https://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 $loremipsum = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.';
 
 
-/* 1.4 STRING SHORTENER
+/*
+ 1.4 STRING SHORTENER
 /––––––––––––––––––––––––*/
 // shorten strings and append ...
 function shorten($string,$length,$append="...") {
@@ -78,7 +83,8 @@ function shorten($string,$length,$append="...") {
 }
 
 
-/* 1.5 URL CHECK
+/*
+ 1.5 URL CHECK
 /––––––––––––––––––––––––*/
 // searche url by string
 // note: also consider using basename($url) or basename(dirname($url)) => http://php.net/manual/de/function.basename.php
@@ -89,7 +95,8 @@ function urlcontains($string) {
 }
 
 
-/* 1.6 SLUGIFY
+/*
+ 1.6 SLUGIFY
 /––––––––––––––––––––––––*/
 // create slugs
 // example: "LORÖM %< 123+ ipsüm!" will be "loroem-123-ipsuem-"
@@ -107,12 +114,14 @@ function slugify($text) {
 
 
 
-/*==================================================================================
+/*
+==================================================================================
   2.0 OUTPUT TOOLKIT
 ==================================================================================*/
 
 
-/* 2.1 GOOGLE TAG MANAGER
+/*
+ 2.1 GOOGLE TAG MANAGER
 /––––––––––––––––––––––––*/
 // outputs one of the two parts of the Google Tag Manager scripts
 // Usage: gtm('head', 'GTM-1234567) and gtm('body', 'GTM-1234567)
@@ -136,7 +145,8 @@ function silence_gtm($type) {
 }
 
 
-/* 2.2 SANITIZER
+/*
+ 2.2 SANITIZER
 /––––––––––––––––––––––––*/
 function sanitize_output($buffer) {
   $search = ['/\>[^\S ]+/s', '/[^\S ]+\</s', '/(\s)+/s'];
@@ -146,7 +156,8 @@ function sanitize_output($buffer) {
 }
 
 
-/* 2.3 BLOG RELATED
+/*
+ 2.3 BLOG RELATED
 /––––––––––––––––––––––––*/
 
 // return formatted post-date in german
@@ -189,11 +200,13 @@ function modify_read_more_link() {
 
 
 
-/*==================================================================================
+/*
+==================================================================================
   3.0 ACCESS TOOLKIT
 ==================================================================================*/
 
-/* 3.1 IP CHECK
+/*
+ 3.1 IP CHECK
 /––––––––––––––––––––––––*/
 // add your own ip here
 function is_me() {
@@ -201,14 +214,16 @@ function is_me() {
 }
 
 
-/* 3.2 LOGIN PAGE
+/*
+ 3.2 LOGIN PAGE
 /––––––––––––––––––––––––*/
 function is_login_page() {
   return in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php'));
 }
 
 
-/* 3.3 RESTRICT ACCES IF NOT LOGGEDIN
+/*
+ 3.3 RESTRICT ACCES IF NOT LOGGEDIN
 /––––––––––––––––––––––––––––––––––––*/
 // redirect all users that are not logged-in to login
 // remove `false && ` to activate
