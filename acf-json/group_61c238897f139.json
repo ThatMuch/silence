@@ -148,5 +148,16 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1640122154
+    "show_in_rest": 0,
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1640790483,
+    "acfe_categories": {
+        "page": "Page"
+    }
 }

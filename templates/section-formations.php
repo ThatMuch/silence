@@ -27,7 +27,7 @@
 	<div class="container">
 		<div class="row">
                 <div class="col-md-12">
-                    <h2 class="title mb-5"><?php echo get_sub_field('title'); ?></h2>
+                    <h2 class="title mb-5"><?php echo esc_html_e(get_sub_field('title')); ?></h2>
                 </div>
         </div>
 		<div class="row">

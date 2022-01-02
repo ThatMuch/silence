@@ -66,6 +66,19 @@
     width: 100%;
 }
 
+.rounded-circle {
+    height: 154px;
+    width: 154px;
+    margin: 0 auto 30px;
+    overflow: hidden;
+
+    img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+}
+
 @media only screen and (max-width: 767px) {
     .round-image {
         margin-bottom: 30px;
