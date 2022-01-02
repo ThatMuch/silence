@@ -101,7 +101,7 @@
         max-width: 192px;
         margin: 30px auto 0;
 
-        h2 {
+        &__text {
             letter-spacing: -0.011em;
             font-size: 13px;
             line-height: 24px;
@@ -109,7 +109,7 @@
             margin: 0;
         }
 
-        p {
+        &__ast {
             color: #733E31;
             font-size: 11px;
             line-height: 16px;
@@ -122,7 +122,7 @@
             align-items: center;
             justify-content: center;
 
-            h1 {
+            &__number {
                 color: $orange;
                 font-family: $barlow;
                 font-weight: 500;
@@ -130,15 +130,15 @@
                 margin: 0;
             }
 
-            &.two {
+            &.box-1 {
                 background-image: url(./assets/images/item-bg-2.svg);
             }
 
-            &.three {
+            &.box-2 {
                 background-image: url(./assets/images/item-bg-3.svg);
             }
 
-            &.four {
+            &.box-3 {
                 background-image: url(./assets/images/item-bg-4.svg);
             }
         }

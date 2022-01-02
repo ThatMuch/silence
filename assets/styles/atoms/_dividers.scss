@@ -51,7 +51,7 @@ hr {
         }
 
         &-green {
-            padding-top: 200px;
+            padding-top: 200px !important;
             z-index: 1;
 
             .container {
@@ -127,7 +127,7 @@ hr {
         }
 
         &.girl {
-            padding-bottom: 250px;
+            padding-bottom: 250px !important;
 
             &::after {
                 height: 250px;
