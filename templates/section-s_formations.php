@@ -64,14 +64,18 @@
 											<?php if ( have_rows( 'details' ) ) : ?>
 												<ul>
 												<?php while ( have_rows( 'details' ) ) : the_row(); ?>
+												<?php if (get_sub_field( 'time_remot' )): ?>
 												<li>
-													<img src="<?php echo get_template_directory_uri(); ?>/assets/images/clock.svg" />
+													<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons_silenceoratoire_Timer.svg" />
 													<span><?php the_sub_field( 'time_remot' ); ?></span>
 												</li>
+											<?php endif; ?>
+											<?php if (get_sub_field( 'people' )): ?>
 												<li>
-													<img src="<?php echo get_template_directory_uri(); ?>/assets/images/user.svg" />
+													<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons_silenceoratoire_Participants.svg" />
 													<span><?php the_sub_field( 'people' ); ?> Pers</span>
 												</li>
+											<?php endif; ?>
 												<?php endwhile; ?>
 												</u>
 											<?php endif; ?>
@@ -79,14 +83,18 @@
 										</div>
 										<div class="card__back ">
 											<h3 class="card__back__title"><?php the_title();?></h3>
-											<?php if ( get_field('desc') ) : ?>
-												<p class="card__back__text"><?php echo get_field('desc'); ?></p>
+											<?php if(has_tag('Formation à distance')): ?>
+											<span class="badge badge-light">Format à distance disponible</span>
 											<?php endif; ?>
-
-												<a class="btn btn-primary mt-auto btn-icon mb-2" href="<?php echo site_url()?>/contact">Nous contacter <i class="icon arrow-right"></i></a>
+											<?php if ( get_field('desc') ) : ?>
+												<div class="card__back__text <?php echo has_tag('Formation à distance') ? "has_tag" : ""?>"><?php echo get_field('desc'); ?></div>
+											<?php endif; ?>
+											<?php // if (intval(strlen(get_field('desc'))) > 250) : ?>
+                                      <!-- <button  class="btn btn-link showMore">lire +</button> -->
+                                    <?php // endif; ?>												<a class="btn btn-primary mt-auto btn-icon mb-2" href="<?php echo site_url()?>/contact">Nous contacter <i class="icon arrow-right"></i></a>
 
 											<?php if ( get_field('brochure') ) : ?>
-											 <a href="<?php  the_field('brochure'); ?>" target="_blank" class="btn btn-outline-primary mt-auto btn-icon" >Télécharger la brochure<i class="icon download"></i></a>
+											 <a href="<?php  the_field('brochure'); ?>" target="_blank" class="btn btn-outline-primary btn-icon" >Télécharger la brochure<i class="icon download"></i></a>
 											<?php endif; ?>
 										</div>
 									</div>

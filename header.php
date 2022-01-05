@@ -70,6 +70,7 @@
     <div class="row">
       <div class="col-12">
         <div class="hero__text">
+			<?php the_post_thumbnail('large');/* img */ ?>
           <h1>
 			  <?php echo esc_html_e(get_field('title_page',$page_id) ? get_field('title_page', $page_id) : single_post_title()); ?>
 			</h1>

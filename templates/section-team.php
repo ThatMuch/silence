@@ -32,7 +32,8 @@
 		<!-- Header Section -->
           <?php
               $args = array(
-                  'post_type' => 'team'
+                  'post_type' => 'team',
+		  'posts_per_page' => 20
                   );
               $the_query = new WP_Query($args);
               if ($the_query->have_posts() ): $i = 0 ?>
@@ -71,7 +72,7 @@
                                               <!-- Facebook -->
                                               <?php if (get_sub_field('facebook') ) : ?>
 
-                                                  <a target="_blank" href="<?php the_sub_field('facebook');?>" class="btn btn-icon">
+                                                  <a target="_blank" href="<?php the_sub_field('facebook');?>" class="btn btn-icon btn-outline-primary">
                                                   Facebook
                                                       <i class="fab fa-facebook" aria-hidden="true"></i>
                                                   </a>

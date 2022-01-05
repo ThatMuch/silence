@@ -107,3 +107,32 @@ strong {
 .grid {
     display: grid;
 }
+
+// Video + img
+
+article .fb-video span, article iframe {
+    margin: 2rem auto 2rem;
+    display: block;
+}
+
+article .fb-video {
+    width: 100%;
+}
+
+.plus-list {
+    list-style: none;
+}
+
+.plus-list li {
+    margin-bottom: 10px;
+}
+
+.plus-list li::before {
+    display: inline-block;
+    content: "";
+    width: 30px;
+    height: 30px;
+    background: transparent url("../assets/images/list-plus.svg") no-repeat;
+    vertical-align: middle;
+    margin-right: 10px;
+}
