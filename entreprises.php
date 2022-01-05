@@ -54,6 +54,9 @@ get_header();
                         <div class="service__list">
 						<?php if ( have_rows( 'company_choices_item' ) ) : ?>
 							<?php while ( have_rows( 'company_choices_item' ) ) : the_row(); ?>
+							/**
+							* TODO: Ajouter les fonds
+							*/
 							<div class="service__item seven">
                                 <div class="service__icon">
                                     <h2><?php the_sub_field( 'choice' ); ?></h2>
