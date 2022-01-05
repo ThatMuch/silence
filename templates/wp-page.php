@@ -7,22 +7,7 @@
 ?>
 
 <?php get_header(); ?>
-<main id="page" class="<?php echo has_post_thumbnail() ? "" : "mt-header" ?>">
-<?php if (has_post_thumbnail()) : ?>
-    <section class="page__header">
-      <div class="page__header__content">
-        <div class="container page__header__content__inner">
-          <?php if ( get_field('slogan_page')) : ?>
-            <h1 class="page__header__title page__header__slogan"><?php the_field( 'slogan_page' ); ?></h1>
-          <?php else : ?>
-            <h1 class="page__header__title text-center"><?php the_title(); ?></h1>
-          <?php endif; ?>
-        </div>
-      </div>
-        <?php the_post_thumbnail('large');/* img */ ?>
-    </section>
-  <?php endif?>
-
+<main id="page">
 <div class="container">
 
   <section>
@@ -49,10 +34,10 @@
           <?php if ( get_field('title') ) : ?>
               <h3 class="title_card_formation"><?php echo the_field('title'); ?></h3>
           <?php endif; ?>
-          
+
           <?php if ( get_field('subtitle') ) : ?>
               <p class="horaire"><?php echo the_field('subtitle'); ?></p>
-          <?php endif; ?>    
+          <?php endif; ?>
           <?php if ( have_rows('price_list') ): $counter = 1; ?>
             <div class="bloc_price_formation ">
                 <?php if( get_field('logo') ): ?>
@@ -63,24 +48,24 @@
                     <li class="<?php  if( $counter == 2 ) { ?>last_list_price<?php } ?>"><p class="price_formation"><?php the_sub_field('prix'); ?> €</p>
                         <p class="libelle_price"><?php the_sub_field('condition'); ?></p>
 
-                        <?php 
+                        <?php
                             $link = get_sub_field('lien');
-                            if( $link ): 
+                            if( $link ):
                                 $link_url = $link['url'];
                                 $link_title = $link['title'];
                                 ?>
                               <a class="btn_purchase" href="<?php echo esc_url( $link_url ); ?>"><?php echo esc_html( $link_title ); ?></a>
                             <?php endif; ?>
 
-                    </li>       
+                    </li>
                     <?php $counter++; endwhile; ?>
                   </ul>
-                  <?php endif; ?>  
-              </div> 
+                  <?php endif; ?>
+              </div>
           <hr class="wp-block-separator">
-          <?php 
+          <?php
                             $link_achat = get_field('link_achat');
-                            if( $link_achat ): 
+                            if( $link_achat ):
                                 $link_url = $link['url'];
                                 $link_title = $link['title'];
                             ?>
@@ -94,11 +79,11 @@
       </div>
       <?php endif; ?>
     </div>
-      
+
       </article>
     <?php endwhile; ?>
 
-   
+
 
 
 
