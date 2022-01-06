@@ -21,7 +21,7 @@ $the_query = new WP_Query($args); ?>
             <div class="row">
                   <div class="col-lg-10 mx-auto">
                         <?php if ( get_sub_field('title') ) : ?>
-                              <h2 class="title"><?php echo get_sub_field('title'); ?></h2>
+                              <h2 class="title"><?php echo esc_html_e(get_sub_field('title')); ?></h2>
                         <?php endif; ?>
                             <div class="testimonial__wrapper carousel slide" data-bs-ride="carousel" id="testimonial">
                             <div class="carousel-inner">
@@ -34,8 +34,8 @@ $the_query = new WP_Query($args); ?>
                                                 </div>
                                                 <div class="testimonial__text">
                                                       <h2><?php the_title()?></h2>
-                                                      <h3><?php echo get_field('poste'); ?></h3>
-                                                      <p><?php echo get_field('quote'); ?></p>
+                                                      <h3><?php echo esc_html_e(get_field('poste')); ?></h3>
+                                                      <p><?php echo esc_html_e(get_field('quote')); ?></p>
                                                 </div>
                                                 </div>
                                           </div>
@@ -45,9 +45,9 @@ $the_query = new WP_Query($args); ?>
                             <div class="carousel-indicators">
                                   <?php if ($the_query->have_posts() ): $i = 0;?>
                                     <?php  while ( $the_query->have_posts() ): $the_query->the_post(); ?>
-                                <button type="button" data-bs-target="#testimonial" data-bs-slide-to="<?php echo $i?>" class="<?php echo $i === 0 ? "active" : "" ?>"" aria-current="true" aria-label="<?php the_title()?>"></button>
+                                <button type="button" data-bs-target="#testimonial" data-bs-slide-to="<?php echo esc_attr($i);?>" class="<?php echo $i === 0 ? "active" : "" ?>"" aria-current="true" aria-label="<?php the_title()?>"></button>
                                  <?php $i++; endwhile;?>
-                          <?php endif; wp_reset_query(); ?>
+                          <?php endif; wp_reset_postdata(); ?>
                             </div>
                         </div>
                   </div>

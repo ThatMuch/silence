@@ -52,7 +52,7 @@
 						<div class="item__box">
 							<div class="<?php echo $cat->name == "Particuliers" ? "small" : ""?> item__image">
 								<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-								<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
+								<img src="<?php echo esc_html_e($image[0]); ?>" alt="<?php the_title(); ?>">
 							</div>
 							<div class="item__text">
 								<h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>

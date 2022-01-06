@@ -130,10 +130,10 @@ function debounce(func,wait,immediate) {
 					items: 1
 				},
 				668: {
-					items: 2
+					items: 1
 				},
 				991: {
-					items: 3
+					items: 1
 				}
 			}
 		});

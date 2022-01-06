@@ -233,10 +233,10 @@
 .mt {
     &-lg {
         &-200 {
-            margin-top: 200px;
+            margin-top: 200px !important;
 
             @include breakpoint(tablet) {
-                margin-top: 0;
+                margin-top: 0 !important;
             }
         }
     }
