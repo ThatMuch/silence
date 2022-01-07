@@ -33,7 +33,7 @@
     <!-- Navbar brand -->
   <a class="navbar-brand" href="<?php esc_html_e(site_url()); ?>">
   <?php if($image[0]) : ?>
-    <img src="<?php $image[0]?>" alt="<?php esc_html_e(get_bloginfo( 'name' )); ?>">
+    <img src="<?php echo esc_url($image[0])?>" alt="<?php esc_html_e(get_bloginfo( 'name' )); ?>">
     <?php else: ?>
   <div class="logo" style="background-image: url('<?php echo esc_html_e(get_template_directory_uri());?>/assets/images/stanlee_logo_texte.png')"></div>
   <?php endif;?>
