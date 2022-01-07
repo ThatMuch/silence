@@ -123,6 +123,8 @@ function create_topics_nonhierarchical_taxonomy() {
     'menu_name' => __( 'Roles' ),
   );
 
+
+
 // Now register the non-hierarchical taxonomy like tag.
 
   register_taxonomy('roles','books',array(
@@ -134,6 +136,35 @@ function create_topics_nonhierarchical_taxonomy() {
     'update_count_callback' => '_update_post_term_count',
     'query_var' => true,
     'rewrite' => array( 'slug' => 'role' ),
+  ));
+
+    $labels_faq = array(
+    'name' => _x( 'Categorie FAQ', 'taxonomy general name' ),
+    'singular_name' => _x( 'Categorie', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Categories' ),
+    'popular_items' => __( 'Popular Categories' ),
+    'all_items' => __( 'All Categories' ),
+    'parent_item' => null,
+    'parent_item_colon' => null,
+    'edit_item' => __( 'Edit Categorie' ),
+    'update_item' => __( 'Update Categorie' ),
+    'add_new_item' => __( 'Add New Categorie' ),
+    'new_item_name' => __( 'New Categorie Name' ),
+    'separate_items_with_commas' => __( 'Separate categories with commas' ),
+    'add_or_remove_items' => __( 'Add or remove categories' ),
+    'choose_from_most_used' => __( 'Choose from the most used categories' ),
+    'menu_name' => __( 'Categories' ),
+  );
+
+    register_taxonomy('categories','books',array(
+    'hierarchical' => false,
+    'labels' => $labels_faq,
+    'show_ui' => true,
+    'show_in_rest' => true,
+    'show_admin_column' => true,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'category_faq' ),
   ));
 }
 

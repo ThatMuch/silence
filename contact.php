@@ -34,15 +34,23 @@ get_header();
                 <div class="row">
                     <div class="col-lg-5">
                         <div class="contact__text">
-                            <img src="assets/img/envelope.svg" alt="">
-                            <p>Toujours à votre écoute, on est ravi d’avoir de vos nouvelles.</p>
-                            <p>Nous répondrons à votre message via le formulaire ci-dessous, dans les plus brefs délais (vous allez voir on est assez rapide ;)) <br> Pas de réponse sous 24h ?</p>
-                            <p>Jetez un œil à vos SPAMS, on s’y cache parfois !</p>
+							<div class="rounded-circle">
+                            <?php $contact_image = get_field( 'contact_image' ); ?>
+							<?php if ( $contact_image ) : ?>
+								<img src="<?php echo esc_url( $contact_image['url'] ); ?>" alt="<?php echo esc_attr( $contact_image['alt'] ); ?>" />
+							<?php endif; ?>
+							</div>
+                            <?php the_field( 'contact_text' ); ?>
                         </div>
                     </div>
                     <div class="col-lg-6 ms-auto">
                         <div class="contact__form">
-                            <div class="row gx-4">
+							<?php if ( get_field('contact_formulaire') ) {
+								$form = get_field('contact_formulaire');
+								 echo $form;
+							} ?>
+
+                            <!-- <div class="row gx-4">
                                 <div class="col-md-6">
                                     <h2>civilité</h2>
                                     <div class="contact__input">
@@ -104,9 +112,10 @@ get_header();
                                 <div class="col-md-3 text-end">
                                     <button class="btn btn-green link">envoyer</button>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+<?php get_footer(); ?>
