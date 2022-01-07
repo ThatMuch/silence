@@ -173,7 +173,7 @@ get_header();
 											<h3 class="team__role"><?php echo esc_attr(get_field('job')); ?></h3>
 										<?php endif; ?>
 										<?php if ( get_field('description') ) : ?>
-											<?php echo esc_attr(get_field('description')); ?>
+											<?php echo get_field('description'); ?>
 										<?php endif; ?>
 										<?php if ( have_rows( 'links' ) ) : ?>
 											<?php while ( have_rows( 'links' ) ) : the_row(); ?>
