@@ -9,6 +9,8 @@
  * Header
  */
 
+$query_modules = get_the_terms( $post->ID, 'modules' );
+
 get_header();
 ?>
 
@@ -107,6 +109,49 @@ get_header();
 	<?php endwhile; ?>
 <?php endif; ?>
 
+<!-- Modules -->
+        <div class="section__area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="title">Nos modules</h2>
+                        <div class="modules__list owl-carousel">
+							<?php foreach ($query_modules as $module) : ?>
+
+								<div class="modules__item">
+									<div class="modules__image">
+										<?php
+											// Define taxonomy prefix eg. 'category'
+											// Use 'term' for all taxonomies.
+											$taxonomy_prefix = 'modules';
+
+											// Define term ID
+											// Replace NULL with ID of term to be queried eg '123'.
+											$term_id = $module->term_id;
+
+											// Define prefixed term ID.
+											$term_id_prefixed = $taxonomy_prefix .'_'. $term_id;
+
+											$module_image = get_field( 'module_image', $term_id_prefixed );
+											// Image variables.
+											$url = $module_image['url'];
+											$alt = $module_image['alt'];
+
+											$size = 'thumbnail';
+											$thumb = $module_image['sizes'][ $size ];
+										?>
+										<?php if ( $module_image ) : ?>
+											<img src="<?php echo esc_url($thumb);  ?>" alt="<?php echo esc_attr($alt); ?>" />
+										<?php endif; ?>
+									</div>
+									<h2><?php echo esc_html($module->name); ?></h2>
+								</div>
+								<?php endforeach;  ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 <!-- Section 3 -->
 <?php if ( have_rows( 'formation_section_3' ) ) : ?>
 	<?php while ( have_rows( 'formation_section_3' ) ) : the_row(); ?>
