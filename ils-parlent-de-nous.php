@@ -44,7 +44,7 @@ get_header();
 									<?php the_sub_field( 'title' ); ?></a></h2>
 										<?php $link_article = get_sub_field( 'link' ); ?>
 										<a class="btn-read-more" href="<?php echo esc_url( $link['url'] ); ?>" target="<?php echo esc_attr( $link['target'] ); ?>" >
-										<img src="<?php echo esc_html_e(get_template_directory_uri()) ;?>/assets/images/icon-2.svg" alt="<?php the_sub_field( 'title' ); ?>"></a>
+										<img src="<?php echo esc_html(get_template_directory_uri()) ;?>/assets/images/icon-2.svg" alt="<?php the_sub_field( 'title' ); ?>"></a>
 									</div>
 								</div>
 							</div>

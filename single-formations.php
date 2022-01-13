@@ -18,7 +18,7 @@ get_header();
 		<div class="row">
 			<div class="col-md-12">
 				<?php if ( get_field('subtitle_page') ) : ?>
-					<h2 class="text-center m-title"><?php echo esc_html_e(get_field('subtitle_page')); ?></h2>
+					<h2 class="text-center m-title"><?php echo esc_html(get_field('subtitle_page')); ?></h2>
 				<?php endif; ?>
 			</div>
 		</div>
@@ -40,7 +40,7 @@ get_header();
 					<div class="col-lg-8">
 						<div class="text">
 							<?php if ( get_sub_field('title') ) : ?>
-								<h2 class="m-title text-light mb-4"><?php echo esc_html_e(get_sub_field('title')); ?></h2>
+								<h2 class="m-title text-light mb-4"><?php echo esc_html(get_sub_field('title')); ?></h2>
 							<?php endif; ?>
 							<?php if ( get_sub_field('text') ) : ?>
 								<?php echo get_sub_field('text'); ?>

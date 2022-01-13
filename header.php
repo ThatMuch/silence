@@ -31,16 +31,16 @@
 <nav class="header__area navbar navbar-expand-lg">
   <div class="container">
     <!-- Navbar brand -->
-  <a class="navbar-brand" href="<?php esc_html_e(site_url()); ?>">
+  <a class="navbar-brand" href="<?php esc_html(site_url()); ?>">
   <?php if($image[0]) : ?>
-    <img src="<?php $image[0]?>" alt="<?php esc_html_e(get_bloginfo( 'name' )); ?>">
+    <img src="<?php $image[0]?>" alt="<?php esc_html(get_bloginfo( 'name' )); ?>">
     <?php else: ?>
-  <div class="logo" style="background-image: url('<?php echo esc_html_e(get_template_directory_uri());?>/assets/images/stanlee_logo_texte.png')"></div>
+  <div class="logo" style="background-image: url('<?php echo esc_html(get_template_directory_uri());?>/assets/images/stanlee_logo_texte.png')"></div>
   <?php endif;?>
   </a>
 
   <!-- Button Toggler -->
-  <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'theme-textdomain' ); ?>">
+  <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html( 'Toggle Navigation', 'theme-textdomain' ); ?>">
     <span class="bar"></span>
     <span class="bar"></span>
     <span class="text">MENU</span>
@@ -72,7 +72,7 @@
         <div class="hero__text">
 			<?php the_post_thumbnail('large');/* img */ ?>
           <h1>
-			  <?php echo esc_html_e(get_field('title_page',$page_id) ? get_field('title_page', $page_id) : single_post_title()); ?>
+			  <?php echo esc_html(get_field('title_page',$page_id) ? get_field('title_page', $page_id) : single_post_title()); ?>
 			</h1>
           <?php if ( get_field('slogan_page', $page_id)) : ?>
             <?php the_field( 'slogan_page', $page_id ); ?>

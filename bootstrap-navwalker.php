@@ -401,7 +401,7 @@ class Bootstrap_NavWalker extends Walker_Nav_Menu {
 
 			// Display the link to Add New Menu
 			echo '<li class="nav-item active"><a class="nav-link" href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '">';
-			esc_html_e( 'Add a menu', 'theme-textdomain' );
+			esc_html( 'Add a menu', 'theme-textdomain' );
 			echo '</a></li>';
 
 			// Close the main <ul>
