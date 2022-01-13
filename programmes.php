@@ -170,11 +170,15 @@ $the_query_testimonials = new WP_Query($args_testimonials);
 											$term_id_prefixed = $taxonomy_prefix .'_'. $term_id;
 
 											$module_image = get_field( 'module_image', $term_id_prefixed );
+											// Image variables.
+											$url = $module_image['url'];
+											$alt = $module_image['alt'];
+
 											$size = 'thumbnail';
 											$thumb = $module_image['sizes'][ $size ];
 										?>
 										<?php if ( $module_image ) : ?>
-											<img src="<?php echo esc_url( $module_image['url'] ); ?>" alt="<?php echo esc_attr( $module_image['alt'] ); ?>" />
+											<img src="<?php echo esc_url($thumb);  ?>" alt="<?php echo esc_attr($alt); ?>" />
 										<?php endif; ?>
 									</div>
 									<h2><?php echo esc_html($module->name); ?></h2>
