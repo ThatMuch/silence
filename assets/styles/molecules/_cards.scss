@@ -76,6 +76,21 @@
     }
 }
 
+.item__box {
+    height: calc(100% - 22px);
+
+    .item__image {
+        height: calc(100% - 75px);
+
+        img {
+            border-radius: 12px 12px 0 0;
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+        }
+    }
+}
+
 .box {
     &__list {
         .owl-dots {
