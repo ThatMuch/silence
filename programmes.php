@@ -389,7 +389,8 @@ $the_query_testimonials = new WP_Query($args_testimonials);
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <a href="#" class="btn btn-border orange link">consulter mon solde formation</a>
+						<img src="<?php echo esc_html(get_template_directory_uri());?>/assets/images/client-13.png')" alt="CPF" class="d-block m-auto mb-2" style="mix-blend-mode: multiply;"/>
+                        <a href="#" class="btn btn-border orange link">consulter mon solde CPF</a>
                     </div>
                 </div>
             </div>
