@@ -41,7 +41,7 @@
                   ?>
             </div>
 			<div class="d-flex justify-content-center">
-				<a href="<?php site_url() ;?>/blog" class="btn btn-border orange bg-white link">Voir tout</a>
+				<a href="<?php site_url() ;?>/blog" class="btn btn-border orange bg-white link">Voir toute l'actualité</a>
 			</div>
       </div>
  </section>
