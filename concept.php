@@ -51,7 +51,7 @@ $query = new WP_Query( $args );
 					</div>
 					<div class="col-lg-6">
 						<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-						<img class="round-image" src="<?php esc_html_e( $image[0] ); ?>" alt="<?php the_title(); ?>">
+						<img class="round-image" src="<?php esc_html( $image[0] ); ?>" alt="<?php the_title(); ?>">
 					</div>
 				</div>
 			</div>
@@ -71,7 +71,7 @@ $query = new WP_Query( $args );
                     </div>
                     <div class="col-lg-6 order-lg-0">
 						<?php if ( get_sub_field('title') ) : ?>
-							<h2 class="m-title mb-4"><?php echo esc_html_e(get_sub_field('title')); ?></h2>
+							<h2 class="m-title mb-4"><?php echo esc_html(get_sub_field('title')); ?></h2>
 						<?php endif; ?>
 
                         <div class="box__text">

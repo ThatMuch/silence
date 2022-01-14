@@ -166,5 +166,34 @@ function create_topics_nonhierarchical_taxonomy() {
     'query_var' => true,
     'rewrite' => array( 'slug' => 'category_faq' ),
   ));
+
+    $labels_modules= array(
+    'name' => _x( 'Modules', 'taxonomy general name' ),
+    'singular_name' => _x( 'Module', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Modules' ),
+    'popular_items' => __( 'Popular Modules' ),
+    'all_items' => __( 'All Modules' ),
+    'parent_item' => null,
+    'parent_item_colon' => null,
+    'edit_item' => __( 'Edit Module' ),
+    'update_item' => __( 'Update Module' ),
+    'add_new_item' => __( 'Add New Module' ),
+    'new_item_name' => __( 'New Module Name' ),
+    'separate_items_with_commas' => __( 'Separate modules with commas' ),
+    'add_or_remove_items' => __( 'Add or remove modules' ),
+    'choose_from_most_used' => __( 'Choose from the most used modules' ),
+    'menu_name' => __( 'Modules' ),
+  );
+
+    register_taxonomy('modules','books',array(
+    'hierarchical' => false,
+    'labels' => $labels_modules,
+    'show_ui' => true,
+    'show_in_rest' => true,
+    'show_admin_column' => true,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'modules' ),
+  ));
 }
 

@@ -16,7 +16,8 @@
 	<div class="container">
                   <div class="row">
                         <div class="col-md-12">
-                              <h2 class="title mb-5"><?php echo esc_html_e(get_sub_field('tittle')); ?></h2>
+                              <h2 class="title mb-5">
+								  Nos actualités</h2>
                         </div>
                   </div>
             <div class="row gx-4 d-none d-lg-flex">
@@ -39,5 +40,8 @@
                         wp_reset_postdata();
                   ?>
             </div>
+			<div class="d-flex justify-content-center">
+				<a href="<?php site_url() ;?>/blog" class="btn btn-border orange bg-white link">Voir tout</a>
+			</div>
       </div>
  </section>

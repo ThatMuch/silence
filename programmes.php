@@ -38,6 +38,23 @@ $args_formations_col2  = array(
 );
 $query_formations_col2 = new WP_Query( $args_formations_col2 );
 
+$args_modules  = array(
+	'post_type'      => 'formations',
+	'taxonomy' => 'modules',
+	'orderby' => 'name',
+	'order'   => 'DESC',
+);
+$query_modules = get_categories($args_modules);
+
+$args_formations_col2  = array(
+	'post_type'      => 'formations',
+	'category_name'  => 'particuliers',
+	'offset'         => '2',
+	'posts_per_page' => '2',
+	'order'          => 'ASC',
+);
+$query_formations_col2 = new WP_Query( $args_formations_col2 );
+
 $args_testimonials = array(
 'post_type' => 'testimonials'
 );
@@ -48,7 +65,7 @@ $the_query_testimonials = new WP_Query($args_testimonials);
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 mx-auto">
-				<h2 class="m-title text-center fw-normal"><?php echo esc_html_e(get_field('subtitle_page')); ?></h2>
+				<h2 class="m-title text-center fw-normal"><?php echo esc_html(get_field('subtitle_page')); ?></h2>
 			</div>
 		</div>
 	</div>
@@ -68,7 +85,7 @@ $the_query_testimonials = new WP_Query($args_testimonials);
                             <div class="item__box">
                                 <div class="item__image">
                                     <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-						<img class="round-image" src="<?php esc_html_e( $image[0] ); ?>" alt="<?php the_title(); ?>">
+						<img class="round-image" src="<?php esc_html( $image[0] ); ?>" alt="<?php the_title(); ?>">
                                 </div>
                                 <div class="item__text">
                                     <h2><a href="<?php the_permalink() ?>">je veux m’inscrire</a></h2>
@@ -79,7 +96,7 @@ $the_query_testimonials = new WP_Query($args_testimonials);
 									<div class="card__info">
 										<h2>Le programme du <?php the_title(); ?></h2>
 										<?php the_sub_field( 'formation_programme_text' ); ?>
-										<a href="<?php echo esc_html_e(site_url()) ;?>/rdv-decouvertes" class="btn btn-green link">rdv découverte gratuit</a>
+										<a href="<?php echo esc_html(site_url()) ;?>/rdv-decouvertes" class="btn btn-green link">rdv découverte gratuit</a>
 										<?php $formation_pdf = get_sub_field( 'formation_pdf' ); ?>
 										<?php if ( $formation_pdf ) : ?>
 											<a class="btn btn-border orange link" target="_blank" href="<?php echo esc_url( $formation_pdf['url'] ); ?>">télécharger</a>
@@ -103,7 +120,7 @@ $the_query_testimonials = new WP_Query($args_testimonials);
                             <div class="item__box">
                                 <div class="item__image">
                                     <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-						<img class="round-image" src="<?php esc_html_e( $image[0] ); ?>" alt="<?php the_title(); ?>">
+						<img class="round-image" src="<?php esc_html( $image[0] ); ?>" alt="<?php the_title(); ?>">
                                 </div>
                                 <div class="item__text">
                                     <h2><a href="<?php the_permalink() ?>">je veux m’inscrire</a></h2>
@@ -136,32 +153,37 @@ $the_query_testimonials = new WP_Query($args_testimonials);
                     <div class="col-md-12">
                         <h2 class="title">Nos modules</h2>
                         <div class="modules__list owl-carousel">
-							<?php
-								if ( $query_formations ->have_posts() ) :
-									$i = 0;
-									while ( $query_formations ->have_posts() ) :
-											$query_formations ->the_post();
-							?>
-								<?php if ( have_rows( 'formations_modules' ) ) : ?>
-									<?php while ( have_rows( 'formations_modules' ) ) : the_row(); ?>
-										<div class="modules__item">
-											<div class="modules__image">
-												<?php
-													$image = get_sub_field( 'image' );
-													$size = 'thumbnail';
-													$thumb = $image['sizes'][ $size ];
-												?>
-												<?php if ( $image ) : ?>
-													<img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
-												<?php endif; ?>
-											</div>
-											<h2><?php the_sub_field( 'text' ); ?></h2>
-										</div>
-									<?php endwhile; ?>
-								<?php endif; ?>
-								<?php endwhile;  wp_reset_postdata(); ?>
-							<?php endif; ?>
+							<?php foreach ($query_modules as $module) : ?>
 
+								<div class="modules__item">
+									<div class="modules__image">
+										<?php
+											// Define taxonomy prefix eg. 'category'
+											// Use 'term' for all taxonomies.
+											$taxonomy_prefix = 'modules';
+
+											// Define term ID
+											// Replace NULL with ID of term to be queried eg '123'.
+											$term_id = $module->term_id;
+
+											// Define prefixed term ID.
+											$term_id_prefixed = $taxonomy_prefix .'_'. $term_id;
+
+											$module_image = get_field( 'module_image', $term_id_prefixed );
+											// Image variables.
+											$url = $module_image['url'];
+											$alt = $module_image['alt'];
+
+											$size = 'thumbnail';
+											$thumb = $module_image['sizes'][ $size ];
+										?>
+										<?php if ( $module_image ) : ?>
+											<img src="<?php echo esc_url($thumb);  ?>" alt="<?php echo esc_attr($alt); ?>" />
+										<?php endif; ?>
+									</div>
+									<h2><?php echo esc_html($module->name); ?></h2>
+								</div>
+								<?php endforeach;  ?>
                         </div>
                     </div>
                 </div>
@@ -251,8 +273,8 @@ $the_query_testimonials = new WP_Query($args_testimonials);
 														</div>
 														<div class="testimonial__text">
 															<h2><?php the_title()?></h2>
-															<h3><?php echo esc_html_e(get_field('poste')); ?></h3>
-															<p><?php echo esc_html_e(get_field('quote')); ?></p>
+															<h3><?php echo esc_html(get_field('poste')); ?></h3>
+															<p><?php echo esc_html(get_field('quote')); ?></p>
 														</div>
 														</div>
 												</div>
@@ -340,7 +362,7 @@ $the_query_testimonials = new WP_Query($args_testimonials);
                                 <div class="item__box">
                                     <div class="item__image">
                                         <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-						<img class="round-image" src="<?php esc_html_e( $image[0] ); ?>" alt="<?php the_title(); ?>">
+						<img class="round-image" src="<?php esc_html( $image[0] ); ?>" alt="<?php the_title(); ?>">
                                     </div>
                                     <div class="item__text icon-2">
                                         <h2><a target="_blank" href="<?php the_field( 'formation_link_cpf' ); ?>">cpf </br><?php the_title(); ?></a></h2>
@@ -367,7 +389,8 @@ $the_query_testimonials = new WP_Query($args_testimonials);
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <a href="#" class="btn btn-border orange link">consulter mon solde formation</a>
+						<img src="<?php echo esc_html(get_template_directory_uri());?>/assets/images/client-13.png')" alt="CPF" class="d-block m-auto mb-2" style="mix-blend-mode: multiply;"/>
+                        <a href="#" class="btn btn-border orange link">consulter mon solde CPF</a>
                     </div>
                 </div>
             </div>

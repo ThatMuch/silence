@@ -19,7 +19,7 @@ get_header();
                 <div class="row">
                     <div class="col-md-12">
                         <?php if ( get_field('subtitle_page') ) : ?>
-							<h2 class="text-center m-title"><?php echo esc_html_e(get_field('subtitle_page')); ?></h2>
+							<h2 class="text-center m-title"><?php echo esc_html(get_field('subtitle_page')); ?></h2>
 						<?php endif; ?>
                     </div>
                 </div>
@@ -122,7 +122,7 @@ get_header();
 				<?php foreach($roles as $role) : ?>
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="title"><?php echo esc_html_e($role->name); ?></h2>
+                        <h2 class="title"><?php echo esc_html($role->name); ?></h2>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -173,7 +173,7 @@ get_header();
 											<h3 class="team__role"><?php echo esc_attr(get_field('job')); ?></h3>
 										<?php endif; ?>
 										<?php if ( get_field('description') ) : ?>
-											<?php echo esc_attr(get_field('description')); ?>
+											<?php echo get_field('description'); ?>
 										<?php endif; ?>
 										<?php if ( have_rows( 'links' ) ) : ?>
 											<?php while ( have_rows( 'links' ) ) : the_row(); ?>
