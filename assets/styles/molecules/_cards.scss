@@ -22,6 +22,8 @@
 
 
         .item__image {
+            height: calc(100% - 75px);
+
             img {
                 border-radius: 12px 12px 0 0;
             }

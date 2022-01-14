@@ -84,8 +84,7 @@ $the_query_testimonials = new WP_Query($args_testimonials);
                         <div class="card__box">
                             <div class="item__box">
                                 <div class="item__image">
-                                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-						<img class="round-image" src="<?php esc_html( $image[0] ); ?>" alt="<?php the_title(); ?>">
+									<img class="round-image" src="<?php echo esc_url( get_the_post_thumbnail_url($post->ID, 'full') ); ?>" alt="<?php the_title(); ?>">
                                 </div>
                                 <div class="item__text">
                                     <h2><a href="<?php the_permalink() ?>">je veux m’inscrire</a></h2>
@@ -119,8 +118,7 @@ $the_query_testimonials = new WP_Query($args_testimonials);
                         <div class="card__box">
                             <div class="item__box">
                                 <div class="item__image">
-                                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-						<img class="round-image" src="<?php esc_html( $image[0] ); ?>" alt="<?php the_title(); ?>">
+									<img class="round-image" src="<?php echo esc_url( get_the_post_thumbnail_url($post->ID, 'full') ); ?>">
                                 </div>
                                 <div class="item__text">
                                     <h2><a href="<?php the_permalink() ?>">je veux m’inscrire</a></h2>
@@ -351,7 +349,7 @@ $the_query_testimonials = new WP_Query($args_testimonials);
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="row">
+                        <div class="row h-100">
 								<?php
 								if ( $query_formations ->have_posts() ) :
 									$i = 0;
@@ -359,10 +357,9 @@ $the_query_testimonials = new WP_Query($args_testimonials);
 											$query_formations ->the_post();
 							?>
                             <div class="col-md-6">
-                                <div class="item__box">
+                                <div class="item__box" style="height: calc(100% - 22px);">
                                     <div class="item__image">
-                                        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-						<img class="round-image" src="<?php esc_html( $image[0] ); ?>" alt="<?php the_title(); ?>">
+										<img class="round-image" src="<?php echo esc_url( get_the_post_thumbnail_url($post->ID, 'full') ); ?>" alt="<?php the_title(); ?>">
                                     </div>
                                     <div class="item__text icon-2">
                                         <h2><a target="_blank" href="<?php the_field( 'formation_link_cpf' ); ?>">cpf </br><?php the_title(); ?></a></h2>
