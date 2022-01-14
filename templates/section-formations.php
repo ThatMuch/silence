@@ -31,14 +31,14 @@
                 </div>
         </div>
 		<div class="row">
-			<?php  foreach($cats as $cat) {?>
+			<?php  foreach($cats as $cat_) {?>
 			<div class="col-lg-6">
-				<h4 class="title-2 text-center"> <?php echo esc_html($cat->name); ?></h4>
+				<h4 class="title-2 text-center"> <?php echo esc_html($cat_->name); ?></h4>
 				<div class="row">
 					<?php
 						$args = array(
 							'post_type' => 'formations',
-							'category_name' => $cat->name,
+							'category_name' => $cat_->name,
 							'offset' => '0',
 							'posts_per_page' => '9999'
 						);
@@ -48,9 +48,9 @@
                               $query->the_post();
 					?>
 
-					<div class="<?php echo $cat->name == "Particuliers" ? "col-md-6" : ""?>">
+					<div class="<?php echo $cat_->name == "Particuliers" ? "col-md-6" : ""?>">
 						<div class="item__box">
-							<div class="<?php echo $cat->name == "Particuliers" ? "small" : ""?> item__image">
+							<div class="<?php echo $cat_->name == "Particuliers" ? "small" : ""?> item__image">
 								<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
 								<img src="<?php echo esc_html($image[0]); ?>" alt="<?php the_title(); ?>">
 							</div>
