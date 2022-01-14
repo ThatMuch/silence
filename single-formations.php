@@ -47,10 +47,11 @@ get_header();
 							<?php if ( get_sub_field('text') ) : ?>
 								<?php echo get_sub_field('text'); ?>
 							<?php endif; ?>
-								<?php $link = get_sub_field( 'link' ); ?>
-							<?php if ( $link ) : ?>
-			<a class="btn btn-white link m-full" href="<?php echo esc_url( $link['url'] ); ?>" target="<?php echo esc_attr( $link['target'] ); ?>"><?php echo esc_html( $link['title'] ); ?></a>
-		<?php endif; ?>
+								<?php $button = get_sub_field( 'link' ); ?>
+							<?php if ( $button ) : ?>
+								<a class="btn btn-white link m-full" href="<?php echo esc_url( $button['url'] ); ?>" target="<?php echo esc_attr( $button['target'] ); ?>"><?php echo esc_html( $button['title'] ); ?></a>
+							<?php endif; ?>
+							<a href="#contact" class="btn btn-white">Rejoignez le prochain cercle</a>
 						</div>
 					</div>
 				</div>
@@ -91,7 +92,7 @@ get_header();
 <!-- Contact -->
 <?php if ( have_rows( 'formation_form_group' ) ) : ?>
 	<?php while ( have_rows( 'formation_form_group' ) ) : the_row(); ?>
-		<div class="section__area border-top-white border-bottom-white">
+		<div id="contact" class="section__area border-top-white border-bottom-white">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-10 mx-auto">
