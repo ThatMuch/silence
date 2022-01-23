@@ -34,7 +34,7 @@
 			<?php  foreach($cats as $cat_) {?>
 			<div class="col-lg-6">
 				<h4 class="title-2 text-center"> <?php echo esc_html_e($cat_->name); ?></h4>
-				<div class="row">
+				<div class="row align-items-center">
 					<?php
 						$args = array(
 							'post_type' => 'formations',
@@ -48,7 +48,7 @@
                               $query->the_post();
 					?>
 
-					<div class="<?php echo $cat_->name == "Particuliers" ? "col-md-6" : ""?>">
+					<div class="<?php echo $cat_->name == "Particuliers" ? "col-md-6" : "col-sm-12"?>">
 						<div class="item__box">
 							<div class="<?php echo $cat_->name == "Particuliers" ? "small" : ""?> item__image">
 								<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
