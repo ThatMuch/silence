@@ -43,8 +43,8 @@ $query = new WP_Query( $args );
 							<h2 class="title-3" style="color: <?php the_field( 'color' ); ?>"><?php the_title(); ?></h2>
 							<?php the_field( 'desc' ); ?>
 							<div class="btn-list g-3 mt-4">
-								<a href="#" class="btn btn-green link">je m’inscris</a>
-								<a href="#" class="btn btn-green link">rdv découverte gratuit</a>
+								<a href="<?php the_permalink(); ?>/#contact" class="btn btn-green link">je m’inscris</a>
+								<a href="<?php echo esc_url(site_url()); ?>/rdv-decouvertes" class="btn btn-green link">rdv découverte gratuit</a>
 								<a href="<?php the_permalink(); ?>" class="btn btn-border orange link">la formation</a>
 							</div>
 						</div>
