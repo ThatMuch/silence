@@ -30,11 +30,11 @@
                     <h2 class="title mb-5"><?php echo esc_html(get_sub_field('title')); ?></h2>
                 </div>
         </div>
-		<div class="row">
+		<div class="row d-flex align-items-center">
 			<?php  foreach($cats as $cat_) {?>
 			<div class="col-lg-6">
 				<h4 class="title-2 text-center"> <?php echo esc_html_e($cat_->name); ?></h4>
-				<div class="row align-items-center">
+				<div class="row">
 					<?php
 						$args = array(
 							'post_type' => 'formations',
