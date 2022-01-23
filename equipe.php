@@ -11,9 +11,7 @@
  */
 
 get_header();
-
 ?>
-
         <div class="section__area">
             <div class="container">
                 <div class="row">
@@ -108,21 +106,24 @@ get_header();
 <?php endif; ?>
 
 <?php
+
    $args = array(
 	    'post_type' => 'team',
 		'taxonomy' => 'roles',
 		'orderby' => 'name',
 		'order'   => 'DESC',
-		'exclude'=>array(1,37)
+		'exclude'=>array(1),
+		'post__not_in' => $ID
     );
    $roles = get_categories($args);
 ?>
         <div class="section__area border-top border-bottom pb-150">
             <div class="container">
-				<?php foreach($roles as $role) : ?>
+				<?php foreach($roles as $role_) : ?>
+					<?php if ($role_->slug != "fondateur") : ?>
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="title"><?php echo esc_html_e($role->name); ?></h2>
+                        <h2 class="title"><?php echo esc_html_e($role_->name); ?></h2>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -133,7 +134,7 @@ get_header();
 									array(
 										'taxonomy' => 'roles',
 										'field'    => 'name',
-										'terms'    => $role->name,
+										'terms'    => $role_->name,
 									),
 								),
 							'offset' => '0',
@@ -148,7 +149,7 @@ get_header();
                         <div class="team__box">
                             <div class="team__image">
                                 <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-								<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
+								<img src="<?php echo esc_url($image[0]); ?>" alt="<?php esc_attr(the_title()); ?>">
                             </div>
                             <h2><?php the_title(); ?></h2>
                             <a data-bs-toggle="modal" data-bs-target="#modal-<?php echo esc_attr( $post->ID ); ?>" class="linked">voir profil</a>
@@ -203,6 +204,7 @@ get_header();
 					<?php endwhile; ?>
 					<?php endif;  wp_reset_postdata(); ?>
                 </div>
+				<?php endif; ?>
 				<?php endforeach; ?>
             </div>
         </div>
