@@ -29,7 +29,7 @@ get_header();
                             <div class="box__item__title box-<?php echo esc_attr($i) ; ?>">
                                 <span class="box__item__title__number"><?php the_sub_field( 'number' ); ?></span>
                             </div>
-                            <p class="box__item__text"><?php the_sub_field( 'text' ); ?></p>
+                            <p class="box__item__text" style="margin:0"><?php the_sub_field( 'text' ); ?></p>
                             <p class="box__item__ast"><?php the_sub_field( 'asterisque' ); ?></p>
                         </div>
                     </div>
@@ -44,10 +44,10 @@ get_header();
                 <div class="row align-items-center">
                     <div class="col-lg-4 text-center text-lg-start">
 						<?php $adn_section1_image = get_field( 'adn_section1_image' ); ?>
-<?php if ( $adn_section1_image ) : ?>
-	<img class="round-image" src="<?php echo esc_url( $adn_section1_image['url'] ); ?>" alt="<?php echo esc_attr( $adn_section1_image['alt'] ); ?>" />
-<?php endif; ?>
-
+						<?php if ( $adn_section1_image ) : ?>
+							<img class="round-image" src="<?php echo esc_url( $adn_section1_image['url'] ); ?>" alt="<?php echo esc_attr( $adn_section1_image['alt'] ); ?>" />
+						<?php endif; ?>
+						<p class="text-center"><?php echo esc_attr($adn_section1_image['caption'])?></p>
                     </div>
                     <div class="col-lg-7 ms-auto">
                         <div class="text-bx">

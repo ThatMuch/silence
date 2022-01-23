@@ -47,11 +47,10 @@ get_header();
 							<?php if ( get_sub_field('text') ) : ?>
 								<?php echo get_sub_field('text'); ?>
 							<?php endif; ?>
-								<?php $button = get_sub_field( 'link' ); ?>
-							<?php if ( $button ) : ?>
-								<a class="btn btn-white link m-full" href="<?php echo esc_url( $button['url'] ); ?>" target="<?php echo esc_attr( $button['target'] ); ?>"><?php echo esc_html( $button['title'] ); ?></a>
-							<?php endif; ?>
-							<a href="#contact" class="btn btn-white">Rejoignez le prochain cercle</a>
+								<?php $link_ = get_sub_field( 'link' ); ?>
+							<?php if ( $link_ ) : ?>
+			<a class="btn btn-white link m-full" href="<?php echo esc_url( $link_['url'] ); ?>" target="<?php echo esc_attr( $link_['target'] ); ?>"><?php echo esc_html( $link_['title'] ); ?></a>
+		<?php endif; ?>
 						</div>
 					</div>
 				</div>
@@ -77,9 +76,9 @@ get_header();
 						<div class="text-bx fw-medium">
 							<h2 class="m-title text-center text-md-start mb-4 mb-lg-0">	<?php the_sub_field( 'title' ); ?></h2>
 							<?php the_sub_field( 'text' ); ?>
-								<?php $link = get_sub_field( 'link' ); ?>
-								<?php if ( $link ) : ?>
-			<a class="btn btn-green link m-full" href="<?php echo esc_url( $link['url'] ); ?>" target="<?php echo esc_attr( $link['target'] ); ?>"><?php echo esc_html( $link['title'] ); ?></a>
+								<?php $link_ = get_sub_field( 'link' ); ?>
+								<?php if ( $link_ ) : ?>
+			<a class="btn btn-green link m-full" href="<?php echo esc_url( $link_['url'] ); ?>" target="<?php echo esc_attr( $link_['target'] ); ?>"><?php echo esc_html( $link_['title'] ); ?></a>
 		<?php endif; ?>
 						</div>
 					</div>
@@ -169,9 +168,9 @@ get_header();
 						<div class="text-bx fw-medium">
 							<h2 class="m-title text-center text-md-start mb-4 mb-lg-0">	<?php the_sub_field( 'title' ); ?></h2>
 							<?php the_sub_field( 'text' ); ?>
-								<?php $link = get_sub_field( 'link' ); ?>
-								<?php if ( $link ) : ?>
-									<a class="btn btn-green link m-full" href="<?php echo esc_url( $link['url'] ); ?>" target="<?php echo esc_attr( $link['target'] ); ?>"><?php echo esc_html( $link['title'] ); ?></a>
+								<?php $link_ = get_sub_field( 'link' ); ?>
+								<?php if ( $link_ ) : ?>
+									<a class="btn btn-green link m-full" href="<?php echo esc_url( $link_['url'] ); ?>" target="<?php echo esc_attr( $link_['target'] ); ?>"><?php echo esc_html( $link_['title'] ); ?></a>
 								<?php endif; ?>
 						</div>
 					</div>

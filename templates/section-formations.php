@@ -33,8 +33,8 @@
 		<div class="row">
 			<?php  foreach($cats as $cat_) {?>
 			<div class="col-lg-6">
-				<h4 class="title-2 text-center"> <?php echo esc_html($cat_->name); ?></h4>
-				<div class="row h-100">
+				<h4 class="title-2 text-center"> <?php echo esc_html_e($cat_->name); ?></h4>
+				<div class="row">
 					<?php
 						$args = array(
 							'post_type' => 'formations',
@@ -50,9 +50,9 @@
 
 					<div class="<?php echo $cat_->name == "Particuliers" ? "col-md-6" : ""?>">
 						<div class="item__box">
-							<div class="item__image">
+							<div class="<?php echo $cat_->name == "Particuliers" ? "small" : ""?> item__image">
 								<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-								<img src="<?php echo esc_html($image[0]); ?>" alt="<?php the_title(); ?>">
+								<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
 							</div>
 							<div class="item__text">
 								<h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
