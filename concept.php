@@ -51,7 +51,7 @@ $query = new WP_Query( $args );
 					</div>
 					<div class="col-lg-6">
 						<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-						<img class="round-image" src="<?php esc_html_e( $image[0] ); ?>" alt="<?php the_title(); ?>">
+						<img class="round-image" src="<?php echo esc_url( $image[0] ); ?>" alt="<?php the_title(); ?>">
 					</div>
 				</div>
 			</div>
