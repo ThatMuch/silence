@@ -29,7 +29,7 @@ get_header();
                             <div class="box__item__title box-<?php echo esc_attr($i) ; ?>">
                                 <span class="box__item__title__number"><?php the_sub_field( 'number' ); ?></span>
                             </div>
-                            <p class="box__item__text"><?php the_sub_field( 'text' ); ?></p>
+                            <p class="box__item__text" style="margin:0"><?php the_sub_field( 'text' ); ?></p>
                             <p class="box__item__ast"><?php the_sub_field( 'asterisque' ); ?></p>
                         </div>
                     </div>
