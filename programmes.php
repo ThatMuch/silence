@@ -389,7 +389,10 @@ $the_query_testimonials = new WP_Query($args_testimonials);
                 <div class="row">
                     <div class="col-md-12 text-center">
 						<img src="<?php echo esc_html(get_template_directory_uri());?>/assets/images/client-13.png')" alt="CPF" class="d-block m-auto mb-2" style="mix-blend-mode: multiply;"/>
-                        <a href="#" class="btn btn-border orange link">consulter mon solde CPF</a>
+						<?php $solde_cpf = get_field( 'solde_cpf' ); ?>
+<?php if ( $solde_cpf ) : ?>
+	<a href="<?php echo esc_url( $solde_cpf['url'] ); ?>" class="btn btn-border orange link" target="<?php echo esc_attr( $solde_cpf['target'] ); ?>"><?php echo esc_html( $solde_cpf['title'] ); ?></a>
+<?php endif; ?>
                     </div>
                 </div>
             </div>

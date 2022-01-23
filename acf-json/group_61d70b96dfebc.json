@@ -438,6 +438,21 @@
                     "maxlength": ""
                 }
             ]
+        },
+        {
+            "key": "field_61ed918c6a1d1",
+            "label": "Solde CPF",
+            "name": "solde_cpf",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
         }
     ],
     "location": [
@@ -465,7 +480,7 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1641487315,
+    "modified": 1642959276,
     "acfe_categories": {
         "page": "Page"
     }
