@@ -177,6 +177,8 @@ $the_query_testimonials = new WP_Query($args_testimonials);
 										?>
 										<?php if ( $module_image ) : ?>
 											<img src="<?php echo esc_url($thumb);  ?>" alt="<?php echo esc_attr($alt); ?>" />
+										<?php else : ?>
+											<img src="<?php echo esc_url(get_template_directory_uri());?>/assets/images/module-1.jpg')" alt="<?php echo esc_html($module->name); ?>" />
 										<?php endif; ?>
 									</div>
 									<h2><?php echo esc_html($module->name); ?></h2>
