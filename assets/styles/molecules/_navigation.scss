@@ -184,6 +184,10 @@
     &-brand {
         position: relative;
         max-width: 10%;
+
+        @include breakpoint(mobile) {
+            max-width: 30%;
+        }
     }
 
     &-toggler {

@@ -84,6 +84,11 @@
     .item__image {
         height: calc(100% - 75px);
 
+        @include breakpoint(mobile) {
+            height: 100%;
+        }
+
+
         img {
             border-radius: 12px 12px 0 0;
             width: 100%;
