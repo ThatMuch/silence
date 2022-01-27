@@ -222,6 +222,18 @@
     }
 }
 
+.alternate-mobile {
+    @include breakpoint(mobile) {
+        flex-direction: column-reverse;
+    }
+}
+
+.mb-2-mobile {
+    @include breakpoint(mobile) {
+        margin-bottom: 2rem;
+    }
+}
+
 .alternate-row {
     &:nth-child(odd) {
         .row {

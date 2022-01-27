@@ -50,60 +50,61 @@ get_header();
 <?php endif; ?>
 
 
-<?php if ( have_rows( 'team_section_2' ) ) : ?>
-	<?php while ( have_rows( 'team_section_2' ) ) : the_row(); ?>
-        <div class="section__area bg-gray">
-            <div class="container">
-								<div class="row align-items-center">
-									<div class="col-lg-3 order-lg-1">
-										<?php $img = get_sub_field( 'img' ); ?>
-										<?php if ( $img ) : ?>
-											<img class="round-image-half border-green" src="<?php echo esc_url( $img['url'] ); ?>" alt="<?php echo esc_attr( $img['alt'] ); ?>" />
-										<?php endif; ?>
-									</div>
-									<div class="col-lg-7 me-auto text-center">
-										<h2 class="m-title mb-30"><?php the_sub_field( 'title' ); ?></h2>
-										<div class="text-bx">
-											<?php the_sub_field( 'text' ); ?>
-											<?php $btn_link = get_sub_field( 'link' ); ?>
-											<?php if ( $btn_link ) : ?>
-												<a class="btn btn-green link" href="<?php echo esc_url( $link['url'] ); ?>" target="<?php echo esc_attr( $btn_link['target'] ); ?>"><?php echo esc_html( $btn_link['title'] ); ?></a>
-											<?php endif; ?>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-lg-12">
-										<hr>
-									</div>
-								</div>
-					<?php endwhile; ?>
-				<?php endif; ?>
-				<?php if ( have_rows( 'team_section_3' ) ) : ?>
-					<?php while ( have_rows( 'team_section_3' ) ) : the_row(); ?>
-								<div class="row align-items-center" style="flex-direction:row-reverse;">
-									<div class="col-lg-7 me-auto text-center">
-										<h2 class="m-title mb-30"><?php the_sub_field( 'title' ); ?></h2>
-										<div class="text-bx">
-											<?php the_sub_field( 'text' ); ?>
-											<?php $btn_link = get_sub_field( 'link' ); ?>
-											<?php if ( $btn_link ) : ?>
-												<a class="btn btn-green link" href="<?php echo esc_url( $link['url'] ); ?>" target="<?php echo esc_attr( $btn_link['target'] ); ?>"><?php echo esc_html( $btn_link['title'] ); ?></a>
-											<?php endif; ?>
-										</div>
-									</div>
-									<div class="col-lg-3 order-lg-1">
-										<?php $img = get_sub_field( 'img' ); ?>
-										<?php if ( $img ) : ?>
-											<img class="round-image-half border-green" src="<?php echo esc_url( $img['url'] ); ?>" alt="<?php echo esc_attr( $img['alt'] ); ?>" />
-										<?php endif; ?>
-									</div>
-								</div>
-
+	<?php if ( have_rows( 'team_section_2' ) ) : ?>
+		<?php while ( have_rows( 'team_section_2' ) ) : the_row(); ?>
+			<div class="section__area bg-gray ">
+				<div class="container">
+					<div class="row align-items-center alternate-mobile">
+						<div class="col-lg-7 me-auto text-center">
+							<h2 class="m-title mb-30"><?php the_sub_field( 'title' ); ?></h2>
+							<div class="text-bx">
+								<?php the_sub_field( 'text' ); ?>
+								<?php $btn_link = get_sub_field( 'link' ); ?>
+								<?php if ( $btn_link ) : ?>
+									<a class="btn btn-green link" href="<?php echo esc_url( $link['url'] ); ?>" target="<?php echo esc_attr( $btn_link['target'] ); ?>"><?php echo esc_html( $btn_link['title'] ); ?></a>
+								<?php endif; ?>
 							</div>
 						</div>
-	<?php endwhile; ?>
-<?php endif; ?>
+						<div class="col-lg-3">
+							<?php $img = get_sub_field( 'img' ); ?>
+							<?php if ( $img ) : ?>
+								<img class="round-image-half border-green mb-2-mobile me-auto ms-auto d-block" src="<?php echo esc_url( $img['url'] ); ?>" alt="<?php echo esc_attr( $img['alt'] ); ?>" />
+							<?php endif; ?>
+						</div>
+
+					</div>
+						<hr>
+
+		<?php endwhile; ?>
+	<?php endif; ?>
+
+
+	<?php if ( have_rows( 'team_section_3' ) ) : ?>
+		<?php while ( have_rows( 'team_section_3' ) ) : the_row(); ?>
+					<div class="row align-items-center">
+						<div class="col-lg-3">
+							<?php $img = get_sub_field( 'img' ); ?>
+							<?php if ( $img ) : ?>
+								<img class="round-image-half border-green mb-2-mobile me-auto ms-auto d-block" src="<?php echo esc_url( $img['url'] ); ?>" alt="<?php echo esc_attr( $img['alt'] ); ?>" />
+							<?php endif; ?>
+						</div>
+						<div class="col-lg-7 me-auto text-center">
+							<h2 class="m-title mb-30"><?php the_sub_field( 'title' ); ?></h2>
+							<div class="text-bx">
+								<?php the_sub_field( 'text' ); ?>
+								<?php $btn_link = get_sub_field( 'link' ); ?>
+								<?php if ( $btn_link ) : ?>
+									<a class="btn btn-green link" href="<?php echo esc_url( $link['url'] ); ?>" target="<?php echo esc_attr( $btn_link['target'] ); ?>"><?php echo esc_html( $btn_link['title'] ); ?></a>
+								<?php endif; ?>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		<?php endwhile; ?>
+	<?php endif; ?>
+
 
 <?php
 
