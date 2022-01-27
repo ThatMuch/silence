@@ -20,7 +20,7 @@
 								  Nos actualités</h2>
                         </div>
                   </div>
-            <div class="row gx-4 d-none d-lg-flex">
+            <div class="row gx-4 d-lg-flex">
                   <?php
                   $args = array(
                         'post_type' => 'post',
