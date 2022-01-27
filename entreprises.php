@@ -55,7 +55,8 @@ get_header();
 						<?php if ( have_rows( 'company_choices_item' ) ) : ?>
 							<?php while ( have_rows( 'company_choices_item' ) ) : the_row(); ?>
 							<div class="service__item seven">
-                                <div class="service__icon">
+								<?php $image = get_sub_field( 'image' ); ?>
+                                <div class="service__icon" style="background-image: url('<?php echo esc_url( $image['url'] ); ?>')">
                                     <h2><?php the_sub_field( 'choice' ); ?></h2>
                                 </div>
                                 <h3><?php the_sub_field( 'title' ); ?></h3>
