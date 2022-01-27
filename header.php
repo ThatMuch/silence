@@ -70,8 +70,13 @@
     <div class="row">
       <div class="col-12">
         <div class="hero__text">
-			<div class="hero_video"></div>
-			<?php the_post_thumbnail('full');/* img */ ?>
+		<?php $video = get_field( 'video' );
+		?>
+		<?php if ( $video ) : ?>
+			 <video autoplay muted loop class="section-accueil-video"><source src="<?php echo esc_url($video['url']);?>" type="video/mp4"></video>
+			<?php else : ?>
+				<?php the_post_thumbnail('full');/* img */ ?>
+		<?php endif; ?>
           <h1>
 			  <?php echo esc_html(get_field('title_page',$page_id) ? get_field('title_page', $page_id) : single_post_title()); ?>
 			</h1>
