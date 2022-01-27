@@ -228,6 +228,12 @@
             flex-direction: row-reverse;
         }
     }
+
+    @include breakpoint(mobile) {
+        .row {
+            flex-direction: column-reverse !important;
+        }
+    }
 }
 
 .mt {
