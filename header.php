@@ -69,7 +69,7 @@
 				<div class="hero__text">
 					<?php $video = get_field( 'video' );?>
 					<?php if ( $video ) : ?>
-						<video autoplay muted loop class="section-accueil-video"><source src="<?php echo esc_url($video['url']);?>" type="video/mp4"></video>
+						<video autoplay muted loop class="section-accueil-video"><source src="<?php echo $video['url'];?>" type="video/mp4"></video>
 						<?php else : ?>
 							<?php the_post_thumbnail('full');/* img */ ?>
 					<?php endif; ?>
