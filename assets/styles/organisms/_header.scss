@@ -16,10 +16,15 @@ $header_h-m: 390px;
     &__area {
         width: 100%;
         padding: 0;
+        position: fixed;
+        background: #fff;
+        z-index: 1000;
     }
 }
 
 .hero {
+    margin-top: 73px;
+
     &_video {
         background-repeat: no-repeat;
         background-attachment: scroll;
@@ -44,6 +49,8 @@ $header_h-m: 390px;
         img {
             position: absolute;
             width: 100%;
+            height: 100%;
+            object-fit: cover;
             z-index: -2;
         }
     }
@@ -60,7 +67,7 @@ $header_h-m: 390px;
         z-index: 2;
 
         @include breakpoint(tablet) {
-            min-height: 295px;
+            min-height: 260px;
         }
 
 
