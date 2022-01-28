@@ -145,7 +145,9 @@ function debounce(func,wait,immediate) {
 			items: 1
 		});
 	});
-
+	if ($('.dropdown-toggle.active').hasClass('active')) {
+		$('.dropdown-toggle.active').removeClass('active');
+	}
 }(jQuery));
 
 

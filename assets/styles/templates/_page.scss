@@ -39,7 +39,6 @@ main#page {
 
     .content {
         margin: 0 auto;
-        max-width: 1000px;
     }
 }
 
@@ -50,42 +49,46 @@ main#post {
     }
 }
 
+.container {
+    @media only screen and (min-width: 1366px) {
+        max-width: 1300px;
+    }
+}
+
 .site-content {
     width: 100vw;
 }
 
-
-
-.card_price_formation{
-    -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+.card_price_formation {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     border-radius: 15px;
     background-color: #fff;
     padding: 25px;
     margin: 4rem 0;
 
-    h3{
+    h3 {
         color: #83988d;
         text-transform: uppercase;
         text-align: center;
-        font-weight: normal!important;
+        font-weight: normal !important;
         font-size: 24px;
     }
 
-    .title_card_formation{
+    .title_card_formation {
         margin-bottom: 0;
     }
 
-    p{
+    p {
         text-align: center;
         margin: 0;
     }
 
-    .horaire{
+    .horaire {
         font-size: 14px;
     }
-    
-    .bloc_price_formation{
+
+    .bloc_price_formation {
         margin-top: 1rem;
         background-color: #F2F2F2;
         text-align: center;
@@ -95,7 +98,7 @@ main#post {
         margin-bottom: 2rem;
         position: relative;
 
-        img{
+        img {
             position: absolute;
             left: 20px;
             width: 19%;
@@ -109,13 +112,13 @@ main#post {
                 margin-bottom: 1rem;
                 transform: inherit;
                 top: inherit;
-            }               
+            }
         }
 
-        ul{
+        ul {
             margin-bottom: 0;
 
-            li{
+            li {
                 display: inline-block;
                 width: 33%;
 
@@ -125,28 +128,26 @@ main#post {
                     padding: 1rem;
                 }
 
-
-                .price_formation{
+                .price_formation {
                     font-size: 30px;
                     color: #83988d;
                     margin-bottom: 0;
                     font-weight: bold;
                 }
 
-                .libelle_price{
+                .libelle_price {
                     font-size: 12px;
                     margin-bottom: 0;
                 }
-                
-                .btn_purchase{
+
+                .btn_purchase {
                     text-transform: uppercase;
                     color: #D8AC4D;
                     text-decoration: underline;
                 }
             }
 
-
-            .last_list_price{
+            .last_list_price {
                 border-left: 1px solid #253D38;
 
                 @media screen and (max-width: 991px) {
@@ -157,47 +158,49 @@ main#post {
         }
     }
 
-    .bloc_button_purchase{
+    .bloc_button_purchase {
         text-align: center;
     }
 
-    fieldset { 
-        padding: .35em .75em .625em!important;
-        
+    fieldset {
+        padding: 0.35em 0.75em 0.625em !important;
+
         legend {
-            letter-spacing: 2px!important;
-            font-size: 12px!important;
+            letter-spacing: 2px !important;
+            font-size: 12px !important;
         }
-        
     }
-    .select{
+
+    .select {
         &::after {
-           display: none;    
+            display: none;
         }
     }
+
     .select-styled {
         top: 0;
         padding: 0;
         display: none;
     }
 
-    .select-options{
-       li{
-           display: none;
-       }
-    } 
+    .select-options {
+        li {
+            display: none;
+        }
+    }
 
     .select-hidden {
-        display: inherit; 
+        display: inherit;
         visibility: inherit;
     }
 
-    .wpcf7-submit{
+    .wpcf7-submit {
         margin-top: 1.5rem;
-        max-width: 250px!important;
+        max-width: 250px !important;
         width: 250px;
     }
+
     .ajax-loader {
-        display: none!important;
+        display: none !important;
     }
 }

@@ -146,7 +146,7 @@ register_post_type( "testimonials", $args );
 		"query_var" => true,
 		"menu_icon" => "dashicons-groups",
 		"supports" => [ "title", "thumbnail"],
-		"taxonomies" => [ "category"],
+		"taxonomies" => [ "category", "modules"],
 	];
 
 	register_post_type( "formations", $args );

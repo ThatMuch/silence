@@ -27,10 +27,10 @@
 	<div class="container">
 		<div class="row">
                 <div class="col-md-12">
-                    <h2 class="title mb-5"><?php echo esc_html_e(get_sub_field('title')); ?></h2>
+                    <h2 class="title mb-5"><?php echo esc_html(get_sub_field('title')); ?></h2>
                 </div>
         </div>
-		<div class="row">
+		<div class="row d-flex align-items-center">
 			<?php  foreach($cats as $cat_) {?>
 			<div class="col-lg-6">
 				<h4 class="title-2 text-center"> <?php echo esc_html_e($cat_->name); ?></h4>
@@ -48,7 +48,7 @@
                               $query->the_post();
 					?>
 
-					<div class="<?php echo $cat_->name == "Particuliers" ? "col-md-6" : ""?>">
+					<div class="<?php echo $cat_->name == "Particuliers" ? "col-md-6" : "col-sm-12"?>">
 						<div class="item__box">
 							<div class="<?php echo $cat_->name == "Particuliers" ? "small" : ""?> item__image">
 								<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>

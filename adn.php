@@ -17,7 +17,7 @@ get_header();
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
-                        <h5 class="title-5 text-orange mb-5"><?php echo esc_html_e(get_field('subtitle_page')); ?></h5>
+                        <h5 class="title-5 text-orange mb-5"><?php echo esc_html(get_field('subtitle_page')); ?></h5>
                     </div>
                 </div>
                 <div class="row">

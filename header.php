@@ -29,18 +29,17 @@
         $image = wp_get_attachment_image_src( $custom_logo_id , 'full' ); ?>
 <!-- MENU -->
 <nav class="header__area navbar navbar-expand-lg">
-  <div class="container">
     <!-- Navbar brand -->
   <a class="navbar-brand" href="<?php echo esc_url(site_url()); ?>">
   <?php if($image[0]) : ?>
     <img src="<?php echo esc_url($image[0]);?>" alt="<?php esc_html_e(get_bloginfo( 'name' )); ?>">
     <?php else: ?>
-  <div class="logo" style="background-image: url('<?php echo esc_html_e(get_template_directory_uri());?>/assets/images/stanlee_logo_texte.png')"></div>
+  <div class="logo" style="background-image: url('<?php echo esc_url(get_template_directory_uri());?>/assets/images/stanlee_logo_texte.png')"></div>
   <?php endif;?>
   </a>
 
   <!-- Button Toggler -->
-  <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'theme-textdomain' ); ?>">
+  <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html( 'Toggle Navigation', 'theme-textdomain' ); ?>">
     <span class="bar"></span>
     <span class="bar"></span>
     <span class="text">MENU</span>
@@ -59,40 +58,41 @@
         ) );
         ?>
     </div>
-
-  </div>
 </nav>
 
 <?php $page_id = get_queried_object_id();?>
 <!-- HEADER -->
 <header class="hero hero__area">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="hero__text">
-			<?php the_post_thumbnail('large');/* img */ ?>
-          <h1>
-			  <?php echo esc_html_e(get_field('title_page',$page_id) ? get_field('title_page', $page_id) : single_post_title()); ?>
-			</h1>
-          <?php if ( get_field('slogan_page', $page_id)) : ?>
-            <?php the_field( 'slogan_page', $page_id ); ?>
-          <?php endif; ?>
-            <?php if (is_archive() || is_category()): ?>
-            <h1>
-            <?php
-                if ( is_day() ) :
-                  echo get_the_date();
-                  elseif ( is_month() ) :
-                    echo get_the_date( _x( 'F Y', 'monthly archives date format', 'stanlee' ) );
-                  elseif ( is_year() ) :
-                    echo get_the_date( _x( 'Y', 'yearly archives date format', 'stanlee' ) );
-                  endif;
-                  ?>
-            </h1>
-            <?php endif; ?>
-          </div>
-        </div>
-      </div>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="hero__text">
+					<?php $video = get_field( 'video' );?>
+					<?php if ( $video ) : ?>
+						<video autoplay muted loop class="section-accueil-video"><source src="<?php echo esc_url($video['url']);?>" type="video/mp4"></video>
+						<?php else : ?>
+							<?php the_post_thumbnail('full');/* img */ ?>
+					<?php endif; ?>
+					<h1><?php echo esc_html(get_field('title_page',$page_id) ? get_field('title_page', $page_id) : single_post_title()); ?></h1>
+					<?php if ( get_field('slogan_page', $page_id)) : ?>
+						<?php the_field( 'slogan_page', $page_id ); ?>
+					<?php endif; ?>
+					<?php if (is_archive() || is_category()): ?>
+					<h1>
+					<?php
+						if ( is_day() ) :
+						echo get_the_date();
+						elseif ( is_month() ) :
+							echo get_the_date( _x( 'F Y', 'monthly archives date format', 'stanlee' ) );
+						elseif ( is_year() ) :
+							echo get_the_date( _x( 'Y', 'yearly archives date format', 'stanlee' ) );
+						endif;
+						?>
+					</h1>
+					<?php endif; ?>
+				</div>
+			</div>
+      	</div>
     </div>
   </header>
 

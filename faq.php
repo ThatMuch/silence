@@ -39,12 +39,12 @@ $query_faq = new WP_Query( $args_faq);
                         <div class="btn-box d-flex justify-content-between my-5">
 							<?php  foreach($cats as $cat_faq) : ?>
 
-                            <a href="#<?php echo esc_html_e($cat_faq->term_id); ?>" class="btn btn-border orange link"><?php echo esc_html_e($cat_faq->name); ?></a>
+                            <a href="#<?php echo esc_html($cat_faq->term_id); ?>" class="btn btn-border orange link"><?php echo esc_html($cat_faq->name); ?></a>
 							<?php endforeach; ?>
                         </div>
 						<?php  foreach($cats as $cat_faq) : ?>
 							<div class="mb-5">
-								<h2 id="<?php echo esc_html_e($cat_faq->term_id); ?>" class="m-title mb-5 text-center text-lg-start ms-0"><?php echo esc_html_e($cat_faq->name); ?></h2>
+								<h2 id="<?php echo esc_html($cat_faq->term_id); ?>" class="m-title mb-5 text-center text-lg-start ms-0"><?php echo esc_html($cat_faq->name); ?></h2>
 								<div class="accordion faq" id="faq">
 									<?php
 										$args = array(

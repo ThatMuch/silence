@@ -21,7 +21,7 @@ $the_query = new WP_Query($args); ?>
             <div class="row">
                   <div class="col-lg-10 mx-auto">
                         <?php if ( get_sub_field('title') ) : ?>
-                              <h2 class="title"><?php echo esc_html_e(get_sub_field('title')); ?></h2>
+                              <h2 class="title"><?php echo esc_html(get_sub_field('title')); ?></h2>
                         <?php endif; ?>
                             <div class="testimonial__wrapper carousel slide" data-bs-ride="carousel" id="testimonial">
                             <div class="carousel-inner">
@@ -34,8 +34,8 @@ $the_query = new WP_Query($args); ?>
                                                 </div>
                                                 <div class="testimonial__text">
                                                       <h2><?php the_title()?></h2>
-                                                      <h3><?php echo esc_html_e(get_field('poste')); ?></h3>
-                                                      <p><?php echo esc_html_e(get_field('quote')); ?></p>
+                                                      <h3><?php echo esc_html(get_field('poste')); ?></h3>
+                                                      <p><?php echo esc_html(get_field('quote')); ?></p>
                                                 </div>
                                                 </div>
                                           </div>

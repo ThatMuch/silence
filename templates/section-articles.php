@@ -16,10 +16,11 @@
 	<div class="container">
                   <div class="row">
                         <div class="col-md-12">
-                              <h2 class="title mb-5"><?php echo esc_html_e(get_sub_field('tittle')); ?></h2>
+                              <h2 class="title mb-5">
+								  Nos actualités</h2>
                         </div>
                   </div>
-            <div class="row gx-4 d-none d-lg-flex">
+            <div class="row gx-4 d-lg-flex">
                   <?php
                   $args = array(
                         'post_type' => 'post',
@@ -39,5 +40,8 @@
                         wp_reset_postdata();
                   ?>
             </div>
+			<div class="d-flex justify-content-center">
+				<a href="<?php echo esc_url(get_permalink( get_option( 'page_for_posts' ) )); ?>" class="btn btn-border orange bg-white link">Voir toute l'actualité</a>
+			</div>
       </div>
  </section>

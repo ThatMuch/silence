@@ -18,7 +18,7 @@ $page_id = get_queried_object_id();
 			<div class="row">
 				<div class="col-md-12">
 					<?php if ( get_field('subtitle_page', $page_id ) ) : ?>
-						<h2 class="text-center m-title"><?php echo esc_html_e(get_field('subtitle_page', $page_id )); ?></h2>
+						<h2 class="text-center m-title"><?php echo esc_html(get_field('subtitle_page', $page_id )); ?></h2>
 					<?php endif; ?>
 				</div>
 			</div>

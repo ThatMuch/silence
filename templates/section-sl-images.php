@@ -8,12 +8,24 @@
 							$images = get_sub_field('logo_list');
 							$size = 'medium';
 							if( $images ): ?>
-							  <?php foreach( $images as $image ): ?>
+							  <?php foreach( $images as $image ):
+							  	$attachment_id = $image['id'];
+								 // Image variables.
+								$url = $image['url'];
+								$alt = $image['alt'];
+								$url_image = get_field( 'url_image', $attachment_id );
+
+								// Thumbnail size attributes.
+								$size = 'thumbnail';
+								$thumb = $image['sizes'][ $size ];
+							?>
                         <div class="client__box">
                             <div class="client__image">
-                                <img src="<?php echo $image['sizes'][$size]; ?>" alt="<?php echo $image['alt']; ?>" />
+								<a href="<?php echo esc_url( $url_image['url'] ); ?>" target="<?php echo esc_attr( $url_image['target'] ); ?>">
+								<img src="<?php echo esc_url($thumb);  ?>" alt="<?php echo esc_attr($alt); ?>" />
+								</a>
                             </div>
-                            <a href="#">lien</a>
+
                         </div>
 						<?php endforeach; ?>
 						<?php endif;?>
