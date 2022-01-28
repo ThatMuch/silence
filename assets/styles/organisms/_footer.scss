@@ -7,6 +7,12 @@
  */
 
 .footer {
+    &__logo {
+        img {
+            height: 100%;
+        }
+    }
+
     &__area {
         padding: 70px 0 50px;
         font-weight: 300;
@@ -117,6 +123,7 @@
 
             img {
                 width: 100px;
+                height: 100%;
             }
         }
 
