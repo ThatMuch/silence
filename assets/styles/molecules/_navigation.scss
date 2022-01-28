@@ -184,6 +184,7 @@
     &-brand {
         position: relative;
         max-width: 10%;
+        margin-left: 1rem;
 
         @include breakpoint(mobile) {
             max-width: 30%;
