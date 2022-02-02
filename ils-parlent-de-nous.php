@@ -40,6 +40,7 @@ get_header();
 									<?php endif; ?>
 
 									<div class="post__text">
+										<?php $link = get_sub_field( 'link' ); ?>
 										<h2 ><a class="post__link" href="<?php echo esc_url( $link['url'] ); ?>" target="<?php echo esc_attr( $link['target'] ); ?>" >
 									<?php the_sub_field( 'title' ); ?></a></h2>
 										<?php $link_article = get_sub_field( 'link' ); ?>
