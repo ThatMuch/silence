@@ -47,10 +47,7 @@ get_header();
 							<?php if ( get_sub_field('text') ) : ?>
 								<?php echo get_sub_field('text'); ?>
 							<?php endif; ?>
-								<?php $link_ = get_sub_field( 'link' ); ?>
-							<?php if ( $link_ ) : ?>
-			<a class="btn btn-white link m-full" href="<?php echo esc_url( $link_['url'] ); ?>" target="<?php echo esc_attr( $link_['target'] ); ?>"><?php echo esc_html( $link_['title'] ); ?></a>
-		<?php endif; ?>
+			<a class="btn btn-white link m-full" href="#contact">S'inscrire</a>
 						</div>
 					</div>
 				</div>
