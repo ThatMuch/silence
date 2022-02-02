@@ -304,7 +304,7 @@ $the_query_testimonials = new WP_Query($args_testimonials);
 									<h3 class="mt-4"><?php the_sub_field( 'program_prices_card2_text' ); ?></h3>
 									<p>en fonction de la formation choisie</p>
 								</div>
-								<a href="#" class="btn btn-orange link">je m’inscris</a>
+								<a href="#formations_CPF" class="btn btn-orange link">je m’inscris</a>
 							</div>
 						</div>
 					<?php endwhile; ?>
@@ -319,7 +319,7 @@ $the_query_testimonials = new WP_Query($args_testimonials);
 									<h3 class="mt-4"><?php the_sub_field( 'program_prices_card3_text' ); ?></h3>
 									<p>en fonction de la formation choisie</p>
 								</div>
-								<a href="#" class="btn btn-green link ">je m’inscris</a>
+								<a href="#formations_CPF" class="btn btn-green link ">je m’inscris</a>
 							</div>
 						</div>
 					<?php endwhile; ?>
@@ -347,7 +347,7 @@ $the_query_testimonials = new WP_Query($args_testimonials);
             </div>
         </div>
 
-        <div class="section__area bg-gray">
+        <div id="formations_CPF" class="section__area bg-gray">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
