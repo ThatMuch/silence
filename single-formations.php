@@ -59,29 +59,30 @@ get_header();
 <!-- Section 2 -->
 <?php if ( have_rows( 'formation_section_2' ) ) : ?>
 	<?php while ( have_rows( 'formation_section_2' ) ) : the_row(); ?>
-		<div class="section__area">
-			<div class="container">
-				<div class="row gx-5 align-items-center">
-					<div class="col-lg-4 text-center order-lg-1">
-						<?php $img = get_sub_field( 'img' ); ?>
-						<?php if ( $img ) : ?>
-			<img src="<?php echo esc_url( $img['url'] ); ?>" alt="<?php echo esc_attr( $img['alt'] ); ?>" class="round-image-half mb-5 mb-lg-0"/>
-		<?php endif; ?>
-
-					</div>
-					<div class="col-lg-8">
-						<div class="text-bx fw-medium">
-							<h2 class="m-title text-center text-md-start mb-4 mb-lg-0">	<?php the_sub_field( 'title' ); ?></h2>
-							<?php the_sub_field( 'text' ); ?>
-								<?php $link_ = get_sub_field( 'link' ); ?>
-								<?php if ( $link_ ) : ?>
-			<a class="btn btn-green link m-full" href="<?php echo esc_url( $link_['url'] ); ?>" target="<?php echo esc_attr( $link_['target'] ); ?>"><?php echo esc_html( $link_['title'] ); ?></a>
-		<?php endif; ?>
+		<?php if (get_sub_field('text')) : ?>
+			<div class="section__area">
+				<div class="container">
+					<div class="row gx-5 align-items-center">
+						<div class="col-lg-4 text-center order-lg-1">
+							<?php $img = get_sub_field( 'img' ); ?>
+							<?php if ( $img ) : ?>
+								<img src="<?php echo esc_url( $img['url'] ); ?>" alt="<?php echo esc_attr( $img['alt'] ); ?>" class="round-image-half mb-5 mb-lg-0"/>
+							<?php endif; ?>
+						</div>
+						<div class="col-lg-8">
+							<div class="text-bx fw-medium">
+								<h2 class="m-title text-center text-md-start mb-4 mb-lg-0">	<?php the_sub_field( 'title' ); ?></h2>
+								<?php the_sub_field( 'text' ); ?>
+									<?php $link_ = get_sub_field( 'link' ); ?>
+									<?php if ( $link_ ) : ?>
+										<a class="btn btn-green link m-full" href="<?php echo esc_url( $link_['url'] ); ?>" target="<?php echo esc_attr( $link_['target'] ); ?>"><?php echo esc_html( $link_['title'] ); ?></a>
+									<?php endif; ?>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		<?php endif; ?>
 	<?php endwhile; ?>
 <?php endif; ?>
 
@@ -107,6 +108,7 @@ get_header();
 <?php endif; ?>
 
 <!-- Modules -->
+<?php if ($query_modules ) :  ?>
         <div class="section__area">
             <div class="container">
                 <div class="row">
@@ -114,7 +116,6 @@ get_header();
                         <h2 class="title">Nos modules</h2>
                         <div class="modules__list owl-carousel">
 							<?php foreach ($query_modules as $module) : ?>
-
 								<div class="modules__item">
 									<div class="modules__image">
 										<?php
@@ -151,31 +152,34 @@ get_header();
                 </div>
             </div>
         </div>
+<?php endif; ?>
 <!-- Section 3 -->
 <?php if ( have_rows( 'formation_section_3' ) ) : ?>
 	<?php while ( have_rows( 'formation_section_3' ) ) : the_row(); ?>
-		<div class="section__area">
-			<div class="container">
-				<div class="row gx-5 align-items-center" style="    flex-direction: row-reverse;">
-					<div class="col-lg-4 text-center order-lg-1">
-						<?php $img = get_sub_field( 'image' ); ?>
-						<?php if ( $img ) : ?>
-							<img src="<?php echo esc_url( $img['url'] ); ?>" alt="<?php echo esc_attr( $img['alt'] ); ?>" class="round-image-half mb-5 mb-lg-0"/>
-						<?php endif; ?>
-					</div>
-					<div class="col-lg-8">
-						<div class="text-bx fw-medium">
-							<h2 class="m-title text-center text-md-start mb-4 mb-lg-0">	<?php the_sub_field( 'title' ); ?></h2>
-							<?php the_sub_field( 'text' ); ?>
-								<?php $link_ = get_sub_field( 'link' ); ?>
-								<?php if ( $link_ ) : ?>
-									<a class="btn btn-green link m-full" href="<?php echo esc_url( $link_['url'] ); ?>" target="<?php echo esc_attr( $link_['target'] ); ?>"><?php echo esc_html( $link_['title'] ); ?></a>
-								<?php endif; ?>
+		<?php if (get_sub_field('text')) : ?>
+			<div class="section__area">
+				<div class="container">
+					<div class="row gx-5 align-items-center" style="    flex-direction: row-reverse;">
+						<div class="col-lg-4 text-center order-lg-1">
+							<?php $img = get_sub_field( 'image' ); ?>
+							<?php if ( $img ) : ?>
+								<img src="<?php echo esc_url( $img['url'] ); ?>" alt="<?php echo esc_attr( $img['alt'] ); ?>" class="round-image-half mb-5 mb-lg-0"/>
+							<?php endif; ?>
+						</div>
+						<div class="col-lg-8">
+							<div class="text-bx fw-medium">
+								<h2 class="m-title text-center text-md-start mb-4 mb-lg-0">	<?php the_sub_field( 'title' ); ?></h2>
+								<?php the_sub_field( 'text' ); ?>
+									<?php $link_ = get_sub_field( 'link' ); ?>
+									<?php if ( $link_ ) : ?>
+										<a class="btn btn-green link m-full" href="<?php echo esc_url( $link_['url'] ); ?>" target="<?php echo esc_attr( $link_['target'] ); ?>"><?php echo esc_html( $link_['title'] ); ?></a>
+									<?php endif; ?>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		<?php endif; ?>
 	<?php endwhile; ?>
 <?php endif; ?>
 
