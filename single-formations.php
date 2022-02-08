@@ -30,6 +30,7 @@ get_header();
 <!-- Section 1 -->
 <?php if ( have_rows( 'formation_section_1' ) ) : ?>
 	<?php while ( have_rows( 'formation_section_1' ) ) : the_row(); ?>
+	<?php if ( get_sub_field('text') ) : ?>
 		<div class="section__area bg-green">
 			<div class="container">
 				<div class="row gx-5">
@@ -44,15 +45,14 @@ get_header();
 							<?php if ( get_sub_field('title') ) : ?>
 								<h2 class="m-title text-light mb-4"><?php echo esc_html(get_sub_field('title')); ?></h2>
 							<?php endif; ?>
-							<?php if ( get_sub_field('text') ) : ?>
 								<?php echo get_sub_field('text'); ?>
-							<?php endif; ?>
 			<a class="btn btn-white link m-full" href="#contact">S'inscrire</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+			<?php endif; ?>
 	<?php endwhile; ?>
 <?php endif; ?>
 
