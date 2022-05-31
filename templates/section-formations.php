@@ -47,10 +47,10 @@
                         	while ( $query->have_posts() ) {
                               $query->the_post();
 					?>
-
-					<div class="<?php echo $cat_->name == "Particuliers" ? "col-md-6" : "col-sm-12"?>">
+					<?php $numb = $query->post_count ; ?>
+					<div class="<?php echo $numb > 2 ? "col-md-6" : "col-sm-12"?>">
 						<div class="item__box">
-							<div class="<?php echo $cat_->name == "Particuliers" ? "small" : ""?> item__image">
+							<div class="<?php echo $numb > 2 ? "small" : ""?> item__image">
 								<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
 								<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
 							</div>
